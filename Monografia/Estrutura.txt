@@ -1,0 +1,29 @@
+Introdução
+    Introdução
+    Justificativa
+        -Necessidade de maior desempenho
+        -Limites físicos e da Lei de Moore
+        -Instruções redundantes
+        -Possibilidade de otimização dinâmica de código
+            --DTM
+    Problema
+        -Instruções redundantes
+        -Verificar se DTM é uma solução viável
+    Objetivos
+        -Implementar DTM em HDL
+        -Gravar em FPGA
+        -Testar e analisar desempenho
+    Estrutura da tese
+
+Metodologia
+    Revisão da literatura
+    Definição das ferramentas
+    Implementação
+    Testes e avaliação dos resultados
+
+Fundamentação Teórica
+    Arquitetura / Desenho Digital
+    DTM
+    Leon3 / GRLIB
+    VHDL
+    FPGA
