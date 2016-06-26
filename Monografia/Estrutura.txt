@@ -1,18 +1,18 @@
 Introdução
     Introdução
+        Necessidade de maior desempenho
+        Limites físicos e da Lei de Moore
     Justificativa
-        -Necessidade de maior desempenho
-        -Limites físicos e da Lei de Moore
-        -Instruções redundantes
-        -Possibilidade de otimização dinâmica de código
-            --DTM
+        Instruções redundantes
+        Possibilidade de otimização dinâmica de código
+            DTM
     Problema
-        -Instruções redundantes
-        -Verificar se DTM é uma solução viável
+        Instruções redundantes
+        Verificar se DTM é uma solução viável
     Objetivos
-        -Implementar DTM em HDL
-        -Gravar em FPGA
-        -Testar e analisar desempenho
+        Implementar DTM em HDL
+        Gravar em FPGA
+        Testar e analisar desempenho
     Estrutura da tese
 
 Metodologia
