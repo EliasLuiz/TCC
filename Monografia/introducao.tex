@@ -1,26 +1,12 @@
 
 %\chapter{Introdução}
 
-	\begin{flushright}
-		\textit{``Clássico é clássico e vice-versa''.\\
-		Mário Jardel}
-	\end{flushright}
+%	\begin{flushright}
+%		\textit{``Clássico é clássico e vice-versa''.\\
+%		Mário Jardel}
+%	\end{flushright}
 
-
-%\textbf{Organização de informação não se dá da mesma forma em qualquer domínio.}
-%As metodologias e técnicas tradicionais de organização de informação (OI) permitem que informação seja coletada, indexada, classificada e recuperada, na Web ou em outros repositórios, tendo em vista seu consequente uso por uma comunidade de usuários. No entanto, é comum a necessidade de se implementar métodos com foco em repositórios e conteúdos de áreas específicas, por aqueles métodos tradicionais não suportarem o reconhecimento de termos de todos os domínios ou não atenderem a necessidades muito específicas dos usuários de informação. Esse é o caso do tratamento de fórmulas químicas \cite{sun07}, de citações bibliográficas \cite{giles98} e de referências geográficas \cite{overellPhd09}, assim como de repositórios de patentes \cite{patents11} e de informação corporativa \cite{hu2010enterprisecase}.
-%
-%%\textbf{SRIC ainda costumam ser SRI sem qualquer adaptação especial.}
-%Porém, ainda é comum que sistemas de recuperação de informação corporativa sejam apenas sistemas tradicionais de recuperação de informação sobre repositórios de documentos corporativos. 
-%Dessa forma, apenas pequena parcela da tecnologia é adaptada para atender as necessidades das empresas e de seus usuários. 
-%Isso frequentemente leva a insatisfação de usuários de informação e causa prejuízos aos processos organizacionais que dependam de buscas \cite{solomon2002}.
-%
-%%\textbf{O usuário costuma precisar de vários SRI para realizar a mesma tarefa.}
-%Adicionalmente, as tarefas de usuários corporativos normalmente exigem informação de diferentes fontes de informação \cite{halevy2005enterprise}, tornando comum o acesso a tais fontes por meio de diferentes sistemas de recuperação de informação. 
-%Apesar de complexo, o acesso através de uma única e integrada interface é muito importante para qualquer usuário de informação, além de recomendável para garantir uma gestão eficaz de recursos de informação.
-%
-%%\textbf{Tudo isso é culpa da complexidade da informação corporativa. Conhecê-la melhor é a solução.}
-%Essas dificuldades são comuns em decorrência da complexidade naturalmente encontrada dentro de organizações, onde diferentes profissionais, atividades e unidades organizacionais são empregados para realizar trabalho. A recuperação mais eficaz de informação corporativa e o desenvolvimento de metabuscas mais eficientes parecem depender da compatibilização e do controle de características que permeiem a informação da empresa, o que sintetiza a justificativa desta pesquisa.
+%% INTRODUÇÃO - Relevância da área sem especificar problema. 
 
 A Lei de Moore possui algumas variações quanto ao seu enunciado, porém todas afirmam que a capacidade computacional dos processadores cresceria exponencialmente devido aos avanços na tecnologia. Por 50 anos essa previsão se manteve consistente com os produtos lançados no mercado, como descrito em. Porém, limitações físicas na criação de circuitos integrados ameaçam o continuidade dessa evolução. \cite{50yearsmooreslaw}
 
@@ -32,52 +18,53 @@ O que ocorre então é a criação de sistemas especialistas para determinadas f
 
 Como exemplo podemos comparar as diferentes abordagens assumidas ao projetar um \textit{system-on-chip} para aplicação em um sistema embarcado e na criação de uma unidade de processamento gráfico. Enquanto sistemas embarcados prezam por tamanho reduzido e baixo consumo de energia, unidades gráficas têm como prioridade a velocidade para cálculos de ponto flutuante, sendo otimizadas para executar instruções simples a diversos dados de entrada simultaneamente. \cite{tanenbaumsco}
 
+Assim, é importante conhecer e desenvolver técnicas que possam tornar os projetos mais eficientes. Desenvolver para que o custo-benefício do produto seja melhorado independentemente de avanços na tecnologia de produção, mas sim por um design melhor elaborado. Conhecer para que seja possível ponderar como e quais técnicas aplicar para que o objetivo final possa ser atingido de maneira ótima, com um máximo de desempenho e mínimo de recursos despendidos.
 
 
 
-\section{Justificativa} %Inseri para organizar o texto
+\section{Justificativa} %Relevância do trabalho em específico. 
 
-%\textbf{Necessidade de SRI adequados para informação corporativa, que evoluam continuamente e que busquem a generalidade.}
-Esta pesquisa justifica-se pela necessidade de se implementar sistemas automáticos de recuperação de informação que deem suporte adequado à informação corporativa e às tarefas dos usuários corporativos, mas também que favoreçam a provisoriedade da informação e a interoperabilidade entre sistemas. Para isso, deve-se buscar uma compreensão mais geral da informação corporativa, que beneficie sua evolução contínua e não a limite a um cenário de uso excessivamente reduzido.
-
-%\textbf{Há diversas iniciativas para aumentar o desempenho dos componentes dos SRI.}
-Há diversas iniciativas que tentam aumentar o desempenho dos componentes de sistemas de recuperação de informação corporativa e dos processos que os suportam, da coleta de documentos à interface com o usuário. As iniciativas mais comuns dependem de vocabulário controlado \cite{ontology12}, o que nem sempre é simples de gerir dentro de empresas. A adoção de vocabulário controlado enfrenta um grande volume de informação produzida, a dificuldade de avaliar a conformidade de novos documentos, e ainda a realidade de que nem toda empresa conta com profissionais de informação qualificados, sendo que suas funções eventualmente são assumidas pelos próprios usuários corporativos. Adicionalmente, nem todo usuário de informação possui habilidades suficientes para executar atividades de produção, classificação, indexação e busca de informação da forma mais eficiente.
-Outras iniciativas dependem de relacionamentos entre documentos em forma hipertextual, assim como ocorre na \textit{Web}. Esse não é um recurso muito comum em coleções corporativas, onde memorandos, notas fiscais, manuais, folhas de pagamento e balanços são conectados apenas através de códigos textuais, nem sempre fáceis de se reconhecer automaticamente.
-
-%\textbf{Maioria das iniciativas dão-se sobre a perspectiva dos projetistas ou sobre a perspectiva dos usuários, o que gera dois problemas: ou requer um projeto prévio intenso ou perde em flexibilidade para evolução.}
-No entanto, a maioria dessas iniciativas continua a ser fortemente dependente da perspectiva dos projetistas dos sistemas de recuperação de informação, com reflexos provenientes da forma como a informação é estruturada nos diversos repositórios usados pela empresa; ou da perspectiva dos usuários, com reflexos provenientes da forma como o conhecimento é organizado. Embora natural, essa dependência exige um grande esforço prévio de projeto ou então provoca uma excessiva perda de flexibilidade para a evolução do sistema de recuperação de informação. 
-
-%\textbf{Estruturas classificatórias facetadas resolvem os dois problemas anteriores.}
-Para contornar essas limitações, estruturas classificatórias facetadas têm sido adotadas como base para um modelo mais flexível e incremental de desenvolvimento de sistemas de recuperação de informação \cite{broughton2006,docubrowse10}. Adicionalmente, uma vez que documentos apresentam facetas significativas para o contexto do documento e do usuário da informação, normalmente consultas submetidas aos mecanismos de busca também incluem estas facetas, como nomes de pessoas e de instituições, localidades e datas \cite{rosieJones08,docubrowse10,mir2ed}. Tal contextualização, além de favorecer a recuperação de informação, pode contribuir para melhorar o \textit{ranking} da informação e para criar novos serviços e funcionalidades \cite{borges07}.
-
-%A origem da classificação facetada se deu com estudos de \citeonline{ranganathan1967} e teve continuidade nos estudos de outros autores da área de Biblioteconomia e Ciência da Informação tais como \citeonline{vickery2008faceted} e \citeonline{broughton2006}, apesar do conceito estar em uso crescente também em outras áreas com algumas variações \cite{broughton2006}. As facetas identificadas a partir desta pesquisa constituem características comuns da informação corporativa de duas empresas, mas favorecem a análise de um domínio corporativo na medida em que o método pode ser repetido em organizações adicionais, usando documentos de diferentes tipos, propósitos e idiomas. 
-
-%Na teoria da análise facetada de \citeonline{ranganathan1967}, faceta é um conceito central, embora apresente interpretações variadas na literatura \cite{broughton2006}. No entanto, faceta sempre é vista como uma característica permanente e relevante de uma entidade, algumas vezes reconhecida por meio da análise facetada. Análise facetada é uma técnica através da qual facetas são descobertas em um domínio e normalmente formam uma classificação facetada \cite{labarre2010}. A abordagem facetada constitui uma estratégia classificatória pela qual se procura responder como uma entidade pode ser descrita, ao invés de procurar responder onde a entidade deve ser posicionada dentro de uma estrutura classificatória definida \textit{a priori} \cite{ranganathan1967}. Assim, variadas perspectivas e incertezas sobre necessidades de usuários são consideradas, dentro de um processo analítico, incremental e iterativo, normalmente tornando seu produto útil para mais de um problema.
-
-%\textbf{Facetas significativas são descobertas por uma análise de domínio.}
-As facetas mais significativas do domínio corporativo podem ser descobertas através de um processo de análise de domínio. E por meio de facetas significativas, a organização da informação pode ser aperfeiçoada e sistemas de recuperação de informação mais eficientes são possíveis \cite{albrechtsen1993subject}. Porém, os requisitos para a análise de todo um domínio e para a análise da informação de uma única empresa são diferentes \cite{gopinath92}. Enquanto o domínio requer uma compreensão mais geral e consensual, a informação de uma instituição admite perspectivas baseadas em maior empirismo e pragmatismo, sendo útil apenas em um contexto mais limitado \cite{hjorland2002domain}.
-
-%\textbf{Análise de domínio deve ser cuidadosa para reconhecer as características essenciais.}
-As facetas normalmente restringem-se às mais importantes por razões econômicas e práticas mesmo havendo muitas características potencialmente relevantes ao domínio \cite{ranganathan1967}. É possível descobrir características do domínio através de técnicas como da análise facetada. No entanto, distinguir entre características importantes e essenciais só se dá através de um rigoroso processo de análise de domínio \cite{lykke2011domain}.
-
-%\textbf{Características locais também são importantes para a análise de domínio.}
-Por outro lado, as características locais da informação corporativa, a terminologia específica de uma atividade econômica, as necessidades individuais de cada unidade organizacional e o contexto geográfico e histórico da empresa também são importantes no processo de análise de domínio. Além disso, elas são úteis para descrever a informação corporativa, inclusive com uma precisão que supera aquela possibilitada por características mais gerais e genéricas. Também, as características locais são representadas da mesma forma que aquelas mais gerais do domínio \cite{dolby09extractingVocabularies,giess2008generation,wild2009describing}, mesmo não sendo compartilhadas por todas as empresas. No entanto, sua adoção implica em uma modelagem que se afasta de um modelo genérico de empresa.
-
-%\textbf{Informação implícita também é importante.}
-Em todo sistema de recuperação de informação corporativa, os usuários da informação estão interessados tanto em dados explícitos presentes no conteúdo de documentos \cite{gardin1973} quanto em informação implícita e conhecimento informal distribuído nos sistemas corporativos \cite{dealwis2001singapore,choo2008,marcella2012,nunes2006,ofarrill2010}, o que constitui um desafio adicional para a representação do domínio. Portanto, o domínio, no nível mais global ou mais individual, é dinâmico e sua representação deve estar preparada para atualizações contínuas.
-
-%\textbf{Análise facetada se justifica como técnica para análise de domínio.}
-Exatamente por favorecer um processo incremental de análise de domínio, a análise facetada parece apropriada. Porém, não há relatos da aplicação dessa técnica em documentos corporativos na literatura. Desenvolvida sobre uma base teórica sólida a partir da Biblioteconomia e da Ciência da Informação \cite{garfield1984}, a análise facetada é mais popular na sua área de origem e para a classificação bibliográfica, embora esteja se popularizando em outras áreas \cite{labarre2010}. São exemplos não exaustivos os documentos de engenharia \cite{giess2008generation,wild2009describing}, \textit{sites} corporativos \cite{wang2008using}, documentos \textit{Web} \cite{hong06,vickery2008faceted} e catálogos \textit{Web} \cite{sacco2006}. Como a diversidade de aplicações e ramos do conhecimento tem aumentado, surgem também visões alternativas e um grande número de trabalhos sem que todos os princípios originais de \citeonline{ranganathan1967} sejam respeitados \cite{spiteri98simplified,wild2009describing}.
-
-%A análise facetada da informação corporativa, como uma técnica de análise de um domínio, deve começar por definir as facetas mais comuns e frequentes à maioria das empresas. As sugestões mais tradicionais partem das cinco categorias consideradas fundamentais por \citeonline{ranganathan1967}, personalidade, matéria, energia, espaço e tempo, e as treze recomendadas pelo \textit{Classification Research Group}: coisa, tipo, parte, propriedade, material, processo, operação, agente, paciente, produto, subproduto, espaço e tempo. Elas supostamente têm o potencial de representar o conhecimento de qualquer domínio, sendo usadas como ponto de partida para a análise facetada \cite{broughton2006}.
-
-
-
-
-
-%\textbf{Conclusão da justificativa.}
-Dessa maneira, a organização da informação por meio de estruturas classificatórias facetadas pode contribuir positivamente para a melhoria dos processos de classificação e indexação de documentos, e para outras etapas da construção e uso dos sistemas de recuperação de informação. Essa hipótese se baseia na presença de facetas comuns a documentos corporativos e na flexibilidade desse método de organização.
-% Uma segunda hipótese refere-se ao relacionamento entre facetas, dentro de documentos ou mesmo dentro da coleção, como importante recurso para reconhecimento e desambiguação de termos e entidades de forma automática, o que por sua vez suportaria uma indexação automática eficiente de entidades facetadas. %Aqui pode haver um exemplo e/ou uma figura de exemplo.
+%%\textbf{Necessidade de SRI adequados para informação corporativa, que evoluam continuamente e que busquem a generalidade.}
+%Esta pesquisa justifica-se pela necessidade de se implementar sistemas automáticos de recuperação de informação que deem suporte adequado à informação corporativa e às tarefas dos usuários corporativos, mas também que favoreçam a provisoriedade da informação e a interoperabilidade entre sistemas. Para isso, deve-se buscar uma compreensão mais geral da informação corporativa, que beneficie sua evolução contínua e não a limite a um cenário de uso excessivamente reduzido.
+%
+%%\textbf{Há diversas iniciativas para aumentar o desempenho dos componentes dos SRI.}
+%Há diversas iniciativas que tentam aumentar o desempenho dos componentes de sistemas de recuperação de informação corporativa e dos processos que os suportam, da coleta de documentos à interface com o usuário. As iniciativas mais comuns dependem de vocabulário controlado \cite{ontology12}, o que nem sempre é simples de gerir dentro de empresas. A adoção de vocabulário controlado enfrenta um grande volume de informação produzida, a dificuldade de avaliar a conformidade de novos documentos, e ainda a realidade de que nem toda empresa conta com profissionais de informação qualificados, sendo que suas funções eventualmente são assumidas pelos próprios usuários corporativos. Adicionalmente, nem todo usuário de informação possui habilidades suficientes para executar atividades de produção, classificação, indexação e busca de informação da forma mais eficiente.
+%Outras iniciativas dependem de relacionamentos entre documentos em forma hipertextual, assim como ocorre na \textit{Web}. Esse não é um recurso muito comum em coleções corporativas, onde memorandos, notas fiscais, manuais, folhas de pagamento e balanços são conectados apenas através de códigos textuais, nem sempre fáceis de se reconhecer automaticamente.
+%
+%%\textbf{Maioria das iniciativas dão-se sobre a perspectiva dos projetistas ou sobre a perspectiva dos usuários, o que gera dois problemas: ou requer um projeto prévio intenso ou perde em flexibilidade para evolução.}
+%No entanto, a maioria dessas iniciativas continua a ser fortemente dependente da perspectiva dos projetistas dos sistemas de recuperação de informação, com reflexos provenientes da forma como a informação é estruturada nos diversos repositórios usados pela empresa; ou da perspectiva dos usuários, com reflexos provenientes da forma como o conhecimento é organizado. Embora natural, essa dependência exige um grande esforço prévio de projeto ou então provoca uma excessiva perda de flexibilidade para a evolução do sistema de recuperação de informação. 
+%
+%%\textbf{Estruturas classificatórias facetadas resolvem os dois problemas anteriores.}
+%Para contornar essas limitações, estruturas classificatórias facetadas têm sido adotadas como base para um modelo mais flexível e incremental de desenvolvimento de sistemas de recuperação de informação \cite{broughton2006,docubrowse10}. Adicionalmente, uma vez que documentos apresentam facetas significativas para o contexto do documento e do usuário da informação, normalmente consultas submetidas aos mecanismos de busca também incluem estas facetas, como nomes de pessoas e de instituições, localidades e datas \cite{rosieJones08,docubrowse10,mir2ed}. Tal contextualização, além de favorecer a recuperação de informação, pode contribuir para melhorar o \textit{ranking} da informação e para criar novos serviços e funcionalidades \cite{borges07}.
+%
+%%A origem da classificação facetada se deu com estudos de \citeonline{ranganathan1967} e teve continuidade nos estudos de outros autores da área de Biblioteconomia e Ciência da Informação tais como \citeonline{vickery2008faceted} e \citeonline{broughton2006}, apesar do conceito estar em uso crescente também em outras áreas com algumas variações \cite{broughton2006}. As facetas identificadas a partir desta pesquisa constituem características comuns da informação corporativa de duas empresas, mas favorecem a análise de um domínio corporativo na medida em que o método pode ser repetido em organizações adicionais, usando documentos de diferentes tipos, propósitos e idiomas. 
+%
+%%Na teoria da análise facetada de \citeonline{ranganathan1967}, faceta é um conceito central, embora apresente interpretações variadas na literatura \cite{broughton2006}. No entanto, faceta sempre é vista como uma característica permanente e relevante de uma entidade, algumas vezes reconhecida por meio da análise facetada. Análise facetada é uma técnica através da qual facetas são descobertas em um domínio e normalmente formam uma classificação facetada \cite{labarre2010}. A abordagem facetada constitui uma estratégia classificatória pela qual se procura responder como uma entidade pode ser descrita, ao invés de procurar responder onde a entidade deve ser posicionada dentro de uma estrutura classificatória definida \textit{a priori} \cite{ranganathan1967}. Assim, variadas perspectivas e incertezas sobre necessidades de usuários são consideradas, dentro de um processo analítico, incremental e iterativo, normalmente tornando seu produto útil para mais de um problema.
+%
+%%\textbf{Facetas significativas são descobertas por uma análise de domínio.}
+%As facetas mais significativas do domínio corporativo podem ser descobertas através de um processo de análise de domínio. E por meio de facetas significativas, a organização da informação pode ser aperfeiçoada e sistemas de recuperação de informação mais eficientes são possíveis \cite{albrechtsen1993subject}. Porém, os requisitos para a análise de todo um domínio e para a análise da informação de uma única empresa são diferentes \cite{gopinath92}. Enquanto o domínio requer uma compreensão mais geral e consensual, a informação de uma instituição admite perspectivas baseadas em maior empirismo e pragmatismo, sendo útil apenas em um contexto mais limitado \cite{hjorland2002domain}.
+%
+%%\textbf{Análise de domínio deve ser cuidadosa para reconhecer as características essenciais.}
+%As facetas normalmente restringem-se às mais importantes por razões econômicas e práticas mesmo havendo muitas características potencialmente relevantes ao domínio \cite{ranganathan1967}. É possível descobrir características do domínio através de técnicas como da análise facetada. No entanto, distinguir entre características importantes e essenciais só se dá através de um rigoroso processo de análise de domínio \cite{lykke2011domain}.
+%
+%%\textbf{Características locais também são importantes para a análise de domínio.}
+%Por outro lado, as características locais da informação corporativa, a terminologia específica de uma atividade econômica, as necessidades individuais de cada unidade organizacional e o contexto geográfico e histórico da empresa também são importantes no processo de análise de domínio. Além disso, elas são úteis para descrever a informação corporativa, inclusive com uma precisão que supera aquela possibilitada por características mais gerais e genéricas. Também, as características locais são representadas da mesma forma que aquelas mais gerais do domínio \cite{dolby09extractingVocabularies,giess2008generation,wild2009describing}, mesmo não sendo compartilhadas por todas as empresas. No entanto, sua adoção implica em uma modelagem que se afasta de um modelo genérico de empresa.
+%
+%%\textbf{Informação implícita também é importante.}
+%Em todo sistema de recuperação de informação corporativa, os usuários da informação estão interessados tanto em dados explícitos presentes no conteúdo de documentos \cite{gardin1973} quanto em informação implícita e conhecimento informal distribuído nos sistemas corporativos \cite{dealwis2001singapore,choo2008,marcella2012,nunes2006,ofarrill2010}, o que constitui um desafio adicional para a representação do domínio. Portanto, o domínio, no nível mais global ou mais individual, é dinâmico e sua representação deve estar preparada para atualizações contínuas.
+%
+%%\textbf{Análise facetada se justifica como técnica para análise de domínio.}
+%Exatamente por favorecer um processo incremental de análise de domínio, a análise facetada parece apropriada. Porém, não há relatos da aplicação dessa técnica em documentos corporativos na literatura. Desenvolvida sobre uma base teórica sólida a partir da Biblioteconomia e da Ciência da Informação \cite{garfield1984}, a análise facetada é mais popular na sua área de origem e para a classificação bibliográfica, embora esteja se popularizando em outras áreas \cite{labarre2010}. São exemplos não exaustivos os documentos de engenharia \cite{giess2008generation,wild2009describing}, \textit{sites} corporativos \cite{wang2008using}, documentos \textit{Web} \cite{hong06,vickery2008faceted} e catálogos \textit{Web} \cite{sacco2006}. Como a diversidade de aplicações e ramos do conhecimento tem aumentado, surgem também visões alternativas e um grande número de trabalhos sem que todos os princípios originais de \citeonline{ranganathan1967} sejam respeitados \cite{spiteri98simplified,wild2009describing}.
+%
+%%A análise facetada da informação corporativa, como uma técnica de análise de um domínio, deve começar por definir as facetas mais comuns e frequentes à maioria das empresas. As sugestões mais tradicionais partem das cinco categorias consideradas fundamentais por \citeonline{ranganathan1967}, personalidade, matéria, energia, espaço e tempo, e as treze recomendadas pelo \textit{Classification Research Group}: coisa, tipo, parte, propriedade, material, processo, operação, agente, paciente, produto, subproduto, espaço e tempo. Elas supostamente têm o potencial de representar o conhecimento de qualquer domínio, sendo usadas como ponto de partida para a análise facetada \cite{broughton2006}.
+%
+%
+%
+%
+%
+%%\textbf{Conclusão da justificativa.}
+%Dessa maneira, a organização da informação por meio de estruturas classificatórias facetadas pode contribuir positivamente para a melhoria dos processos de classificação e indexação de documentos, e para outras etapas da construção e uso dos sistemas de recuperação de informação. Essa hipótese se baseia na presença de facetas comuns a documentos corporativos e na flexibilidade desse método de organização.
+%% Uma segunda hipótese refere-se ao relacionamento entre facetas, dentro de documentos ou mesmo dentro da coleção, como importante recurso para reconhecimento e desambiguação de termos e entidades de forma automática, o que por sua vez suportaria uma indexação automática eficiente de entidades facetadas. %Aqui pode haver um exemplo e/ou uma figura de exemplo.
 
 
 
@@ -110,7 +97,7 @@ As características da informação, em documentos e expressões de busca, refer
 %A organização multifacetada da informação demanda um esforço manual de identificação de facetas e anotação de termos da coleção ou exige um processo de reconhecimento que seja automático e suficientemente preciso para torná-la útil na recuperação de documentos.
 %que caracterizam o sistema de informação corporativo pode ajudar no reconhecimento automático e na desambiguação de entidades multifacetadas e seus valores de facetas (focus)
 
-\section{Objetivos}
+\section{Objetivos} % Falar o que será feito.
 
 %\textbf{Objetivo geral.}
 Para responder ao problema proposto, o objetivo geral deste trabalho é propor um conjunto de características da informação corporativa que favoreça a organização e a recuperação da informação.

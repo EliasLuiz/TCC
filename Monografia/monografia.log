@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.11)  26 JUN 2016 00:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.11)  9 JUL 2016 19:10
 entering extended mode
 **./monografia.tex
 (monografia.tex
@@ -1208,79 +1208,87 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
 ]
 (monografia.toc [9
 
-]) [10] (introducao.tex [11
+]) [10] (introducao.tex
+
+LaTeX Warning: Citation `50yearsmooreslaw' on page 11 undefined on input line 1
+1.
+
+
+LaTeX Warning: Citation `tanenbaumsco' on page 11 undefined on input line 19.
+
+[11
 
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 62.
- [12] [13]
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 195.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 182.
+ [12]
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 182.
 
 
 ("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsphv.fd"
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 195.
-[14]) [15] (metodologia.tex [16
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 182.
+) [13] (metodologia.tex [14
 
 ]
-<fig/metodologia.jpg, id=313, 995.72pt x 1101.11375pt>
+<fig/metodologia.jpg, id=208, 995.72pt x 1101.11375pt>
 File: fig/metodologia.jpg Graphic file (type jpg)
 
 <use fig/metodologia.jpg>
 Package pdftex.def Info: fig/metodologia.jpg used on input line 49.
 (pdftex.def)             Requested size: 364.00139pt x 402.53325pt.
- [17 <./fig/metodologia.jpg>]
+ [15 <./fig/metodologia.jpg>]
 
-LaTeX Warning: Reference `prototipo-colecaoPublica' on page 18 undefined on inp
+LaTeX Warning: Reference `prototipo-colecaoPublica' on page 16 undefined on inp
 ut line 58.
 
-[18] [19] [20]) [21]
+[16] [17] [18]) [19]
 Underfull \hbox (badness 1072) in paragraph at lines 454--454
 []\T1/phv/m/n/24.88 Fundamentos his-tó-ri-cos, teó-ri-cos e
  []
 
-(literatura.tex [22
+(literatura.tex [20
 
-] [23] [24] [25] [26] [27]
+] [21] [22] [23] [24] [25]
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 129.
 
 
 ("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-[28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42]
-<fig/facetasIndividuo.jpg, id=834, 512.91624pt x 778.91pt>
+[26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40]
+<fig/facetasIndividuo.jpg, id=746, 512.91624pt x 778.91pt>
 File: fig/facetasIndividuo.jpg Graphic file (type jpg)
 
 <use fig/facetasIndividuo.jpg>
 Package pdftex.def Info: fig/facetasIndividuo.jpg used on input line 401.
 (pdftex.def)             Requested size: 273.00278pt x 414.57935pt.
- [43] [44 <./fig/facetasIndividuo.jpg>] [45]
+ [41] [42 <./fig/facetasIndividuo.jpg>] [43]
 Overfull \hbox (5.68256pt too wide) in paragraph at lines 446--447
  []\T1/phv/m/sl/9 faceted clas-si-fi-ca-tion fo-cuses on the es-sen-tial and co
 n-stant char-ac-ter-is-tics/facets,
  []
 
-[46] [47] [48]) [49] (analiseDominio.tex
+[44] [45] [46]) [47] (analiseDominio.tex
 
-LaTeX Warning: Reference `anexoassuntosCEFETMGdocs' on page 50 undefined on inp
+LaTeX Warning: Reference `anexoassuntosCEFETMGdocs' on page 48 undefined on inp
 ut line 34.
 
 
-LaTeX Warning: Reference `anexoassuntosCSIROqueries' on page 50 undefined on in
+LaTeX Warning: Reference `anexoassuntosCSIROqueries' on page 48 undefined on in
 put line 34.
 
 
-LaTeX Warning: Reference `anexoassuntosCSIROdocs' on page 50 undefined on input
+LaTeX Warning: Reference `anexoassuntosCSIROdocs' on page 48 undefined on input
  line 34.
 
-[50
+[48
 
-] [51]
-<fig/assuntosIdentificadosParticular.jpg, id=1004, 1415.2875pt x 885.3075pt>
+] [49]
+<fig/assuntosIdentificadosParticular.jpg, id=921, 1415.2875pt x 885.3075pt>
 File: fig/assuntosIdentificadosParticular.jpg Graphic file (type jpg)
 
 <use fig/assuntosIdentificadosParticular.jpg>
@@ -1289,27 +1297,27 @@ line 88.
 (pdftex.def)             Requested size: 455.0pt x 284.61452pt.
 
 
-LaTeX Warning: Reference `anexoassuntosCEFETMGdocs' on page 52 undefined on inp
+LaTeX Warning: Reference `anexoassuntosCEFETMGdocs' on page 50 undefined on inp
 ut line 105.
 
-[52 <./fig/assuntosIdentificadosParticular.jpg>] [53]
+[50 <./fig/assuntosIdentificadosParticular.jpg>] [51]
 
-LaTeX Warning: Reference `anexoassuntosCSIROqueries' on page 54 undefined on in
+LaTeX Warning: Reference `anexoassuntosCSIROqueries' on page 52 undefined on in
 put line 131.
 
-[54]
+[52]
 
-LaTeX Warning: Reference `anexoassuntosCSIROdocs' on page 55 undefined on input
+LaTeX Warning: Reference `anexoassuntosCSIROdocs' on page 53 undefined on input
  line 178.
 
-(lista.tex [55] [56] [57] [58] [59]) [60]
+(lista.tex [53] [54] [55] [56] [57]) [58]
 
-LaTeX Warning: Reference `fig:facetasDocsQueries' on page 61 undefined on input
+LaTeX Warning: Reference `fig:facetasDocsQueries' on page 59 undefined on input
  line 566.
 
-[61]
+[59]
 
-LaTeX Warning: Reference `fig:facetasDocsQueries' on page 62 undefined on input
+LaTeX Warning: Reference `fig:facetasDocsQueries' on page 60 undefined on input
  line 572.
 
 
@@ -1319,70 +1327,70 @@ fi-cas, Pro-ces-sos de ne-gó-cios, Es-paço e Tempo.
  []
 
 
-LaTeX Warning: Reference `fig:disp-docdoc' on page 62 undefined on input line 5
+LaTeX Warning: Reference `fig:disp-docdoc' on page 60 undefined on input line 5
 78.
 
 
-LaTeX Warning: Reference `fig:disp-docquery' on page 62 undefined on input line
+LaTeX Warning: Reference `fig:disp-docquery' on page 60 undefined on input line
  578.
 
 
-LaTeX Warning: Reference `fig:disp-docqueryCSIRO' on page 62 undefined on input
+LaTeX Warning: Reference `fig:disp-docqueryCSIRO' on page 60 undefined on input
  line 581.
 
 
-LaTeX Warning: Reference `fig:disp-docqueryCSIRO' on page 62 undefined on input
+LaTeX Warning: Reference `fig:disp-docqueryCSIRO' on page 60 undefined on input
  line 581.
 
 
-LaTeX Warning: Reference `fig:disp-docquery' on page 62 undefined on input line
+LaTeX Warning: Reference `fig:disp-docquery' on page 60 undefined on input line
  581.
 
-[62] [63] [64] [65] [66]
+[60] [61] [62] [63] [64]
 
-LaTeX Warning: Reference `fig:disp-docqueryCSIRO' on page 67 undefined on input
+LaTeX Warning: Reference `fig:disp-docqueryCSIRO' on page 65 undefined on input
  line 724.
 
 
-LaTeX Warning: Reference `fig:disp-docdoc' on page 67 undefined on input line 7
+LaTeX Warning: Reference `fig:disp-docdoc' on page 65 undefined on input line 7
 27.
 
 
-LaTeX Warning: Reference `fig:disp-docquery' on page 67 undefined on input line
+LaTeX Warning: Reference `fig:disp-docquery' on page 65 undefined on input line
  727.
 
 
-LaTeX Warning: Reference `fig:disp-docquery' on page 67 undefined on input line
+LaTeX Warning: Reference `fig:disp-docquery' on page 65 undefined on input line
  730.
 
 
-LaTeX Warning: Reference `fig:disp-docdoc' on page 67 undefined on input line 7
+LaTeX Warning: Reference `fig:disp-docdoc' on page 65 undefined on input line 7
 30.
 
 
-LaTeX Warning: Reference `fig:facetasDocsQueries' on page 67 undefined on input
+LaTeX Warning: Reference `fig:facetasDocsQueries' on page 65 undefined on input
  line 737.
 
-[67]) [68] (prototipo.tex) [69
+[65]) [66] (prototipo.tex) [67
 
-] (conclusao.tex [70
+] (conclusao.tex [68
 
-] [71] [72] [73] [74])
+] [69] [70] [71] [72])
 (monografia.bbl (monografia.brf)
 \tf@brf=\write5
 \openout5 = `monografia.brf'.
 
- [75]
+ [73]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 3.
 
 bibitemlist
-[76
+[74
 
-] [77] [78] [79] [80] [81] [82]) 
+] [75] [76] [77] [78] [79] [80]) 
 AED: lastpage setting LastPage
-[83]
+[81]
 \tf@lof=\write6
 \openout6 = `monografia.lof'.
 
@@ -1398,7 +1406,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 549.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 549.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 549.
 Package rerunfilecheck Info: File `monografia.brf' has not changed.
-(rerunfilecheck)             Checksum: B41A7E7E4FE50E7E8D792F8C8B0BD487;16723.
+(rerunfilecheck)             Checksum: 635D3264940B8B4A44CCF5F606AAA701;14556.
 
 
 LaTeX Warning: There were undefined references.
@@ -1409,10 +1417,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 549.
  ) 
 Here is how much of TeX's memory you used:
- 13972 strings out of 493634
- 206039 string characters out of 3135239
- 352806 words of memory out of 3000000
- 16541 multiletter control sequences out of 15000+200000
+ 13980 strings out of 493634
+ 206221 string characters out of 3135239
+ 349025 words of memory out of 3000000
+ 16551 multiletter control sequences out of 15000+200000
  51163 words of font info for 54 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  39i,13n,36p,2316b,804s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1430,9 +1438,9 @@ TeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/elias/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/elias/AppData/Local/P
 rograms/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/elias/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on monografia.pdf (84 pages, 1120784 bytes).
+Output written on monografia.pdf (82 pages, 1095539 bytes).
 PDF statistics:
- 1995 PDF objects out of 2073 (max. 8388607)
- 568 named destinations out of 1000 (max. 500000)
+ 1890 PDF objects out of 2073 (max. 8388607)
+ 566 named destinations out of 1000 (max. 500000)
  476 words of extra memory for PDF output out of 10000 (max. 10000000)
 
