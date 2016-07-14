@@ -7,6 +7,34 @@
 \contentsline {section}{\numberline {1.2}Problema}{6}{section.1.2}
 \contentsline {section}{\numberline {1.3}Objetivos}{6}{section.1.3}
 \contentsline {section}{\numberline {1.4}Estrutura da tese}{7}{section.1.4}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Procedimentos metodol\IeC {\'o}gicos}}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}Revis\IeC {\~a}o da literatura}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}Cole\IeC {\c c}\IeC {\~o}es de documentos}{10}{section.2.2}
+\contentsline {section}{\numberline {2.3}Defini\IeC {\c c}\IeC {\~a}o de um conjunto m\IeC {\'\i }nimo de facetas corporativas}{11}{section.2.3}
+\contentsline {section}{\numberline {2.4}Prototipa\IeC {\c c}\IeC {\~a}o de um sistema de recupera\IeC {\c c}\IeC {\~a}o de informa\IeC {\c c}\IeC {\~a}o corporativa}{11}{section.2.4}
+\contentsline {section}{\numberline {2.5}Avalia\IeC {\c c}\IeC {\~a}o e valida\IeC {\c c}\IeC {\~a}o}{12}{section.2.5}
+\contentsline {section}{\numberline {2.6}Anota\IeC {\c c}\IeC {\~a}o da cole\IeC {\c c}\IeC {\~a}o particular}{13}{section.2.6}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Fundamentos hist\IeC {\'o}ricos, te\IeC {\'o}ricos e metodol\IeC {\'o}gicos}}{14}{chapter.3}
+\contentsline {section}{\numberline {3.1}An\IeC {\'a}lise de dom\IeC {\'\i }nio}{14}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Fontes para o processo de an\IeC {\'a}lise de dom\IeC {\'\i }nio}{16}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Evid\IeC {\^e}ncias emp\IeC {\'\i }ricas}{19}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Evid\IeC {\^e}ncias temporais}{19}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Evid\IeC {\^e}ncias lingu\IeC {\'\i }sticas}{21}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Evid\IeC {\^e}ncias sem\IeC {\^a}nticas}{22}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Evid\IeC {\^e}ncias sociais}{23}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Evid\IeC {\^e}ncias espaciais}{24}{subsection.3.1.7}
+\contentsline {section}{\numberline {3.2}An\IeC {\'a}lise facetada e classifica\IeC {\c c}\IeC {\~a}o facetada}{25}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Forma\IeC {\c c}\IeC {\~a}o de assuntos}{27}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Forma\IeC {\c c}\IeC {\~a}o de categorias}{29}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Princ\IeC {\'\i }pios do plano das ideias}{29}{subsubsection.3.2.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2.2}Princ\IeC {\'\i }pios do plano verbal}{32}{subsubsection.3.2.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.3}Princ\IeC {\'\i }pios do plano notacional}{34}{subsubsection.3.2.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Uso de facetas na busca e na recupera\IeC {\c c}\IeC {\~a}o de informa\IeC {\c c}\IeC {\~a}o}{34}{subsection.3.2.3}
+\select@language {english}
+\select@language {brazil}
+\contentsline {section}{\numberline {3.3}Avalia\IeC {\c c}\IeC {\~a}o de sistemas de recupera\IeC {\c c}\IeC {\~a}o de informa\IeC {\c c}\IeC {\~a}o}{38}{section.3.3}
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\uppercase {Refer\^encias}}{8}{section*.6}
+\contentsline {chapter}{\uppercase {Refer\^encias}}{41}{section*.6}

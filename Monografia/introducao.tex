@@ -1,5 +1,5 @@
-
 %\chapter{Introdução}
+\label{Introducao}
 
 %	\begin{flushright}
 %		\textit{``Clássico é clássico e vice-versa''.\\
@@ -22,7 +22,7 @@ Assim, é importante conhecer e desenvolver técnicas que possam tornar os proje
 
 
 
-\section{Justificativa} %Relevância do trabalho em específico. 
+\section{Justificativa}\label{Introducao:Justificativa} %Relevância do trabalho em específico. 
 
 Como demonstrado em \cite{costa2001explorando}, muitos programas acabam por ter instruções redundantes ao longo de seu fluxo de execução. Assim, tempo computacional é perdido para se obter resultados já calculados.
 
@@ -32,36 +32,19 @@ Em simulações realizadas por \cite{costa2001explorando}, essa técnica foi cap
 
 É possível então notar que há aplicações para as quais a implementação de uma unidade de DTM poderia melhorar significativamente o desempenho. Sendo assim, é interessante conhecer as os impactos desta para que seja possível melhor avaliar em que situações a utilização da DTM é proveitosa, considerando os \textit{trade-offs} causados por sua presença.
 
-\section{Problema}
-
-%%\textbf{As questões de pesquisa.}
-%As seguintes questões constituem o problema desta pesquisa: 
-%A informação corporativa possui características que potencialmente sejam comuns a todo o domínio corporativo? 
-%No contexto de uso de sistemas de recuperação de informação corporativa, as expressões de busca de usuários apresentam as mesmas características que estão presentes nos documentos? 
-%A organização facetada da informação corporativa contribui para o aumento do desempenho geral do sistema automático de recuperação de informação?
-%
-%%\textbf{Conceituação dos termos novos presentes nas perguntas acima.}
-%As características da informação, em documentos e expressões de busca, referem-se a atributos que devem ser reconhecidos a partir do domínio corporativo. Adicionalmente, a contribuição esperada da organização facetada da informação está associada à sua capacidade de representar entidades por meio da totalidade ou de um subconjunto de suas características, suportando a recuperação de entidades e consequentemente a recuperação de documentos onde as entidades estão contidas. Finalmente, o desempenho do sistema de recuperação de informação refere-se à sua capacidade atender às necessidades informacionais de seus usuários, algo que pode ser parcialmente medido através de métricas discutidas na literatura.
-%
-%%Finalmente, a contribuição esperada da organização facetada da informação aos sistemas de recuperação de informação está associada à sua capacidade de identificar entidades por meio da totalidade ou subconjunto de seus atributos, emprestando a documentos e outras entidades parte de seu contexto.
-%
-%
-%%automaticamente termos a facetas
-%%aumento da precisão como medida de desempenho do SRI
-%
-%
-%%A organização multifacetada da informação demanda um esforço manual de identificação de facetas e anotação de termos da coleção ou exige um processo de reconhecimento que seja automático e suficientemente preciso para torná-la útil na recuperação de documentos.
-%%que caracterizam o sistema de informação corporativo pode ajudar no reconhecimento automático e na desambiguação de entidades multifacetadas e seus valores de facetas (focus)
-
-\section{Objetivos} % Falar o que será feito.
+\section{Problema}\label{Introducao:Problema}
 
 A arquitetura de um circuito e a tecnologia utilizada para a sua geração estão intimamente ligados às características do circuito resultante. Considerando isso, algumas métricas utilizadas nesses circuitos resultantes servem para comparar apenas um dos fatores, seja uma mesma arquitetura em diversas tecnologias ou diversas arquiteturas em uma mesma tecnologia.
 
 Segundo \cite{chu2006rtl}, as principais métricas que podem ser utilizadas nessas medições são área de chip, velocidade, consumo de potência e custo de produção. Esses quesitos são correlacionados, fazendo que alterações mudem os valores de mais de um ponto, senão todos.
 
-O objetivo deste trabalho é avaliar como essas métricas são alteradas com a implementação do mecanismo de DTM em um processador.
+O problema que motiva este trabalho é saber, considerando essas métricas, se a DTM é uma técnica viável para aplicações práticas. Caso seja, quais os \textit{trade-offs} que o projetista deve considerar ao aplicar a DTM no seu projeto.
 
-Mais especificamente, os objetivos podem ser descritos nos seguites tópicos:
+\section{Objetivos}\label{Introducao:Objetivos} % Falar o que será feito.
+
+O objetivo deste trabalho é avaliar como as métricas citadas na seção \ref{Introducao:Problema} são alteradas com a implementação do mecanismo de DTM em um processador.
+
+Mais especificamente, os objetivos podem ser descritos nos seguintes tópicos:
 \begin{enumerate}
 	\item Implementar a memorização dinâmica de traços em uma arquitetura de processadores;
 	\item Produzir um circuito físico do processador e comparar os resultados da arquitetura padrão e da arquitetura com DTM nas seguintes métricas:
@@ -72,97 +55,42 @@ Mais especificamente, os objetivos podem ser descritos nos seguites tópicos:
 	\item Executar programas de \textit{benchmark} sobre as duas arquiteturas e comparar os resultados de performance de ambas.
 	\end{itemize}
 \end{enumerate}
-%%\textbf{Objetivo geral.}
-%Para responder ao problema proposto, o objetivo geral deste trabalho é propor um conjunto de características da informação corporativa que favoreça a organização e a recuperação da informação.
-%% projetar e descrever um processo de reconhecimento e desambiguação de termos que permita uma associação dinâmica entre cada termo reconhecido e sua respectiva faceta, tais como nomes de pessoas e de instituições, processos, localidades e datas.
-%
-%%associação dinâmica. Como um processo automático, termo pode ser associado a uma faceta diferente daquela com a qual já se encontra associado a partir da reunião de novas evidências, pela edição de um documento ou pela simples inclusão de outros documentos no índice. Assim, a técnica deve ser aplicada recursivamente e deve ser considerada eficaz caso o número de associação falso-positiva seja baixo.
-%
-%%\textbf{Objetivos específicos.}
-%Também, objetivam-se mais especificamente:
-%
-%\begin{enumerate}
-%	\item Propor um conjunto de facetas que seja útil na organização automática da informação corporativa e na interoperabilidade entre diferentes repositórios de informação da mesma empresa ou de diferentes empresas;
-%
-%	\item Identificar as facetas pelas quais os usuários de informação especificam sua necessidade de informação no contexto de trabalho;
-%
-%	\item Avaliar as implicações da organização facetada da informação corporativa no desempenho dos sistemas automáticos de recuperação de informação.
-%
-%\end{enumerate}
-%
-%%\textbf{Link para os procedimentos metodológicos.}
-%Para responder as questões propostas e aos objetivos apresentados, pretende-se empreender uma análise preliminar do domínio corporativo a partir de dois exemplares do domínio, avaliar como os usuários informacionais mobilizam as facetas mais comuns do domínio, e implementar e avaliar um protótipo de sistema de recuperação de informação corporativa. Os procedimentos metodológicos seguidos são apresentados no capítulo \ref{metodologia}.
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%%\section{Contribuições esperadas}
-%
-%%Pelo desenvolvimento desta pesquisa em organização de informação facetada, espera-se que sejam realizados aperfeiçoamentos em técnicas usuais de i) reconhecimento e desambiguação de termos, ii) busca de documentos por meio de consultas ambíguas, e iii) ordenação de resultados a partir de indicadores facetados.
-%
-%%Na atividade de reconhecimento, o reconhecimento de termos permite a contextualização de documentos coletados para um sistema de busca, o que, em outros trabalhos, tem sido feito em classes homogêneas de documentos. Esta pesquisa pretende que documentos mais diversos, comuns em empresas, como manuais, memorandos, bancos de dados estruturados ou páginas Web sejam tratados sob o mesmo arcabouço, considerando as diferenças de gênero linguístico e ao mesmo tempo em que se possa adequadamente estendê-lo a outros idiomas. Para esse fim, deve-se implementar uma técnica de desambiguação que utilize evidências de documentos explicitamente ou implicitamente relacionados, com ou sem hipertexto, e que avalie automaticamente a qualidade da fonte de evidência de facetas.
-%
-%%Para isso, deve ser implementado um protótipo funcional de sistema de recuperação de informação corporativo, com componentes de coleta, \textit{parsing}, indexação, processamento de consulta e \textit{ranking}. Tais componentes, modificados para reconhecer, desambiguar, indexar e recuperar informação multifacetada a partir dos documentos da coleção, servirão para avaliar o modelo de organização multifacetada de informação em outros cenários de teste.
-%
-%%Para a atividade de busca pelo usuário, uma interface deve ser projetada para favorecer o ajuste fino dos critérios de busca, textuais e multifacetados. O método de interação com as respostas da busca pode representar um passo adiante na ordenação de respostas. Adicionalmente, um algoritmo de ordenação de documentos deve ser proposto para o mesmo arcabouço, pelo \textit{ranking} a partir dos critérios textuais e multifacetados, mas com alterações na estrutura de indexação que favoreçam o método de \textit{ranking}. Espera-se obter um algoritmo de busca eficiente por informação multifacetada, especialmente no contexto de sistemas de recuperação de informação corporativos. A avaliação da modelagem multifacetada para a organização da informação corporativa também é uma contribuição esperada.
-%
-%%É necessário investigar porque as estruturas próprias não têm produzido aumento da eficiência na recuperação das respostas \cite{anastacio09}, e se isso é também verdade em buscas onde exista o ajuste fino do \textit{ranking}. É prevista a necessidade de se projetar uma estrutura de dados mais apropriada para indexar informação corporativa e multifacetada. A estrutura de dados deve privilegiar operações de atualização de índice (inclusão, alteração e exclusão de documentos da coleção) e de acesso de dados para recuperação e \textit{ranking}.
-%
-%%Finalmente, os repositórios usados para avaliação de técnicas de recuperação de informação corporativa têm sido constituídos por classes similares de documentos. Logo, espera-se formar um repositório de teste e avaliação a partir de documentos de diferentes gêneros linguísticos e formatos, o que pode contribuir positivamente para pesquisas futuras. Para isso, este trabalho deve primeiramente colaborar para o projeto, criação e disponibilização de uma coleção de referência em língua portuguesa, adequado para o contexto empresarial, de fonte pública, apropriado para avaliação de SRI corporativos. A nova coleção de referência não será a única base de experimentação deste trabalho, mas sim complementar àquelas disponíveis na literatura.
-%
-%%As contribuições desta pesquisa mostram-se particularmente úteis aos sistemas de RI corporativos, em qualquer idioma, mas podem igualmente ser aplicados em outros domínios. Dessa forma, não podem ser descartadas as possibilidades de se gerar produtos úteis e funcionais no curto prazo.
-%
-%
-%
-%
-%
-%
-%
-%%\section{Resultados esperados}
-%
-%%A técnica de consulta multifacetada deve favorecer a precisão e a revocação se comparada às técnicas estatísticas como TF-IDF, nosso baseline, com custo computacional conhecido.
-%
-%%A técnica implementada e o método proposto devem ser mais eficientes que os baselines taxonomia facetada, TF-IDF, taxonomia facetada dinâmica, busca sobre metadados na biblioteca digital implementada em dspace.
-%
-%%O desempenho também deve ser superior na coleção de referência da TREC comparada com resultados disponíveis na literatura.
-%
-%
-%
-%
-%
-%
-%
 
-
-\section{Estrutura da tese}
+\section{Estrutura da tese}\label{Introducao:Estrutura}
 
 %\textbf{Links para os próximos capítulos.}
-Esta tese está estruturada em seis capítulos, ordenados pelo momento em que foram concluídos dentro do ciclo de vida desta pesquisa, e anexos, a saber:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% ATUALIZAR NUMERO CAPITULOS %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Esta tese está organizada em \textbf{??} capítulos. Esses capítulos foram ordenados em uma sequência lógica que facilitasse a compreensão do leitor, já que cronologicamente houve certo paralelismo durante a produção de algumas etapas.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% ATUALIZAR NUMERO CAPITULOS %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
 
 	%\item capítulo atual	
 
-	\item O capítulo \ref{metodologia} apresenta os procedimentos metodológicos através dos quais este trabalho se desenvolve, o que inclui a formação das coleções de documentos para experimentação e avaliação, as etapas para o projeto do protótipo funcional, bem como as estratégias de validação.
+	\item No capítulo \ref{Metodologia} é demonstrado o processo metodológico adotado no desenvolvimento deste trabalho. Nele é descrito o processo de seleção da literatura base, a definição das ferramentas e parâmetros para a implementação da DTM e como foi planejado a análise e comparação dos resultados obtidos.
 
-	\item As bases teóricas são apresentadas em seguida, no capítulo \ref{literatura}, o que inclui marcos conceituais importantes para o contexto de sistemas de recuperação de informação corporativa e para a organização do conhecimento e da informação em estruturas facetadas.
+	\item Sequencialmente, no capítulo \ref{Literatura} é apresentada a fundamentação que serve como base teórica para o trabalho, incluindo uma conceituação mais apurada sobre a técnica de memorização dinâmica de traces, além de discorrer sobre a arquitetura de processadores escolhida como referência para a implementação e as tecnologias utilizadas para o desenvolvimento.
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%% ATUALIZAR REFERENCIA CAPITULOS %%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	\item Uma análise preliminar de domínio é descrita no capítulo \ref{analiseDominio}. Duas coleções de documentos são investigadas para identificar as facetas mais comuns que possam constituir um conjunto mínimo de facetas para representar entidades no domínio corporativo.
+%	\item Uma análise preliminar de domínio é descrita no capítulo \ref{analiseDominio}. Duas coleções de documentos são investigadas para identificar as facetas mais comuns que possam constituir um conjunto mínimo de facetas para representar entidades no domínio corporativo.
+%
+%	\item No capítulo \ref{prototipo} é detalhada uma avaliação da coleção pública e é obtido um conjunto de expressões de busca a partir de seus usuários sobre uma das coleções estudadas. São então avaliadas a utilidade e a eficiência de um modelo de recuperação baseado em facetas do domínio corporativo.
+%
+%	\item Finalmente, no capítulo \ref{conclusao} são apresentadas as conclusões e considerações finais, principais contribuições, limitações e indicadas algumas direções para trabalhos futuros.
+%
+%	\item A tese inclui parte dos seus resultados e produtos em anexos, tendo em vista que sua extensão poderia comprometer a legibilidade do texto e a compreensão do leitor. As coleções estudadas não são disponibilizadas entre os anexos pois isso violaria alguns direitos de propriedade intelectual dos seus autores. A tese aponta outros meios de obter uma cópia das referidas coleções.
 
-	\item No capítulo \ref{prototipo} é detalhada uma avaliação da coleção pública e é obtido um conjunto de expressões de busca a partir de seus usuários sobre uma das coleções estudadas. São então avaliadas a utilidade e a eficiência de um modelo de recuperação baseado em facetas do domínio corporativo.
-
-	\item Finalmente, no capítulo \ref{conclusao} são apresentadas as conclusões e considerações finais, principais contribuições, limitações e indicadas algumas direções para trabalhos futuros.
-
-	\item A tese inclui parte dos seus resultados e produtos em anexos, tendo em vista que sua extensão poderia comprometer a legibilidade do texto e a compreensão do leitor. As coleções estudadas não são disponibilizadas entre os anexos pois isso violaria alguns direitos de propriedade intelectual dos seus autores. A tese aponta outros meios de obter uma cópia das referidas coleções.
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%% ATUALIZAR REFERENCIA CAPITULOS %%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 \end{itemize}
 
