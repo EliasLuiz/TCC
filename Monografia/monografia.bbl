@@ -8,7 +8,7 @@
 \bibitem[Chu 2006]{chu2006rtl}
 \abntrefinfo{Chu}{CHU}{2006}
 {CHU, P.~P. \emph{RTL hardware design using VHDL: coding for efficiency,
-  portability, and scalability}. [S.l.]: John Wiley \& Sons, 2006.}
+  portability, and scalability}. Hoboken: John Wiley \& Sons, 2006.}
 
 \bibitem[Costa 2001]{costa2001explorando}
 \abntrefinfo{Costa}{COSTA}{2001}
@@ -17,11 +17,29 @@
   processador}.
 2001. Tese (Doutorado) --- COPPE/UFRJ, Rio de Janeiro, 2001.}
 
+\bibitem[Gaisler 2010]{gaisler2010leon3}
+\abntrefinfo{Gaisler}{GAISLER}{2010}
+{GAISLER, A. Leon3 processor.
+\emph{Nanoscale Integration and Modeling (NIMO) Group}, 2010.}
+
 \bibitem[Mack 2011]{mack2011fifty}
 \abntrefinfo{Mack}{MACK}{2011}
 {MACK, C.~A. Fifty years of moore's law.
 \emph{IEEE Transactions on semiconductor manufacturing}, IEEE, v.~24, n.~2, p.
   202--207, 2011.}
+
+\bibitem[Schoeberl 2005]{schoeberl2005jop}
+\abntrefinfo{Schoeberl}{SCHOEBERL}{2005}
+{SCHOEBERL, M.
+\emph{JOP: A Java optimized processor for embedded real-time systems}.
+2005. Tese (Doutorado) --- Vienna University of Technology, 2005.}
+
+\bibitem[Silva 2006]{silva2006memorizacao}
+\abntrefinfo{Silva}{SILVA}{2006}
+{SILVA, B.~R.
+\emph{Memorização e reuso dinâmico de traços em uma arquitetura de
+  processador Java}.
+2006. Disserta\c{c}\~{a}o (Mestrado) --- COPPE/UFRJ, Rio de Janeiro, 2006.}
 
 \bibitem[Tanenbaum e Zucchi 2009]{tanenbaum2009organizacao}
 \abntrefinfo{Tanenbaum e Zucchi}{TANENBAUM; ZUCCHI}{2009}

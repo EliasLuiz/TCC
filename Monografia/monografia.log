@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.11)  14 JUL 2016 15:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.11)  16 JUL 2016 16:34
 entering extended mode
 **./monografia.tex
 (monografia.tex
@@ -1198,856 +1198,51 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 19.
 
 
-LaTeX Warning: Reference `dtm' on page 5 undefined on input line 29.
+LaTeX Warning: Reference `dtm' on page 5 undefined on input line 38.
 
 [5
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 52.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 63.
 
 ("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsphv.fd"
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 63.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 53.
-[6]) [7] (metodologia.tex [8
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 64.
+[6]
+
+LaTeX Warning: Reference `Literatura' on page 7 undefined on input line 89.
+
+) [7] (metodologia.tex [8
 
 ]
-<fig/metodologia.jpg, id=143, 995.72pt x 1101.11375pt>
-File: fig/metodologia.jpg Graphic file (type jpg)
 
-<use fig/metodologia.jpg>
-Package pdftex.def Info: fig/metodologia.jpg used on input line 49.
-(pdftex.def)             Requested size: 364.00139pt x 402.53325pt.
- [9 <./fig/metodologia.jpg>]
+LaTeX Warning: Reference `Conclusao:Trabalhos' on page 9 undefined on input lin
+e 64.
 
-LaTeX Warning: Reference `prototipo-colecaoPublica' on page 10 undefined on inp
-ut line 58.
 
-[10]
+LaTeX Warning: Reference `Literatura' on page 9 undefined on input line 71.
 
-LaTeX Warning: Reference `analiseDominio' on page 11 undefined on input line 91
+
+LaTeX Warning: Reference `Desenvolvimento' on page 9 undefined on input line 71
 .
 
-
-LaTeX Warning: Reference `prototipo' on page 11 undefined on input line 103.
-
-[11]
-
-LaTeX Warning: Citation `anastacio09' on page 12 undefined on input line 106.
-
-
-LaTeX Warning: Reference `prototipo' on page 12 undefined on input line 130.
-
-[12]) [13]
-Underfull \hbox (badness 1072) in paragraph at lines 456--456
+[9] [10]) [11]
+Underfull \hbox (badness 1072) in paragraph at lines 454--454
 []\T1/phv/m/n/24.88 Fundamentos his-tó-ri-cos, teó-ri-cos e
  []
 
-(literatura.tex
-
-LaTeX Warning: Citation `alvarenga12' on page 14 undefined on input line 36.
-
-
-LaTeX Warning: Citation `domainAnalysis1995' on page 14 undefined on input line
- 36.
-
-
-LaTeX Warning: Citation `dias11' on page 14 undefined on input line 39.
-
-
-LaTeX Warning: Citation `hjorland2002domain' on page 14 undefined on input line
- 42.
-
-
-LaTeX Warning: Citation `alvarenga12' on page 14 undefined on input line 42.
-
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 45.
-
-LaTeX Warning: Citation `alvarenga12' on page 14 undefined on input line 45.
-
-[14
-
-]
-
-LaTeX Warning: Citation `alvarenga12' on page 15 undefined on input line 49.
-
-
-LaTeX Warning: Citation `hjorland2002domain' on page 15 undefined on input line
- 49.
-
-
-LaTeX Warning: Citation `lykke2011domain' on page 15 undefined on input line 52
-.
-
-
-LaTeX Warning: Citation `albrechtsen1993subject' on page 15 undefined on input 
-line 52.
-
-
-LaTeX Warning: Citation `alvarenga12' on page 15 undefined on input line 52.
-
-[15]
-
-LaTeX Warning: Citation `broughton2006' on page 16 undefined on input line 63.
-
-
-LaTeX Warning: Citation `brascher2008organizacao' on page 16 undefined on input
- line 63.
-
-
-LaTeX Warning: Citation `alvarenga12' on page 16 undefined on input line 63.
-
-
-LaTeX Warning: Citation `gardin1973' on page 16 undefined on input line 63.
-
-
-LaTeX Warning: Citation `talamo2001' on page 16 undefined on input line 63.
-
-
-LaTeX Warning: Citation `fujita04' on page 16 undefined on input line 63.
-
-
-LaTeX Warning: Citation `hjorland2012google' on page 16 undefined on input line
- 66.
-
-
-LaTeX Warning: Citation `halevy2005enterprise' on page 16 undefined on input li
-ne 69.
-
-
-LaTeX Warning: Citation `hjorland2012google' on page 16 undefined on input line
- 69.
-
-
-LaTeX Warning: Citation `halevy2005enterprise' on page 16 undefined on input li
-ne 69.
-
-
-LaTeX Warning: Citation `halevy2005enterprise' on page 16 undefined on input li
-ne 72.
-
-
-LaTeX Warning: Citation `domainAnalysis1995' on page 16 undefined on input line
- 72.
-
-
-LaTeX Warning: Citation `solomon2002' on page 16 undefined on input line 72.
-
-[16]
-
-LaTeX Warning: Citation `solomon2002' on page 17 undefined on input line 75.
-
-
-LaTeX Warning: Citation `solomon2002' on page 17 undefined on input line 75.
-
-
-LaTeX Warning: Citation `brascher2008organizacao' on page 17 undefined on input
- line 78.
-
-
-LaTeX Warning: Citation `brascher2008organizacao' on page 17 undefined on input
- line 78.
-
-
-LaTeX Warning: Citation `solomon2002' on page 17 undefined on input line 81.
-
-
-LaTeX Warning: Citation `hjorland1998classification' on page 17 undefined on in
-put line 84.
-
-[17]
-
-LaTeX Warning: Citation `hjorland1998classification' on page 18 undefined on in
-put line 87.
-
-
-LaTeX Warning: Citation `solomon2002' on page 18 undefined on input line 90.
-
-
-LaTeX Warning: Citation `alvarenga12' on page 18 undefined on input line 93.
-
-[18]
-
-LaTeX Warning: Citation `hjorland2002domain' on page 19 undefined on input line
- 105.
-
-
-LaTeX Warning: Citation `hjorland2002domain' on page 19 undefined on input line
- 105.
-
-
-LaTeX Warning: Citation `talamo2001' on page 19 undefined on input line 108.
-
-
-LaTeX Warning: Citation `salton88' on page 19 undefined on input line 111.
-
-
-LaTeX Warning: Citation `difficultTRECtopics03' on page 19 undefined on input l
-ine 111.
-
-
-LaTeX Warning: Citation `tfidf08' on page 19 undefined on input line 111.
-
-
-LaTeX Warning: Citation `relevantEnterpriseData11' on page 19 undefined on inpu
-t line 114.
-
-
-LaTeX Warning: Citation `southon2002' on page 19 undefined on input line 120.
-
-
-LaTeX Warning: Citation `talamo2001' on page 19 undefined on input line 120.
-
-[19]
-
-LaTeX Warning: Citation `hjorland2002domain' on page 20 undefined on input line
- 123.
-
-
-LaTeX Warning: Citation `solomon2002' on page 20 undefined on input line 123.
-
-
-LaTeX Warning: Citation `hjorland2002domain' on page 20 undefined on input line
- 126.
-
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 129.
-
-("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-
-LaTeX Warning: Citation `rula12temporal' on page 20 undefined on input line 129
-.
-
-[20]
-
-LaTeX Warning: Citation `ladeira10' on page 21 undefined on input line 139.
-
-
-LaTeX Warning: Citation `gardin1973' on page 21 undefined on input line 142.
-
-
-LaTeX Warning: Citation `ladeira10' on page 21 undefined on input line 145.
-
-
-LaTeX Warning: Citation `joyce11' on page 21 undefined on input line 145.
-
-
-LaTeX Warning: Citation `hjorland2002domain' on page 21 undefined on input line
- 148.
-
-
-LaTeX Warning: Citation `navigli09wordsense' on page 21 undefined on input line
- 151.
-
-
-LaTeX Warning: Citation `ladeira10' on page 21 undefined on input line 151.
-
-
-LaTeX Warning: Citation `gardin1973' on page 21 undefined on input line 151.
-
-
-LaTeX Warning: Citation `ladeira10' on page 21 undefined on input line 151.
-
-[21]
-
-LaTeX Warning: Citation `ladeira10' on page 22 undefined on input line 159.
-
-
-LaTeX Warning: Citation `gardin1973' on page 22 undefined on input line 159.
-
-
-LaTeX Warning: Citation `salton88' on page 22 undefined on input line 162.
-
-
-LaTeX Warning: Citation `albani06' on page 22 undefined on input line 162.
-
-
-LaTeX Warning: Citation `sosnovsky10' on page 22 undefined on input line 162.
-
-
-LaTeX Warning: Citation `fernandez11' on page 22 undefined on input line 162.
-
-
-LaTeX Warning: Citation `hu2010enterprisecase' on page 22 undefined on input li
-ne 162.
-
-
-LaTeX Warning: Citation `dolby09extractingVocabularies' on page 22 undefined on
- input line 162.
-
-
-LaTeX Warning: Citation `omelayenko02integratingVocabularies' on page 22 undefi
-ned on input line 162.
-
-
-LaTeX Warning: Citation `hjorland2002domain' on page 22 undefined on input line
- 165.
-
-
-LaTeX Warning: Citation `solomon2002' on page 22 undefined on input line 168.
-
-
-LaTeX Warning: Citation `labarre2010' on page 22 undefined on input line 168.
-
-
-LaTeX Warning: Citation `ontology12' on page 22 undefined on input line 168.
-
-
-LaTeX Warning: Citation `talamo2001' on page 22 undefined on input line 173.
-
-
-LaTeX Warning: Citation `hjorland2002domain' on page 22 undefined on input line
- 173.
-
-[22]
-
-LaTeX Warning: Citation `vanti02' on page 23 undefined on input line 176.
-
-
-LaTeX Warning: Citation `page99' on page 23 undefined on input line 176.
-
-
-LaTeX Warning: Citation `peopleSearch12' on page 23 undefined on input line 176
-.
-
-
-LaTeX Warning: Citation `vanti02' on page 23 undefined on input line 179.
-
-
-LaTeX Warning: Citation `alvarenga12' on page 23 undefined on input line 179.
-
-
-LaTeX Warning: Citation `dealwis2001singapore' on page 23 undefined on input li
-ne 179.
-
-
-LaTeX Warning: Citation `nunes2006' on page 23 undefined on input line 179.
-
-
-LaTeX Warning: Citation `choo2008' on page 23 undefined on input line 179.
-
-
-LaTeX Warning: Citation `ofarrill2010' on page 23 undefined on input line 179.
-
-
-LaTeX Warning: Citation `marcella2012' on page 23 undefined on input line 179.
-
-
-LaTeX Warning: Citation `chou2005' on page 23 undefined on input line 182.
-
-[23]
-
-LaTeX Warning: Citation `leveling07' on page 24 undefined on input line 190.
-
-
-LaTeX Warning: Citation `amitay04' on page 24 undefined on input line 190.
-
-
-LaTeX Warning: Citation `borges07' on page 24 undefined on input line 190.
-
-
-LaTeX Warning: Citation `li06' on page 24 undefined on input line 190.
-
-
-LaTeX Warning: Citation `cardosoSantos08' on page 24 undefined on input line 19
-3.
-
-
-LaTeX Warning: Citation `jones08' on page 24 undefined on input line 196.
-
-
-LaTeX Warning: Citation `hassan09' on page 24 undefined on input line 196.
-
-
-LaTeX Warning: Citation `li09' on page 24 undefined on input line 196.
-
-
-LaTeX Warning: Citation `buscaldiRosso07' on page 24 undefined on input line 19
-9.
-
-
-LaTeX Warning: Citation `hassan09' on page 24 undefined on input line 199.
-
-
-LaTeX Warning: Citation `gouveaMsc09' on page 24 undefined on input line 202.
-
-
-LaTeX Warning: Citation `santos08' on page 24 undefined on input line 202.
-
-
-LaTeX Warning: Citation `overell08' on page 24 undefined on input line 202.
-
-
-LaTeX Warning: Citation `overellPhd09' on page 24 undefined on input line 202.
-
-
-LaTeX Warning: Citation `alencar10' on page 24 undefined on input line 202.
-
-
-LaTeX Warning: Citation `gouveaMsc09' on page 24 undefined on input line 202.
-
-
-LaTeX Warning: Citation `hassan09' on page 24 undefined on input line 202.
-
-
-LaTeX Warning: Citation `chavesPhd09' on page 24 undefined on input line 202.
-
-
-LaTeX Warning: Citation `amitay04' on page 24 undefined on input line 202.
-
-[24]
-
-LaTeX Warning: Citation `campos04' on page 25 undefined on input line 224.
-
-
-LaTeX Warning: Citation `campos04' on page 25 undefined on input line 224.
-
-
-LaTeX Warning: Citation `garfield1984' on page 25 undefined on input line 227.
-
-
-LaTeX Warning: Citation `broughton2006' on page 25 undefined on input line 227.
-
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 25 undefined on input line 230.
-
-
-
-LaTeX Warning: Citation `hjorland1998classification' on page 25 undefined on in
-put line 233.
-
-
-LaTeX Warning: Citation `broughton2006' on page 25 undefined on input line 233.
-
-
-
-LaTeX Warning: Citation `labarre2010' on page 25 undefined on input line 233.
-
-
-LaTeX Warning: Citation `hjorland2002domain' on page 25 undefined on input line
- 233.
-
-
-LaTeX Warning: Citation `campos04' on page 25 undefined on input line 233.
-
-
-LaTeX Warning: Citation `broughton2006' on page 25 undefined on input line 233.
-
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 25 undefined on input line 236.
-
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 25 undefined on input line 236.
-
-
-[25]
-
-LaTeX Warning: Citation `spiteri98simplified' on page 26 undefined on input lin
-e 239.
-
-
-LaTeX Warning: Citation `garfield1984' on page 26 undefined on input line 239.
-
-
-LaTeX Warning: Citation `gopinath92' on page 26 undefined on input line 239.
-
-
-LaTeX Warning: Citation `broughton2006' on page 26 undefined on input line 239.
-
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 26 undefined on input lin
-e 239.
-
-
-LaTeX Warning: Citation `labarre2010' on page 26 undefined on input line 242.
-
-
-LaTeX Warning: Citation `vakkari2005explanation' on page 26 undefined on input 
-line 242.
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 26 undefined on input line 245.
-
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 26 undefined on input lin
-e 245.
-
-
-LaTeX Warning: Citation `campos04' on page 26 undefined on input line 248.
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 26 undefined on input line 248.
-
-
-[26]
-
-LaTeX Warning: Citation `ranganathan1967' on page 27 undefined on input line 25
-1.
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 27 undefined on input lin
-e 251.
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 27 undefined on input line 251.
-
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 27 undefined on input lin
-e 251.
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 27 undefined on input lin
-e 251.
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 27 undefined on input line 254.
-
-
-
-LaTeX Warning: Citation `mhtx04' on page 27 undefined on input line 254.
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 27 undefined on input lin
-e 254.
-
-
-LaTeX Warning: Citation `broughton2006' on page 27 undefined on input line 254.
-
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 27 undefined on input lin
-e 254.
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 27 undefined on input line 269.
-
-
-[27]
-
-LaTeX Warning: Citation `lima04spiteri' on page 28 undefined on input line 285.
-
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 28 undefined on input line 285.
-
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 28 undefined on input line 288.
-
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 28 undefined on input line 291.
-
-
-[28]
-
-LaTeX Warning: Citation `spiteri98simplified' on page 29 undefined on input lin
-e 305.
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 29 undefined on input line 316.
-
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 29 undefined on input line 319.
-
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 29 undefined on input lin
-e 322.
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 29 undefined on input line 322.
-
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 29 undefined on input lin
-e 322.
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 29 undefined on input line 322.
-
-
-[29]
-
-LaTeX Warning: Citation `spiteri98simplified' on page 30 undefined on input lin
-e 325.
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 30 undefined on input lin
-e 325.
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 30 undefined on input lin
-e 325.
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 30 undefined on input line 325.
-
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 30 undefined on input lin
-e 328.
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 30 undefined on input line 328.
-
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 30 undefined on input lin
-e 328.
-
-[30]
-
-LaTeX Warning: Citation `spiteri98simplified' on page 31 undefined on input lin
-e 334.
-
-[31]
-
-LaTeX Warning: Citation `spiteri98simplified' on page 32 undefined on input lin
-e 343.
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 32 undefined on input lin
-e 343.
-
-
-LaTeX Warning: Citation `lima04spiteri' on page 32 undefined on input line 346.
-
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 32 undefined on input lin
-e 346.
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 32 undefined on input lin
-e 355.
-
-[32]
-
-LaTeX Warning: Citation `spiteri98simplified' on page 33 undefined on input lin
-e 361.
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 33 undefined on input lin
-e 361.
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 33 undefined on input lin
-e 361.
-
-[33]
-
-LaTeX Warning: Citation `spiteri98simplified' on page 34 undefined on input lin
-e 374.
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 34 undefined on input lin
-e 374.
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 34 undefined on input lin
-e 377.
-
-
-LaTeX Warning: Citation `spiteri98simplified' on page 34 undefined on input lin
-e 377.
-
-
-LaTeX Warning: Citation `broughton2006' on page 34 undefined on input line 389.
-
-
-
-LaTeX Warning: Citation `labarre2010' on page 34 undefined on input line 392.
-
-<fig/facetasIndividuo.jpg, id=266, 512.91624pt x 778.91pt>
-File: fig/facetasIndividuo.jpg Graphic file (type jpg)
-
-<use fig/facetasIndividuo.jpg>
-Package pdftex.def Info: fig/facetasIndividuo.jpg used on input line 401.
-(pdftex.def)             Requested size: 273.00278pt x 414.57935pt.
- [34] [35 <./fig/facetasIndividuo.jpg>] [36]
-
-LaTeX Warning: Citation `hong06' on page 37 undefined on input line 424.
-
-
-LaTeX Warning: Citation `borges07' on page 37 undefined on input line 424.
-
-
-LaTeX Warning: Citation `mir2ed' on page 37 undefined on input line 424.
-
-
-LaTeX Warning: Citation `hong06' on page 37 undefined on input line 427.
-
-
-LaTeX Warning: Citation `hong06' on page 37 undefined on input line 430.
-
-
-LaTeX Warning: Citation `hong06' on page 37 undefined on input line 433.
-
-
-LaTeX Warning: Citation `oren06facetedRDF' on page 37 undefined on input line 4
-40.
-
-
-LaTeX Warning: Citation `sacco2006' on page 37 undefined on input line 440.
-
-
-LaTeX Warning: Citation `auer09linkedgeodata' on page 37 undefined on input lin
-e 440.
-
-
-LaTeX Warning: Citation `docubrowse10' on page 37 undefined on input line 440.
-
-
-LaTeX Warning: Citation `maculan2011' on page 37 undefined on input line 440.
-
-
-LaTeX Warning: Citation `pontesLima2012' on page 37 undefined on input line 440
-.
-
-
-LaTeX Warning: Citation `labarre2010' on page 37 undefined on input line 440.
-
-[37]
-
-LaTeX Warning: Citation `hong06' on page 38 undefined on input line 443.
-
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <9> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 446.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <9> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 446.
-
-LaTeX Warning: Citation `hong06' on page 38 undefined on input line 446.
-
-
-Overfull \hbox (5.68256pt too wide) in paragraph at lines 446--447
- []\T1/phv/m/sl/9 faceted clas-si-fi-ca-tion fo-cuses on the es-sen-tial and co
-n-stant char-ac-ter-is-tics/facets,
- []
-
-
-LaTeX Warning: Citation `toda08' on page 38 undefined on input line 450.
-
-
-LaTeX Warning: Citation `entityCentric12' on page 38 undefined on input line 45
-0.
-
-
-LaTeX Warning: Citation `andrade06' on page 38 undefined on input line 450.
-
-
-LaTeX Warning: Citation `ehlen09' on page 38 undefined on input line 453.
-
-
-LaTeX Warning: Citation `toda08' on page 38 undefined on input line 453.
-
-
-LaTeX Warning: Citation `andrade06' on page 38 undefined on input line 453.
-
-
-LaTeX Warning: Citation `yuCai07' on page 38 undefined on input line 453.
-
-
-LaTeX Warning: Citation `GarciaCumbreras09' on page 38 undefined on input line 
-453.
-
-
-LaTeX Warning: Citation `hong06' on page 38 undefined on input line 456.
-
-
-LaTeX Warning: Citation `labarre2010' on page 38 undefined on input line 456.
-
-[38]
-
-LaTeX Warning: Citation `irEvaluation02' on page 39 undefined on input line 474
-.
-
-
-LaTeX Warning: Citation `evaluationWithIncompleteInformation04' on page 39 unde
-fined on input line 474.
-
-
-LaTeX Warning: Citation `bucher05' on page 39 undefined on input line 474.
-
-
-LaTeX Warning: Citation `sakai08ret' on page 39 undefined on input line 474.
-
-
-LaTeX Warning: Citation `DBLP:conf/clef/2008' on page 39 undefined on input lin
-e 474.
-
-
-LaTeX Warning: Citation `craswell05' on page 39 undefined on input line 474.
-
-
-LaTeX Warning: Citation `bailey07' on page 39 undefined on input line 477.
-
-
-LaTeX Warning: Citation `balog08' on page 39 undefined on input line 477.
-
-
-LaTeX Warning: Citation `domenech07' on page 39 undefined on input line 480.
-
-
-LaTeX Warning: Citation `cardoso08' on page 39 undefined on input line 480.
-
-
-LaTeX Warning: Citation `anastacio09' on page 39 undefined on input line 480.
-
-
-LaTeX Warning: Citation `harem07' on page 39 undefined on input line 480.
-
-
-LaTeX Warning: Citation `amitay04' on page 39 undefined on input line 483.
-
-
-LaTeX Warning: Citation `bucher05' on page 39 undefined on input line 483.
-
-
-LaTeX Warning: Citation `yuCai07' on page 39 undefined on input line 483.
-
-
-LaTeX Warning: Citation `pontes13' on page 39 undefined on input line 483.
-
-
-LaTeX Warning: Citation `domenech07' on page 39 undefined on input line 483.
-
-
-LaTeX Warning: Citation `sakai08ret' on page 39 undefined on input line 483.
-
-[39]
-
-LaTeX Warning: Citation `bailey07' on page 40 undefined on input line 486.
-
-
-LaTeX Warning: Citation `balog08' on page 40 undefined on input line 486.
-
-
-LaTeX Warning: Citation `bailey07csiro' on page 40 undefined on input line 489.
-
-
-
-LaTeX Warning: Citation `lykke2011domain' on page 40 undefined on input line 48
-9.
-
-) (monografia.bbl (monografia.brf)
+(monografia.bbl (monografia.brf)
 \tf@brf=\write5
 \openout5 = `monografia.brf'.
 
- [40]
+ [12
+
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 3.
@@ -2055,19 +1250,19 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 bibitemlist
 ) 
 AED: lastpage setting LastPage
-[41
+[13
 
 ]
 \tf@toc=\write6
 \openout6 = `monografia.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 552.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 552.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 549.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 549.
  (monografia.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 552.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 552.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 549.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 549.
 Package rerunfilecheck Info: File `monografia.brf' has not changed.
-(rerunfilecheck)             Checksum: 7E6EB3B885919547A29C579F3ACC7D74;14152.
+(rerunfilecheck)             Checksum: 349DD4C71EF1514E0C53C7F3D31FD7BE;537.
 
 
 LaTeX Warning: There were undefined references.
@@ -2075,30 +1270,25 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 552.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 549.
  ) 
 Here is how much of TeX's memory you used:
- 13169 strings out of 493634
- 195211 string characters out of 3135239
- 318108 words of memory out of 3000000
- 16224 multiletter control sequences out of 15000+200000
- 56749 words of font info for 58 fonts, out of 3000000 for 9000
+ 12380 strings out of 493634
+ 182119 string characters out of 3135239
+ 306449 words of memory out of 3000000
+ 15504 multiletter control sequences out of 15000+200000
+ 45064 words of font info for 49 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 39i,13n,36p,2300b,606s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,13n,36p,2300b,587s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/fontname/8r
-.enc}{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ma
-thsy.enc}{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/l
-m-ec.enc}<C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmsy10.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/lm/lmtt10.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/elias/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/elias/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/elias/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on monografia.pdf (42 pages, 571939 bytes).
+.enc}<C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/urw/helvetic/uhvb8a.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/urw/helvetic/uhvr8a.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on monografia.pdf (14 pages, 97860 bytes).
 PDF statistics:
- 465 PDF objects out of 1000 (max. 8388607)
- 96 named destinations out of 1000 (max. 500000)
- 303 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 225 PDF objects out of 1000 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
+ 149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

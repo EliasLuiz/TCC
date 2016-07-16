@@ -4,10 +4,9 @@ Introdução
         Limites físicos e da Lei de Moore
     Justificativa
         Instruções redundantes
-        Possibilidade de otimização dinâmica de código
-            DTM
+        Possibilidade de otimização dinâmica de código - DTM
     Problema
-        Instruções redundantes
+        Métricas para avaliar qualidade chip
         Verificar se DTM é uma solução viável
     Objetivos
         Implementar DTM em HDL
@@ -16,10 +15,19 @@ Introdução
     Estrutura da tese
 
 Metodologia
-    Revisão da literatura
-    Definição das ferramentas
+    Escolher arquitetura
+        Java vs RISC
+    Revisão literatura
+        DTM - Tese Amarildo
+        Tecnologias
+            LEON3
+            Altera
+            VHDL ???? - Perguntar Bruno
     Implementação
-    Testes e avaliação dos resultados
+        Estudo e adaptação para SPARC
+        Repetir Metodologia:Literatura:Tecnologias ????
+    Testes e análise
+        Chu - repetir Introducao:Problema - Perguntar Bruno qual benchmark
 
 Fundamentação Teórica
     Arquitetura / Desenho Digital
