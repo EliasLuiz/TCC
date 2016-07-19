@@ -8,7 +8,7 @@
 
 %% INTRODUÇÃO - Relevância da área sem especificar problema. 
 
-A Lei de Moore possui algumas variações quanto ao seu enunciado, porém todas afirmam que a capacidade computacional dos processadores cresceria exponencialmente devido aos avanços na tecnologia. Por 50 anos essa previsão se manteve consistente com os produtos lançados no mercado, como descrito em. Porém, limitações físicas na criação de circuitos integrados ameaçam o continuidade dessa evolução. \cite{mack2011fifty}
+A Lei de Moore possui algumas variações quanto ao seu enunciado, porém todas afirmam que a capacidade computacional dos processadores cresceria exponencialmente devido aos avanços na tecnologia. Por 50 anos essa previsão se manteve consistente com os produtos lançados no mercado. Porém, limitações físicas na criação de circuitos integrados ameaçam o continuidade dessa evolução \cite{mack2011fifty}. 
 
 Mas com o crescente aumento da demanda por computação é necessário que os projetistas encontrem maneiras de aperfeiçoar ainda mais o funcionamento das unidades de processamento. Uma solução que vem sendo utilizada é acoplar vários processadores para funcionar em paralelo, porém isso aumenta a complexidade de projetos tanto a nível de hardware como de software, além de amplificar o consumo energético do sistema.
 
@@ -16,7 +16,7 @@ O grande desafio da arquitetura de computadores é buscar soluções eficientes,
 
 O que ocorre então é a criação de sistemas especialistas para determinadas funções, enquanto outros projetos mais gerais lidam com uma gama mais diversa de aplicações. Em ambos os casos, projetistas consideram qual problema buscam resolver para criar a solução mais adequada dentro das restrições. 
 
-Como exemplo podemos comparar as diferentes abordagens assumidas ao projetar um \textit{system-on-chip} para aplicação em um sistema embarcado e na criação de uma unidade de processamento gráfico. Enquanto sistemas embarcados prezam por tamanho reduzido e baixo consumo de energia, unidades gráficas têm como prioridade a velocidade para cálculos de ponto flutuante, sendo otimizadas para executar instruções simples a diversos dados de entrada simultaneamente. \cite{tanenbaum2009organizacao}
+Como exemplo podemos comparar as diferentes abordagens assumidas ao projetar um \textit{system-on-chip} para aplicação em um sistema embarcado e na criação de uma unidade de processamento gráfico. Enquanto sistemas embarcados prezam por tamanho reduzido e baixo consumo de energia, unidades gráficas têm como prioridade a velocidade para cálculos de ponto flutuante, sendo otimizadas para executar instruções simples a diversos dados de entrada simultaneamente \cite{tanenbaum2009organizacao}. 
 
 Assim, é importante conhecer e desenvolver técnicas que possam tornar os projetos mais eficientes. Desenvolver para que o custo-benefício do produto seja melhorado independentemente de avanços na tecnologia de produção, mas sim por um design melhor elaborado. Conhecer para que seja possível ponderar como e quais técnicas aplicar para que o objetivo final possa ser atingido de maneira ótima, com um máximo de desempenho e mínimo de recursos despendidos.
 
@@ -28,27 +28,27 @@ Assim, é importante conhecer e desenvolver técnicas que possam tornar os proje
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%% OTIMIZACAO DINAMICA DE CODIGO %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% OTIMIZACAO DINAMICA DE CODIGO? %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Como demonstrado em \cite{costa2001explorando}, muitos programas acabam por ter instruções redundantes ao longo de seu fluxo de execução. Assim, tempo computacional é perdido para se obter resultados já calculados.
+Como demonstrado por \citeonline{costa2001explorando}, muitos programas acabam por ter instruções redundantes ao longo de seu fluxo de execução. Assim, tempo computacional é perdido para se obter resultados já calculados.
 
-Uma das técnicas propostas para reduzir esse desperdício de poder de processamento é a \textit{DTM: Dynamic Trace Memoization}, ou Memorização Dinâmica de Traces. A DTM armazena o resultado de conjuntos de instruções executados anteriormente e, caso detecte uma execução redundante do mesmo conjunto, é capaz de armazenar os resultados e desviar o fluxo de controle para a instrução a ser executada após esse conjunto, substituindo a execução linear de cada instrução pelo resultado final, como se o bloco inteiro fosse uma instrução somente. A técnica será abordada com mais detalhes na seção \ref{dtm}.
+Uma das técnicas propostas para reduzir esse desperdício de poder de processamento é a DTM (\textit{Dynamic Trace Memoization} ou Memorização Dinâmica de Traces). A DTM armazena o resultado de conjuntos de instruções executados anteriormente e, caso detecte uma execução redundante do mesmo conjunto, é capaz de armazenar os resultados e desviar o fluxo de controle para a instrução a ser executada após esse conjunto, substituindo a execução linear de cada instrução pelo resultado final, como se o bloco inteiro fosse uma instrução somente. A técnica será abordada com mais detalhes na seção \ref{dtm}.
 
-Em simulações realizadas por \cite{costa2001explorando}, essa técnica foi capaz de aumentar o desempenho de programas do \textit{SpecInt95 Benchmark Suite} de 1\% até 21\%, variando de acordo com o programa e os parâmetros utilizados na construção das unidades responsáveis por implementar o mecanismo DTM.
+Em simulações realizadas por \citeonline{costa2001explorando}, essa técnica foi capaz de aumentar o desempenho de programas do \textit{SpecInt95 Benchmark Suite} de 1\% até 21\%, variando de acordo com o programa e os parâmetros utilizados na construção das unidades responsáveis por implementar o mecanismo DTM.
 
 É possível então notar que há aplicações para as quais a implementação de uma unidade de DTM poderia melhorar significativamente o desempenho. Sendo assim, é interessante conhecer as os impactos desta para que seja possível melhor avaliar em que situações a utilização da DTM é proveitosa, considerando os \textit{trade-offs} causados por sua presença.
 
 \section{Problema}
 \label{Introducao:Problema}
 
+O problema que motiva este trabalho é saber se a DTM é uma técnica viável para aplicações práticas. Caso seja, quais os \textit{trade-offs} que o projetista deve considerar ao aplicar a DTM no seu projeto. Esses \textit{trade-offs} serão baseados na análise das principais características do circuito resultante.
+
 A arquitetura de um circuito e a tecnologia utilizada para a sua geração estão intimamente ligados às características do circuito resultante. Considerando isso, algumas métricas utilizadas nesses circuitos resultantes servem para comparar apenas um dos fatores, seja uma mesma arquitetura em diversas tecnologias ou diversas arquiteturas em uma mesma tecnologia.
 
-Segundo \cite{chu2006rtl}, as principais métricas que podem ser utilizadas nessas medições são área de chip, velocidade, consumo de potência e custo de produção. Esses quesitos são correlacionados, fazendo que alterações mudem os valores de mais de um ponto, senão todos.
-
-O problema que motiva este trabalho é saber, considerando essas métricas, se a DTM é uma técnica viável para aplicações práticas. Caso seja, quais os \textit{trade-offs} que o projetista deve considerar ao aplicar a DTM no seu projeto.
+Segundo \citeonline{chu2006rtl}, as principais métricas que podem ser utilizadas nessas medições são área de chip, velocidade, consumo de potência e custo de produção. Esses quesitos são correlacionados, fazendo que alterações mudem os valores de mais de um ponto, senão todos. Saber como esses fatores se comportam ao inserir uma unidade de DTM em um processador foi o fator que estimulou este trabalho de pesquisa.
 
 \section{Objetivos}
 \label{Introducao:Objetivos} % Falar o que será feito.
@@ -59,12 +59,14 @@ Mais especificamente, os objetivos podem ser descritos nos seguintes tópicos:
 \begin{enumerate}
 	\item Implementar a memorização dinâmica de traços em uma arquitetura de processadores;
 	\item Produzir um circuito físico do processador e comparar os resultados da arquitetura padrão e da arquitetura com DTM nas seguintes métricas:
-	\begin{itemize}
-		\item área de chip;
-		\item potência consumida;
-		\item latência de ciclo;
+	
+%	\begin{itemize}
+%		\item área de chip;
+%		\item potência consumida;
+%		\item latência de ciclo;
+%	\end{itemize}
+	
 	\item Executar programas de \textit{benchmark} sobre as duas arquiteturas e comparar os resultados de performance de ambas.
-	\end{itemize}
 \end{enumerate}
 
 \section{Estrutura da tese}
@@ -75,7 +77,7 @@ Mais especificamente, os objetivos podem ser descritos nos seguintes tópicos:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% ATUALIZAR NUMERO CAPITULOS %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Esta tese está organizada em \textbf{??} capítulos. Esses capítulos foram ordenados em uma sequência lógica que facilitasse a compreensão do leitor, já que cronologicamente houve certo paralelismo durante a produção de algumas etapas.
+Esta tese está organizada em ?? capítulos. Esses capítulos foram ordenados em uma sequência lógica que facilitasse a compreensão do leitor, já que cronologicamente houve certo paralelismo durante a produção de algumas etapas.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% ATUALIZAR NUMERO CAPITULOS %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

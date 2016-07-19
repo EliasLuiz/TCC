@@ -13,7 +13,7 @@
 \bibitem[Costa 2001]{costa2001explorando}
 \abntrefinfo{Costa}{COSTA}{2001}
 {COSTA, A.~T. da.
-\emph{Explorando dinamicamente o reuso de traces em n\'ivel de arquitetura de
+\emph{Explorando dinamicamente o reuso de traces em nível de arquitetura de
   processador}.
 2001. Tese (Doutorado) --- COPPE/UFRJ, Rio de Janeiro, 2001.}
 
@@ -22,11 +22,21 @@
 {GAISLER, A. Leon3 processor.
 \emph{Nanoscale Integration and Modeling (NIMO) Group}, 2010.}
 
+\bibitem[Hennessy e Patterson 2011]{hennessy2011computer}
+\abntrefinfo{Hennessy e Patterson}{HENNESSY; PATTERSON}{2011}
+{HENNESSY, J.~L.; PATTERSON, D.~A. \emph{Computer architecture: a quantitative
+  approach}. [S.l.]: Elsevier, 2011.}
+
 \bibitem[Mack 2011]{mack2011fifty}
 \abntrefinfo{Mack}{MACK}{2011}
 {MACK, C.~A. Fifty years of moore's law.
 \emph{IEEE Transactions on semiconductor manufacturing}, IEEE, v.~24, n.~2, p.
   202--207, 2011.}
+
+\bibitem[Patterson e Hennessy 2013]{patterson2013computer}
+\abntrefinfo{Patterson e Hennessy}{PATTERSON; HENNESSY}{2013}
+{PATTERSON, D.~A.; HENNESSY, J.~L. \emph{Computer organization and design: the
+  hardware/software interface}. [S.l.]: Newnes, 2013.}
 
 \bibitem[Schoeberl 2005]{schoeberl2005jop}
 \abntrefinfo{Schoeberl}{SCHOEBERL}{2005}
@@ -43,7 +53,7 @@
 
 \bibitem[Tanenbaum e Zucchi 2009]{tanenbaum2009organizacao}
 \abntrefinfo{Tanenbaum e Zucchi}{TANENBAUM; ZUCCHI}{2009}
-{TANENBAUM, A.~S.; ZUCCHI, W.~L. \emph{Organiza{\c{c}}{\~a}o estruturada de
+{TANENBAUM, A.~S.; ZUCCHI, W.~L. \emph{Organização estruturada de
   computadores}. [S.l.]: Pearson Prentice Hall, 2009.}
 
 \end{thebibliography}

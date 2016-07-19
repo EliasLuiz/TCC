@@ -22,17 +22,25 @@ Metodologia
         Tecnologias
             LEON3
             Altera
-            VHDL ???? - Perguntar Bruno
     Implementação
         Estudo e adaptação para SPARC
         Repetir Metodologia:Literatura:Tecnologias ???? - Discutir com o Bruno qual a configuração do processador
     Testes e análise
-        Chu - repetir Introducao:Problema - Perguntar Bruno qual benchmark
+        Chu - repetir Introducao:Problema - Perguntar Bruno qual benchmark (SPECInt95 (impacto direto)? SPECFp95 (impacto indireto)?)
                                           - Texto explicando cada medição fica aqui mesmo?
 
 Fundamentação Teórica
-    Arquitetura / Desenho Digital
-    DTM
-    Leon3 / GRLIB
-    VHDL
-    FPGA
+    Técnica a ser estudada e testada:
+        DTM
+    Arquitetura utilizada:
+        Leon3 / GRLIB
+        SPARC
+    Tecnologias utilizadas:
+        FPGA
+        VHDL
+
+
+Trabalhos posteriores:
+    Testar DTM especulativo
+    Incorporar LOAD e STORE nos traces, controle parecido com o da cache
+    Incorporar instruções de PF? Costa diz ter pouco reuso

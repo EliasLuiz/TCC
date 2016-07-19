@@ -1,202 +1,202 @@
-%\chapter{Conclusão} - manter comentado
-
-	\begin{flushright}
-		\textit{``As palavras fogem quando precisamos delas e 
-		\\sobram quando não pretendemos usá-las.''\\Carlos Drummond de Andrade}
-	\end{flushright}
-
-%\textbf{Justificativa e objetivo da tese.}
-Esta pesquisa justifica-se pela necessidade de se implementar sistemas automáticos de recuperação de informação que deem suporte adequado à informação corporativa e às tarefas dos usuários corporativos. Para isso, se buscou uma compreensão mais geral da informação corporativa que beneficie sua evolução contínua e não a limite a um cenário de uso excessivamente reduzido. Para isso, foi realizada uma análise do domínio corporativo com o objetivo de propor um conjunto de características da informação corporativa.
-
-%\textbf{Resultados obtidos.}
-Assim, este trabalho empreendeu uma análise preliminar de domínio pela aplicação da técnica de análise facetada sobre informação corporativa. Foram identificadas características potencialmente comuns às coleções; e um protótipo de sistema de recuperação de informação corporativa e um conjunto de expressões de busca de usuários reais serviram para avaliar empiricamente e validar essas características identificadas.
-
-%Para responder ao problema proposto, o objetivo geral deste trabalho será propor um conjunto de características da informação corporativa que favoreça a organização e a recuperação da informação.
-%	\item Propor um conjunto de facetas que seja útil na organização automática da informação corporativa e na interoperabilidade entre diferentes repositórios de informação da mesma empresa ou de diferentes empresas;
-%	\item Identificar as facetas pelas quais os usuários de informação especificam sua necessidade de informação no contexto de trabalho;
-%	\item Avaliar as implicações da organização facetada da informação corporativa no desempenho dos sistemas automáticos de recuperação de informação.
-
-
-%\textbf{Sumário para próximas seções.}
-A seção \ref{conclusao-resultados} apresenta os principais resultados alcançados, enquanto a seção \ref{conclusao-limitacoes} apresenta discussões e limitações da pesquisa. Finalmente, a seção \ref{conclusao-futuros} aponta algumas direções para trabalhos futuros.
-
-
-
-
-\section{Resultados}
-\label{conclusao-resultados}
-
-%\textbf{3 resultados obtidos.}
-Três resultados foram obtidos neste trabalho. O primeiro resultado refere-se a um conjunto com 12 categorias que, como uma potencial representação da informação corporativa, pode servir como um modelo conceitual de longo prazo do domínio corporativo. O conjunto de categorias descobertas deve requerer revisões menos frequentes e suportar o desenvolvimento incremental de sistemas de recuperação de informação corporativa mais flexíveis e interoperáveis. O segundo resultado refere-se a um subconjunto das 12 categorias que é mobilizado especialmente por usuários no momento de elaborar expressões de busca com o objetivo de recuperar documentos de interesse.
-O terceiro resultado refere-se à validação de ambas as coleções corporativas como pertinentes para desenvolver e avaliar sistemas de recuperação de informação corporativa.
-
-%1
-%\textbf{1o resultado - 12 categorias.}
-O primeiro resultado teve sua origem na análise facetada empreendida sobre os dois exemplares do domínio corporativo. Ele corresponde à identificação de 12 categorias comuns às duas coleções corporativas. A distribuição de assuntos de ambas as empresas dentro das categorias apresentou alta correlação positiva. Isso sugere que autores e leitores, de ambas as empresas, embora necessitem de assuntos diferentes, mobilizam assuntos das mesmas categorias e facetas.
-%isso tem o potencial de melhorar o desempenho da indexação e recuperação automática de informação corporativa, na medida em que métodos especiais assumem a função de indexar, recuperar e ordenar as diferentes categorias e facetas.
-
-%\textbf{Facetas e subfacetas.}
-Além das categorias identificadas, foram também avaliadas as facetas e subfacetas. Embora úteis para cada coleção, a distribuição de assuntos em facetas e subfacetas entre as coleções não apresenta indício de correlação. Isso sugere que características exclusivas de algumas empresas requerem facetas e subfacetas especiais que favorecem a comunicação de seus atores sociais. O volume de atores sociais contidos na empresa, a extensão geográfica atendida por seus serviços e produtos, as atividades e o setor econômico são exemplos de características exclusivas que parecem interferir na composição das mensagens corporativas.
-
-%\textbf{Aumento do desempenho do SRI.}
-Em avaliação, as categorias não figuraram entre as fontes de evidência mais comuns dos experimentos apresentados na trilha \textit{Enterprise} da \textit{Text Retrieval Conference}. Entretanto, a simples implementação de um protótipo que considerou parte das categorias aumentou o desempenho do recuperação de informação. O aumento do desempenho ocorreu mesmo sem fazer uso de repositórios externos à empresa e sem o suporte de metabuscadores, algumas das estratégias adotadas em outros trabalhos. Comparando os resultados atuais com aqueles encontrados na literatura, facetas espaciais e temporais mostraram-se especialmente úteis, uma vez que quase não têm sido exploradas em trabalhos interpretativos e constituíram as fontes de evidência com maior potencial de contribuição para a recuperação e o \textit{ranking} da informação corporativa.
-
-%2
-
-%\textbf{2o resultado - 8 categorias.}
-O segundo resultado teve sua origem na análise facetada empreendida sobre as expressões de busca de usuários da coleção particular. As expressões de busca foram elaboradas com o objetivo de recuperar documentos previamente apresentados pelo usuário. Assim, o método serviu para investigar quais categorias e facetas eram reconhecidas no documento e mobilizadas pelo usuário enquanto usavam um sistema de recuperação de informação hipotético. A distribuição de assuntos em oito categorias, compatível com a distribuição de assuntos naquelas categorias descobertas no domínio, evidencia que os usuários mobilizam as categorias corretas para elaborar as expressões de busca.
-
-%\textbf{Evidência de que usuários da coleção pública não sabem escolher termos espaciais e temporais com a precisão correta.}
-Por outro lado, o experimento sobre a coleção pública evidenciou que os usuários da coleção pública, apesar de também mobilizarem as categorias corretas, não conseguem escolher corretamente os termos espaciais e temporais. Isso pode ser explicado pelo desconhecimento da precisão geográfica e temporal com a qual o documento foi produzido e indexado. No entanto, o primeiro resultado, discutido anteriormente, foi suficiente para compatibilizar a granularidade espacial e temporal de indexação e de recuperação.
-
-
-%3
-
-%\textbf{3o resultado - validação das coleções.}
-O terceiro resultado corresponde à validação cruzada da coleção de referência e da coleção particular. Coleções de referência usadas para avaliação de Cranfield normalmente são alvos de críticas sobre sua utilidade limitada para o desenvolvimento científico. Essa dificuldade também se apresenta para a coleção de referência adotada neste trabalho. Para enfrentar essa dificuldade, foi adotada também uma coleção particular. Uma vez que a coleção particular foi produzida por seus próprios usuários para ser usada no contexto de trabalho e tomada de decisão, ela pode ser vista como uma coleção suficiente para empreender novos estudos sobre informação corporativa. Por outro lado, a compatibilidade entre a distribuição de assuntos entre as categorias, facetas e subfacetas de ambas as coleções faz com que a coleção pública igualmente possa ser vista como uma coleção válida para estudos sobre informação corporativa.
-
-%\textbf{Coleção de avaliação adicional, em língua portuguesa.}
-Adicionalmente, uma vez que não havia qualquer iniciativa de construção de coleção de documentos corporativos em língua portuguesa, a coleção particular constitui um produto útil para trabalhos futuros. Porém, a aplicação da nova coleção difere da aplicação da coleção de referência, sendo mais apropriada para estudos interpretativos e históricos. A coleção da CSIRO, principalmente por seu tamanho e método de criação, é mais adequada para estudos empíricos baseados em métodos estatísticos e carece de uma maior diversidade de informação no escopo intraorganizacional.
-
-
-\section{Considerações e limitações}
-\label{conclusao-limitacoes}
-
-%12 facetas
-
-%\textbf{Apenas 2 empresas, poucos documentos, de pequena diversidade.}
-O número reduzido de empresas e coleções estudadas apresenta limitações para uma análise mais aprofundada e para uma generalização do domínio corporativo. Na coleção de referência pública, os documentos são de um conjunto muito restritivo, apenas da \textit{Web} pública da empresa, com necessidades de informação que poderiam ser atendidas pelo próprio cliente da empresa, através de um bom sistema de busca da \textit{Web}. Na segunda coleção, particular, há um número bem menor de documentos, porém com uma maior diversidade temporal e de atividades. Em nenhuma das coleções há exaustividade, o que nos remete à impossibilidade de representar todo e qualquer fenômeno do domínio, embora provavelmente representem os fenômenos mais comuns de ambas as empresas.
-
-%\textbf{Importância das características locais ou exclusivas.}
-Por outro lado, mesmo se for possível alguma generalização sobre as características do domínio corporativo, ela certamente não representa isoladamente toda a comunicação da qual as empresas precisam para realizar trabalho. Com isso, as características locais ou exclusivas de cada empresa continuam a desempenhar um papel importante na compreensão da comunicação dos seus diversos atores sociais.
-
-%\textbf{Características seriam suficientes para melhorar o desempenho do SRI.}
-Ao mesmo tempo, todas as características identificadas, das mais gerais até as mais específicas, parecem suportar a melhoria do desempenho de um sistema de recuperação de informação corporativa. Porém, as características mais específicas tendem a ser úteis apenas no contexto particular de uma organização, enquanto as características mais gerais provavelmente contribuem para empresas de todo o domínio corporativo.%isso aqui é resultado, não?
-
-%\textbf{Foram usadas apenas as categorias na avaliação empírica da coleção pública.}
-A recuperação de informação da coleção pública foi avaliada empiricamente utilizando-se apenas das características mais gerais (as categorias). Essa avaliação, tratada no capítulo \ref{prototipo}, embora destaque o valor das características comuns a ambas as empresas, requer cautela. De fato, não é possível generalizar o domínio corporativo a partir das duas empresas pesquisadas, assim como não é possível deduzir que todo o arquivo das empresas possui as mesmas características. A linguagem corporativa, como fenômeno social, está sujeita a um desenvolvimento contínuo e dinâmico, adaptando-se às necessidades das instituições e de seus atores sociais. Acompanhar continuamente essas mudanças parece ser a única saída para manter sistemas de recuperação de informação corporativa eficazes ao longo do tempo, adaptando-os para novas realidades de comunicação que são construídas ao longo do tempo.
-
-%\textbf{Há limitações na documentação da coleção pública.}
-Adicionalmente, a classificação de relevância de documentos para cada tarefa de busca da coleção pública não é bem documentada. Como a qualidade dessa classificação não pode ser atestada neste trabalho, os resultados do \textit{ranking} podem ser piores ou melhores que aqueles aferidos em outros trabalhos. 
-
-%Aumento do desempenho suporta a hipótese de que facetas diferentes são úteis para qualquer empresa. Na literatura há menor frequência de trabalhos sobre facetas sociais, espaciais e temporais.
-
-%O fenômeno social depende do tempo e da evolução concorrente das áreas do conhecimento que colaboram dentro das organizações.
-
-%Também depende de outras variáveis que afetam uma ou mais facetas, como espaço e redes sociais.
-
-%\textbf{Relevância não foi avaliada na coleção particular.}
-Relevância também não foi objeto de avaliação na coleção particular. A compatibilidade entre as expressões de busca e os documentos da coleção particular representa a uniformidade da comunicação corporativa, especificada tanto nos documentos quanto nas expressões de busca dos seus usuários, ao invés de provável relevância de documentos. A uniformidade da comunicação pode contribuir para recuperar e ordenar documentos baseando-se na sua utilidade para o contexto de trabalho. Para isso, é preciso explorar métodos mais adequados para quantificar e avaliar sua utilidade, percepção incompatível com aquela de relevância.% embora mesmo a noção de relevância não seja unânime e não possa facilmente ser formalizada.
-
-%\textbf{Avanços sobre coleções é menos importante que avanços sobre facetas.}
-Resultados empíricos de outras trilhas da \textit{Text Retrieval Conference} têm indicado que avanços tecnológicos sobre coleções influenciam menos o desempenho dos sistemas de recuperação de informação que avanços tecnológicos sobre facetas específicas. Como um exemplo, avanços em técnicas de identificação, desambiguação e recuperação de facetas sociais no domínio corporativo parecem repercutir positivamente em vários contextos ou várias coleções do domínio. Por outro lado, avanços na compreensão e no desempenho de uma coleção de uma só empresa, mesmo que contribua para o desempenho de um sistema de recuperação de informação aplicado àquela coleção, não contribui para o desempenho do mesmo sistema para qualquer outra empresa.
-
-%\textbf{Avanços sobre facetas não garantem aumento de desempenho em todo e qualquer domínio.}
-Porém, é preciso esclarecer que aperfeiçoamentos baseados em uma faceta do domínio corporativo, e.g. faceta social, não implica no mesmo ganho de desempenho em outros domínios. Portanto, é preciso garantir que sejam realizados estudos sobre facetas e domínios específicos, sem esperar que sistemas de recuperação de informação adequados para um domínio também sejam adequados para outros domínios aparentemente semelhantes. Isso justifica trabalhos futuros, usando as mesmas coleções e usando coleções corporativas adicionais, o que enfrenta a dificuldade permanente de construir coleções de documentos que sejam válidas sem que comprometam o sigilo de alguns dados corporativos.
-
-%\textbf{Comparação de coleções por meio de categorias, facetas e subfacetas mostrou-se útil.}
-Por outro lado, o método de comparação através de categorias, facetas e subfacetas mostrou-se valioso por conta da baixa exposição de dados e da alta comparabilidade, podendo servir a coleções diferentes e a diferentes pesquisadores. A técnica de análise facetada mostrou-se útil para descobrir características e comparar organizações sem expor em excesso seus ativos de informação, garantindo uma comparação simples e direta das categorias, facetas e subfacetas que constituem sua informação corporativa. Esse uso da análise facetada não foi observado na literatura. Adicionalmente, a classificação facetada resultante, além de útil para trabalhos futuros sobre informação corporativa, constitui um exemplar de classificação facetada construído fora da biblioteca e para fins não-didáticos. Esse último produto contribui para aperfeiçoar os guias metodológicos e estudos empíricos acerca da própria técnica de análise facetada \cite{wild2009describing,labarre2010}.
-
-
-
-%validação da coleção
-
-
-%The work uses only two enterprise collections and more repositories are needed to evaluate the compatibility of terminology and the meaningful of the proposed facets for the whole enterprise domain. Both the companies are in the quaternary economic sector (i.e. education; and research and development). Studies about companies in other economic sectors are very important, since the knowledge and information can assume different roles and different behaviour. Additionally, the difficulties of accessing to enterprise repositories is a permanent issue. However, one can compare enterprise repositories by applying the facet analysis and by comparing the subjects rather than the  data. 
-
-
-%Não é possível generalizar
-
-
-%Mesmo facetas e subfacetas são úteis para aumentar desempenho de SRIC, mas localmente, ou seja, atende só a uma organização e não várias do domínio.
-
-%O empírico
-
-
-
-
-
-\section{Trabalhos futuros}
-\label{conclusao-futuros}
-
-%\textbf{Sumário para próximos parágrafos.}
-Os resultados deste trabalho sugerem algumas direções promissoras de trabalho futuro: a exploração de coleções corporativas adicionais; a exploração mais aprofundada de características da informação corporativa; novos estudos sobre o uso e o desempenho de sistemas de recuperação de informação; e o estudo de indexação automática da informação facetada.
-
-%-
-
-%\textbf{trabalho futuro 1.}
-Os resultados demonstram que as empresas apresentam muitas semelhanças e também muitas diferenças entre si. Portanto, a criação de mais coleções de referência é uma necessidade permanente. É preciso reunir amostras de dados de um número maior de organizações, com características que sejam úteis para trabalhos futuros, sem que as pesquisas se desenvolvam sobre apenas uma ou algumas poucas coleções de referência. Ao mesmo tempo em que novas coleções surgem, é importante que versões atualizadas também sejam produzidas de modo a permitir uma avaliação mais histórica do desenvolvimento da documentação, da linguagem corporativa e das necessidades dos usuários de uma dada organização. 
-
-%\textbf{trabalho futuro 1 - explicação.}
-Apenas dessa forma, se pode alcançar uma representação mais generalista do domínio ou pode ser identificada a impossibilidade de alcançá-la. Embora essa necessidade seja sugerida neste trabalho, reunir tantas empresas com dados abertos não é tarefa trivial. Uma solução intermediária passa pela caracterização da informação de várias empresas sem que os dados sejam livremente expostos. A análise de assuntos e a análise facetada atendem esses requisitos.
-
-%-
-
-%\textbf{trabalho futuro 2.}
-Também é importante diversificar as atividades e setores econômicos. Além disso, dentro do domínio corporativo, é preciso identificar as especificidades que idiomas, setores econômicos, atividades econômicas, tamanho da rede social corporativa, tipos de documentos e gêneros textuais provocam na informação corporativa.
-
-%\textbf{trabalho futuro 2 - explicação complementar.}
-A análise preliminar de domínio apontou que as facetas e subfacetas descobertas acomodam assuntos que são específicos de determinados contextos de uso. É o caso de facetas e subfacetas de elevada precisão geográfica, dentro da categoria Espaço. Em empresas com escopo geográfico urbano, são comuns os nomes de bairro, nomes de cidades vizinhas, nomes de capitais de estados vizinhos e nomes de empresas que correspondam a referências geográficas (agências bancárias, supermercados, hospitais, dentro outras). Ao contrário, em empresas com escopo geográfico nacional, são incomuns essas referências e tornam-se mais comuns os nomes de estados, nomes de cidades, nomes de empresas que não correspondem a referências geográficas (grandes empresas e multinacionais), e nomes de países.
-
-
-
-%-
-
-%\textbf{trabalho futuro 3 - novos modelos de interação.}
-Na perspectiva do uso da informação, é preciso estudar e experimentar novos modelos de interação que se beneficiem da classificação facetada da informação, além da busca por palavras-chaves. É o caso da navegação facetada, por exemplo, que passa a ser possível e mostra-se mais flexível para atender a uma maior diversidade de contextos de uso e necessidades de informação. Também é preciso experimentar novos modelos de ordenação de resultados (\textit{ranking}) que permita um ajuste fino e personalizado de facetas potencialmente mais úteis para certos grupos de usuários. Nesses casos, é preciso realizar estudos sobre estruturas de dados específicas para informação facetada e o seu papel no desempenho e na eficácia de sistemas de recuperação de informação.
-
-%\textbf{trabalho futuro 3 - comparação de desempenho entre organização da informação facetada e outras abordagens.}
-Na avaliação do impacto da organização facetada na eficiência da recuperação e no \textit{ranking} da informação corporativa, deve-se compará-la ao desempenho obtido através das estratégias de vocabulário controlado, de dados ligados externos (\textit{linked data}), de busca em texto completo, dentre outras.
-
-%\textbf{trabalho futuro 3 - representação de grandes massas de dados.}
-Adicionalmente, aplicações que têm se beneficiado menos de estudos interpretativos, como técnicas de \textit{data mining}, \textit{big data} sobre dados corporativos e sistemas de respostas automáticas, merecem ser observadas pela lente da teoria da análise facetada. Pelo grande volume de dados manipulados, análises intelectuais sobre essas coleções parecem proibitivas. Por outro lado, se amostras de dados da empresa são analisadas e apontam indícios de compatibilidade entre si, a modelagem e a representação de uma grande massa de dados podem se tornar mais significativas.
-
-%\textbf{trabalho futuro 3 - suporte a sistemas de respostas automáticas.}
-Como os experimentos deste trabalho beneficiaram-se da recuperação mais eficiente de entidades presentes no conteúdo dos documentos, é preciso estudar a implicação da organização facetada especialmente nos sistemas de respostas automáticas. Uma possível vantagem da organização facetada refere-se ao potencial de identificar características das entidades, com grande precisão, favorecendo a capacidade de responder a perguntas complexas elaboradas por seus usuários.
-
-%-
-
-%\textbf{trabalho futuro 4 - reconhecimento de termos e associação dinâmica a facetas.}
-Por fim, dada uma classificação facetada adequada, a indexação de documentos corporativos continua a representar um grande desafio, tendo em vista o número crescente de documentos que as empresas produzem e mobilizam para dar suporte às suas operações. Portanto, é uma direção útil de trabalho futuro desenvolver técnicas de reconhecimento automático de termos e de associação dinâmica de termos às categorias e facetas identificadas neste trabalho.
-
-%\textbf{trabalho futuro 4 - dados ligados e empresas de todos os portes.}
-O processo de reconhecimento de termos e sua associação a facetas normalmente dependerá de um processo de desambiguação sempre que não houver vocabulário controlado. Este trabalho encontrou referências à dados ligados (\textit{linked data}) como suporte para a desambiguação de informação na \textit{Web}. Que os dados ligados são úteis para a desambiguação e para a implementação de sistemas de informação parece óbvio, mas de que modo eles podem suportar a desambiguação de entidades na informação corporativa e qual sua eficácia em empresas menores é uma questão em aberto. No entanto, pelo volume da informação produzida, empresas de todos os tamanhos requerem sistemas de informação automatizados para gerenciar e recuperar eficientemente seus ativos de informação. Este trabalho demonstrou que a Ciência da Informação possui um papel fundamental para responder de que forma as empresas têm usado tais sistemas, e de que forma sistemas de recuperação de informação corporativos devem ser desenvolvidos.
-
-
-%		Propor um método de \textit{ranking} facetado e adaptativo que se beneficie da organização facetada da informação.% e que atribua um peso aos critérios multifacetados em função da busca do usuário e da oferta de termos indexados para as diversas facetas que sejam de interesse para aquela consulta.
-
-
-%De fato, realizar pesquisas similares em outros contextos corporativos é estimulante e produtivo. É preciso reunir amostras adicionais da informação das empresas estudadas e amostras complementares com origem em outras empresas. 
-
-%Um custo relativamente baixo de avaliação dos ativos de informação é necessário para comparar com os resultados encontrados nessa tese. Em caso de compatibilidade, pesquisa adicional de avaliação de desempenho de SRIC deve ser feito na nova empresa; senão, novos conjuntos de empresas distintas estarão se formando para entender melhor o domínio das empresas contemporâneas, grandes usuárias das tecnologias de informação e comunicação.
-
-%	Propor um conjunto de técnicas de reconhecimento automático de termos e de associação dinâmica a facetas de diferentes tipos, como espaciais, temporais, lógicos ou descritivos.%, como nomes de pessoas e de instituições, processos, localidades e tempo.% Partindo do pressuposto de que um documento pode se beneficiar de evidências presentes em documentos para os quais possui referência e em documentos nos quais é referenciado, implícita ou explicitamente, deve-se utilizar de evidências em toda a coleção de documentos para fins de desambiguação.
-	
-%	Fazer uma avaliação a associação dinâmica entre termos e facetas em documentos de diferentes tipos, de diferentes idiomas e de diferentes gêneros linguísticos.%, uma vez que o uso de um conjunto mais diverso de classes de documentos presentes em repositórios corporativos pode contribuir com o processo de desambiguação de termos.
-	%é eficaz indexar automaticamente informação corporativa facetada pela associação dinâmica de termos a facetas? A organização da informação através da teoria da análise facetada contribui para o aumento do desempenho geral de sistemas de recuperação de informação corporativa? %--isso saiu da introdução. era um antigo problema.
-	%A eficácia da indexação automática está intimamente relacionada à precisão com a qual o indexador automático associa um termo, explicitamente presente no texto, à faceta correta. A associação dinâmica de termos a facetas está relacionada à capacidade do indexador em atualizar as características das entidades na medida em que novos documentos são processados. --isso explica a parte anterior.
-
-%	Avaliar se as técnicas multifacetadas de recuperação de informação corporativa implementadas são mais eficientes que aquelas que utilizam-se exclusivamente do conteúdo do documento, de vocabulário controlado ou de busca em metadados.
-
-%	Experimentar um modelo de interação para o processo de \textit{ranking} de documentos a partir de critérios textuais e de facetas dados pelo usuário, onde seja possível um ajuste fino do \textit{ranking} multifacetado dinamicamente, o que deve exigir a indexação em uma estrutura de dados específica para informação multifacetada.
-
-%	Propor um método de \textit{ranking} facetado e adaptativo que se beneficie da organização facetada da informação.% e que atribua um peso aos critérios multifacetados em função da busca do usuário e da oferta de termos indexados para as diversas facetas que sejam de interesse para aquela consulta.
-
-
-
-%The existence of common facets and subfacets and its distribution motivate additional experiments and future work. Additional experiments on subject and facet analysis may be done using other repositories by trying fit the set of facets in a possible generalisation of the enterprise domain. The comparison of the present results and other private collections is an important issue, even using unavailable private collections. 
-
-
-%Linked data é outra direção relevante de trabalho futuro. Que os linked data são úteis para se construir sistemas de informação é consensual, mas de que modo eles podem suportar a desambiguação de entidades na informação corporativa e com qual eficiência eles suportam SRIC melhores é uma questão em aberto.
-
-
-
-%Alta correlação positiva entre duas coleções neste nível
-%The strong positive correlation between the public queries and narratives and the public collection of documents demonstrate how query logs can be used to show up subjects the enterprise users identify and use in a day-to-day routine. However, the documents present much more subjects than the queries and they should be used in a more deeper evaluation of subjects the enterprise information retrieval system may index. Indeed, both the public collection and the public queries could be used in this kind of study with no difference.?????
-
-%Additionally, structured data, databases and other enterprise tools can support the identification and disambiguation of terms and the their association to the corresponding facets and subfacets. However, the automatic identification and disambiguation require frequent updates of enterprise terminology as the knowledge and information evolve. The set of facets and subfacets as a knowledge representation may constitute a long-term model, requiring less frequent revision, supporting the information representation and supporting the development of interoperable and flexible enterprise information retrieval systems.
-
-%A second work step has to do with the automatic identification and disambiguation of terms and their association to facets and subfacets. These processes are supported by special algorithms and special facets of information like social, spatial and temporal. The translation of terms into facets is an enterprise specific task that depends on information specialists and information users from the company. This is a process that happens from the general model to the specific one, where the facet approach is also beneficial.
-
-%Trabalho futuro: queries e narrrativas da coleção particular?
-
+%%\chapter{Conclusão} - manter comentado
+%
+%	\begin{flushright}
+%		\textit{``As palavras fogem quando precisamos delas e 
+%		\\sobram quando não pretendemos usá-las.''\\Carlos Drummond de Andrade}
+%	\end{flushright}
+%
+%%\textbf{Justificativa e objetivo da tese.}
+%Esta pesquisa justifica-se pela necessidade de se implementar sistemas automáticos de recuperação de informação que deem suporte adequado à informação corporativa e às tarefas dos usuários corporativos. Para isso, se buscou uma compreensão mais geral da informação corporativa que beneficie sua evolução contínua e não a limite a um cenário de uso excessivamente reduzido. Para isso, foi realizada uma análise do domínio corporativo com o objetivo de propor um conjunto de características da informação corporativa.
+%
+%%\textbf{Resultados obtidos.}
+%Assim, este trabalho empreendeu uma análise preliminar de domínio pela aplicação da técnica de análise facetada sobre informação corporativa. Foram identificadas características potencialmente comuns às coleções; e um protótipo de sistema de recuperação de informação corporativa e um conjunto de expressões de busca de usuários reais serviram para avaliar empiricamente e validar essas características identificadas.
+%
+%%Para responder ao problema proposto, o objetivo geral deste trabalho será propor um conjunto de características da informação corporativa que favoreça a organização e a recuperação da informação.
+%%	\item Propor um conjunto de facetas que seja útil na organização automática da informação corporativa e na interoperabilidade entre diferentes repositórios de informação da mesma empresa ou de diferentes empresas;
+%%	\item Identificar as facetas pelas quais os usuários de informação especificam sua necessidade de informação no contexto de trabalho;
+%%	\item Avaliar as implicações da organização facetada da informação corporativa no desempenho dos sistemas automáticos de recuperação de informação.
+%
+%
+%%\textbf{Sumário para próximas seções.}
+%A seção \ref{conclusao-resultados} apresenta os principais resultados alcançados, enquanto a seção \ref{conclusao-limitacoes} apresenta discussões e limitações da pesquisa. Finalmente, a seção \ref{conclusao-futuros} aponta algumas direções para trabalhos futuros.
+%
+%
+%
+%
+%\section{Resultados}
+%\label{conclusao-resultados}
+%
+%%\textbf{3 resultados obtidos.}
+%Três resultados foram obtidos neste trabalho. O primeiro resultado refere-se a um conjunto com 12 categorias que, como uma potencial representação da informação corporativa, pode servir como um modelo conceitual de longo prazo do domínio corporativo. O conjunto de categorias descobertas deve requerer revisões menos frequentes e suportar o desenvolvimento incremental de sistemas de recuperação de informação corporativa mais flexíveis e interoperáveis. O segundo resultado refere-se a um subconjunto das 12 categorias que é mobilizado especialmente por usuários no momento de elaborar expressões de busca com o objetivo de recuperar documentos de interesse.
+%O terceiro resultado refere-se à validação de ambas as coleções corporativas como pertinentes para desenvolver e avaliar sistemas de recuperação de informação corporativa.
+%
+%%1
+%%\textbf{1o resultado - 12 categorias.}
+%O primeiro resultado teve sua origem na análise facetada empreendida sobre os dois exemplares do domínio corporativo. Ele corresponde à identificação de 12 categorias comuns às duas coleções corporativas. A distribuição de assuntos de ambas as empresas dentro das categorias apresentou alta correlação positiva. Isso sugere que autores e leitores, de ambas as empresas, embora necessitem de assuntos diferentes, mobilizam assuntos das mesmas categorias e facetas.
+%%isso tem o potencial de melhorar o desempenho da indexação e recuperação automática de informação corporativa, na medida em que métodos especiais assumem a função de indexar, recuperar e ordenar as diferentes categorias e facetas.
+%
+%%\textbf{Facetas e subfacetas.}
+%Além das categorias identificadas, foram também avaliadas as facetas e subfacetas. Embora úteis para cada coleção, a distribuição de assuntos em facetas e subfacetas entre as coleções não apresenta indício de correlação. Isso sugere que características exclusivas de algumas empresas requerem facetas e subfacetas especiais que favorecem a comunicação de seus atores sociais. O volume de atores sociais contidos na empresa, a extensão geográfica atendida por seus serviços e produtos, as atividades e o setor econômico são exemplos de características exclusivas que parecem interferir na composição das mensagens corporativas.
+%
+%%\textbf{Aumento do desempenho do SRI.}
+%Em avaliação, as categorias não figuraram entre as fontes de evidência mais comuns dos experimentos apresentados na trilha \textit{Enterprise} da \textit{Text Retrieval Conference}. Entretanto, a simples implementação de um protótipo que considerou parte das categorias aumentou o desempenho do recuperação de informação. O aumento do desempenho ocorreu mesmo sem fazer uso de repositórios externos à empresa e sem o suporte de metabuscadores, algumas das estratégias adotadas em outros trabalhos. Comparando os resultados atuais com aqueles encontrados na literatura, facetas espaciais e temporais mostraram-se especialmente úteis, uma vez que quase não têm sido exploradas em trabalhos interpretativos e constituíram as fontes de evidência com maior potencial de contribuição para a recuperação e o \textit{ranking} da informação corporativa.
+%
+%%2
+%
+%%\textbf{2o resultado - 8 categorias.}
+%O segundo resultado teve sua origem na análise facetada empreendida sobre as expressões de busca de usuários da coleção particular. As expressões de busca foram elaboradas com o objetivo de recuperar documentos previamente apresentados pelo usuário. Assim, o método serviu para investigar quais categorias e facetas eram reconhecidas no documento e mobilizadas pelo usuário enquanto usavam um sistema de recuperação de informação hipotético. A distribuição de assuntos em oito categorias, compatível com a distribuição de assuntos naquelas categorias descobertas no domínio, evidencia que os usuários mobilizam as categorias corretas para elaborar as expressões de busca.
+%
+%%\textbf{Evidência de que usuários da coleção pública não sabem escolher termos espaciais e temporais com a precisão correta.}
+%Por outro lado, o experimento sobre a coleção pública evidenciou que os usuários da coleção pública, apesar de também mobilizarem as categorias corretas, não conseguem escolher corretamente os termos espaciais e temporais. Isso pode ser explicado pelo desconhecimento da precisão geográfica e temporal com a qual o documento foi produzido e indexado. No entanto, o primeiro resultado, discutido anteriormente, foi suficiente para compatibilizar a granularidade espacial e temporal de indexação e de recuperação.
+%
+%
+%%3
+%
+%%\textbf{3o resultado - validação das coleções.}
+%O terceiro resultado corresponde à validação cruzada da coleção de referência e da coleção particular. Coleções de referência usadas para avaliação de Cranfield normalmente são alvos de críticas sobre sua utilidade limitada para o desenvolvimento científico. Essa dificuldade também se apresenta para a coleção de referência adotada neste trabalho. Para enfrentar essa dificuldade, foi adotada também uma coleção particular. Uma vez que a coleção particular foi produzida por seus próprios usuários para ser usada no contexto de trabalho e tomada de decisão, ela pode ser vista como uma coleção suficiente para empreender novos estudos sobre informação corporativa. Por outro lado, a compatibilidade entre a distribuição de assuntos entre as categorias, facetas e subfacetas de ambas as coleções faz com que a coleção pública igualmente possa ser vista como uma coleção válida para estudos sobre informação corporativa.
+%
+%%\textbf{Coleção de avaliação adicional, em língua portuguesa.}
+%Adicionalmente, uma vez que não havia qualquer iniciativa de construção de coleção de documentos corporativos em língua portuguesa, a coleção particular constitui um produto útil para trabalhos futuros. Porém, a aplicação da nova coleção difere da aplicação da coleção de referência, sendo mais apropriada para estudos interpretativos e históricos. A coleção da CSIRO, principalmente por seu tamanho e método de criação, é mais adequada para estudos empíricos baseados em métodos estatísticos e carece de uma maior diversidade de informação no escopo intraorganizacional.
+%
+%
+%\section{Considerações e limitações}
+%\label{conclusao-limitacoes}
+%
+%%12 facetas
+%
+%%\textbf{Apenas 2 empresas, poucos documentos, de pequena diversidade.}
+%O número reduzido de empresas e coleções estudadas apresenta limitações para uma análise mais aprofundada e para uma generalização do domínio corporativo. Na coleção de referência pública, os documentos são de um conjunto muito restritivo, apenas da \textit{Web} pública da empresa, com necessidades de informação que poderiam ser atendidas pelo próprio cliente da empresa, através de um bom sistema de busca da \textit{Web}. Na segunda coleção, particular, há um número bem menor de documentos, porém com uma maior diversidade temporal e de atividades. Em nenhuma das coleções há exaustividade, o que nos remete à impossibilidade de representar todo e qualquer fenômeno do domínio, embora provavelmente representem os fenômenos mais comuns de ambas as empresas.
+%
+%%\textbf{Importância das características locais ou exclusivas.}
+%Por outro lado, mesmo se for possível alguma generalização sobre as características do domínio corporativo, ela certamente não representa isoladamente toda a comunicação da qual as empresas precisam para realizar trabalho. Com isso, as características locais ou exclusivas de cada empresa continuam a desempenhar um papel importante na compreensão da comunicação dos seus diversos atores sociais.
+%
+%%\textbf{Características seriam suficientes para melhorar o desempenho do SRI.}
+%Ao mesmo tempo, todas as características identificadas, das mais gerais até as mais específicas, parecem suportar a melhoria do desempenho de um sistema de recuperação de informação corporativa. Porém, as características mais específicas tendem a ser úteis apenas no contexto particular de uma organização, enquanto as características mais gerais provavelmente contribuem para empresas de todo o domínio corporativo.%isso aqui é resultado, não?
+%
+%%\textbf{Foram usadas apenas as categorias na avaliação empírica da coleção pública.}
+%A recuperação de informação da coleção pública foi avaliada empiricamente utilizando-se apenas das características mais gerais (as categorias). Essa avaliação, tratada no capítulo \ref{prototipo}, embora destaque o valor das características comuns a ambas as empresas, requer cautela. De fato, não é possível generalizar o domínio corporativo a partir das duas empresas pesquisadas, assim como não é possível deduzir que todo o arquivo das empresas possui as mesmas características. A linguagem corporativa, como fenômeno social, está sujeita a um desenvolvimento contínuo e dinâmico, adaptando-se às necessidades das instituições e de seus atores sociais. Acompanhar continuamente essas mudanças parece ser a única saída para manter sistemas de recuperação de informação corporativa eficazes ao longo do tempo, adaptando-os para novas realidades de comunicação que são construídas ao longo do tempo.
+%
+%%\textbf{Há limitações na documentação da coleção pública.}
+%Adicionalmente, a classificação de relevância de documentos para cada tarefa de busca da coleção pública não é bem documentada. Como a qualidade dessa classificação não pode ser atestada neste trabalho, os resultados do \textit{ranking} podem ser piores ou melhores que aqueles aferidos em outros trabalhos. 
+%
+%%Aumento do desempenho suporta a hipótese de que facetas diferentes são úteis para qualquer empresa. Na literatura há menor frequência de trabalhos sobre facetas sociais, espaciais e temporais.
+%
+%%O fenômeno social depende do tempo e da evolução concorrente das áreas do conhecimento que colaboram dentro das organizações.
+%
+%%Também depende de outras variáveis que afetam uma ou mais facetas, como espaço e redes sociais.
+%
+%%\textbf{Relevância não foi avaliada na coleção particular.}
+%Relevância também não foi objeto de avaliação na coleção particular. A compatibilidade entre as expressões de busca e os documentos da coleção particular representa a uniformidade da comunicação corporativa, especificada tanto nos documentos quanto nas expressões de busca dos seus usuários, ao invés de provável relevância de documentos. A uniformidade da comunicação pode contribuir para recuperar e ordenar documentos baseando-se na sua utilidade para o contexto de trabalho. Para isso, é preciso explorar métodos mais adequados para quantificar e avaliar sua utilidade, percepção incompatível com aquela de relevância.% embora mesmo a noção de relevância não seja unânime e não possa facilmente ser formalizada.
+%
+%%\textbf{Avanços sobre coleções é menos importante que avanços sobre facetas.}
+%Resultados empíricos de outras trilhas da \textit{Text Retrieval Conference} têm indicado que avanços tecnológicos sobre coleções influenciam menos o desempenho dos sistemas de recuperação de informação que avanços tecnológicos sobre facetas específicas. Como um exemplo, avanços em técnicas de identificação, desambiguação e recuperação de facetas sociais no domínio corporativo parecem repercutir positivamente em vários contextos ou várias coleções do domínio. Por outro lado, avanços na compreensão e no desempenho de uma coleção de uma só empresa, mesmo que contribua para o desempenho de um sistema de recuperação de informação aplicado àquela coleção, não contribui para o desempenho do mesmo sistema para qualquer outra empresa.
+%
+%%\textbf{Avanços sobre facetas não garantem aumento de desempenho em todo e qualquer domínio.}
+%Porém, é preciso esclarecer que aperfeiçoamentos baseados em uma faceta do domínio corporativo, e.g. faceta social, não implica no mesmo ganho de desempenho em outros domínios. Portanto, é preciso garantir que sejam realizados estudos sobre facetas e domínios específicos, sem esperar que sistemas de recuperação de informação adequados para um domínio também sejam adequados para outros domínios aparentemente semelhantes. Isso justifica trabalhos futuros, usando as mesmas coleções e usando coleções corporativas adicionais, o que enfrenta a dificuldade permanente de construir coleções de documentos que sejam válidas sem que comprometam o sigilo de alguns dados corporativos.
+%
+%%\textbf{Comparação de coleções por meio de categorias, facetas e subfacetas mostrou-se útil.}
+%Por outro lado, o método de comparação através de categorias, facetas e subfacetas mostrou-se valioso por conta da baixa exposição de dados e da alta comparabilidade, podendo servir a coleções diferentes e a diferentes pesquisadores. A técnica de análise facetada mostrou-se útil para descobrir características e comparar organizações sem expor em excesso seus ativos de informação, garantindo uma comparação simples e direta das categorias, facetas e subfacetas que constituem sua informação corporativa. Esse uso da análise facetada não foi observado na literatura. Adicionalmente, a classificação facetada resultante, além de útil para trabalhos futuros sobre informação corporativa, constitui um exemplar de classificação facetada construído fora da biblioteca e para fins não-didáticos. Esse último produto contribui para aperfeiçoar os guias metodológicos e estudos empíricos acerca da própria técnica de análise facetada \cite{wild2009describing,labarre2010}.
+%
+%
+%
+%%validação da coleção
+%
+%
+%%The work uses only two enterprise collections and more repositories are needed to evaluate the compatibility of terminology and the meaningful of the proposed facets for the whole enterprise domain. Both the companies are in the quaternary economic sector (i.e. education; and research and development). Studies about companies in other economic sectors are very important, since the knowledge and information can assume different roles and different behaviour. Additionally, the difficulties of accessing to enterprise repositories is a permanent issue. However, one can compare enterprise repositories by applying the facet analysis and by comparing the subjects rather than the  data. 
+%
+%
+%%Não é possível generalizar
+%
+%
+%%Mesmo facetas e subfacetas são úteis para aumentar desempenho de SRIC, mas localmente, ou seja, atende só a uma organização e não várias do domínio.
+%
+%%O empírico
+%
+%
+%
+%
+%
+%\section{Trabalhos futuros}
+%\label{conclusao-futuros}
+%
+%%\textbf{Sumário para próximos parágrafos.}
+%Os resultados deste trabalho sugerem algumas direções promissoras de trabalho futuro: a exploração de coleções corporativas adicionais; a exploração mais aprofundada de características da informação corporativa; novos estudos sobre o uso e o desempenho de sistemas de recuperação de informação; e o estudo de indexação automática da informação facetada.
+%
+%%-
+%
+%%\textbf{trabalho futuro 1.}
+%Os resultados demonstram que as empresas apresentam muitas semelhanças e também muitas diferenças entre si. Portanto, a criação de mais coleções de referência é uma necessidade permanente. É preciso reunir amostras de dados de um número maior de organizações, com características que sejam úteis para trabalhos futuros, sem que as pesquisas se desenvolvam sobre apenas uma ou algumas poucas coleções de referência. Ao mesmo tempo em que novas coleções surgem, é importante que versões atualizadas também sejam produzidas de modo a permitir uma avaliação mais histórica do desenvolvimento da documentação, da linguagem corporativa e das necessidades dos usuários de uma dada organização. 
+%
+%%\textbf{trabalho futuro 1 - explicação.}
+%Apenas dessa forma, se pode alcançar uma representação mais generalista do domínio ou pode ser identificada a impossibilidade de alcançá-la. Embora essa necessidade seja sugerida neste trabalho, reunir tantas empresas com dados abertos não é tarefa trivial. Uma solução intermediária passa pela caracterização da informação de várias empresas sem que os dados sejam livremente expostos. A análise de assuntos e a análise facetada atendem esses requisitos.
+%
+%%-
+%
+%%\textbf{trabalho futuro 2.}
+%Também é importante diversificar as atividades e setores econômicos. Além disso, dentro do domínio corporativo, é preciso identificar as especificidades que idiomas, setores econômicos, atividades econômicas, tamanho da rede social corporativa, tipos de documentos e gêneros textuais provocam na informação corporativa.
+%
+%%\textbf{trabalho futuro 2 - explicação complementar.}
+%A análise preliminar de domínio apontou que as facetas e subfacetas descobertas acomodam assuntos que são específicos de determinados contextos de uso. É o caso de facetas e subfacetas de elevada precisão geográfica, dentro da categoria Espaço. Em empresas com escopo geográfico urbano, são comuns os nomes de bairro, nomes de cidades vizinhas, nomes de capitais de estados vizinhos e nomes de empresas que correspondam a referências geográficas (agências bancárias, supermercados, hospitais, dentro outras). Ao contrário, em empresas com escopo geográfico nacional, são incomuns essas referências e tornam-se mais comuns os nomes de estados, nomes de cidades, nomes de empresas que não correspondem a referências geográficas (grandes empresas e multinacionais), e nomes de países.
+%
+%
+%
+%%-
+%
+%%\textbf{trabalho futuro 3 - novos modelos de interação.}
+%Na perspectiva do uso da informação, é preciso estudar e experimentar novos modelos de interação que se beneficiem da classificação facetada da informação, além da busca por palavras-chaves. É o caso da navegação facetada, por exemplo, que passa a ser possível e mostra-se mais flexível para atender a uma maior diversidade de contextos de uso e necessidades de informação. Também é preciso experimentar novos modelos de ordenação de resultados (\textit{ranking}) que permita um ajuste fino e personalizado de facetas potencialmente mais úteis para certos grupos de usuários. Nesses casos, é preciso realizar estudos sobre estruturas de dados específicas para informação facetada e o seu papel no desempenho e na eficácia de sistemas de recuperação de informação.
+%
+%%\textbf{trabalho futuro 3 - comparação de desempenho entre organização da informação facetada e outras abordagens.}
+%Na avaliação do impacto da organização facetada na eficiência da recuperação e no \textit{ranking} da informação corporativa, deve-se compará-la ao desempenho obtido através das estratégias de vocabulário controlado, de dados ligados externos (\textit{linked data}), de busca em texto completo, dentre outras.
+%
+%%\textbf{trabalho futuro 3 - representação de grandes massas de dados.}
+%Adicionalmente, aplicações que têm se beneficiado menos de estudos interpretativos, como técnicas de \textit{data mining}, \textit{big data} sobre dados corporativos e sistemas de respostas automáticas, merecem ser observadas pela lente da teoria da análise facetada. Pelo grande volume de dados manipulados, análises intelectuais sobre essas coleções parecem proibitivas. Por outro lado, se amostras de dados da empresa são analisadas e apontam indícios de compatibilidade entre si, a modelagem e a representação de uma grande massa de dados podem se tornar mais significativas.
+%
+%%\textbf{trabalho futuro 3 - suporte a sistemas de respostas automáticas.}
+%Como os experimentos deste trabalho beneficiaram-se da recuperação mais eficiente de entidades presentes no conteúdo dos documentos, é preciso estudar a implicação da organização facetada especialmente nos sistemas de respostas automáticas. Uma possível vantagem da organização facetada refere-se ao potencial de identificar características das entidades, com grande precisão, favorecendo a capacidade de responder a perguntas complexas elaboradas por seus usuários.
+%
+%%-
+%
+%%\textbf{trabalho futuro 4 - reconhecimento de termos e associação dinâmica a facetas.}
+%Por fim, dada uma classificação facetada adequada, a indexação de documentos corporativos continua a representar um grande desafio, tendo em vista o número crescente de documentos que as empresas produzem e mobilizam para dar suporte às suas operações. Portanto, é uma direção útil de trabalho futuro desenvolver técnicas de reconhecimento automático de termos e de associação dinâmica de termos às categorias e facetas identificadas neste trabalho.
+%
+%%\textbf{trabalho futuro 4 - dados ligados e empresas de todos os portes.}
+%O processo de reconhecimento de termos e sua associação a facetas normalmente dependerá de um processo de desambiguação sempre que não houver vocabulário controlado. Este trabalho encontrou referências à dados ligados (\textit{linked data}) como suporte para a desambiguação de informação na \textit{Web}. Que os dados ligados são úteis para a desambiguação e para a implementação de sistemas de informação parece óbvio, mas de que modo eles podem suportar a desambiguação de entidades na informação corporativa e qual sua eficácia em empresas menores é uma questão em aberto. No entanto, pelo volume da informação produzida, empresas de todos os tamanhos requerem sistemas de informação automatizados para gerenciar e recuperar eficientemente seus ativos de informação. Este trabalho demonstrou que a Ciência da Informação possui um papel fundamental para responder de que forma as empresas têm usado tais sistemas, e de que forma sistemas de recuperação de informação corporativos devem ser desenvolvidos.
+%
+%
+%%		Propor um método de \textit{ranking} facetado e adaptativo que se beneficie da organização facetada da informação.% e que atribua um peso aos critérios multifacetados em função da busca do usuário e da oferta de termos indexados para as diversas facetas que sejam de interesse para aquela consulta.
+%
+%
+%%De fato, realizar pesquisas similares em outros contextos corporativos é estimulante e produtivo. É preciso reunir amostras adicionais da informação das empresas estudadas e amostras complementares com origem em outras empresas. 
+%
+%%Um custo relativamente baixo de avaliação dos ativos de informação é necessário para comparar com os resultados encontrados nessa tese. Em caso de compatibilidade, pesquisa adicional de avaliação de desempenho de SRIC deve ser feito na nova empresa; senão, novos conjuntos de empresas distintas estarão se formando para entender melhor o domínio das empresas contemporâneas, grandes usuárias das tecnologias de informação e comunicação.
+%
+%%	Propor um conjunto de técnicas de reconhecimento automático de termos e de associação dinâmica a facetas de diferentes tipos, como espaciais, temporais, lógicos ou descritivos.%, como nomes de pessoas e de instituições, processos, localidades e tempo.% Partindo do pressuposto de que um documento pode se beneficiar de evidências presentes em documentos para os quais possui referência e em documentos nos quais é referenciado, implícita ou explicitamente, deve-se utilizar de evidências em toda a coleção de documentos para fins de desambiguação.
+%	
+%%	Fazer uma avaliação a associação dinâmica entre termos e facetas em documentos de diferentes tipos, de diferentes idiomas e de diferentes gêneros linguísticos.%, uma vez que o uso de um conjunto mais diverso de classes de documentos presentes em repositórios corporativos pode contribuir com o processo de desambiguação de termos.
+%	%é eficaz indexar automaticamente informação corporativa facetada pela associação dinâmica de termos a facetas? A organização da informação através da teoria da análise facetada contribui para o aumento do desempenho geral de sistemas de recuperação de informação corporativa? %--isso saiu da introdução. era um antigo problema.
+%	%A eficácia da indexação automática está intimamente relacionada à precisão com a qual o indexador automático associa um termo, explicitamente presente no texto, à faceta correta. A associação dinâmica de termos a facetas está relacionada à capacidade do indexador em atualizar as características das entidades na medida em que novos documentos são processados. --isso explica a parte anterior.
+%
+%%	Avaliar se as técnicas multifacetadas de recuperação de informação corporativa implementadas são mais eficientes que aquelas que utilizam-se exclusivamente do conteúdo do documento, de vocabulário controlado ou de busca em metadados.
+%
+%%	Experimentar um modelo de interação para o processo de \textit{ranking} de documentos a partir de critérios textuais e de facetas dados pelo usuário, onde seja possível um ajuste fino do \textit{ranking} multifacetado dinamicamente, o que deve exigir a indexação em uma estrutura de dados específica para informação multifacetada.
+%
+%%	Propor um método de \textit{ranking} facetado e adaptativo que se beneficie da organização facetada da informação.% e que atribua um peso aos critérios multifacetados em função da busca do usuário e da oferta de termos indexados para as diversas facetas que sejam de interesse para aquela consulta.
+%
+%
+%
+%%The existence of common facets and subfacets and its distribution motivate additional experiments and future work. Additional experiments on subject and facet analysis may be done using other repositories by trying fit the set of facets in a possible generalisation of the enterprise domain. The comparison of the present results and other private collections is an important issue, even using unavailable private collections. 
+%
+%
+%%Linked data é outra direção relevante de trabalho futuro. Que os linked data são úteis para se construir sistemas de informação é consensual, mas de que modo eles podem suportar a desambiguação de entidades na informação corporativa e com qual eficiência eles suportam SRIC melhores é uma questão em aberto.
+%
+%
+%
+%%Alta correlação positiva entre duas coleções neste nível
+%%The strong positive correlation between the public queries and narratives and the public collection of documents demonstrate how query logs can be used to show up subjects the enterprise users identify and use in a day-to-day routine. However, the documents present much more subjects than the queries and they should be used in a more deeper evaluation of subjects the enterprise information retrieval system may index. Indeed, both the public collection and the public queries could be used in this kind of study with no difference.?????
+%
+%%Additionally, structured data, databases and other enterprise tools can support the identification and disambiguation of terms and the their association to the corresponding facets and subfacets. However, the automatic identification and disambiguation require frequent updates of enterprise terminology as the knowledge and information evolve. The set of facets and subfacets as a knowledge representation may constitute a long-term model, requiring less frequent revision, supporting the information representation and supporting the development of interoperable and flexible enterprise information retrieval systems.
+%
+%%A second work step has to do with the automatic identification and disambiguation of terms and their association to facets and subfacets. These processes are supported by special algorithms and special facets of information like social, spatial and temporal. The translation of terms into facets is an enterprise specific task that depends on information specialists and information users from the company. This is a process that happens from the general model to the specific one, where the facet approach is also beneficial.
+%
+%%Trabalho futuro: queries e narrrativas da coleção particular?
+%

@@ -14,7 +14,7 @@
 \contentsline {section}{\numberline {2.3}Adapta\IeC {\c c}\IeC {\~a}o e Implementa\IeC {\c c}\IeC {\~a}o}{9}{section.2.3}
 \contentsline {section}{\numberline {2.4}Testes e An\IeC {\'a}lise}{10}{section.2.4}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Fundamentos hist\IeC {\'o}ricos, te\IeC {\'o}ricos e metodol\IeC {\'o}gicos}}{12}{chapter.3}
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Fundamenta\IeC {\c c}\IeC {\~a}o te\IeC {\'o}rica}}{12}{chapter.3}
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \contentsline {chapter}{\uppercase {Refer\^encias}}{13}{section*.6}
