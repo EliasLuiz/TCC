@@ -92,6 +92,9 @@
 
 \usepackage{longtable}
 
+%Pacote para desenho de grafos
+\usepackage{tikz}
+
 
 %\setlrmarginsandblock{3cm}{2cm}{*}
 %\setulmarginsandblock{3cm}{2cm}{*}
@@ -389,15 +392,15 @@
 % inserir lista de ilustrações
 % ---
 
-%%%% no extra space before the entry, or in the LoF/LoT
-%% \setlength{\cftbeforechapterskip}{0pt plus 0pt} %afeta sumário, o que não desejo!
-% \renewcommand*{\insertchapterspace}{} %afeta apenas lista de figuras e lista de tabelas, precisamente o que desejo!
-%
-%\pdfbookmark[0]{\listfigurename}{lof}
-%\listoffigures*
-%\cleardoublepage
-%% ---
-%
+%%% no extra space before the entry, or in the LoF/LoT
+% \setlength{\cftbeforechapterskip}{0pt plus 0pt} %afeta sumário, o que não desejo!
+ \renewcommand*{\insertchapterspace}{} %afeta apenas lista de figuras e lista de tabelas, precisamente o que desejo!
+
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
 %% ---
 %% inserir lista de tabelas
 %% ---
@@ -409,12 +412,16 @@
 %% ---
 %% inserir lista de abreviaturas e siglas
 %% ---
-%%\begin{siglas}
-%%  \item[Fig.] Area of the $i^{th}$ component
-%%  \item[456] Isto é um número
-%%  \item[123] Isto é outro número
-%%  \item[lauro cesar] este é o meu nome
-%%\end{siglas}
+\begin{siglas}
+  \item[ASIC] \textit{Application Specific Integrated Circuits}% ou Circuitos Integrados para Aplicação Específica
+  \item[CPU] \textit{Central Processing Unit}% ou Unidade Central de Processamento
+  \item[DTM] \textit{Dynamic Trace Memoization}% ou Memorização Dinâmica de Traces
+  \item[FPGA]  \textit{Field-Programmable Gate Array}
+  \item[ISA] \textit{Instruction Set Architecture}% ou Conjunto de Instruções de Máquina
+  \item[RISC] \textit{Reduced Instruction Set Computer}
+  \item[VHDL] \textit{VHSIC Hardware Description Language}
+  \item[VHSIC] \textit{Very High Speed Integrated Circuit}
+\end{siglas}
 %% ---
 %
 %% ---
@@ -453,15 +460,15 @@
 \input{metodologia.tex}
 
 \chapter{Fundamentação teórica}
-\input{literatura.tex}
+\input{fundamentacao.tex}
 %
-%\chapter{Análise de domínio corporativo}
-%\label{analiseDominio}
-%\input{analiseDominio.tex}
+%\chapter{Desenvolvimento e implementação}
+%\label{Desenvolvimento}
+%\input{desenvolvimento.tex}
 %
-%\chapter{Recuperação automatizada da informação corporativa e facetada}
-%\label{prototipo}
-%\input{prototipo.tex}
+%\chapter{Análise dos resultados}
+%\label{Analise}
+%\input{analise.tex}
 
 
 
@@ -475,7 +482,7 @@
 % Conclusão
 % ---
 %\chapter[Conclusão]{Conclusão}
-%\label{conclusao}
+%\label{Conclusao}
 %\input{conclusao.tex}
 
 

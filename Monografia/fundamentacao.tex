@@ -1,5 +1,5 @@
 %%\chapter{Revisão da literatura}
-\label{Literatura}
+\label{Fundamentacao}
 %
 %	\begin{flushright}
 %		\textit{``O período de maior ganho em conhecimento e experiência
@@ -7,6 +7,217 @@
 %	\end{flushright}
 %
 %
+
+Neste capítulo busca-se contextualizar o leitor dos fundamentos teóricos nos quais este trabalho se baseia, mais especificamente abordando de forma mais detalhada o funcionamento da técnica DTM. Além disso, as tecnologias utilizadas na realização desta pesquisa serão apresentadas de forma teórica, permitindo ao leitor assimilar seu funcionamento e assim melhor compreender sua aplicação prática descrita no capítulo \ref{Desenvolvimento}.
+
+Para melhor compreensão, este capítulo é dividido em três seções. Na primeira seção ocorre a demonstração de como se dá o processo de memorização dinâmica de traces. Na segunda seção é apresentado o processador LEON3 juntamente com outras tecnologias auxiliares. Por fim, na terceira seção é explicado como funciona o FPGA, tecnologia para gravação de circuitos utilizada neste trabalho.
+
+
+\section{Memorização dinâmica de traces}
+\label{Fundamentacao:DTM}
+
+A memorização dinâmica de traces é uma técnica que busca evitar a perda de tempo computacional reduzindo o número de execuções de instruções já executadas. Diferente de algumas técnicas de programação que exploram o reuso em software, a DTM trabalha a nível de hardware e identifica candidatos ao reuso de forma dinâmica. Essa identificação dinâmica se caracteriza por reutilizar instruções em qualquer ponto do programa, identificando a redundância desta instrução de acordo com os valores dos seus parâmetros de entrada, comparando-os aos de uma execução anterior.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%  INTRODUZIR A TECNICA DTM  %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Na figura \ref{Fig:ExemploDTM} vemos um exemplo do funcionamento de DTM em um fluxo de controle. Na figura, cada nó representa um instrução e as ligações entre os nós representam os possíveis caminhos de execução de um código. 
+
+Em (a) é possível observar uma sequência de intruções que foram executadas pelo programa, com os nós em cinza claro simbolizando as instruções executadas enquanto os em branco os caminhos não tomados.
+
+Em (b) temos em cinza escuro os nós que representam instruções redundantes executadas. Após a identificação dessas instruções, ocorre a construção do trace e a memorização deste.
+
+Em (c) é representado como o fluxo de controle se comporta quando ocorre o reuso do trace. Como pode ser notado, as instruções identificadas como redundantes não são executadas. Ocorre então a escrita dos resultados gerados na execução memorizada e o desvio para a próxima instrução a ser executada que não pertence ao trace, considerando qualquer desvio que tenha sido tomado entre as instruções reusadas.
+
+\begin{figure}
+\label{Fig:ExemploDTM}
+	\caption[Exemplo das etapas do processo de DTM em um fluxo de controle]{
+	\label{fig:facetasIndividuo} Exemplo do processo de DTM em um fluxo de controle: (a) Instruções executadas; (b) Instruções redundantes identificadas, memorização; (c) Fluxo de controle quando ocorre reuso do trace.}
+	
+	\centering
+	\begin{multicols}{3}
+		\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=1cm,thick,main node/.style={fill=black!20,circle,draw,font=\sffamily}]
+	
+		\node[main node] (1) { };
+		\node[main node] (2) [below of=1] { };
+		\node[main node] (3) [below of=2] { };
+		\node[main node, style={thin, fill=none}] (4) [below left of=3] { };
+		\node[main node] (5) [below right of=3] { };
+		\node[main node, style={draw=none, fill=none}] (erapraser6) [below left of=4] { };
+		\node[main node] (6) [below left of=5] { };
+		\node[main node, style={thin, fill=none}] (7) [below right of=5] { };
+		\node[main node, style={thin, fill=none}] (8) [below right of=6] { };
+		\node[main node] (9) [below left of=6] { };
+		\node[main node, style={draw=none, fill=none}] (erapraser10) [below of=7] { };
+		\node[main node, style={draw=none, fill=none}] (10) [below of=8] { };
+		\node[main node] (11) [below of=9] { };
+		\node[main node] (12) [below right of=11] { };
+		\node[main node, style={thin, fill=none}] (13) [below left of=11] { };
+		\node[main node] (14) [below of=12] { };
+		\node[main node, style={draw=none, fill=none}] (15) [below of=13] { };
+		\node[main node] (16) [below of=14] { };
+		\node[main node] (17) [below left of=16] { };
+		\node[main node, style={thin, fill=none}] (18) [below right of=16] { };
+		\node[main node] (19) [below of=17] { };
+		\node[main node, style={draw=none, fill=none}] (20) [below of=16] {};
+		\node[main node, style={draw=none, fill=none}] (21) [below of=20] {};
+		\node[main node, style={draw=none, fill=none}] (a) [below of=21] {(a)};
+		
+		\path[every node/.style={font=\sffamily\small}]
+		(1) edge (2)
+		(2) edge (3)
+		(3) edge (4)
+			edge (5)
+		(4)	edge (erapraser6)
+		(5) edge (6)
+			edge (7)
+		(6) edge (8)
+			edge (9)
+		(7) edge (erapraser10)
+		(8) edge (10)
+		(9) edge (11)
+		(11)edge (12)
+			edge (13)
+		(12)edge (14)
+		(13)edge (15)
+		(14)edge (16)
+		(16)edge (17)
+			edge (18)
+		(17)edge (19);
+		
+		\end{tikzpicture}
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+
+		\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=1cm,thick,main node/.style={fill=black!50,circle,draw,font=\sffamily}]
+		
+		\node[main node, style={fill=black!20}] (1) { };
+		\node[main node] (2) [below of=1] { };
+		\node[main node] (3) [below of=2] { };
+		\node[main node, style={thin, fill=none}] (4) [below left of=3] { };
+		\node[main node] (5) [below right of=3] { };
+		\node[main node, style={draw=none, fill=none}] (erapraser6) [below left of=4] { };
+		\node[main node] (6) [below left of=5] { };
+		\node[main node, style={thin, fill=none}] (7) [below right of=5] { };
+		\node[main node, style={thin, fill=none}] (8) [below right of=6] { };
+		\node[main node] (9) [below left of=6] { };
+		\node[main node, style={draw=none, fill=none}] (erapraser10) [below of=7] { };
+		\node[main node, style={draw=none, fill=none}] (10) [below of=8] { };
+		\node[main node] (11) [below of=9] { };
+		\node[main node] (12) [below right of=11] { };
+		\node[main node, style={thin, fill=none}] (13) [below left of=11] { };
+		\node[main node] (14) [below of=12] { };
+		\node[main node, style={draw=none, fill=none}] (15) [below of=13] { };
+		\node[main node] (16) [below of=14] { };
+		\node[main node] (17) [below left of=16] { };
+		\node[main node, style={thin, fill=none}] (18) [below right of=16] { };
+		\node[main node, style={fill=black!20}] (19) [below of=17] { };
+		\node[main node, style={draw=none, fill=none}] (20) [below of=16] {};
+		\node[main node, style={draw=none, fill=none}] (21) [below of=20] {};
+		\node[main node, style={draw=none, fill=none}] (b) [below of=21] {(b)};
+		
+		\path[every node/.style={font=\sffamily\small}]
+		(1) edge (2)
+		(2) edge (3)
+		(3) edge (4)
+		edge (5)
+		(4)	edge (erapraser6)
+		(5) edge (6)
+		edge (7)
+		(6) edge (8)
+		edge (9)
+		(7) edge (erapraser10)
+		(8) edge (10)
+		(9) edge (11)
+		(11)edge (12)
+		edge (13)
+		(12)edge (14)
+		(13)edge (15)
+		(14)edge (16)
+		(16)edge (17)
+		edge (18)
+		(17)edge (19);
+		
+		\end{tikzpicture}
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		
+		\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=1cm,thick,main node/.style={fill=black!50,circle,draw,font=\sffamily}]
+		
+		\node[main node, style={fill=black!20}] (1) { };
+		\node[main node] (2) [below of=1] { };
+		\node[main node] (3) [below of=2] { };
+		\node[main node, style={thin, fill=none}] (4) [below left of=3] { };
+		\node[main node] (5) [below right of=3] { };
+		\node[main node, style={draw=none, fill=none}] (erapraser6) [below left of=4] { };
+		\node[main node] (6) [below left of=5] { };
+		\node[main node, style={thin, fill=none}] (7) [below right of=5] { };
+		\node[main node, style={thin, fill=none}] (8) [below right of=6] { };
+		\node[main node] (9) [below left of=6] { };
+		\node[main node, style={draw=none, fill=none}] (erapraser10) [below of=7] { };
+		\node[main node, style={draw=none, fill=none}] (10) [below of=8] { };
+		\node[main node] (11) [below of=9] { };
+		\node[main node] (12) [below right of=11] { };
+		\node[main node, style={thin, fill=none}] (13) [below left of=11] { };
+		\node[main node] (14) [below of=12] { };
+		\node[main node, style={draw=none, fill=none}] (15) [below of=13] { };
+		\node[main node] (16) [below of=14] { };
+		\node[main node] (17) [below left of=16] { };
+		\node[main node, style={thin, fill=none}] (18) [below right of=16] { };
+		\node[main node, style={fill=black!20}] (19) [below of=17] { };
+		\node[main node, style={draw=none, fill=none}] (20) [below of=16] {};
+		\node[main node, style={draw=none, fill=none}] (21) [below of=20] {};
+		\node[main node, style={draw=none, fill=none}] (c) [below of=21] {(c)};
+		
+		\path[every node/.style={font=\sffamily\small}]
+		(1) edge (2)
+		(2) edge (3)
+		(3) edge (4)
+		edge (5)
+		(4)	edge (erapraser6)
+		(5) edge (6)
+		edge (7)
+		(6) edge (8)
+		edge (9)
+		(7) edge (erapraser10)
+		(8) edge (10)
+		(9) edge (11)
+		(11)edge (12)
+		edge (13)
+		(12)edge (14)
+		(13)edge (15)
+		(14)edge (16)
+		(16)edge (17)
+		edge (18)
+		(17)edge (19);
+		
+	    \draw 
+	    (2.west)
+	    -- ++(left:4.5em) 
+	    |- (19.west);
+		
+		\end{tikzpicture}
+	\end{multicols}
+
+\legend{Fonte: elaborada pelo autor}
+\end{figure}
+
+\subsection{Identificação e memorização de traces}
+\label{Fundamentacao:DTM:Identificacao}
+
+\subsection{Reuso de traces}
+\label{Fundamentacao:DTM:Reuso}
+
+\subsection{DTM a nível de hardware}
+\label{Fundamentacao:DTM:Hardware}
 
 
 %

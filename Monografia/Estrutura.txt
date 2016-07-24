@@ -30,8 +30,11 @@ Metodologia
                                           - Texto explicando cada medição fica aqui mesmo?
 
 Fundamentação Teórica
-    Técnica a ser estudada e testada:
-        DTM
+    DTM (Técnica a ser estudada e testada)
+        Introdução
+        Identificação e memorização
+        Reuso
+        Construção do algoritmo em hardware
     Arquitetura utilizada:
         Leon3 / GRLIB
         SPARC

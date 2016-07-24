@@ -23,15 +23,15 @@ Os procedimentos metodológicos adotados podem ser descritas na seguinte sequên
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\item adaptar a técnica DTM para esse conjunto de instruções de máquina (ISA ou \textit{Instruction Set Architecture}), implementar a unidade de memorização dinâmica de traces em linguagem de descrição de hardware, testá-la de forma isolada e integrá-la ao processador da maneira menos invasiva, isto é alterando ao mínimo a unidade de processamento; 
+\item adaptar a técnica DTM para esse conjunto de instruções de máquina, implementar a unidade de memorização dinâmica de traces em linguagem de descrição de hardware, testá-la de forma isolada e integrá-la ao processador da maneira menos invasiva, isto é alterando ao mínimo a unidade de processamento; 
 
-\item realizar testes em um processador sem DTM, que age como unidade de controle, e no processador com DTM, comparando os resultados de ambos obtidos através de  simulação e execução física em placas de FPGA (\textit{Field-Programmable Gate Array});
+\item realizar testes em um processador sem DTM, que age como unidade de controle, e no processador com DTM, comparando os resultados de ambos obtidos através de  simulação e execução física em placas de FPGA;
 
 \end{enumerate}
 
 Essas etapas serão expostas em mais detalhes nas seções subsequentes deste capítulo.
 
-\section{Escolha da Arquitetura} 
+\section{Escolha da arquitetura} 
 \label{Metodologia:Arquitetura}
 
 O primeiro passo do desenvolvimento deste trabalho foi selecionar uma arquitetura de processadores que atendesse os requisitos necessários, listados abaixo:
@@ -42,7 +42,7 @@ O primeiro passo do desenvolvimento deste trabalho foi selecionar uma arquitetur
 	
 	\item Sintetizável e gravável no dispositivo FPGA disponibilizado pela instituição, o Altera Cyclone II EP2C35F672C6;
 	
-	\item ISA do tipo RISC (\textit{Reduced Instruction Set Computer}) ou Java;
+	\item ISA do tipo RISC ou Java;
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -73,19 +73,19 @@ Cabe notar que, enquanto há outros trabalhos que trazem diferentes abordagens s
 %%%%%%%%%%%%%%%%% ESTICAR EM MAIS PARAGRAFOS? %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Porém, devido à natureza prática deste trabalho, a revisão de literatura não se ateve ao estudo teórico da técnica. Uma seção considerável da bibliografia utilizada concerne às tecnologias componentes do trabalho, desde manuais confeccionados pela Altera tratando aspectos físicos do chip de FPGA utilizado à documentos da Aeroflex Gaisler referentes à comunicação com o processador para \textit{debug} de software. Essas referências utilizadas na implementação serão melhor demonstradas nos capítulos \ref{Literatura} e \ref{Desenvolvimento}, onde ocorrerá um maior detalhamento das questões técnicas envolvidas no projeto.
+Porém, devido à natureza prática deste trabalho, a revisão de literatura não se ateve ao estudo teórico da técnica. Uma seção considerável da bibliografia utilizada concerne às tecnologias componentes do trabalho, desde manuais confeccionados pela Altera tratando aspectos físicos do chip de FPGA utilizado à documentos da Aeroflex Gaisler referentes à comunicação com o processador para \textit{debug} de software. Essas referências utilizadas na implementação serão melhor demonstradas nos capítulos \ref{Fundamentacao} e \ref{Desenvolvimento}, onde ocorrerá um maior detalhamento das questões técnicas envolvidas no projeto.
 
 
-\section{Adaptação e Implementação}
+\section{Adaptação e implementação}
 \label{Metodologia:Implementacao}
 
 Em \citeonline{costa2001explorando} a técnica DTM é explorada aplicada a um processador cujo conjunto de instruções é o MIPS I. Neste trabalho a aplicação se dá em um processador que implementa o SPARC v8. Apesar de possuírem muitas semelhanças há também diferenças entre eles, como o fato do SPARC implementar janelas de registradores para uma troca de contexto de execução mais rápida.
 
 Diferenças como a citada se mostram como um empecilho para a aplicação direta de DTM em uma arquitetura diferente seguindo a implementação de \cite{costa2001explorando}. Portanto neste trabalho decidiu-se por estudar o funcionamento da técnica de forma ampla e genérica e projetar uma unidade específica para a arquitetura utilizada, sem fugir dos conceitos básicos que definem o DTM.
 
-A implementação se dá alterando o código-fonte do processador LEON3 na linguagem de descrição de hardware VHDL (\textit{VHSIC Hardware Description Language} onde VHSIC significa \textit{Very High Speed Integrated Circuit}). Por utilizar \textit{generics}, ou seja uma implementação parametrizada, o LEON3 pode ter suas características adaptadas de acordo com a definição do usuário antes do processo de compilação ser iniciado.
+A implementação se dá alterando o código-fonte do processador LEON3 na linguagem de descrição de hardware VHDL. Por utilizar \textit{generics}, ou seja uma implementação parametrizada, o LEON3 pode ter suas características adaptadas de acordo com a definição do usuário antes do processo de compilação ser iniciado.
 
-Para este trabalho, o processador foi configurado de uma maneira que se assemelha a uma unidade de processamento de propósito geral, considerando as restrições impostas pelo fato deste ser aplicado em sistemas embarcados, onde características como tamanho de memória e quantidade de periféricos se comunicando diferem de uma unidade central de processamento (\textit{Central Processing Unit} ou CPU) utilizada em outras aplicações, como estações de trabalho e servidores. Mais detalhes serão discutidos na seção \ref{Implementacao:LEON3}.
+Para este trabalho, o processador foi configurado de uma maneira que se assemelha a uma unidade de processamento de propósito geral, considerando as restrições impostas pelo fato deste ser aplicado em sistemas embarcados, onde características como tamanho de memória e quantidade de periféricos se comunicando diferem de uma unidade central de processamento utilizada em outras aplicações, como estações de trabalho e servidores. Mais detalhes serão discutidos na seção \ref{Implementacao:LEON3}.
 
 %Neste trabalho, o processador foi configurado da seguite forma:
 %
@@ -134,7 +134,7 @@ Para este trabalho, o processador foi configurado de uma maneira que se assemelh
 %\end{itemize}
 
 
-\section{Testes e Análise}
+\section{Testes e análise}
 \label{Metodologia:Analise}
 
 Após completada a implementação do processador com DTM, será iniciada a etapa de testes e análise dos resultados. 
@@ -151,7 +151,7 @@ Como descrito em \ref{Introducao:Objetivos}, os testes realizados tem a função
 
 Para que os resultados tenham valor significativo, o mesmo processador porém sem DTM desempenha o papel de controle, servindo de referência para os valores lidos e permitindo uma visão mais completa dos impactos do mecanismo nas características gerais da unidade de processamento.
 
-A área do chip pode ser estimada pela quantidade de células ou \textit{slices} necessários para a gravação do circuito em FPGA. Essa métrica impacta diretamente no tamanho do circuito resultante, custo por unidade produzida usando tecnologias ASIC (\textit{Application Specific Integrated Circuits}) e qual o número mínimo de células que um dispositivo lógico programável deve possuir para suportá-lo.
+A área do chip pode ser estimada pela quantidade de células ou \textit{slices} necessários para a gravação do circuito em FPGA. Essa métrica impacta diretamente no tamanho do circuito resultante, custo por unidade produzida usando tecnologias ASIC e qual o número mínimo de células que um dispositivo lógico programável deve possuir para suportá-lo.
 
 Além disso, a área do chip impacta indiretamente a potência dissipada e a latência do circuito. Indiretamente pois, apesar de não haver relação de causalidade direta, comumente existe uma correlação entre circuitos com uma área de chip maior e maior quantidade de elementos lógicos, o que pode acarretar em uma perda de potência maior \cite{chu2006rtl}.
 

@@ -35,7 +35,7 @@ Assim, é importante conhecer e desenvolver técnicas que possam tornar os proje
 
 Como demonstrado por \citeonline{costa2001explorando}, muitos programas acabam por ter instruções redundantes ao longo de seu fluxo de execução. Assim, tempo computacional é perdido para se obter resultados já calculados.
 
-Uma das técnicas propostas para reduzir esse desperdício de poder de processamento é a DTM (\textit{Dynamic Trace Memoization} ou Memorização Dinâmica de Traces). A DTM armazena o resultado de conjuntos de instruções executados anteriormente e, caso detecte uma execução redundante do mesmo conjunto, é capaz de armazenar os resultados e desviar o fluxo de controle para a instrução a ser executada após esse conjunto, substituindo a execução linear de cada instrução pelo resultado final, como se o bloco inteiro fosse uma instrução somente. A técnica será abordada com mais detalhes na seção \ref{dtm}.
+Uma das técnicas propostas para reduzir esse desperdício de poder de processamento é a DTM. A DTM armazena o resultado de conjuntos de instruções executados anteriormente e, caso detecte uma execução redundante do mesmo conjunto, é capaz de armazenar os resultados e desviar o fluxo de controle para a instrução a ser executada após esse conjunto, substituindo a execução linear de cada instrução pelo resultado final, como se o bloco inteiro fosse uma instrução somente. A técnica será abordada com mais detalhes na seção \ref{dtm}.
 
 Em simulações realizadas por \citeonline{costa2001explorando}, essa técnica foi capaz de aumentar o desempenho de programas do \textit{SpecInt95 Benchmark Suite} de 1\% até 21\%, variando de acordo com o programa e os parâmetros utilizados na construção das unidades responsáveis por implementar o mecanismo DTM.
 
@@ -88,7 +88,7 @@ Esta tese está organizada em ?? capítulos. Esses capítulos foram ordenados em
 
 	\item No capítulo \ref{Metodologia} é demonstrado o processo metodológico adotado no desenvolvimento deste trabalho. Nele é descrito o processo de seleção da literatura base, a definição das ferramentas e parâmetros para a implementação da DTM e como foi planejado a análise e comparação dos resultados obtidos.
 
-	\item Sequencialmente, no capítulo \ref{Literatura} é apresentada a fundamentação que serve como base teórica para o trabalho, incluindo uma conceituação mais apurada sobre a técnica de memorização dinâmica de traces, além de discorrer sobre a arquitetura de processadores escolhida como referência para a implementação e as tecnologias utilizadas para o desenvolvimento.
+	\item Sequencialmente, no capítulo \ref{Fundamentacao} é apresentada a fundamentação que serve como base teórica para o trabalho, incluindo uma conceituação mais apurada sobre a técnica de memorização dinâmica de traces, além de discorrer sobre a arquitetura de processadores escolhida como referência para a implementação e as tecnologias utilizadas para o desenvolvimento.
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%% ATUALIZAR REFERENCIA CAPITULOS %%%%%%%%%%%%%%%%%
