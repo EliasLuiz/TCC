@@ -4,7 +4,7 @@ Database file #1: abntex2-options.bib
 Database file #2: bibfile.bib
 I was expecting a `,' or a `}'---line 72 of file bibfile.bib
  : 
- : %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ : @article{gabbay1996speculative,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 +---------------------------------------------------------+

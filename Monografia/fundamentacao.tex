@@ -16,7 +16,7 @@ Para melhor compreensão, este capítulo é dividido em três seções. Na prime
 \section{Memorização dinâmica de traces}
 \label{Fundamentacao:DTM}
 
-A memorização dinâmica de traces é uma técnica que busca evitar a perda de tempo computacional reduzindo o número de execuções de instruções já executadas. Diferente de algumas técnicas de programação que exploram o reuso em software, a DTM trabalha a nível de hardware e identifica candidatos ao reuso de forma dinâmica. Essa identificação dinâmica se caracteriza por reutilizar instruções em qualquer ponto do programa, identificando a redundância desta instrução de acordo com os valores dos seus parâmetros de entrada, comparando-os aos de uma execução anterior.
+A memorização dinâmica de traces é uma técnica que busca evitar a perda de tempo computacional reduzindo o número de execuções de instruções já executadas. Diferente de algumas técnicas de programação que exploram o reuso em software, a DTM trabalha a nível de hardware e identifica candidatos ao reuso de forma dinâmica. Essa identificação dinâmica se caracteriza por reutilizar instruções em qualquer ponto do programa, identificando a redundância desta instrução de acordo com os valores dos seus parâmetros de entrada, comparando-os aos de uma execução anterior \cite{costa2001explorando}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -179,7 +179,7 @@ Em (c) é representado como o fluxo de controle se comporta quando ocorre o reus
 		
 		\path[every node/.style={font=\sffamily\small}]
 		(1) edge (2)
-		(2) edge (3)
+		%(2) edge (3)
 		(3) edge (4)
 		edge (5)
 		(4)	edge (erapraser6)
@@ -212,6 +212,10 @@ Em (c) é representado como o fluxo de controle se comporta quando ocorre o reus
 
 \subsection{Identificação e memorização de traces}
 \label{Fundamentacao:DTM:Identificacao}
+
+A primeira etapa do processo de DTM é a identificação de traces. Traces são conjuntos de instruções sequenciais redundantes e que não possuem efeitos colaterais. Instruções são consideradas redundantes quando, dado um determinado conjunto de entradas, a instrução produzirá sempre o mesmo resultado. Exemplos de instruções redundantes e sem efeitos colaterais incluem instruções lógicas e aritméticas e de desvio condicional e incondicional. Instruções que manipulam a memória primária e que executam subrotinas do sistema não são redundantes ou possuem efeitos colaterais, portanto não serão constituintes de um trace.
+
+Operações envolvendo ponto-flutuante possuem a mesma caracterização quanto à redundância e causalidade de efeitos colaterais que as instruções citadas acima. Por exemplo, instruções aritméticas com ponto-flutuante são redundantes enquanto a manipulação de memória envolvendo-os não. Porém, como \citeonline{gabbay1996speculative} observa, instruções de ponto flutuante possuem baixa localidade, o que no caso da construção de uma unidade de DTM as torna indesejáveis, por adicionarem complexidade desnecessária tendo em vista o baixo retorno causado por sua inclusão.
 
 \subsection{Reuso de traces}
 \label{Fundamentacao:DTM:Reuso}

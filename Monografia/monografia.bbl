@@ -17,6 +17,11 @@
   processador}.
 2001. Tese (Doutorado) --- COPPE/UFRJ, Rio de Janeiro, 2001.}
 
+\bibitem[Gabbay 1996]{gabbay1996speculative}
+\abntrefinfo{Gabbay}{GABBAY}{1996}
+{GABBAY, F. Speculative execution based on value prediction.
+Technical Report EE-TR 1080, Technion - Israel Institute of Technology, 1996.}
+
 \bibitem[Gaisler 2010]{gaisler2010leon3}
 \abntrefinfo{Gaisler}{GAISLER}{2010}
 {GAISLER, A. Leon3 processor.
