@@ -20,7 +20,9 @@
 \contentsline {section}{\numberline {3.1}Memoriza\IeC {\c c}\IeC {\~a}o din\IeC {\^a}mica de traces}{14}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Identifica\IeC {\c c}\IeC {\~a}o e memoriza\IeC {\c c}\IeC {\~a}o de traces}{15}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Reuso de traces}{16}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}DTM a n\IeC {\'\i }vel de hardware}{16}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}DTM em hardware}{17}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}A unidade \textit {Memo\_Table\_G}}{17}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}A unidade \textit {Memo\_Table\_T}}{17}{subsection.3.2.2}
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\uppercase {Refer\^encias}}{17}{section*.8}
+\contentsline {chapter}{\uppercase {Refer\^encias}}{18}{section*.8}

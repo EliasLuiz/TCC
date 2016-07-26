@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.11)  25 JUL 2016 00:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.11)  26 JUL 2016 00:53
 entering extended mode
 **./monografia.tex
 (monografia.tex
@@ -1367,7 +1367,33 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 r\tikz\libraries\tikzlibrarytopaths.code.tex"
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
-Package hyperref Info: Option `colorlinks' set `true' on input line 171.
+("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\algorithms\algorit
+hm.sty"
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count276
+\float@exts=\toks43
+\float@box=\box74
+\@float@everytoks=\toks44
+\@floatcapt=\box75
+)
+\@float@every@algorithm=\toks45
+\c@algorithm=\count277
+)
+("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\algorithms\algorit
+hmic.sty"
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count278
+\c@ALC@line=\count279
+\c@ALC@rem=\count280
+\c@ALC@depth=\count281
+\ALC@tlm=\skip273
+\algorithmicindent=\skip274
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 208.
 \monografia@idxfile=\write5
 \openout5 = `monografia.idx'.
 
@@ -1376,27 +1402,27 @@ Writing index file monografia.idx
 (monografia.aux)
 \openout1 = `monografia.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 194.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 231.
 
 ("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-\AtBeginShipoutBox=\box74
-Package hyperref Info: Link coloring ON on input line 194.
+\AtBeginShipoutBox=\box76
+Package hyperref Info: Link coloring ON on input line 231.
 
 ("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
 ty"
@@ -1406,114 +1432,114 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 estring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count276
+\c@section@level=\count282
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 194.
-LaTeX Info: Redefining \ref on input line 194.
-LaTeX Info: Redefining \pageref on input line 194.
-LaTeX Info: Redefining \nameref on input line 194.
-LaTeX Info: Redefining \degres on input line 194.
-LaTeX Info: Redefining \dots on input line 194.
-LaTeX Info: Redefining \up on input line 194.
-\myptabbox=\box75
-\myptabboxwidth=\skip273
+LaTeX Info: Redefining \nameref on input line 231.
+LaTeX Info: Redefining \ref on input line 231.
+LaTeX Info: Redefining \pageref on input line 231.
+LaTeX Info: Redefining \nameref on input line 231.
+LaTeX Info: Redefining \degres on input line 231.
+LaTeX Info: Redefining \dots on input line 231.
+LaTeX Info: Redefining \up on input line 231.
+\myptabbox=\box77
+\myptabboxwidth=\skip275
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 194.
+(lastpage)             ! on input line 231.
 
 ("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count277
+\scratchcounter=\count283
 \scratchdimen=\dimen279
-\scratchbox=\box76
-\nofMPsegments=\count278
-\nofMParguments=\count279
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count280
+\scratchbox=\box78
+\nofMPsegments=\count284
+\nofMParguments=\count285
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count286
 \MPscratchDim=\dimen280
-\MPnumerator=\count281
-\makeMPintoPDFobject=\count282
-\everyMPtoPDFconversion=\toks44
+\MPnumerator=\count287
+\makeMPintoPDFobject=\count288
+\everyMPtoPDFconversion=\toks47
 ) ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 207.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 244.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 207.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 244.
  [1
 
 {C:/Users/elias/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 216.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 253.
 
-Underfull \hbox (badness 1043) in paragraph at lines 216--216
+Underfull \hbox (badness 1043) in paragraph at lines 253--253
 []\T1/phv/m/n/10.95 Monografia apre-sen-tada à Co-or-de-na-ção de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--216
+Underfull \hbox (badness 10000) in paragraph at lines 253--253
 \T1/phv/m/n/10.95 En-ge-nha-ria de Com-pu-ta-ção do Cam-pus
  []
 
 
-Underfull \hbox (badness 3635) in paragraph at lines 216--216
+Underfull \hbox (badness 3635) in paragraph at lines 253--253
 \T1/phv/m/n/10.95 Ti-mó-teo do Cen-tro Fe-de-ral de Edu-ca-ção
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--216
+Underfull \hbox (badness 10000) in paragraph at lines 253--253
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 216.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 253.
 
 ("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )<<ot1.cmap>>
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 216.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 253.
 
 
 ("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )<<oml.cmap>>
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 216
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 253
 .
 
 ("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )<<oms.cmap>>
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 216
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 253
 .
 
 ("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 216.
+(Font)              <10.95> on input line 253.
 <<omx.cmap>>
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 216.
+(Font)              <8> on input line 253.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 216.
+(Font)              <6> on input line 253.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.216 
+l.253 
        [1
 
 
 
 ] [2] [3
 
-] (monografia.lof) [4
-
-]
+] (monografia.lof
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 416.
- [5
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 5.
+) [4
+
+] [5
 
 
 ] (monografia.toc) [6
@@ -1560,11 +1586,43 @@ LaTeX Warning: Reference `Desenvolvimento' on page 14 undefined on input line 1
 
 [14
 
-]) (monografia.bbl (monografia.brf)
+] [15pdfTeX warning (ext4): destination with the same identifier (name{figure.3
+.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.219 
+      ]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 250.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 250.
+ [16pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.267 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+3.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.267 
+      ]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 279.
+) (monografia.bbl (monografia.brf)
 \tf@brf=\write6
 \openout6 = `monografia.brf'.
 
- [15] [16]
+ [17pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3 ...th{\labelsep}{0pt}\begin{thebibliography}{}
+                                                  ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 3.
@@ -1572,7 +1630,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 bibitemlist
 ) 
 AED: lastpage setting LastPage
-[17
+[18
 
 ]
 \tf@lof=\write7
@@ -1581,13 +1639,13 @@ AED: lastpage setting LastPage
 \tf@toc=\write8
 \openout8 = `monografia.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 557.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 557.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 595.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 595.
  (monografia.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 557.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 557.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 595.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 595.
 Package rerunfilecheck Info: File `monografia.brf' has not changed.
-(rerunfilecheck)             Checksum: 239AD232D68CD3ABF088B63A11116981;1006.
+(rerunfilecheck)             Checksum: 1D4E80881AF7C570D020508C6AAF67AD;1187.
 
 
 LaTeX Warning: There were undefined references.
@@ -1595,25 +1653,31 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 557.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 595.
  ) 
 Here is how much of TeX's memory you used:
- 22483 strings out of 493634
- 400117 string characters out of 3135239
- 558104 words of memory out of 3000000
- 25376 multiletter control sequences out of 15000+200000
- 45064 words of font info for 49 fonts, out of 3000000 for 9000
+ 22793 strings out of 493634
+ 404381 string characters out of 3135239
+ 562345 words of memory out of 3000000
+ 25637 multiletter control sequences out of 15000+200000
+ 61047 words of font info for 61 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 60i,12n,54p,2300b,881s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/fontname/8r
-.enc}<C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/urw/helvetic/uhvb8a.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/urw/helvetic/uhvr8a.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on monografia.pdf (18 pages, 118824 bytes).
+ 60i,12n,54p,2300b,890s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
+c}{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-maths
+y.enc}{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
+athit.enc}{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/fon
+tname/8r.enc}<C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/lm/lmmi10.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/lm/lmr10.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/elias/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/elias/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/elias/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on monografia.pdf (19 pages, 162660 bytes).
 PDF statistics:
- 309 PDF objects out of 1000 (max. 8388607)
- 65 named destinations out of 1000 (max. 500000)
- 209 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 377 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
+ 225 words of extra memory for PDF output out of 10000 (max. 10000000)
 

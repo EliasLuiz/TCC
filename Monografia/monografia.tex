@@ -92,7 +92,7 @@
 
 \usepackage{longtable}
 
-%Pacote para desenho de grafos
+%Pacote para desenhos
 \usepackage{tikz}
 
 
@@ -122,6 +122,43 @@
 		Citado nas páginas #2.%
 	\fi}%
 % ---
+
+% Comandos para facilitar a escrita da parte teorica da DTM
+\newcommand{\tablet}{\textit{Memo\_Table\_T}}
+\newcommand{\tableg}{\textit{Memo\_Table\_G}}
+
+%%Pacote para escrita de algoritmos
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%     configurações do pacote algorithm
+% \renewcommand{\algorithmcfname}{alg}
+\floatname{algorithm}{Algoritmo}
+\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{Saída:}}
+\renewcommand{\algorithmicend}{\textbf{fim}}
+\renewcommand{\algorithmicif}{\textbf{se}}
+\renewcommand{\algorithmicthen}{\textbf{então}}
+\renewcommand{\algorithmicelse}{\textbf{senão}}
+\renewcommand{\algorithmicelsif}{\algorithmicelse\ \algorithmicif}
+\renewcommand{\algorithmicendif}{\algorithmicend\ \algorithmicif}
+\renewcommand{\algorithmicfor}{\textbf{para}}
+% \renewcommand{\algorithmicto}{\textbf{até}}
+\renewcommand{\algorithmicforall}{\textbf{para todo}}
+\renewcommand{\algorithmicdo}{\textbf{faça}}
+\renewcommand{\algorithmicendfor}{\algorithmicend\ \algorithmicfor}
+\renewcommand{\algorithmicwhile}{\textbf{enquanto}}
+\renewcommand{\algorithmicendwhile}{\algorithmicend\ \algorithmicwhile}
+\renewcommand{\algorithmicloop}{\textbf{laço}}
+\renewcommand{\algorithmicendloop}{\algorithmicend\ \algorithmicloop}
+\renewcommand{\algorithmicrepeat}{\textbf{repita}}
+\renewcommand{\algorithmicuntil}{\textbf{até que}}
+\renewcommand{\algorithmicprint}{\textbf{imprima}}
+\renewcommand{\algorithmicreturn}{\textbf{retorne}}
+\renewcommand{\algorithmictrue}{\textbf{verdadeiro}}
+\renewcommand{\algorithmicfalse}{\textbf{falso}}
+\renewcommand{\algorithmicnot}{\textbf{não}}
+% ---
+
 
 
 % ---
@@ -417,6 +454,7 @@
   \item[CPU] \textit{Central Processing Unit}% ou Unidade Central de Processamento
   \item[DTM] \textit{Dynamic Trace Memoization}% ou Memorização Dinâmica de Traces
   \item[FPGA]  \textit{Field-Programmable Gate Array}
+  \item[GPL] \textit{GNU General Public License}
   \item[ISA] \textit{Instruction Set Architecture}% ou Conjunto de Instruções de Máquina
   \item[RISC] \textit{Reduced Instruction Set Computer}
   \item[VHDL] \textit{VHSIC Hardware Description Language}

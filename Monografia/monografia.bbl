@@ -10,6 +10,12 @@
 {CHU, P.~P. \emph{RTL hardware design using VHDL: coding for efficiency,
   portability, and scalability}. Hoboken: John Wiley \& Sons, 2006.}
 
+\bibitem[Citron, Feitelson e Rudolph 1998]{citron1998accelerating}
+\abntrefinfo{Citron, Feitelson e Rudolph}{CITRON; FEITELSON; RUDOLPH}{1998}
+{CITRON, D.; FEITELSON, D.; RUDOLPH, L. Accelerating multi-media processing by
+  implementing memoing in multiplication and division units. In:  ACM.
+  \emph{ACM SIGPLAN Notices}. [S.l.], 1998. v.~33, n.~11, p. 252--261.}
+
 \bibitem[Costa 2001]{costa2001explorando}
 \abntrefinfo{Costa}{COSTA}{2001}
 {COSTA, A.~T. da.

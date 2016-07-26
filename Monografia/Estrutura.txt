@@ -46,4 +46,4 @@ Fundamentação Teórica
 Trabalhos posteriores:
     Testar DTM especulativo
     Incorporar LOAD e STORE nos traces, controle parecido com o da cache
-    Incorporar instruções de PF? Costa diz ter pouco reuso
+    Incorporar instruções de PF? somente em Memo_Table_G ? Gabbay diz ter pouco reuso, mas pode ter sido só naquele benchmark

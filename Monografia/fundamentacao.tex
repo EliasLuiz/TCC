@@ -38,7 +38,7 @@ Em (c) é representado como o fluxo de controle se comporta quando ocorre o reus
 \begin{figure}
 \label{Fig:ExemploDTM}
 	\caption[Exemplo das etapas do processo de DTM em um fluxo de controle]{
-	\label{fig:facetasIndividuo} Exemplo do processo de DTM em um fluxo de controle: (a) Instruções executadas; (b) Instruções redundantes identificadas, memorização; (c) Fluxo de controle quando ocorre reuso do trace.}
+	Exemplo do processo de DTM em um fluxo de controle: (a) Instruções executadas; (b) Instruções redundantes identificadas, memorização; (c) Fluxo de controle quando ocorre reuso do trace.}
 	
 	\centering
 	\begin{multicols}{3}
@@ -213,15 +213,120 @@ Em (c) é representado como o fluxo de controle se comporta quando ocorre o reus
 \subsection{Identificação e memorização de traces}
 \label{Fundamentacao:DTM:Identificacao}
 
-A primeira etapa do processo de DTM é a identificação de traces. Traces são conjuntos de instruções sequenciais redundantes e que não possuem efeitos colaterais. Instruções são consideradas redundantes quando, dado um determinado conjunto de entradas, a instrução produzirá sempre o mesmo resultado. Exemplos de instruções redundantes e sem efeitos colaterais incluem instruções lógicas e aritméticas e de desvio condicional e incondicional. Instruções que manipulam a memória primária e que executam subrotinas do sistema não são redundantes ou possuem efeitos colaterais, portanto não serão constituintes de um trace.
+A primeira etapa do processo de DTM é a identificação de traces. Traces são conjuntos sequenciais de instruções válidas redundantes e que não possuem efeitos colaterais. Instruções são consideradas redundantes quando, dado um determinado conjunto de entradas, a instrução produzirá sempre o mesmo resultado. Exemplos de instruções redundantes e sem efeitos colaterais incluem instruções lógicas e aritméticas e de desvio condicional e incondicional. Instruções que manipulam a memória primária e que executam sub-rotinas do sistema não são redundantes ou possuem efeitos colaterais, portanto não serão constituintes de um trace.
 
-Operações envolvendo ponto-flutuante possuem a mesma caracterização quanto à redundância e causalidade de efeitos colaterais que as instruções citadas acima. Por exemplo, instruções aritméticas com ponto-flutuante são redundantes enquanto a manipulação de memória envolvendo-os não. Porém, como \citeonline{gabbay1996speculative} observa, instruções de ponto flutuante possuem baixa localidade, o que no caso da construção de uma unidade de DTM as torna indesejáveis, por adicionarem complexidade desnecessária tendo em vista o baixo retorno causado por sua inclusão.
+Operações envolvendo ponto-flutuante possuem a mesma caracterização quanto à redundância e causalidade de efeitos colaterais que as instruções citadas acima. Por exemplo, instruções aritméticas com ponto-flutuante são redundantes enquanto a manipulação de memória envolvendo-os não. Porém, como \citeonline{gabbay1996speculative} observa, instruções de ponto flutuante costumam ter baixa localidade espacial, o que no caso da construção de uma unidade de DTM as torna indesejáveis, por adicionarem complexidade desnecessária tendo em vista o baixo retorno causado por sua inclusão. Isso não impede que a técnica de memorização seja empregada em operações de ponto-flutuante para aumentar seu desempenho, como demonstrado por \citeonline{citron1998accelerating}.
+
+Após a identificação do trace, se dá o processo de memorização. A memorização consiste em armazenar as informações necessárias para permitir a identificação de uma oportunidade de reuso de um trace, além de garantir que o circuito seja capaz de gerar corretamente as saídas necessárias e realizar um desvio para a próxima instrução a ser executada.
+
+
 
 \subsection{Reuso de traces}
 \label{Fundamentacao:DTM:Reuso}
 
-\subsection{DTM a nível de hardware}
-\label{Fundamentacao:DTM:Hardware}
+O reuso de um trace ocorre quando este é redundante e possui uma instância memorizada equivalente ao que deve ser executado. Essas instâncias são equivalentes quando possuem a mesma sequência de instruções e o mesmo contexto de entrada.
+
+O contexto de entrada é definido como o conjunto de valores utilizados no trace cuja origem é externa ao trace. De forma análoga, o contexto de saída são os valores gerados internamente ao trace e que estão disponíveis para uso externo ao término deste.
+
+Como exemplo, tomemos um trace para o pseudocódigo da demonstrado na figura \ref{Fig:ExemploContexto1}. Em um trace gerado após a execução desse código, os valores contidos em $a$, $b$ e $c$ são utilizados internamente mas não possuem seus valores definidos inicialmente no próprio trace, compondo então o contexto de entrada.
+
+\begin{figure}[!h]
+	\label{Fig:ExemploContexto1}
+	\caption[Exemplo de pseudocódigo]{
+		Exemplo de pseudocódigo.}
+	
+		\begin{algorithmic}
+			\STATE $c \leftarrow c + a$
+			\STATE $x \leftarrow c + b$
+			\IF{$x \le 5$}
+			\STATE $y \leftarrow x * 2$
+			\ELSE
+			\STATE $x \leftarrow x + 1$
+			\ENDIF
+		\end{algorithmic}
+	\legend{Fonte: elaborada pelo autor}
+\end{figure}
+
+Suponhamos os valores de entrada como $a = 1$, $b = 2$ e $c = 3$. Com esses valores as instruções armazenadas no trace resultante se assemelhariam com o trace representado na figura \ref{Fig:ExemploContexto2}\footnote{Estariam inclusas no trace também as instruções de comparação e desvio responsáveis pelo desvio condicional, mas por terem formato e efeitos relativos à arquitetura foram omitidas para maior clareza no exemplo.}. 
+%. Estariam inclusas no trace também as instruções de comparação e desvio responsáveis pelo desvio condicional, mas por terem formato e efeitos relativos à arquitetura foram omitidas para maior clareza no exemplo.
+
+\begin{figure}[!h]
+	\label{Fig:ExemploContexto2}
+	\caption[Exemplo de trace para o pseudocódigo da figura \ref{Fig:ExemploContexto1}]{
+		Exemplo de trace para o pseudocódigo da figura \ref{Fig:ExemploContexto1}.}
+	
+	\begin{algorithmic}
+		\STATE $c \leftarrow c + a$
+		\STATE $x \leftarrow c + b$
+		\STATE $x \leftarrow x + 1$
+	\end{algorithmic}
+	\legend{Fonte: elaborada pelo autor}
+\end{figure}
+
+Com os valores do contexto de entrada contidos no parágrafo anterior, o contexto de saída deste trace é $c = 4$ e $x = 7$. Assim, sempre que os valores do contexto de entrada se igualassem a esses ao entrar no trace, não há necessidade de execução das instruções, ocorrendo então a escrita do contexto de saída diretamente. Como essas instruções não possuem efeito colateral, esse processo é transparente para o programa sendo executado.
+
+É possível então observar a importância da memorização correta do trace. Ainda analisando o pseudocódigo da figura \ref{Fig:ExemploContexto1}, caso o contexto de entrada seja $a = 1$, $b = 2$ e $c = 1$, o contexto de saída é $c = 2$, $x = 4$ e $y = 8$. O trace gerado para essa execução difere do trace descrito anteriormente, tanto nas instruções contidas como nos resultados gerados, de forma que o reuso do trace impróprio pode levar a aplicação executando a produzir resultados incorretos.
+
+\section{DTM em hardware}
+\label{Fundamentacao:DTMHardware}
+
+Na seção \ref{Fundamentacao:DTM} é explanado o funcionamento da técnica DTM de forma abstrata, sem detalhar como implementar em hardware um mecanismo capaz de executar tal tarefa. Esta seção apresenta uma possível implementação, descrita por \citeonline{costa2001explorando}.
+
+A implementação de \citeonline{costa2001explorando} tem como alvo o processador MIPS I, um processador com ISA do tipo RISC tal qual a ISA SPARC, se assemelhando em muitas características ao processador Leon3 utilizado neste trabalho. Assim, a implementação apresentada nesta seção é adaptada para se adequar à ISA e desenho do Leon3.
+
+Para armazenamento das informações relevantes ao reuso de um trace será utilizada uma unidade de memória denominada \tablet. Essa unidade de memória será organizada como uma tabela, na qual cada linha corresponde a um trace armazenado. Também é utilizada uma tabela para o armazenamento de informações sobre instruções individuais, denominada \tableg. Esta será utilizada para o reuso de instruções isoladas, enquanto aquela para o reuso de blocos de instruções sequenciais.
+
+\subsection{A unidade \tableg}
+\label{Fundamentacao:DTMHardware:TableG}
+
+\begin{figure}
+	\label{Fig:MemoTableG}
+	\caption[Representação da tabela \tableg]{
+		Representação da tabela \tableg.}
+	\begin{center}
+		%A famosa gambiarra ataca novamente
+		\newcommand{\tabela}[1]{
+			\multicolumn{1}{|c|}{#1}
+		}
+		\begin{tabular}{*{8}{c}}
+			tamanho em bits & 32 & 32 & 32 & 32 & 1 & 1 & 1 \\
+			\cline{2-8}
+			& \tabela{pc} & \tabela{sv1} & \tabela{sv2} & \tabela{res/targ} & \tabela{jmp} & \tabela{brc} & \tabela{btaken} \\
+			\cline{2-8}
+			& \multicolumn{7}{c}{\vdots} \\
+			\cline{2-8}
+			& \tabela{pc} & \tabela{sv1} & \tabela{sv2} & \tabela{res/targ} & \tabela{jmp} & \tabela{brc} & \tabela{btaken} \\
+			\cline{2-8}
+		\end{tabular}
+	\end{center}
+	\legend{Fonte: elaborada pelo autor}
+\end{figure}
+
+\subsection{A unidade \tablet}
+\label{Fundamentacao:DTMHardware:TableT}
+
+\begin{figure}
+	\label{Fig:MemoTableG}
+	\caption[Representação da tabela \tablet]{
+		Representação da tabela \tablet.}
+	\begin{center}
+		%A famosa gambiarra ataca novamente novamente
+		\newcommand{\tabela}[1]{
+			\multicolumn{1}{|c|}{#1}
+		}
+		\begin{tabular}{*{8}{c}}
+			tamanho em bits & 32 & 32 & 32 & 32 & 1 & 1 & 1 \\
+			\cline{2-8}
+			& \tabela{pc} & \tabela{sv1} & \tabela{sv2} & \tabela{res/targ} & \tabela{jmp} & \tabela{brc} & \tabela{btaken} \\
+			\cline{2-8}
+			& \multicolumn{7}{c}{\vdots} \\
+			\cline{2-8}
+			& \tabela{pc} & \tabela{sv1} & \tabela{sv2} & \tabela{res/targ} & \tabela{jmp} & \tabela{brc} & \tabela{btaken} \\
+			\cline{2-8}
+		\end{tabular}
+	\end{center}
+	\legend{Fonte: elaborada pelo autor}
+\end{figure}
 
 
 %
