@@ -22,7 +22,7 @@
 \contentsline {subsection}{\numberline {3.1.2}Reuso de traces}{16}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}DTM em hardware}{17}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}A unidade \textit {Memo\_Table\_G}}{17}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}A unidade \textit {Memo\_Table\_T}}{17}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}A unidade \textit {Memo\_Table\_T}}{18}{subsection.3.2.2}
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\uppercase {Refer\^encias}}{18}{section*.8}
+\contentsline {chapter}{\uppercase {Refer\^encias}}{20}{section*.8}

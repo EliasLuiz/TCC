@@ -8,15 +8,15 @@
 %
 %
 
-Neste capítulo busca-se contextualizar o leitor dos fundamentos teóricos nos quais este trabalho se baseia, mais especificamente abordando de forma mais detalhada o funcionamento da técnica DTM. Além disso, as tecnologias utilizadas na realização desta pesquisa serão apresentadas de forma teórica, permitindo ao leitor assimilar seu funcionamento e assim melhor compreender sua aplicação prática descrita no capítulo \ref{Desenvolvimento}.
+Neste capítulo busca-se contextualizar o leitor dos fundamentos teóricos nos quais este trabalho se baseia, mais especificamente abordando de forma detalhada o funcionamento da técnica DTM. Além disso, as tecnologias utilizadas na realização desta pesquisa serão apresentadas de forma teórica, permitindo ao leitor assimilar seu funcionamento e assim melhor compreender sua aplicação prática descrita no capítulo \ref{Desenvolvimento}.
 
-Para melhor compreensão, este capítulo é dividido em três seções. Na primeira seção ocorre a demonstração de como se dá o processo de memorização dinâmica de traces. Na segunda seção é apresentado o processador LEON3 juntamente com outras tecnologias auxiliares. Por fim, na terceira seção é explicado como funciona o FPGA, tecnologia para gravação de circuitos utilizada neste trabalho.
+Para melhor compreensão, este capítulo é dividido em quatro seções. Na seção \ref{Fundamentacao:DTM} ocorre a demonstração de como funciona a técnica de memorização dinâmica de traces de forma teórica. Na seção \ref{Fundamentacao:DTMHardware} vemos uma adaptação da técnica para aplicação prática em hardware. Na seção \ref{Fundamentacao:LEON3} é apresentado o processador LEON3 juntamente com outras tecnologias auxiliares. Por fim, na seção \ref{Fundamentacao:FPGA} é explicado como funciona o FPGA, tecnologia para gravação de circuitos utilizada neste trabalho.
 
 
 \section{Memorização dinâmica de traces}
 \label{Fundamentacao:DTM}
 
-A memorização dinâmica de traces é uma técnica que busca evitar a perda de tempo computacional reduzindo o número de execuções de instruções já executadas. Diferente de algumas técnicas de programação que exploram o reuso em software, a DTM trabalha a nível de hardware e identifica candidatos ao reuso de forma dinâmica. Essa identificação dinâmica se caracteriza por reutilizar instruções em qualquer ponto do programa, identificando a redundância desta instrução de acordo com os valores dos seus parâmetros de entrada, comparando-os aos de uma execução anterior \cite{costa2001explorando}.
+A memorização dinâmica de traces é uma técnica que busca evitar a perda de tempo computacional reduzindo o número de execuções de instruções já executadas. Diferente de algumas técnicas de programação que exploram o reuso de computação a nível de software, a DTM trabalha a nível de hardware e identifica candidatos ao reuso de forma dinâmica. Essa identificação dinâmica se caracteriza por reutilizar instruções em qualquer ponto do programa, categorizando uma instrução ou sequência de instruções como redundante de acordo com os valores dos seus parâmetros de entrada, comparando-os aos de uma execução anterior \cite{costa2001explorando}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -213,7 +213,7 @@ Em (c) é representado como o fluxo de controle se comporta quando ocorre o reus
 \subsection{Identificação e memorização de traces}
 \label{Fundamentacao:DTM:Identificacao}
 
-A primeira etapa do processo de DTM é a identificação de traces. Traces são conjuntos sequenciais de instruções válidas redundantes e que não possuem efeitos colaterais. Instruções são consideradas redundantes quando, dado um determinado conjunto de entradas, a instrução produzirá sempre o mesmo resultado. Exemplos de instruções redundantes e sem efeitos colaterais incluem instruções lógicas e aritméticas e de desvio condicional e incondicional. Instruções que manipulam a memória primária e que executam sub-rotinas do sistema não são redundantes ou possuem efeitos colaterais, portanto não serão constituintes de um trace.
+A primeira etapa do processo de DTM é a identificação de traces. Traces são conjuntos sequenciais de instruções válidas redundantes e que não possuem efeitos colaterais. Instruções são consideradas redundantes quando, dado um determinado conjunto de entradas, a instrução produzirá sempre o mesmo resultado. Exemplos de instruções redundantes e sem efeitos colaterais incluem instruções lógicas e aritméticas e de desvio condicional e incondicional. Instruções que manipulam a memória primária e que executam sub-rotinas do sistema não são redundantes e possuem efeitos colaterais, portanto não serão constituintes de um trace.
 
 Operações envolvendo ponto-flutuante possuem a mesma caracterização quanto à redundância e causalidade de efeitos colaterais que as instruções citadas acima. Por exemplo, instruções aritméticas com ponto-flutuante são redundantes enquanto a manipulação de memória envolvendo-os não. Porém, como \citeonline{gabbay1996speculative} observa, instruções de ponto flutuante costumam ter baixa localidade espacial, o que no caso da construção de uma unidade de DTM as torna indesejáveis, por adicionarem complexidade desnecessária tendo em vista o baixo retorno causado por sua inclusão. Isso não impede que a técnica de memorização seja empregada em operações de ponto-flutuante para aumentar seu desempenho, como demonstrado por \citeonline{citron1998accelerating}.
 
@@ -228,7 +228,7 @@ O reuso de um trace ocorre quando este é redundante e possui uma instância mem
 
 O contexto de entrada é definido como o conjunto de valores utilizados no trace cuja origem é externa ao trace. De forma análoga, o contexto de saída são os valores gerados internamente ao trace e que estão disponíveis para uso externo ao término deste.
 
-Como exemplo, tomemos um trace para o pseudocódigo da demonstrado na figura \ref{Fig:ExemploContexto1}. Em um trace gerado após a execução desse código, os valores contidos em $a$, $b$ e $c$ são utilizados internamente mas não possuem seus valores definidos inicialmente no próprio trace, compondo então o contexto de entrada.
+Como exemplo, tomemos um trace para o pseudocódigo demonstrado na figura \ref{Fig:ExemploContexto1}. Em um trace gerado após a execução desse código, os valores contidos em $a$, $b$ e $c$ são utilizados internamente antes de terem seus valores definidos no próprio trace, compondo então o contexto de entrada.
 
 \begin{figure}[!h]
 	\label{Fig:ExemploContexto1}
@@ -265,19 +265,23 @@ Suponhamos os valores de entrada como $a = 1$, $b = 2$ e $c = 3$. Com esses valo
 
 Com os valores do contexto de entrada contidos no parágrafo anterior, o contexto de saída deste trace é $c = 4$ e $x = 7$. Assim, sempre que os valores do contexto de entrada se igualassem a esses ao entrar no trace, não há necessidade de execução das instruções, ocorrendo então a escrita do contexto de saída diretamente. Como essas instruções não possuem efeito colateral, esse processo é transparente para o programa sendo executado.
 
-É possível então observar a importância da memorização correta do trace. Ainda analisando o pseudocódigo da figura \ref{Fig:ExemploContexto1}, caso o contexto de entrada seja $a = 1$, $b = 2$ e $c = 1$, o contexto de saída é $c = 2$, $x = 4$ e $y = 8$. O trace gerado para essa execução difere do trace descrito anteriormente, tanto nas instruções contidas como nos resultados gerados, de forma que o reuso do trace impróprio pode levar a aplicação executando a produzir resultados incorretos.
+É possível então observar a importância da memorização correta do trace. Ainda analisando o pseudocódigo da figura \ref{Fig:ExemploContexto1}, caso o contexto de entrada seja $a = 1$, $b = 2$ e $c = 1$, o contexto de saída é $c = 2$, $x = 4$ e $y = 8$. O trace gerado para essa execução difere do trace descrito anteriormente, tanto nas instruções contidas como nos resultados gerados, de forma que o reuso do trace impróprio pode levar a aplicação que está executando a produzir resultados incorretos.
 
 \section{DTM em hardware}
 \label{Fundamentacao:DTMHardware}
 
 Na seção \ref{Fundamentacao:DTM} é explanado o funcionamento da técnica DTM de forma abstrata, sem detalhar como implementar em hardware um mecanismo capaz de executar tal tarefa. Esta seção apresenta uma possível implementação, descrita por \citeonline{costa2001explorando}.
 
-A implementação de \citeonline{costa2001explorando} tem como alvo o processador MIPS I, um processador com ISA do tipo RISC tal qual a ISA SPARC, se assemelhando em muitas características ao processador Leon3 utilizado neste trabalho. Assim, a implementação apresentada nesta seção é adaptada para se adequar à ISA e desenho do Leon3.
+A implementação de \citeonline{costa2001explorando} tem como alvo o processador MIPS I, um processador com ISA do tipo RISC tal qual a ISA SPARC, se assemelhando em muitas características ao processador LEON3 utilizado neste trabalho. Assim, a implementação apresentada nesta seção é adaptada para se adequar à ISA e desenho do LEON3.
 
 Para armazenamento das informações relevantes ao reuso de um trace será utilizada uma unidade de memória denominada \tablet. Essa unidade de memória será organizada como uma tabela, na qual cada linha corresponde a um trace armazenado. Também é utilizada uma tabela para o armazenamento de informações sobre instruções individuais, denominada \tableg. Esta será utilizada para o reuso de instruções isoladas, enquanto aquela para o reuso de blocos de instruções sequenciais.
 
 \subsection{A unidade \tableg}
 \label{Fundamentacao:DTMHardware:TableG}
+
+Como descrito anteriormente, o primeiro passo do processo de DTM é a identificação de instruções redundantes. Para que o reuso dessas instruções possa ser feito é necessário que as instâncias executadas sejam armazenadas em alguma estrutura, de forma que quando for identificada a redundância o resultado prévio possa ser prontamente utilizado.
+
+Para cumprir este papel, foi projetada uma unidade de memória denominada \tableg. A \tableg\ tem como função armazenar instâncias anteriores e permitir a leitura de resultados. Para que esses valores possam ser lidos e gravados de forma eficiente, essa tabela foi projetada tendo em cada linha uma instância de uma instrução redundante e em cada coluna um campo que deve ser armazenado.
 
 \begin{figure}
 	\label{Fig:MemoTableG}
@@ -286,10 +290,10 @@ Para armazenamento das informações relevantes ao reuso de um trace será utili
 	\begin{center}
 		%A famosa gambiarra ataca novamente
 		\newcommand{\tabela}[1]{
-			\multicolumn{1}{|c|}{#1}
+			\multicolumn{1}{|c|}{$#1$}
 		}
 		\begin{tabular}{*{8}{c}}
-			tamanho em bits & 32 & 32 & 32 & 32 & 1 & 1 & 1 \\
+			tamanho em bits & $32$ & $32$ & $32$ & $32$ & $1$ & $1$ & $1$ \\
 			\cline{2-8}
 			& \tabela{pc} & \tabela{sv1} & \tabela{sv2} & \tabela{res/targ} & \tabela{jmp} & \tabela{brc} & \tabela{btaken} \\
 			\cline{2-8}
@@ -302,28 +306,69 @@ Para armazenamento das informações relevantes ao reuso de um trace será utili
 	\legend{Fonte: elaborada pelo autor}
 \end{figure}
 
+Na figura \ref{Fig:MemoTableG} pode ser vista a distribuição dos bits na \tableg. Abaixo é definido o significado dos valores a serem estocados em cada campo da tabela:
+
+\begin{itemize}
+	\item $pc$: Responsável por armazenar o valor do contador de programa quando a instrução foi executada. Esse valor nada mais é que o endereço de memória onde está localizada a instrução.
+	\item $sv1$: Armazena o valor do primeiro parâmetro passado para a instrução.
+	\item $sv2$: Armazena o valor do segundo parâmetro passado para a instrução.
+	\item $res/targ$: Campo onde é salvo o resultado da computação realizada, seja o resultado de uma instrução lógica ou aritmética ou o endereço para um desvio.
+	\item $jmp$: Caso a instrução seja um desvio incondicional será setado em $1$. Caso contrário estará em $0$.
+	\item $brc$: Caso a instrução seja um desvio condicional será setado em $1$. Caso contrário estará em $0$.
+	\item $btaken$: Caso a instrução seja um desvio condicional e tenha sido tomado será setado em $1$. Caso contrário não tenha sido tomado estará em $0$. Caso não seja um desvio condicional seu valor é indeterminado.
+\end{itemize}
+
+Colocando esses valores armazenados em \tableg\ no contexto da técnica DTM, o campo $pc$ é utilizado para identificar a qual instrução pertence aquela instância armazenada. Os valores de $sv1$ e $sv2$ compõe o contexto de entrada de uma única instrução, podendo esta fazer uso de apenas um ou ambos de acordo com seu formato. Em $res/targ$ temos o contexto de saída da instrução.
+
+Os três campos de um bit servem para identificar como deve ser utilizado o resultado. Caso os três tenham valor $0$, $res/targ$ é copiado para o registrador de destino indicado na instrução. Caso $jmp$ seja $1$, o valor de $res/targ$ é somado ao registrador de programa, o PC, realizando assim um desvio incondicional. Caso $brc$ esteja ativo a instrução é um desvio condicional, e o valor de $res/targ$ é somado ao PC caso $btaken$ também esteja ativo. Independentemente do valor de $btaken$, caso $brc$ esteja ativo ambos os bits serão utilizados para atualizar a unidade de predição de desvios, caso este exista.
+
 \subsection{A unidade \tablet}
 \label{Fundamentacao:DTMHardware:TableT}
 
+Analogamente à \tableg, a \tablet\ tem como objetivo armazenar dados de instâncias de instruções armazenadas afim de permitir o reuso destas em execuções futuras. Porém, diferentemente daquela, esta armazena informações sobre traces, sendo então responsável por guardar todas as informações necessárias para o reuso de um conjunto de duas ou mais instruções redundantes.
+
+O projeto da \tablet, apesar de compartilhar características com a \tableg, deve ser adaptado para que o armazenamento de informações sobre um trace completo possam ser utilizadas de forma a identificar um trace redundante e reutilizá-lo de forma transparente à aplicação utilizando a unidade de processamento. 
+
+A \tablet\ é então também uma unidade de memória organizada em forma tabular na qual cada linha representa um trace, ou seja uma instância de execução de uma sequência de instruções, e cada coluna um campo necessário para identificação ou reuso correto deste trace. A descrição destes campos, que podem ser vistos na figura \ref{Fig:MemoTableT}, segue abaixo:
+
+\begin{itemize}
+	\item $pc$: .
+	\item $npc$: .
+	\item $icr$: .
+	\item $icv$: .
+	\item $ocr$: .
+	\item $ocv$: .
+	\item $bmask$: .
+	\item $btaken$: .
+\end{itemize}
+
 \begin{figure}
-	\label{Fig:MemoTableG}
+	\label{Fig:MemoTableT}
 	\caption[Representação da tabela \tablet]{
 		Representação da tabela \tablet.}
 	\begin{center}
 		%A famosa gambiarra ataca novamente novamente
 		\newcommand{\tabela}[1]{
-			\multicolumn{1}{|c|}{#1}
+			\multicolumn{1}{|@{ }c@{ }|}{#1}
 		}
-		\begin{tabular}{*{8}{c}}
-			tamanho em bits & 32 & 32 & 32 & 32 & 1 & 1 & 1 \\
-			\cline{2-8}
-			& \tabela{pc} & \tabela{sv1} & \tabela{sv2} & \tabela{res/targ} & \tabela{jmp} & \tabela{brc} & \tabela{btaken} \\
-			\cline{2-8}
-			& \multicolumn{7}{c}{\vdots} \\
-			\cline{2-8}
-			& \tabela{pc} & \tabela{sv1} & \tabela{sv2} & \tabela{res/targ} & \tabela{jmp} & \tabela{brc} & \tabela{btaken} \\
-			\cline{2-8}
+		
+		\newcommand{\tabelatripla}[2]{
+			\tabela{$#1_{1}$} & \tabela{\hdots} & \tabela{$#1_{#2}$}
+		}
+		
+		\tiny
+		\begin{tabular}{*{21}{c}}
+			tamanho em bits & $32$ & $32$ & \multicolumn{3}{c}{$5 * N_{1}$} & \multicolumn{3}{c}{$32 * N_{1}$} & \multicolumn{3}{c}{$5 * N_{2}$} & \multicolumn{3}{c}{$32 * N_{2}$} & \multicolumn{3}{c}{$1 * B$} & \multicolumn{3}{c}{$1 * B$} \\
+			\cline{2-21}
+			& \tabela{$pc$} & \tabela{$npc$} & \tabelatripla{icr}{N_{1}} & \tabelatripla{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}} & \tabelatripla{bmask}{B} & \tabelatripla{btaken}{B}  \\
+			\cline{2-21}
+			\multicolumn{21}{c}{\vdots} \\
+			\cline{2-21}
+			& \tabela{$pc$} & \tabela{$npc$} & \tabelatripla{icr}{N_{1}} & \tabelatripla{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}} & \tabelatripla{bmask}{B} & \tabelatripla{btaken}{B}  \\
+			\cline{2-21}
 		\end{tabular}
+		\normalsize
+		
 	\end{center}
 	\legend{Fonte: elaborada pelo autor}
 \end{figure}

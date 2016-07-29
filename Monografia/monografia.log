@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.11)  26 JUL 2016 00:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.11)  28 JUL 2016 18:20
 entering extended mode
 **./monografia.tex
 (monografia.tex
@@ -1584,6 +1584,14 @@ ne 88.
 LaTeX Warning: Reference `Desenvolvimento' on page 14 undefined on input line 1
 1.
 
+
+LaTeX Warning: Reference `Fundamentacao:LEON3' on page 14 undefined on input li
+ne 13.
+
+
+LaTeX Warning: Reference `Fundamentacao:FPGA' on page 14 undefined on input lin
+e 13.
+
 [14
 
 ] [15pdfTeX warning (ext4): destination with the same identifier (name{figure.3
@@ -1612,12 +1620,165 @@ l.267
       ]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 279.
+
+Overfull \hbox (29.61943pt too wide) in paragraph at lines 284--285
+[]\T1/phv/m/n/10.95 Para cum-prir este pa-pel, foi pro-je-tada uma uni-dade de 
+me-mó-ria de-no-mi-nada \T1/phv/m/sl/10.95 Memo_Table_G\T1/phv/m/n/10.95 .
+ []
+
+[17] [18pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.3.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.329 
+      ]
+Overfull \hbox (21.13287pt too wide) in paragraph at lines 330--331
+[]\T1/phv/m/n/10.95 O pro-jeto da \T1/phv/m/sl/10.95 Memo_Table_T\T1/phv/m/n/10
+.95 , ape-sar de com-par-ti-lhar ca-rac-te-rís-ti-cas com a \T1/phv/m/sl/10.95 
+Memo_Table_G\T1/phv/m/n/10.95 ,
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 360.
+! Undefined control sequence.
+\@sharp ->\hdots 
+                 
+l.363 ...tabela{$npc$} & \tabelatripla{icr}{N_{1}}
+                                                   & \tabelatripla{icv}{N_{1...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@sharp ->\hdots 
+                 
+l.363 ...a{icr}{N_{1}} & \tabelatripla{icv}{N_{1}}
+                                                   & \tabelatripla{ocr}{N_{2...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@sharp ->\hdots 
+                 
+l.363 ...a{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}}
+                                                   & \tabelatripla{ocv}{N_{2...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@sharp ->\hdots 
+                 
+l.363 ...a{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}}
+                                                   & \tabelatripla{bmask}{B}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@sharp ->\hdots 
+                 
+l.363 ...pla{ocv}{N_{2}} & \tabelatripla{bmask}{B}
+                                                   & \tabelatripla{btaken}{B...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@sharp ->\hdots 
+                 
+l.363 ...ipla{bmask}{B} & \tabelatripla{btaken}{B}
+                                                    \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@sharp ->\hdots 
+                 
+l.367 ...tabela{$npc$} & \tabelatripla{icr}{N_{1}}
+                                                   & \tabelatripla{icv}{N_{1...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@sharp ->\hdots 
+                 
+l.367 ...a{icr}{N_{1}} & \tabelatripla{icv}{N_{1}}
+                                                   & \tabelatripla{ocr}{N_{2...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@sharp ->\hdots 
+                 
+l.367 ...a{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}}
+                                                   & \tabelatripla{ocv}{N_{2...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@sharp ->\hdots 
+                 
+l.367 ...a{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}}
+                                                   & \tabelatripla{bmask}{B}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@sharp ->\hdots 
+                 
+l.367 ...pla{ocv}{N_{2}} & \tabelatripla{bmask}{B}
+                                                   & \tabelatripla{btaken}{B...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@sharp ->\hdots 
+                 
+l.367 ...ipla{bmask}{B} & \tabelatripla{btaken}{B}
+                                                    \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 ) (monografia.bbl (monografia.brf)
 \tf@brf=\write6
 \openout6 = `monografia.brf'.
 
- [17pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
-4}) has been already used, duplicate ignored
+ [19pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -1630,7 +1791,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 bibitemlist
 ) 
 AED: lastpage setting LastPage
-[18
+[20
 
 ]
 \tf@lof=\write7
@@ -1656,28 +1817,33 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 595.
  ) 
 Here is how much of TeX's memory you used:
- 22793 strings out of 493634
- 404381 string characters out of 3135239
- 562345 words of memory out of 3000000
- 25637 multiletter control sequences out of 15000+200000
- 61047 words of font info for 61 fonts, out of 3000000 for 9000
+ 22815 strings out of 493634
+ 404653 string characters out of 3135239
+ 562553 words of memory out of 3000000
+ 25647 multiletter control sequences out of 15000+200000
+ 67537 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  60i,12n,54p,2300b,890s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
-c}{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-maths
-y.enc}{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
-athit.enc}{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/fon
+{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
+t.enc}{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-r
+m.enc}{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
+athsy.enc}{C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/fon
 tname/8r.enc}<C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmsy10.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9/fon
 ts/type1/public/lm/lmmi10.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/lm/lmr10.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/elias/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/elias/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/elias/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on monografia.pdf (19 pages, 162660 bytes).
+/fonts/type1/public/lm/lmmi5.pfb><C:/Users/elias/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Users/elias/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/elias/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/lm/lmr5.pfb><C:/Users/elias/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Users/elias/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/elias/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb><C:/Users/elias/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/elias/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/elias
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on monografia.pdf (21 pages, 225211 bytes).
 PDF statistics:
- 377 PDF objects out of 1000 (max. 8388607)
- 83 named destinations out of 1000 (max. 500000)
+ 412 PDF objects out of 1000 (max. 8388607)
+ 86 named destinations out of 1000 (max. 500000)
  225 words of extra memory for PDF output out of 10000 (max. 10000000)
 

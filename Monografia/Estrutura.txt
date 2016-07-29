@@ -34,7 +34,9 @@ Fundamentação Teórica
         Introdução
         Identificação e memorização
         Reuso
-        Construção do algoritmo em hardware
+    DTM em hardware
+        MemoTableG
+        MemoTableT
     Arquitetura utilizada:
         Leon3 / GRLIB
         SPARC
