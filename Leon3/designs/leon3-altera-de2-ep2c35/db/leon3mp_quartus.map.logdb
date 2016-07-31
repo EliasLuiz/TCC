@@ -1,0 +1,5 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|proc3:\vhdl:p0|mul32:\mgen:mul0|techmult:\xm3232:m3232|gen_mult_pipe:\pipe2:arch0:dwm|lpm_mult:Mult0|mult_m1t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|proc3:\vhdl:p0|mul32:\mgen:mul0|techmult:\xm3232:m3232|gen_mult_pipe:\pipe2:arch0:dwm|lpm_mult:Mult0|mult_m1t:auto_generated|mac_out4,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|proc3:\vhdl:p0|mul32:\mgen:mul0|techmult:\xm3232:m3232|gen_mult_pipe:\pipe2:arch0:dwm|lpm_mult:Mult0|mult_m1t:auto_generated|mac_out6,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|proc3:\vhdl:p0|mul32:\mgen:mul0|techmult:\xm3232:m3232|gen_mult_pipe:\pipe2:arch0:dwm|lpm_mult:Mult0|mult_m1t:auto_generated|mac_out8,

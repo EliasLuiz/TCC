@@ -37,6 +37,12 @@ Fundamentação Teórica
     DTM em hardware
         MemoTableG
         MemoTableT
+            npc - desvio relativo? em vez de armazenar o pc armazenar o desvio?
+            b - armazenar apenas desvio condicional?
+                laços sem acesso a memoria -> b = 0 ?(reuso do laço inteiro)
+                sem unidade previsão branch -> b = 0?
+        Construcao de Traces
+        Reuso de Traces
     Arquitetura utilizada:
         Leon3 / GRLIB
         SPARC

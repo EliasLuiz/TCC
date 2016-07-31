@@ -1,0 +1,14 @@
+
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/clean_rst.v
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/decoder_8b10b.v
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/encoder_8b10b.v
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/ge_1000baseX_constants.v
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/ge_1000baseX_regs.v
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/ge_1000baseX_test.v
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/timescale.v
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/ge_1000baseX.v
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/ge_1000baseX_an.v
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/ge_1000baseX_mdio.v
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/ge_1000baseX_rx.v
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/ge_1000baseX_sync.v
+/mnt/D/CEFET/TCC/Leon3/grlib-gpl-1.5.0-b4164/lib/opencores/ge_1000baseX/ge_1000baseX_tx.v

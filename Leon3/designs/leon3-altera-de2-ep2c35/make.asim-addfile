@@ -1,0 +1,9 @@
+
+addfile -vhdl ../../config.vhd
+addfile -vhdl ../../clkgen_de2.vhd
+addfile -vhdl ../../mypackage.vhd
+addfile -vhdl ../../sdctrl16.vhd
+addfile -vhdl ../../apblcd.vhd
+addfile -vhdl ../../leon3mp.vhd
+addfile -vhdl ../../mt48lc16m16a2.vhd
+addfile -vhdl ../../testbench.vhd
