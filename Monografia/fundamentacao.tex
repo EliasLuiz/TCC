@@ -18,15 +18,6 @@ Para melhor compreensão, este capítulo é dividido em quatro seções. Na seç
 
 A memorização dinâmica de traces é uma técnica que busca evitar a perda de tempo computacional reduzindo o número de execuções de instruções já executadas. Diferente de algumas técnicas de programação que exploram o reuso de computação a nível de software, a DTM trabalha a nível de hardware e identifica candidatos ao reuso de forma dinâmica. Essa identificação dinâmica se caracteriza por reutilizar instruções em qualquer ponto do programa, categorizando uma instrução ou sequência de instruções como redundante de acordo com os valores dos seus parâmetros de entrada, comparando-os aos de uma execução anterior \cite{costa2001explorando}.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%  INTRODUZIR A TECNICA DTM  %%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 Na figura \ref{Fig:ExemploDTM} vemos um exemplo do funcionamento de DTM em um fluxo de controle. Na figura, cada nó representa um instrução e as ligações entre os nós representam os possíveis caminhos de execução de um código. 
 
 Em (a) é possível observar uma sequência de intruções que foram executadas pelo programa, com os nós em cinza claro simbolizando as instruções executadas enquanto os em branco os caminhos não tomados.
@@ -213,7 +204,7 @@ Em (c) é representado como o fluxo de controle se comporta quando ocorre o reus
 \subsection{Identificação e memorização de traces}
 \label{Fundamentacao:DTM:Identificacao}
 
-A primeira etapa do processo de DTM é a identificação de traces. Traces são conjuntos sequenciais de instruções válidas redundantes e que não possuem efeitos colaterais. Instruções são consideradas redundantes quando, dado um determinado conjunto de entradas, a instrução produzirá sempre o mesmo resultado. Exemplos de instruções redundantes e sem efeitos colaterais incluem instruções lógicas e aritméticas e de desvio condicional e incondicional. Instruções que manipulam a memória primária e que executam sub-rotinas do sistema não são redundantes e possuem efeitos colaterais, portanto não serão constituintes de um trace.
+A primeira etapa do processo de DTM é a identificação de traces. Traces são conjuntos sequenciais de instruções válidas redundantes e que não possuem efeitos colaterais. Instruções são consideradas redundantes quando, dado um determinado conjunto de entradas, a instrução produzirá sempre o mesmo resultado. Exemplos de instruções redundantes e sem efeitos colaterais incluem instruções lógicas e aritméticas e de desvio condicional e incondicional. Instruções que manipulam a memória primária e que executam sub-rotinas do sistema não são redundantes e possuem efeitos colaterais, portanto não serão constituintes de um trace. No caso da arquitetura SPARC também foram consideradas não redundantes as instruções que manipulam as janelas de registradores, já que adicionaram uma complexidade muito grande à criação e armazenamento de traces.
 
 Operações envolvendo ponto-flutuante possuem a mesma caracterização quanto à redundância e causalidade de efeitos colaterais que as instruções citadas acima. Por exemplo, instruções aritméticas com ponto-flutuante são redundantes enquanto a manipulação de memória envolvendo-os não. Porém, como \citeonline{gabbay1996speculative} observa, instruções de ponto flutuante costumam ter baixa localidade espacial, o que no caso da construção de uma unidade de DTM as torna indesejáveis, por adicionarem complexidade desnecessária tendo em vista o baixo retorno causado por sua inclusão. Isso não impede que a técnica de memorização seja empregada em operações de ponto-flutuante para aumentar seu desempenho, como demonstrado por \citeonline{citron1998accelerating}.
 
@@ -272,7 +263,7 @@ Com os valores do contexto de entrada contidos no parágrafo anterior, o context
 
 Na seção \ref{Fundamentacao:DTM} é explanado o funcionamento da técnica DTM de forma abstrata, sem detalhar como implementar em hardware um mecanismo capaz de executar tal tarefa. Esta seção apresenta uma possível implementação, descrita por \citeonline{costa2001explorando}.
 
-A implementação de \citeonline{costa2001explorando} tem como alvo o processador MIPS I, um processador com ISA do tipo RISC tal qual a ISA SPARC, se assemelhando em muitas características ao processador LEON3 utilizado neste trabalho. Assim, a implementação apresentada nesta seção é adaptada para se adequar à ISA e desenho do LEON3.
+A implementação de \citeonline{costa2001explorando} tem como alvo um processador com ISA MIPS I, uma ISA do tipo RISC tal qual a ISA SPARC, se assemelhando em muitas características ao processador LEON3 utilizado neste trabalho. Assim, a implementação apresentada nesta seção é adaptada para se adequar à ISA e desenho do LEON3.
 
 Para armazenamento das informações relevantes ao reuso de um trace será utilizada uma unidade de memória denominada \tablet. Essa unidade de memória será organizada como uma tabela, na qual cada linha corresponde a um trace armazenado. Também é utilizada uma tabela para o armazenamento de informações sobre instruções individuais, denominada \tableg. Esta será utilizada para o reuso de instruções isoladas, enquanto aquela para o reuso de blocos de instruções sequenciais.
 
@@ -382,4 +373,16 @@ Com uso bastante semelhante a $N_{1}$, $N_{2}$ limita a quantidade de registrado
 Por fim, $B$ indica a quantidade máxima de instruções de desvio que serão armazenadas em um trace. Os valores armazenados em $bmask$ e $btaken$ são utilizados para atualizar as unidades de predição de desvio. Caso a aplicação envolva muitas instruções de desvio, aumentar o valor de $B$ aumentará o tamanho máximo dos traces armazenados, permitindo o reuso de mais instruções com uma única entrada.
 
 Esses parâmetros devem ser definidos no momento da construção do hardware. A existência desses se deve ao fato de não interferirem no bom funcionamento da técnica mas influenciar os resultados. A medida que se aumenta o valor dos parâmetros o tamanho máximo dos traces também aumenta, o que pode causar um ganho de desempenho dependendo da aplicação sendo executada. Porém, esses valores são diretamente proporcionais à quantidade de memória necessária para o armazenamento, aumentando a área de chip e o custo do hardware resultante.
+
+
+\subsection{Construção e reuso}
+\label{Fundamentacao:DTMHardware:Integracao}
+
+Para construção de um trace são utilizados dois mapas de contexto e um \textit{buffer} temporário. Esse \textit{buffer} possui o mesmo formato de uma linha da \tablet, enquanto os mapas possuem um bit para cada registrador, totalizando 32 bits.
+
+Quando uma instrução redundante é identificada se inicia a construção do trace. O valor de $pc$ é inserido no \textit{buffer}, enquanto seu valor somado 4 no $npc$. Para cada registrador pertencente ao contexto de entrada, o respectivo bit na máscara de contexto de entrada é posta em nível alto. Caso o bit estivesse em $0$, o número do registrador e seu valor são inseridos no \textit{buffer}. O mesmo se aplica ao mapa de contexto de saída, com a diferença que caso haja duas escritas em um registrador o valor em $ocv$ é atualizado, o que não ocorre no contexto de entrada. Caso a instrução a ser executada seja um desvio, os devidos bits são escritos nas máscaras do \textit{buffer} temporário. 
+
+Para cada instrução subsequente, caso seja redundante, o campo $npc$ recebe o valor do registrador PC mais quatro, enquanto os outros valores são inseridos e atualizados como descrito anteriormente. Caso a instrução não seja redundante o \textit{buffer} é escrito em uma entrada da \tablet\ e os valores do \textit{buffer} e dos mapas são zerados.
+
+Paralelamente, para cada instrução é verificado em \tableg\ e \tablet\ se existem entradas para as quais valor de $pc$ equivale ao do registrador PC. Para as que são encontradas, é verificado então o contexto de entrada. Os registradores indicados pelo campo $icr$ tem seus valores lidos do banco de registradores e comparados com os valores de $icv$ para cada entrada identificadas de \tablet\. Já para \tableg, os registradores indicados na própria instrução tem seus valores comparados com os campos $sv1$ e $sv2$. Caso haja um trace em \tablet\ no qual todos os registradores passem neste teste, ele então é reusado. Caso não haja um trace mas haja um instrução em \tableg\, ela então é reusada. Caso contrário, a instrução é executada normalmente.
 

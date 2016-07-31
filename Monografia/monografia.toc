@@ -23,6 +23,7 @@
 \contentsline {section}{\numberline {3.2}DTM em hardware}{17}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}A unidade \textit {Memo\_Table\_G}}{17}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}A unidade \textit {Memo\_Table\_T}}{19}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Constru\IeC {\c c}\IeC {\~a}o e reuso}{20}{subsection.3.2.3}
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\uppercase {Refer\^encias}}{21}{section*.8}
+\contentsline {chapter}{\uppercase {Refer\^encias}}{22}{section*.8}
