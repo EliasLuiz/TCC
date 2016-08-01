@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  31 JUL 2016 18:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  31 JUL 2016 20:43
 entering extended mode
 **monografia.tex
 (monografia.tex
@@ -1752,10 +1752,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 595.
  ) 
 Here is how much of TeX's memory you used:
- 22803 strings out of 493673
- 402128 string characters out of 3143961
+ 22805 strings out of 493673
+ 402145 string characters out of 3143961
  563409 words of memory out of 3000000
- 25595 multiletter control sequences out of 15000+200000
+ 25596 multiletter control sequences out of 15000+200000
  67537 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  60i,12n,54p,2298b,918s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1773,9 +1773,9 @@ m/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/helvetic/uhvro8a.pfb>
-Output written on monografia.pdf (23 pages, 255075 bytes).
+Output written on monografia.pdf (23 pages, 255431 bytes).
 PDF statistics:
- 433 PDF objects out of 1000 (max. 8388607)
- 89 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 437 PDF objects out of 1000 (max. 8388607)
+ 90 named destinations out of 1000 (max. 500000)
+ 241 words of extra memory for PDF output out of 10000 (max. 10000000)
 
