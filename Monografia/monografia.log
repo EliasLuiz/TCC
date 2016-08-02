@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  2 AUG 2016 00:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  2 AUG 2016 12:45
 entering extended mode
 **monografia.tex
 (monografia.tex
@@ -1520,10 +1520,6 @@ ne 88.
 LaTeX Warning: Reference `Desenvolvimento' on page 14 undefined on input line 1
 1.
 
-
-LaTeX Warning: Reference `Fundamentacao:FPGA' on page 14 undefined on input lin
-e 13.
-
 [14
 
 ] [15pdfTeX warning (ext4): destination with the same identifier (name{figure.3
@@ -1716,9 +1712,14 @@ e.3.5}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.388 
-      ]) (monografia.bbl (monografia.brf)
+      ] [21]
+
+LaTeX Warning: Citation `altera2007cyclone' on page 22 undefined on input line 
+407.
+
+) (monografia.bbl (monografia.brf)
 \tf@brf=\write6
- [21]
+ [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 3.
@@ -1726,37 +1727,37 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 bibitemlist
 ) 
 AED: lastpage setting LastPage
-[22
+[23
 
 ]
 \tf@lof=\write7
 \tf@toc=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 600.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 600.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 602.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 602.
  (monografia.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 600.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 600.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 602.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 602.
 
 
 Package rerunfilecheck Warning: File `monografia.brf' has changed.
 (rerunfilecheck)                Rerun to get bibliographical references right.
 
 Package rerunfilecheck Info: Checksums for `monografia.brf':
-(rerunfilecheck)             Before: C7DBF208DB2A8D80C0ABB87C6FF55E34;1245
-(rerunfilecheck)             After:  4E19ECA58E9B9840242B701432CC9448;1293.
+(rerunfilecheck)             Before: 4E19ECA58E9B9840242B701432CC9448;1293
+(rerunfilecheck)             After:  E3E5B66E68BF69477BBCE0A66D8A70A8;1472.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 600.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 602.
  ) 
 Here is how much of TeX's memory you used:
- 22806 strings out of 493673
- 402155 string characters out of 3143961
- 563503 words of memory out of 3000000
- 25596 multiletter control sequences out of 15000+200000
+ 22809 strings out of 493673
+ 402212 string characters out of 3143961
+ 563595 words of memory out of 3000000
+ 25598 multiletter control sequences out of 15000+200000
  67537 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  60i,12n,54p,2298b,918s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1774,9 +1775,9 @@ m/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/helvetic/uhvro8a.pfb>
-Output written on monografia.pdf (23 pages, 258245 bytes).
+Output written on monografia.pdf (24 pages, 261599 bytes).
 PDF statistics:
- 446 PDF objects out of 1000 (max. 8388607)
- 91 named destinations out of 1000 (max. 500000)
+ 457 PDF objects out of 1000 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
  249 words of extra memory for PDF output out of 10000 (max. 10000000)
 
