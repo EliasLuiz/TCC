@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  31 JUL 2016 20:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  2 AUG 2016 00:39
 entering extended mode
 **monografia.tex
 (monografia.tex
@@ -1521,10 +1521,6 @@ LaTeX Warning: Reference `Desenvolvimento' on page 14 undefined on input line 1
 1.
 
 
-LaTeX Warning: Reference `Fundamentacao:LEON3' on page 14 undefined on input li
-ne 13.
-
-
 LaTeX Warning: Reference `Fundamentacao:FPGA' on page 14 undefined on input lin
 e 13.
 
@@ -1735,26 +1731,31 @@ AED: lastpage setting LastPage
 ]
 \tf@lof=\write7
 \tf@toc=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 595.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 595.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 600.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 600.
  (monografia.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 595.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 595.
-Package rerunfilecheck Info: File `monografia.brf' has not changed.
-(rerunfilecheck)             Checksum: C7DBF208DB2A8D80C0ABB87C6FF55E34;1245.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 600.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 600.
 
+
+Package rerunfilecheck Warning: File `monografia.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `monografia.brf':
+(rerunfilecheck)             Before: C7DBF208DB2A8D80C0ABB87C6FF55E34;1245
+(rerunfilecheck)             After:  4E19ECA58E9B9840242B701432CC9448;1293.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 595.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 600.
  ) 
 Here is how much of TeX's memory you used:
- 22805 strings out of 493673
- 402145 string characters out of 3143961
- 563409 words of memory out of 3000000
+ 22806 strings out of 493673
+ 402155 string characters out of 3143961
+ 563503 words of memory out of 3000000
  25596 multiletter control sequences out of 15000+200000
  67537 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -1773,9 +1774,9 @@ m/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/helvetic/uhvro8a.pfb>
-Output written on monografia.pdf (23 pages, 255431 bytes).
+Output written on monografia.pdf (23 pages, 258245 bytes).
 PDF statistics:
- 437 PDF objects out of 1000 (max. 8388607)
- 90 named destinations out of 1000 (max. 500000)
- 241 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 446 PDF objects out of 1000 (max. 8388607)
+ 91 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
 

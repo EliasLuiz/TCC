@@ -384,10 +384,22 @@ Quando uma instrução redundante é identificada se inicia a construção do tr
 
 Para cada instrução subsequente, caso seja redundante, o campo $npc$ recebe o valor do registrador PC mais quatro, enquanto os outros valores são inseridos e atualizados como descrito anteriormente. Caso a instrução não seja redundante o \textit{buffer} é escrito em uma entrada da \tablet\ e os valores do \textit{buffer} e dos mapas são zerados.
 
-Paralelamente, para cada instrução é verificado em \tableg\ e \tablet\ se existem entradas para as quais valor de $pc$ equivale ao do registrador PC. Para as que são encontradas, é verificado então o contexto de entrada. Os registradores indicados pelo campo $icr$ tem seus valores lidos do banco de registradores e comparados com os valores de $icv$ para cada entrada identificadas de \tablet. Já para \tableg, os registradores indicados na própria instrução tem seus valores comparados com os campos $sv1$ e $sv2$. Caso haja um trace em \tablet\ no qual todos os registradores passem neste teste, ele então é reusado. Caso não haja um trace mas haja um instrução em \tableg\, ela então é reusada. Caso contrário, a instrução é executada normalmente.
+Paralelamente, para cada instrução é verificado em \tableg\ e \tablet\ se existem entradas para as quais valor de $pc$ equivale ao do registrador PC. Para as que são encontradas, é verificado então o contexto de entrada. Os registradores indicados pelo campo $icr$ tem seus valores lidos do banco de registradores e comparados com os valores de $icv$ para cada entrada identificadas de \tablet. Já para \tableg, os registradores indicados na própria instrução tem seus valores comparados com os campos $sv1$ e $sv2$. Caso haja um trace em \tablet\ no qual todos os registradores passem neste teste, ele então é reusado. Caso não haja um trace mas haja um instrução em \tableg, ela então é reusada. Caso contrário, a instrução é executada normalmente.
 
 \section{O LEON3}
 \label{Fundamentacao:LEON3}
 
 O processador LEON3 faz parte do GRLIB, um conjunto de projetos de propriedade intelectual para desenvolvimento de \textit{system-on-chip} mantidos pela Cobham Gaisler. Escrito em VHDL e altamente configurável, é possível sintetizar e gravar os elementos da GRLIB em diversas plataformas e editar e simulá-las nas diversas ferramentas de CAD utilizadas no desenvolvimento de hardware em HDL.
 
+\section{FPGA}
+\label{Fundamentacao:FPGA}
+
+Devido a sua versatilidade e relativo baixo custo, decidiu-se por utilizar a tecnologia de FPGA para realização dos testes de hardware. Para produção de poucas unidades, tecnologias ASIC possuem um custo por unidade muito maior que o uso de FPGA, além desta oferecer a possibilidade de realização de modificações no hardware depois de pronto, o que é impossível naquela \cite{chu2006rtl}.
+
+Nesta seção será apresentado brevemente o funcionamento de um circuito de FPGA. A intenção é permitir ao leitor a compreensão que mesmo sendo diferente de um circuito impresso, um circuito gravado em FPGA compartilhará de quase todas suas características apesar de sua diferente configuração.
+
+Como dito anteriormente, chips de FPGA são programáveis e, apesar de serem mais caros que um CI de produção em massa, é muito mais barato para poucas unidades a gravação em FPGA que a criação de um CI específico. Além disso, apesar de se mostrarem mais lentos que circuitos usando tecnologias ASIC, os FPGA possuem um comportamento semelhante a suas a estes, respeitando uma proporcionalidade causada pela diferença de tecnologias. Isso os torna ideais para prototipação e testes de hardware, já que é possível testar de forma barata e versátil a funcionalidade e valores proporcionais de um determindado circuito.
+
+Um circuito de FPGA é composto principalmente de LUT e interconexões programáveis. A replicação desses componentes e a possibilidade de programá-los independentemente dá ao FPGA uma capacidade de criar diversos circuitos lógicos de acordo com os valores dados.
+
+Uma LUT é uma pequena unidade de memória que
