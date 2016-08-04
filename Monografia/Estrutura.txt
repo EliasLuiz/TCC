@@ -30,6 +30,7 @@ Metodologia
                                           - Texto explicando cada medição fica aqui mesmo?
 
 Fundamentação Teórica
+    Estado da arte
     DTM (Técnica a ser estudada e testada)
         Introdução
         Identificação e memorização
@@ -41,6 +42,7 @@ Fundamentação Teórica
             b - armazenar apenas desvio condicional?
                 laços sem acesso a memoria -> b = 0 ?(reuso do laço inteiro)
                 sem unidade previsão branch -> b = 0?
+            icr e icv - não armazenar o registrador zero
         Construcao de Traces
         Reuso de Traces
     Arquitetura utilizada:
@@ -53,5 +55,9 @@ Fundamentação Teórica
 
 Trabalhos posteriores:
     Testar DTM especulativo
-    Incorporar LOAD e STORE nos traces, controle parecido com o da cache
+    [Já existe: DTM-M] Incorporar LOAD e STORE nos traces (estilo memvalid do Sodoni?), controle parecido com o da cache
     Incorporar instruções de PF? somente em Memo_Table_G ? Gabbay diz ter pouco reuso, mas pode ter sido só naquele benchmark
+    Memo_Table_G com comparacao por opcode em vez de pc e armazenando imediato para permitir reuso global?
+        Ex: addi $s0, $0, 1 
+            ... 
+            addi $s1, $0, 1 [reusada apesar de pc diferente]

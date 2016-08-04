@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  2 AUG 2016 12:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  4 AUG 2016 17:48
 entering extended mode
 **monografia.tex
 (monografia.tex
@@ -1336,31 +1336,31 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip212
 \algorithmicindent=\skip213
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 208.
+Package hyperref Info: Option `colorlinks' set `true' on input line 210.
 \monografia@idxfile=\write5
 
 Writing index file monografia.idx 
 (monografia.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 231.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 233.
  ("C:\Program Files\MiKTeX 2.9\tex/latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 \AtBeginShipoutBox=\box76
-Package hyperref Info: Link coloring ON on input line 231.
+Package hyperref Info: Link coloring ON on input line 233.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1372,18 +1372,18 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 231.
-LaTeX Info: Redefining \ref on input line 231.
-LaTeX Info: Redefining \pageref on input line 231.
-LaTeX Info: Redefining \nameref on input line 231.
-LaTeX Info: Redefining \degres on input line 231.
-LaTeX Info: Redefining \dots on input line 231.
-LaTeX Info: Redefining \up on input line 231.
+LaTeX Info: Redefining \nameref on input line 233.
+LaTeX Info: Redefining \ref on input line 233.
+LaTeX Info: Redefining \pageref on input line 233.
+LaTeX Info: Redefining \nameref on input line 233.
+LaTeX Info: Redefining \degres on input line 233.
+LaTeX Info: Redefining \dots on input line 233.
+LaTeX Info: Redefining \up on input line 233.
 \myptabbox=\box77
 \myptabboxwidth=\skip214
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 231.
+(lastpage)             ! on input line 233.
 
 ("C:\Users\elias\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
@@ -1401,69 +1401,69 @@ ii"
 \everyMPtoPDFconversion=\toks47
 ) ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 244.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 246.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 244.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 246.
  [1
 
 {C:/Users/elias/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 253.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 255.
 
-Underfull \hbox (badness 1043) in paragraph at lines 253--253
+Underfull \hbox (badness 1043) in paragraph at lines 255--255
 []\T1/phv/m/n/10.95 Monografia apre-sen-tada à Co-or-de-na-ção de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 255--255
 \T1/phv/m/n/10.95 En-ge-nha-ria de Com-pu-ta-ção do Cam-pus
  []
 
 
-Underfull \hbox (badness 3635) in paragraph at lines 253--253
+Underfull \hbox (badness 3635) in paragraph at lines 255--255
 \T1/phv/m/n/10.95 Ti-mó-teo do Cen-tro Fe-de-ral de Edu-ca-ção
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 255--255
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 253.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 255.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )<<ot1.cmap>>
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 253.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 255.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )<<oml.cmap>>
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 253
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 255
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )<<oms.cmap>>
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 253
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 255
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 253.
+(Font)              <10.95> on input line 255.
 <<omx.cmap>>
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 253.
+(Font)              <8> on input line 255.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 253.
+(Font)              <6> on input line 255.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.253 
+l.255 
        [1
 
 
@@ -1522,62 +1522,60 @@ LaTeX Warning: Reference `Desenvolvimento' on page 14 undefined on input line 1
 
 [14
 
-] [15pdfTeX warning (ext4): destination with the same identifier (name{figure.3
-.1}) has been already used, duplicate ignored
+] [15] [16] [17pdfTeX warning (ext4): destination with the same identifier (nam
+e{figure.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.210 
+l.245 
       ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 241.
+(Font)              <9> on input line 263.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 241.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
-}) has been already used, duplicate ignored
+(Font)              <5> on input line 263.
+ [18pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.260 
+l.289 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+3.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.289 
       ]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 270.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 292.
 
-Overfull \hbox (29.61943pt too wide) in paragraph at lines 275--276
+Overfull \hbox (29.61943pt too wide) in paragraph at lines 297--298
 []\T1/phv/m/n/10.95 Para cum-prir este pa-pel, foi pro-je-tada uma uni-dade de 
 me-mó-ria de-no-mi-nada \T1/phv/m/sl/10.95 Memo_Table_G\T1/phv/m/n/10.95 .
  []
 
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3
+[19pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.303 	\item $
-              pc$: ResponsÃ¡vel por armazenar o valor do contador de program...
-] [18pdfTeX warning (ext4): destination with the same identifier (name{figure.3
-.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.320 
-      ]
-Overfull \hbox (21.13287pt too wide) in paragraph at lines 321--322
+l.330 	\item $
+              brc$: Caso a instruÃ§Ã£o seja um desvio condicional serÃ¡ seta...
+]
+Overfull \hbox (21.13287pt too wide) in paragraph at lines 343--344
 []\T1/phv/m/n/10.95 O pro-jeto da \T1/phv/m/sl/10.95 Memo_Table_T\T1/phv/m/n/10
 .95 , ape-sar de com-par-ti-lhar ca-rac-te-rís-ti-cas com a \T1/phv/m/sl/10.95 
 Memo_Table_G\T1/phv/m/n/10.95 ,
  []
 
+[20]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 351.
+(Font)              <7> on input line 373.
+
 ! Undefined control sequence.
 \@sharp ->\hdots 
                  
-l.354 ...tabela{$npc$} & \tabelatripla{icr}{N_{1}}
+l.376 ...tabela{$npc$} & \tabelatripla{icr}{N_{1}}
                                                    & \tabelatripla{icv}{N_{1...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1588,7 +1586,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@sharp ->\hdots 
                  
-l.354 ...a{icr}{N_{1}} & \tabelatripla{icv}{N_{1}}
+l.376 ...a{icr}{N_{1}} & \tabelatripla{icv}{N_{1}}
                                                    & \tabelatripla{ocr}{N_{2...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1599,7 +1597,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@sharp ->\hdots 
                  
-l.354 ...a{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}}
+l.376 ...a{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}}
                                                    & \tabelatripla{ocv}{N_{2...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1610,7 +1608,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@sharp ->\hdots 
                  
-l.354 ...a{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}}
+l.376 ...a{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}}
                                                    & \tabelatripla{bmask}{B}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1621,7 +1619,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@sharp ->\hdots 
                  
-l.354 ...pla{ocv}{N_{2}} & \tabelatripla{bmask}{B}
+l.376 ...pla{ocv}{N_{2}} & \tabelatripla{bmask}{B}
                                                    & \tabelatripla{btaken}{B...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1632,7 +1630,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@sharp ->\hdots 
                  
-l.354 ...ipla{bmask}{B} & \tabelatripla{btaken}{B}
+l.376 ...ipla{bmask}{B} & \tabelatripla{btaken}{B}
                                                     \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1643,7 +1641,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@sharp ->\hdots 
                  
-l.358 ...tabela{$npc$} & \tabelatripla{icr}{N_{1}}
+l.380 ...tabela{$npc$} & \tabelatripla{icr}{N_{1}}
                                                    & \tabelatripla{icv}{N_{1...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1654,7 +1652,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@sharp ->\hdots 
                  
-l.358 ...a{icr}{N_{1}} & \tabelatripla{icv}{N_{1}}
+l.380 ...a{icr}{N_{1}} & \tabelatripla{icv}{N_{1}}
                                                    & \tabelatripla{ocr}{N_{2...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1665,7 +1663,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@sharp ->\hdots 
                  
-l.358 ...a{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}}
+l.380 ...a{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}}
                                                    & \tabelatripla{ocv}{N_{2...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1676,7 +1674,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@sharp ->\hdots 
                  
-l.358 ...a{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}}
+l.380 ...a{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}}
                                                    & \tabelatripla{bmask}{B}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1687,7 +1685,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@sharp ->\hdots 
                  
-l.358 ...pla{ocv}{N_{2}} & \tabelatripla{bmask}{B}
+l.380 ...pla{ocv}{N_{2}} & \tabelatripla{bmask}{B}
                                                    & \tabelatripla{btaken}{B...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1698,7 +1696,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@sharp ->\hdots 
                  
-l.358 ...ipla{bmask}{B} & \tabelatripla{btaken}{B}
+l.380 ...ipla{bmask}{B} & \tabelatripla{btaken}{B}
                                                     \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1706,20 +1704,20 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[19] [20pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.3.5}) has been already used, duplicate ignored
+[21pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.388 
-      ] [21]
+l.398 
+      ] [22]
 
-LaTeX Warning: Citation `altera2007cyclone' on page 22 undefined on input line 
-407.
+LaTeX Warning: Citation `altera2007cyclone' on page 23 undefined on input line 
+429.
 
 ) (monografia.bbl (monografia.brf)
 \tf@brf=\write6
- [22]
+ [23]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 3.
@@ -1727,40 +1725,40 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 bibitemlist
 ) 
 AED: lastpage setting LastPage
-[23
+[24
 
 ]
 \tf@lof=\write7
 \tf@toc=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 602.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 602.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 607.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 607.
  (monografia.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 602.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 602.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 607.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 607.
 
 
 Package rerunfilecheck Warning: File `monografia.brf' has changed.
 (rerunfilecheck)                Rerun to get bibliographical references right.
 
 Package rerunfilecheck Info: Checksums for `monografia.brf':
-(rerunfilecheck)             Before: 4E19ECA58E9B9840242B701432CC9448;1293
-(rerunfilecheck)             After:  E3E5B66E68BF69477BBCE0A66D8A70A8;1472.
+(rerunfilecheck)             Before: 75EC9B4B40A542C8F6BBBE7324A73B90;2031
+(rerunfilecheck)             After:  2860AFC852E3B300EBC8CE47B9876D68;2031.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 602.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 607.
  ) 
 Here is how much of TeX's memory you used:
- 22809 strings out of 493673
- 402212 string characters out of 3143961
- 563595 words of memory out of 3000000
- 25598 multiletter control sequences out of 15000+200000
+ 22863 strings out of 493673
+ 403341 string characters out of 3143961
+ 559168 words of memory out of 3000000
+ 25646 multiletter control sequences out of 15000+200000
  67537 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 60i,12n,54p,2298b,918s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,13n,54p,2298b,918s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Fil
 es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
 nc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname
@@ -1768,16 +1766,17 @@ nc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/lm/lmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
-r10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr5.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
-m/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/urw/helvetic/uhvro8a.pfb>
-Output written on monografia.pdf (24 pages, 261599 bytes).
+mi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/lm/lmr5.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvet
+ic/uhvro8a.pfb>
+Output written on monografia.pdf (25 pages, 280596 bytes).
 PDF statistics:
- 457 PDF objects out of 1000 (max. 8388607)
- 92 named destinations out of 1000 (max. 500000)
- 249 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 512 PDF objects out of 1000 (max. 8388607)
+ 98 named destinations out of 1000 (max. 500000)
+ 257 words of extra memory for PDF output out of 10000 (max. 10000000)
 

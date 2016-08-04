@@ -17,15 +17,16 @@
 \contentsline {section}{\numberline {2.4}Testes e an\IeC {\'a}lise}{12}{section.2.4}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Fundamenta\IeC {\c c}\IeC {\~a}o te\IeC {\'o}rica}}{14}{chapter.3}
-\contentsline {section}{\numberline {3.1}Memoriza\IeC {\c c}\IeC {\~a}o din\IeC {\^a}mica de traces}{14}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Identifica\IeC {\c c}\IeC {\~a}o e memoriza\IeC {\c c}\IeC {\~a}o de traces}{15}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Reuso de traces}{16}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}DTM em hardware}{17}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}A unidade \textit {Memo\_Table\_G}}{17}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}A unidade \textit {Memo\_Table\_T}}{19}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Constru\IeC {\c c}\IeC {\~a}o e reuso}{20}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}O LEON3}{21}{section.3.3}
-\contentsline {section}{\numberline {3.4}FPGA}{21}{section.3.4}
+\contentsline {section}{\numberline {3.1}Estado da Arte}{14}{section.3.1}
+\contentsline {section}{\numberline {3.2}Memoriza\IeC {\c c}\IeC {\~a}o din\IeC {\^a}mica de traces}{15}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Identifica\IeC {\c c}\IeC {\~a}o e memoriza\IeC {\c c}\IeC {\~a}o de traces}{16}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Reuso de traces}{17}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}DTM em hardware}{18}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}A unidade \textit {Memo\_Table\_G}}{19}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}A unidade \textit {Memo\_Table\_T}}{20}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Constru\IeC {\c c}\IeC {\~a}o e reuso}{22}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}O LEON3}{22}{section.3.4}
+\contentsline {section}{\numberline {3.5}FPGA}{23}{section.3.5}
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\uppercase {Refer\^encias}}{23}{section*.8}
+\contentsline {chapter}{\uppercase {Refer\^encias}}{24}{section*.8}
