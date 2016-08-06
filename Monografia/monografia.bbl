@@ -5,6 +5,11 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.6 }
 
+\bibitem[Altera 2007]{altera2007cyclone}
+\abntrefinfo{Altera}{ALTERA}{2007}
+{ALTERA. \emph{Cyclone II Device Handbook}. [S.l.]: Altera Corporation, 2007.
+  v.~1.}
+
 \bibitem[Chu 2006]{chu2006rtl}
 \abntrefinfo{Chu}{CHU}{2006}
 {CHU, P.~P. \emph{RTL hardware design using VHDL: coding for efficiency,

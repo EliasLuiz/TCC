@@ -67,6 +67,7 @@
 \PassOptionsToPackage{normalem}{ulem} % Para não usar sublinhado em referências bibliográficas
 \usepackage{ulem}
 \usepackage{multicol}
+\usepackage{amssymb}
 % ---
 
 %Trocar fonte para Arial ou Helvetica
@@ -454,7 +455,7 @@
 \begin{siglas}
   \item[ASIC] \textit{Application Specific Integrated Circuits}% ou Circuitos Integrados para Aplicação Específica
   \item[CAD] \textit{Computer Aid Design}
-  \item[CI] \textit{Circuito Integrado}
+  \item[CI] Circuito Integrado
   \item[CPU] \textit{Central Processing Unit}% ou Unidade Central de Processamento
   \item[DTM] \textit{Dynamic Trace Memoization}% ou Memorização Dinâmica de Traces
   \item[FPGA]  \textit{Field-Programmable Gate Array}
@@ -512,13 +513,11 @@
 \chapter{Fundamentação teórica}
 \input{fundamentacao.tex}
 %
-%\chapter{Desenvolvimento e implementação}
-%\label{Desenvolvimento}
-%\input{desenvolvimento.tex}
-%
-%\chapter{Análise dos resultados}
-%\label{Analise}
-%\input{analise.tex}
+\chapter{Desenvolvimento e implementação}
+\input{desenvolvimento.tex}
+
+\chapter{Testes e análise dos resultados}
+\input{analise.tex}
 
 
 
@@ -531,9 +530,8 @@
 % ---
 % Conclusão
 % ---
-%\chapter[Conclusão]{Conclusão}
-%\label{Conclusao}
-%\input{conclusao.tex}
+\chapter[Conclusão]{Conclusão}
+\input{conclusao.tex}
 
 
 % ----------------------------------------------------------

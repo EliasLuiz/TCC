@@ -58,7 +58,7 @@ O motivo para que a escolha da arquitetura se desse antes da revisão de literat
 
 Caso fosse selecionada uma arquitetura baseada em Java como o JOP \cite{schoeberl2005jop}, em que o funcionamento do processador é baseado em uma máquina de pilha, seria utilizado como referência básica \citeonline{silva2006memorizacao}, já que este trabalho lida de maneira mais detalhada com a técnica DTM aplicada a uma máquina Java.
 
-Porém, por possuir melhor compatibilidade com o FPGA utilizado, decidiu-se utilizar a arquitetura LEON3, atualmente mantido pela Aeroflex Gaisler, que possui como ISA o SPARC v8 \cite{gaisler2010leon3}. Por ser uma arquitetura de modelo RISC tal qual a arquitetura MIPS, utilizada por \citeonline{costa2001explorando}, este foi tido como a peça de bibliografia central para este trabalho.
+Porém, por possuir melhor compatibilidade com o FPGA utilizado, decidiu-se utilizar a arquitetura LEON3, atualmente mantido pela Cobham Gaisler, que possui como ISA o SPARC v8 \cite{gaisler2010leon3}. Por ser uma arquitetura de modelo RISC tal qual a arquitetura MIPS, utilizada por \citeonline{costa2001explorando}, este foi tido como a peça de bibliografia central para este trabalho.
 
 
 \section{Revisão da literatura}
@@ -73,13 +73,13 @@ Cabe notar que, enquanto há outros trabalhos que trazem diferentes abordagens s
 %%%%%%%%%%%%%%%%% ESTICAR EM MAIS PARAGRAFOS? %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Porém, devido à natureza prática deste trabalho, a revisão de literatura não se ateve ao estudo teórico da técnica. Uma seção considerável da bibliografia utilizada concerne às tecnologias componentes do trabalho, desde manuais confeccionados pela Altera tratando aspectos físicos do chip de FPGA utilizado à documentos da Aeroflex Gaisler referentes à comunicação com o processador para \textit{debug} de software. Essas referências utilizadas na implementação serão melhor demonstradas nos capítulos \ref{Fundamentacao} e \ref{Desenvolvimento}, onde ocorrerá um maior detalhamento das questões técnicas envolvidas no projeto.
+Porém, devido à natureza prática deste trabalho, a revisão de literatura não se ateve ao estudo teórico da técnica. Uma seção considerável da bibliografia utilizada concerne às tecnologias componentes do trabalho, desde manuais confeccionados pela Altera tratando aspectos físicos do chip de FPGA utilizado à documentos da Aeroflex Gaisler, atual Cobham Gaisler, referentes à comunicação com o processador para \textit{debug} de software. Essas referências utilizadas na implementação serão melhor demonstradas nos capítulos \ref{Fundamentacao} e \ref{Desenvolvimento}, onde ocorrerá um maior detalhamento das questões técnicas envolvidas no projeto.
 
 
 \section{Adaptação e implementação}
 \label{Metodologia:Implementacao}
 
-Em \citeonline{costa2001explorando} a técnica DTM é explorada aplicada a um processador cujo conjunto de instruções é o MIPS I. Neste trabalho a aplicação se dá em um processador que implementa o SPARC v8. Apesar de possuírem muitas semelhanças há também diferenças entre eles, como o fato do SPARC implementar janelas de registradores para uma troca de contexto de execução mais rápida.
+Em \citeonline{costa2001explorando} a técnica DTM é aplicada a um processador cujo conjunto de instruções é o MIPS I. Neste trabalho a aplicação se dá em um processador que implementa o SPARC v8. Apesar de possuírem muitas semelhanças há também diferenças entre eles, como o fato do SPARC implementar janelas de registradores para uma troca de contexto de execução mais rápida.
 
 Diferenças como a citada se mostram como um empecilho para a aplicação direta de DTM em uma arquitetura diferente seguindo a implementação de \cite{costa2001explorando}. Portanto neste trabalho decidiu-se por estudar o funcionamento da técnica de forma ampla e genérica e projetar uma unidade específica para a arquitetura utilizada, sem fugir dos conceitos básicos que definem o DTM.
 
@@ -153,7 +153,7 @@ Para que os resultados tenham valor significativo, o mesmo processador porém se
 
 A área do chip pode ser estimada pela quantidade de células ou \textit{slices} necessários para a gravação do circuito em FPGA. Essa métrica impacta diretamente no tamanho do circuito resultante, custo por unidade produzida usando tecnologias ASIC e qual o número mínimo de células que um dispositivo lógico programável deve possuir para suportá-lo.
 
-Além disso, a área do chip impacta indiretamente a potência dissipada e a latência do circuito. Indiretamente pois, apesar de não haver relação de causalidade direta, comumente existe uma correlação entre circuitos com uma área de chip maior e maior quantidade de elementos lógicos, o que pode acarretar em uma perda de potência maior \cite{chu2006rtl}.
+Além disso, a área do chip impacta indiretamente a potência dissipada e a latência do circuito. Apesar de não haver relação de causalidade direta, comumente existe uma correlação entre circuitos com uma área de chip maior e maior quantidade de elementos lógicos, o que pode acarretar em uma perda de potência maior \cite{chu2006rtl}.
 
 A potência dissipada no circuito, ou seja, a energia consumida por este, é outro aspecto importante a ser considerado ao determinar a aplicabilidade da técnica e que pode ser medido diretamente com auxílio de equipamentos para medições elétricas. Além de possuir uma relação direta com o calor produzido no circuito, explicada pelo efeito Joule, a fonte utilizada para alimentação do circuito deve possuir a capacidade de suprir a potência necessária. Isso é um fator determinante em aplicações de sistemas embarcados, nos quais muitas vezes busca-se o sistema com o menor consumo possível devido a estar embutido em outros sistemas, normalmente em um ambiente não idealmente preparado e estar ativado por longos períodos de tempo \cite{tanenbaum2009organizacao}.
 
