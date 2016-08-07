@@ -33,10 +33,19 @@
 {GABBAY, F. Speculative execution based on value prediction.
 Technical Report EE-TR 1080, Technion - Israel Institute of Technology, 1996.}
 
+\bibitem[Gaisler 2010]{leondatasheet}
+\abntrefinfo{Gaisler}{GAISLER}{2010a}
+{GAISLER, C. \emph{LEON3 / LEON3-FT Data Sheet}. [S.l.]: Cobham Gaisler, 2010.}
+
 \bibitem[Gaisler 2010]{gaisler2010leon3}
-\abntrefinfo{Gaisler}{GAISLER}{2010}
-{GAISLER, A. Leon3 processor.
+\abntrefinfo{Gaisler}{GAISLER}{2010b}
+{GAISLER, C. Leon3 processor.
 \emph{Nanoscale Integration and Modeling (NIMO) Group}, 2010.}
+
+\bibitem[Gaisler 2016]{grlibmanual}
+\abntrefinfo{Gaisler}{GAISLER}{2016}
+{GAISLER, C. \emph{GRLIB IP Library User's Manual}. [S.l.]: Cobham Gaisler,
+  2016.}
 
 \bibitem[Gonz{\'a}lez, Tubella e Molina 1999]{gonzalez1999trace}
 \abntrefinfo{Gonz{\'a}lez, Tubella e Molina}{GONZ{\'A}LEZ; TUBELLA;
@@ -91,6 +100,11 @@ Technical Report EE-TR 1080, Technion - Israel Institute of Technology, 1996.}
 \abntrefinfo{Sodani e Sohi}{SODANI; SOHI}{1997}
 {SODANI, A.; SOHI, G.~S. \emph{Dynamic instruction reuse}. [S.l.]: ACM, 1997.
   v.~25.}
+
+\bibitem[{SPARC International, Inc.} 1992]{sparcmanual}
+\abntrefinfo{{SPARC International, Inc.}}{{SPARC International, Inc.}}{1992}
+{{SPARC International, Inc.} \emph{The SPARC Architecture Manual}. Menlo Park,
+  EUA: SPARC International, Inc., 1992.}
 
 \bibitem[Tanenbaum e Zucchi 2009]{tanenbaum2009organizacao}
 \abntrefinfo{Tanenbaum e Zucchi}{TANENBAUM; ZUCCHI}{2009}

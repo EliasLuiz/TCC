@@ -370,16 +370,16 @@ A \tablet\ é então também uma unidade de memória completamente associativa o
 		}
 		
 		\tiny
-		\begin{tabular}{*{21}{c}}
-			tamanho em bits & $32$ & $32$ & \multicolumn{3}{c}{$5 * N_{1}$} & \multicolumn{3}{c}{$32 * N_{1}$} & \multicolumn{3}{c}{$5 * N_{2}$} & \multicolumn{3}{c}{$32 * N_{2}$} & \multicolumn{3}{c}{$1 * B$} & \multicolumn{3}{c}{$1 * B$} \\
-			\cline{2-21}
-			& \tabela{$pc$} & \tabela{$npc$} & \tabelatripla{icr}{N_{1}} & \tabelatripla{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}} & \tabelatripla{bmask}{B} & \tabelatripla{btaken}{B}  \\
-			\cline{2-21}
-			\multicolumn{21}{c}{\vdots} \\
-			\cline{2-21}
-			& \tabela{$pc$} & \tabela{$npc$} & \tabelatripla{icr}{N_{1}} & \tabelatripla{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}} & \tabelatripla{bmask}{B} & \tabelatripla{btaken}{B}  \\
-			\cline{2-21}
-		\end{tabular}
+%		\begin{tabular}{*{21}{c}}
+%			tamanho em bits & $32$ & $32$ & \multicolumn{3}{c}{$5 * N_{1}$} & \multicolumn{3}{c}{$32 * N_{1}$} & \multicolumn{3}{c}{$5 * N_{2}$} & \multicolumn{3}{c}{$32 * N_{2}$} & \multicolumn{3}{c}{$1 * B$} & \multicolumn{3}{c}{$1 * B$} \\
+%			\cline{2-21}
+%			& \tabela{$pc$} & \tabela{$npc$} & \tabelatripla{icr}{N_{1}} & \tabelatripla{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}} & \tabelatripla{bmask}{B} & \tabelatripla{btaken}{B}  \\
+%			\cline{2-21}
+%			\multicolumn{21}{c}{\vdots} \\
+%			\cline{2-21}
+%			& \tabela{$pc$} & \tabela{$npc$} & \tabelatripla{icr}{N_{1}} & \tabelatripla{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}} & \tabelatripla{bmask}{B} & \tabelatripla{btaken}{B}  \\
+%			\cline{2-21}
+%		\end{tabular}
 		\normalsize
 		
 	\end{center}
@@ -411,20 +411,63 @@ Paralelamente, para cada instrução é verificado em \tableg\ e \tablet\ se exi
 \section{O LEON3}
 \label{Fundamentacao:LEON3}
 
-\textbf{EM PROCESSO DE REESCRITA}
+O LEON3 é um processador 32-bit baseado na arquitetura SPARC V8 atualmente mantido pela Cobham Gaisler. Disponibilizado sob a licensa GPL, o código-fonte é na linguagem VHDL e implementado utilizando \textit{generics}, o que permite a configuração dos parâmetros que definem algumas características do processador \cite{grlibmanual}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% <REESCREVER>
+O LEON3 possui um banco de registradores com suporte para 2 a 32 janelas. Cada janela tem acesso a 32 registradores:
 
-%O processador LEON3 faz parte do GRLIB, um conjunto de projetos de propriedade intelectual para desenvolvimento de \textit{system-on-chip} mantidos pela Cobham Gaisler. Escrito em VHDL e altamente configurável, é possível sintetizar e gravar os elementos da GRLIB em diversas plataformas, editar e simulá-las nas diversas ferramentas de CAD utilizadas no desenvolvimento de hardware em HDL.
+\begin{itemize}
+	\item \textit{Global}: 8 registradores acessíveis por todas as janela. Utilizados para armazenamento de valores globais. Registradores 0 a 7.
+	\item \textit{Out}: 8 registradores acessíveis pela janela atual e pela próxima janela. Utilizados para passagem de parâmetros e recebimento de valores de retorno. Registradores 8 a 15.
+	\item \textit{Local}: 8 registradores acessíveis somente pela janela atual. Utilizados para variáveis locais e valores temporários. Registradores 16 a 23.
+	\item \textit{In}: 8 registradores acessíveis pela janela atual e pela janela anterior. Utilizados para recebimento de parâmetros e retorno de valores. Registradores 24 a 31.
+\end{itemize}
 
-%%%% </REESCREVER>
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+A janela atual é determinada pelo \textit{Current Window Pointer}, um contador de 5 bits contido no registrador \textit{Processor State Register}. O contador é incrementado com a instrução RETT e decrementado com a SAVE. O objetivo dessas janelas é agilizar a troca de contexto, permitindo a mudança de vários registradores para um valor anterior em menos instruções \cite{sparcmanual}.
+
+\begin{figure}
+	\label{Fig:Leon3Interno}
+	\caption[Diagrama de blocos interno do LEON3]{
+		Diagrama de blocos interno do LEON3.}
+	\begin{center}
+		\includegraphics[width=\linewidth]{fig/leon3interno.pdf}
+	\end{center}
+	\legend{Fonte: \cite{leondatasheet}}
+\end{figure}
+
+Ao configurar o sistema antes da compilação do código-fonte também é possível optar pela inclusão de uma unidade de processamento de ponto-flutuante. Duas unidades estão disponíveis, a GRFPU e a GRFPU-Lite, ambas se adequando ao padrão IEEE-754.
+
+Além dessas unidades, como demonstrado na figura \ref{Fig:Leon3Interno} são incluídas outras unidades como suporte a depuração, multiplicadores e divisores em hardware, entre outros \cite{grlibmanual}.
+
+
+\begin{figure}
+	\label{Fig:Leon3Externo}
+	\caption[Diagrama de blocos de um sistema utilizando o GRLIB]{
+		Diagrama de blocos de um sistema utilizando o GRLIB.}
+	\begin{center}
+		\includegraphics[width=\linewidth]{fig/leon3externo.pdf}
+	\end{center}
+	\legend{Fonte: \cite{grlibmanual}}
+\end{figure}
+
+A unidade de inteiros, que lida com as instruções que não são de ponto-flutuante na arquitetura SPARC, é organizada em um pipeline de 7 estágios:
+
+\begin{enumerate}
+	\item FE (\textit{Instruction Fetch}): A instrução é buscada na cache de instruções. Caso haja um \textit{miss} a devida instrução é buscada no barramento.
+	\item DE (\textit{Decode}): A instrução é decodificada. O endereço de desvio é calculado.
+	\item RA (\textit{Register Access}): Os registradores utilizados são lidos do banco ou de alguma unidade de \textit{fowarding}.
+	\item EX (\textit{Execute}): Operações lógicas e aritméticas são executadas. Endereços de acesso de memória e de retorno de chamada são calculados.
+	\item ME (\textit{Memory}): Caso a instrução requisite, é feito um acesso à cache de dados. Na ocorrência de um \textit{miss} ou de uma escrita (o tratamento de escritas é \textit{write-through}) o comando é enviado ao barramento principal.
+	\item XC (\textit{Exception}): Tratamento de excessões e interrupções.
+	\item WR (\textit{Write}): O resultado da operação lógica ou aritmética é escrito no banco de registradores.
+\end{enumerate}
+
+As memórias caches são separadas para instruções e dados. Seus tamanhos, formatos e associatividades são configuráveis. A presença de uma MMU para auxiliar o gerenciamento de memória é opcional. As requisições de memória são realizadas para o barramento AHB.
+
+Como pode ser visto na figura \ref{Fig:Leon3Externo}, um sistema GRLIB utiliza uma barramento segundo o padrão AMBA 2.0. O processador é conectado ao barramento AHB, juntamente com o controlador de memória e outras unidades como entradas para JTAG, USB, Ethernet, entre outros. Também está conectado neste barramento um controlador ponte para o APB. O APB é responsável por controle dos periféricos, como temporizadores e portas de entrada e saída de dados  \cite{grlibmanual}.
+
 
 \section{FPGA}
 \label{Fundamentacao:FPGA}
-
-\textbf{EM PROCESSO DE ESCRITA}
 
 Devido a sua versatilidade e relativo baixo custo, decidiu-se por utilizar a tecnologia de FPGA para realização dos testes de hardware. Para produção de poucas unidades, tecnologias ASIC possuem um custo por unidade muito maior que o uso de FPGA, além desta oferecer a possibilidade de realização de modificações no hardware depois de pronto, o que é impossível naquela \cite{chu2006rtl}.
 

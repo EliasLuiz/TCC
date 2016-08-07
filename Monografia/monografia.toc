@@ -26,13 +26,13 @@
 \contentsline {subsection}{\numberline {3.3.2}A unidade \textit {Memo\_Table\_T}}{20}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Constru\IeC {\c c}\IeC {\~a}o e reuso}{22}{subsection.3.3.3}
 \contentsline {section}{\numberline {3.4}O LEON3}{22}{section.3.4}
-\contentsline {section}{\numberline {3.5}FPGA}{22}{section.3.5}
+\contentsline {section}{\numberline {3.5}FPGA}{25}{section.3.5}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Desenvolvimento e implementa\IeC {\c c}\IeC {\~a}o}}{25}{chapter.4}
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Desenvolvimento e implementa\IeC {\c c}\IeC {\~a}o}}{27}{chapter.4}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Testes e an\IeC {\'a}lise dos resultados}}{26}{chapter.5}
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Testes e an\IeC {\'a}lise dos resultados}}{28}{chapter.5}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Conclus\IeC {\~a}o}}{27}{chapter.6}
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Conclus\IeC {\~a}o}}{29}{chapter.6}
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\uppercase {Refer\^encias}}{28}{section*.8}
+\contentsline {chapter}{\uppercase {Refer\^encias}}{30}{section*.8}
