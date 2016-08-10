@@ -370,16 +370,16 @@ A \tablet\ é então também uma unidade de memória completamente associativa o
 		}
 		
 		\tiny
-%		\begin{tabular}{*{21}{c}}
-%			tamanho em bits & $32$ & $32$ & \multicolumn{3}{c}{$5 * N_{1}$} & \multicolumn{3}{c}{$32 * N_{1}$} & \multicolumn{3}{c}{$5 * N_{2}$} & \multicolumn{3}{c}{$32 * N_{2}$} & \multicolumn{3}{c}{$1 * B$} & \multicolumn{3}{c}{$1 * B$} \\
-%			\cline{2-21}
-%			& \tabela{$pc$} & \tabela{$npc$} & \tabelatripla{icr}{N_{1}} & \tabelatripla{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}} & \tabelatripla{bmask}{B} & \tabelatripla{btaken}{B}  \\
-%			\cline{2-21}
-%			\multicolumn{21}{c}{\vdots} \\
-%			\cline{2-21}
-%			& \tabela{$pc$} & \tabela{$npc$} & \tabelatripla{icr}{N_{1}} & \tabelatripla{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}} & \tabelatripla{bmask}{B} & \tabelatripla{btaken}{B}  \\
-%			\cline{2-21}
-%		\end{tabular}
+		\begin{tabular}{*{21}{c}}
+			tamanho em bits & $32$ & $32$ & \multicolumn{3}{c}{$5 * N_{1}$} & \multicolumn{3}{c}{$32 * N_{1}$} & \multicolumn{3}{c}{$5 * N_{2}$} & \multicolumn{3}{c}{$32 * N_{2}$} & \multicolumn{3}{c}{$1 * B$} & \multicolumn{3}{c}{$1 * B$} \\
+			\cline{2-21}
+			& \tabela{$pc$} & \tabela{$npc$} & \tabelatripla{icr}{N_{1}} & \tabelatripla{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}} & \tabelatripla{bmask}{B} & \tabelatripla{btaken}{B}  \\
+			\cline{2-21}
+			\multicolumn{21}{c}{\vdots} \\
+			\cline{2-21}
+			& \tabela{$pc$} & \tabela{$npc$} & \tabelatripla{icr}{N_{1}} & \tabelatripla{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}} & \tabelatripla{bmask}{B} & \tabelatripla{btaken}{B}  \\
+			\cline{2-21}
+		\end{tabular}
 		\normalsize
 		
 	\end{center}
@@ -466,7 +466,7 @@ As memórias caches são separadas para instruções e dados. Seus tamanhos, for
 Como pode ser visto na figura \ref{Fig:Leon3Externo}, um sistema GRLIB utiliza uma barramento segundo o padrão AMBA 2.0. O processador é conectado ao barramento AHB, juntamente com o controlador de memória e outras unidades como entradas para JTAG, USB, Ethernet, entre outros. Também está conectado neste barramento um controlador ponte para o APB. O APB é responsável por controle dos periféricos, como temporizadores e portas de entrada e saída de dados  \cite{grlibmanual}.
 
 
-\section{FPGA}
+\section{\textit{Field-Programmable Gate Array}}
 \label{Fundamentacao:FPGA}
 
 Devido a sua versatilidade e relativo baixo custo, decidiu-se por utilizar a tecnologia de FPGA para realização dos testes de hardware. Para produção de poucas unidades, tecnologias ASIC possuem um custo por unidade muito maior que o uso de FPGA, além desta oferecer a possibilidade de realização de modificações no hardware depois de pronto, o que é impossível naquela \cite{chu2006rtl}.
