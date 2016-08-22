@@ -10,7 +10,7 @@
 %\textbf{Introdução das etapas metodológicas.}
 Esta pesquisa é descritiva em se tratando dos objetivos, já que a observação das características do objeto de pesquisa é o foco principal. É aplicada do ponto de vista de sua natureza, considerando que busca contrastar os resultados obtidos em modelos teóricos e simulações com resultados medidos em uma implementação real. É classificada como qualitativa quanto à abordagem ao problema, pois os resultados apresentados são medições de grandezas do objeto de estudo.
 
-Os procedimentos metodológicos adotados podem ser descritas na seguinte sequência:
+Os procedimentos metodológicos adotados podem ser descritos na seguinte sequência:
 
 \begin{enumerate}
 
@@ -23,7 +23,7 @@ Os procedimentos metodológicos adotados podem ser descritas na seguinte sequên
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\item adaptar a técnica DTM para esse conjunto de instruções de máquina, implementar a unidade de memorização dinâmica de traces em linguagem de descrição de hardware, testá-la de forma isolada e integrá-la ao processador da maneira menos invasiva, isto é alterando ao mínimo a unidade de processamento; 
+\item adaptar a técnica DTM para esse conjunto de instruções de máquina, implementar a unidade de memorização dinâmica de traços em linguagem de descrição de hardware, testá-la de forma isolada e integrá-la ao processador da maneira menos invasiva, isto é alterando ao mínimo a unidade de processamento; 
 
 \item realizar testes em um processador sem DTM, que age como unidade de controle, e no processador com DTM, comparando os resultados de ambos obtidos através de  simulação e execução física em placas de FPGA;
 
@@ -64,16 +64,19 @@ Porém, por possuir melhor compatibilidade com o FPGA utilizado, decidiu-se util
 \section{Revisão da literatura}
 \label{Metodologia:Literatura}
 
-Como dito anteriormente na seção \ref{Metodologia:Arquitetura}, a peça central da literatura utilizada neste trabalho é \citeonline{costa2001explorando} devido a sua abordagem minuciosa ao descrever todas as características que compõe a técnica de memorização dinâmica de traces. Sendo o trabalho mais completo tratando de DTM e contendo uma explicação detalhada em como implementar essa técnica em um processador RISC, é notável a semelhança com este trabalho, o que o torna uma referência de suma importância.
+Como dito anteriormente na seção \ref{Metodologia:Arquitetura}, a peça central da literatura utilizada neste trabalho é \citeonline{costa2001explorando} devido a sua abordagem minuciosa ao descrever todas as características que compõe a técnica de memorização dinâmica de traços. Sendo o trabalho mais completo tratando de DTM e contendo uma explicação detalhada em como implementar essa técnica em um processador RISC, é notável a semelhança com este trabalho, o que o torna uma referência de suma importância.
 
-Cabe notar que, enquanto há outros trabalhos que trazem diferentes abordagens sobre DTM, como reuso especulativo através da predição de valores de entrada, neste trabalho o escopo foi limitado a uma abordagem mais simples, analisando o impacto dos conceitos básicos de DTM em um processador. Outras abordagens adicionando uma maior capacidade e complexidade à unidade serão tratadas na seção \ref{Conclusao:Trabalhos}, onde serão apresentadas algumas possíveis adições para futuros trabalhos que compartilhem essa temática.
+Cabe notar que, enquanto há outros trabalhos que trazem diferentes abordagens sobre DTM, como reuso especulativo através da predição de valores de entrada, neste trabalho o escopo foi limitado a uma abordagem mais simples, analisando o impacto dos conceitos básicos de DTM em um processador. %Outras abordagens adicionando uma maior capacidade e complexidade à unidade serão tratadas na seção \ref{Conclusao:Trabalhos}, onde serão apresentadas algumas possíveis adições para futuros trabalhos que compartilhem essa temática.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% ESTICAR EM MAIS PARAGRAFOS? %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Porém, devido à natureza prática deste trabalho, a revisão de literatura não se ateve ao estudo teórico da técnica. Uma seção considerável da bibliografia utilizada concerne às tecnologias componentes do trabalho, desde manuais confeccionados pela Altera tratando aspectos físicos do chip de FPGA utilizado à documentos da Aeroflex Gaisler, atual Cobham Gaisler, referentes à comunicação com o processador para \textit{debug} de software. Essas referências utilizadas na implementação serão melhor demonstradas nos capítulos \ref{Fundamentacao} e \ref{Desenvolvimento}, onde ocorrerá um maior detalhamento das questões técnicas envolvidas no projeto.
+Porém, devido à natureza prática deste trabalho, a revisão de literatura não se ateve ao estudo teórico da técnica. Uma seção considerável da bibliografia utilizada concerne às tecnologias componentes do trabalho, desde manuais confeccionados pela Altera tratando aspectos físicos do chip de FPGA utilizado à documentos da Aeroflex Gaisler, atual Cobham Gaisler, referentes à comunicação com o processador para \textit{debug} de software. Essas referências utilizadas na implementação serão melhor demonstradas 
+%nos capítulos \ref{Fundamentacao} e \ref{Desenvolvimento}
+no capítulo \ref{Fundamentacao}
+, onde ocorrerá um maior detalhamento das questões técnicas envolvidas no projeto.
 
 
 \section{Adaptação e implementação}
@@ -83,9 +86,9 @@ Em \citeonline{costa2001explorando} a técnica DTM é aplicada a um processador 
 
 Diferenças como a citada se mostram como um empecilho para a aplicação direta de DTM em uma arquitetura diferente seguindo a implementação de \cite{costa2001explorando}. Portanto neste trabalho decidiu-se por estudar o funcionamento da técnica de forma ampla e genérica e projetar uma unidade específica para a arquitetura utilizada, sem fugir dos conceitos básicos que definem o DTM.
 
-A implementação se dá alterando o código-fonte do processador LEON3 na linguagem de descrição de hardware VHDL. Por utilizar \textit{generics}, ou seja uma implementação parametrizada, o LEON3 pode ter suas características adaptadas de acordo com a definição do usuário antes do processo de compilação ser iniciado.
+A implementação se dá alterando o código-fonte do processador LEON3 na linguagem de descrição de hardware VHDL. Por utilizar \textit{generics}, ou seja uma implementação parametrizada, o LEON3 pode ter suas características adaptadas de acordo com a definição do usuário antes do processo de síntese do circuito ser iniciado.
 
-Para este trabalho, o processador foi configurado de uma maneira que se assemelha a uma unidade de processamento de propósito geral, considerando as restrições impostas pelo fato deste ser aplicado em sistemas embarcados, onde características como tamanho de memória e quantidade de periféricos se comunicando diferem de uma unidade central de processamento utilizada em outras aplicações, como estações de trabalho e servidores. Mais detalhes serão discutidos na seção \ref{Implementacao:LEON3}.
+Para este trabalho, o processador foi configurado de uma maneira que se assemelha a uma unidade de processamento de propósito geral, considerando as restrições impostas pelo fato deste ser aplicado em sistemas embarcados, onde características como tamanho de memória e quantidade de periféricos se comunicando diferem de uma unidade central de processamento utilizada em outras aplicações, como estações de trabalho e servidores. %Mais detalhes serão discutidos na seção \ref{Implementacao:LEON3}.
 
 %Neste trabalho, o processador foi configurado da seguite forma:
 %
@@ -147,7 +150,7 @@ Após completada a implementação do processador com DTM, será iniciada a etap
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Como descrito em \ref{Introducao:Objetivos}, os testes realizados tem a função de determinar a área de chip, potência dissipada, latência de ciclo de execução e ganho de performance na execução de programas de \textit{benchmark}. % Para este trabalho os programas de \textit{benchmark} que compõe a suite SPECInt95 servem como parâmetros para a medição de performance dos processadores em diferentes tarefas.
+Como descrito em \ref{Introducao:Objetivos}, os testes realizados tem a função de determinar a área de chip, potência dissipada, latência de ciclo de execução e ganho de performance na execução de programas de \textit{benchmark}. Para este trabalho os programas de \textit{benchmark} que compõe a suite SPECInt 2006 servem como parâmetros para a medição de performance dos processadores em diferentes tarefas.
 
 Para que os resultados tenham valor significativo, o mesmo processador porém sem DTM desempenha o papel de controle, servindo de referência para os valores lidos e permitindo uma visão mais completa dos impactos do mecanismo nas características gerais da unidade de processamento.
 

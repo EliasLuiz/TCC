@@ -33,9 +33,9 @@ Assim, é importante conhecer e desenvolver técnicas que possam tornar os proje
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Como demonstrado por \citeonline{costa2001explorando}, muitos programas acabam por ter instruções redundantes ao longo de seu fluxo de execução. Assim, tempo computacional é perdido para se obter resultados já calculados.
+Como demonstrado por \citeonline{costa2001explorando}, muitos programas acabam por ter instruções redundantes ao longo de seu fluxo de execução. Instruções redundantes são aquelas que não possuem efeitos colaterais e já foram executadas anteriormente com os mesmos valores de entrada, o que faz com que o valor de saída produzido seja o mesmo da execução prévia. Assim, executando essas instruções novamente, tempo computacional é perdido para se obter resultados já calculados.
 
-Uma das técnicas propostas para reduzir esse desperdício de poder de processamento é a DTM. A DTM armazena o resultado de conjuntos de instruções executados anteriormente e, caso detecte uma execução redundante do mesmo conjunto, é capaz de armazenar os resultados e desviar o fluxo de controle para a instrução a ser executada após esse conjunto, substituindo a execução linear de cada instrução pelo resultado final, como se o bloco inteiro fosse uma instrução somente. A técnica será abordada com mais detalhes na seção \ref{dtm}.
+Uma das técnicas propostas para reduzir esse desperdício de poder de processamento é a memorização dinâmica de traços. A DTM armazena o resultado de conjuntos de instruções executados anteriormente e, caso detecte uma execução redundante do mesmo conjunto, é capaz de recuperar os resultados e desviar o fluxo de controle para a instrução a ser executada após esse conjunto, substituindo a execução linear de cada instrução pelo resultado final, como se o bloco inteiro fosse uma instrução somente. A técnica será abordada com mais detalhes na seção \ref{Fundamentacao:DTM}.
 
 Em simulações realizadas por \citeonline{costa2001explorando}, essa técnica foi capaz de aumentar o desempenho de programas do \textit{SpecInt95 Benchmark Suite} de 1\% até 21\%, variando de acordo com o programa e os parâmetros utilizados na construção das unidades responsáveis por implementar o mecanismo DTM.
 
@@ -48,7 +48,7 @@ O problema que motiva este trabalho é saber se a DTM é uma técnica viável pa
 
 A arquitetura de um circuito e a tecnologia utilizada para a sua geração estão intimamente ligados às características do circuito resultante. Considerando isso, algumas métricas utilizadas nesses circuitos resultantes servem para comparar apenas um dos fatores, seja uma mesma arquitetura em diversas tecnologias ou diversas arquiteturas em uma mesma tecnologia.
 
-Segundo \citeonline{chu2006rtl}, as principais métricas que podem ser utilizadas nessas medições são área de chip, velocidade, consumo de potência e custo de produção. Esses quesitos são correlacionados, fazendo que alterações mudem os valores de mais de um ponto, senão todos. Saber como esses fatores se comportam ao inserir uma unidade de DTM em um processador foi o fator que estimulou este trabalho de pesquisa.
+Segundo \citeonline{chu2006rtl}, as principais métricas que podem ser utilizadas nessas medições são área de chip, velocidade, consumo de potência e custo de produção. Esses quesitos são correlacionados, fazendo que alterações mudem os valores de mais de um ponto, senão todos. Saber como esses fatores se comportam ao inserir uma unidade de DTM em um processador foi o fator que estimulou este trabalho de pesquisa, já que nenhum dos trabalhos realizados até o momento realizou uma implementação real de um processador com DTM. Por se aterem a simulações computacionais, foi estimado o efeito da técnica no desempenho do processador, mas é impossível saber o impacto em outros aspectos do circuito sem uma análise de uma unidade física. Mais detalhes sobre os trabalhos passados se encontram na seção \ref{Fundamentacao:EstadoArte}.
 
 \section{Objetivos}
 \label{Introducao:Objetivos} % Falar o que será feito.
@@ -57,19 +57,19 @@ O objetivo deste trabalho é avaliar como as métricas citadas na seção \ref{I
 
 Mais especificamente, os objetivos podem ser descritos nos seguintes tópicos:
 \begin{enumerate}
-	\item Implementar a memorização dinâmica de traços em uma arquitetura de processadores;
+	\item Implementar a memorização dinâmica de traços em uma arquitetura de processador;
 	\item Produzir um circuito físico do processador e comparar os resultados da arquitetura padrão e da arquitetura com DTM nas seguintes métricas:
 	
-%	\begin{itemize}
-%		\item área de chip;
-%		\item potência consumida;
-%		\item latência de ciclo;
-%	\end{itemize}
+	\begin{itemize}
+		\item área de chip;
+		\item potência consumida;
+		\item latência de ciclo;
+	\end{itemize}
 	
-	\item Executar programas de \textit{benchmark} sobre as duas arquiteturas e comparar os resultados de performance de ambas.
+	\item Executar programas de \textit{benchmark}, mais especificamente os que compõe o SPEC CPU 2006, sobre as duas arquiteturas e comparar os resultados de performance de ambas.
 \end{enumerate}
 
-\section{Estrutura da tese}
+\section{Estrutura da monografia}
 \label{Introducao:Estrutura}
 
 %\textbf{Links para os próximos capítulos.}
@@ -77,7 +77,7 @@ Mais especificamente, os objetivos podem ser descritos nos seguintes tópicos:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% ATUALIZAR NUMERO CAPITULOS %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Esta tese está organizada em 6 capítulos. Esses capítulos foram ordenados em uma sequência lógica que facilitasse a compreensão do leitor, já que cronologicamente houve certo paralelismo durante a produção de algumas etapas.
+Esta monografia está organizada em 6 capítulos. Esses capítulos foram ordenados em uma sequência lógica que facilitasse a compreensão do leitor, já que cronologicamente houve certo paralelismo durante a produção de algumas etapas.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% ATUALIZAR NUMERO CAPITULOS %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -88,13 +88,12 @@ Esta tese está organizada em 6 capítulos. Esses capítulos foram ordenados em 
 
 	\item No capítulo \ref{Metodologia} é demonstrado o processo metodológico adotado no desenvolvimento deste trabalho. Nele é descrito o processo de seleção da literatura base, a definição das ferramentas e parâmetros para a implementação da DTM e como foi planejado a análise e comparação dos resultados obtidos.
 
-	\item Sequencialmente, no capítulo \ref{Fundamentacao} é apresentada a fundamentação que serve como base teórica para o trabalho, incluindo uma conceituação mais apurada sobre a técnica de memorização dinâmica de traces, além de discorrer sobre a arquitetura de processadores escolhida como referência para a implementação e as tecnologias utilizadas para o desenvolvimento.
+	\item Sequencialmente, no capítulo \ref{Fundamentacao} é apresentada a fundamentação que serve como base teórica para o trabalho, incluindo uma conceituação mais apurada sobre a técnica de memorização dinâmica de traços, além de discorrer sobre a arquitetura de processadores escolhida como referência para a implementação e as tecnologias utilizadas para o desenvolvimento.
 	
-	\item No capítulo \ref{Desenvolvimento} é exposto todo o processo de desenvolvimento, definindo as decisões de \textit{design} tomadas além das técnicas e softwares utilizados. Também será demonstrado como se deu a implementação da unidade, explicitando as alterações realizadas no processador e como ficou estruturado o produto final.
-	
-	\item A seguir, no capítulo \ref{Analise} são demonstrados os métodos de testes aplicados ao circuito. Somado à exposição dos testes e seus resultados, é feita também uma análise do significado e do impacto que as medições tem na aplicabilidade da técnica de memorização dinâmica de traces.
-	
-	\item Por fim, no capítulo \ref{Conclusao} é feita uma sumarização do trabalho como um todo, realçando os aspectos mais importantes e contextualizando a significância desta pesquisa para o estado da arte de técnicas de reuso aplicadas a conjuntos de instruções.
+%	\item No capítulo \ref{Desenvolvimento} é exposto todo o processo de desenvolvimento, definindo as decisões de \textit{design} tomadas além das técnicas e softwares utilizados. Também será demonstrado como se deu a implementação da unidade, explicitando as alterações realizadas no processador e como ficou estruturado o produto final.
+%	
+%	\item A seguir, no capítulo \ref{Analise} são demonstrados os métodos de testes aplicados ao circuito. Somado à exposição dos testes e seus resultados, é feita também uma análise do significado e do impacto que as medições tem na aplicabilidade da técnica de memorização dinâmica de traços.
+%	
+%	\item Por fim, no capítulo \ref{Conclusao} é feita uma sumarização do trabalho como um todo, realçando os aspectos mais importantes e contextualizando a significância desta pesquisa para o estado da arte de técnicas de reuso aplicadas a conjuntos de instruções.
 	
 \end{itemize}
-

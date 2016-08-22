@@ -1,4 +1,4 @@
-Introdução
+﻿Introdução
     Introdução
         Necessidade de maior desempenho
         Limites físicos e da Lei de Moore
@@ -27,6 +27,7 @@ Metodologia
         Repetir Metodologia:Literatura:Tecnologias ???? - Discutir com o Bruno qual a configuração do processador
     Testes e análise
         Chu - repetir Introducao:Problema - Perguntar Bruno qual benchmark (SPECInt95 (impacto direto)? SPECFp95 (impacto indireto)?)
+						-SPECint vs Dhrystone vs CoreMark
                                           - Texto explicando cada medição fica aqui mesmo?
 
 Fundamentação Teórica

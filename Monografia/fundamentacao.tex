@@ -8,50 +8,52 @@
 %
 %
 
-Neste capítulo busca-se contextualizar o leitor dos fundamentos teóricos nos quais este trabalho se baseia, mais especificamente abordando de forma detalhada o funcionamento da técnica DTM. Além disso, as tecnologias utilizadas na realização desta pesquisa serão apresentadas de forma teórica, permitindo ao leitor assimilar seu funcionamento e assim melhor compreender sua aplicação prática descrita no capítulo \ref{Desenvolvimento}.
+Neste capítulo busca-se contextualizar o leitor dos fundamentos teóricos nos quais este trabalho se baseia, mais especificamente abordando de forma detalhada o funcionamento da técnica DTM. Além disso, as tecnologias utilizadas na realização desta pesquisa serão apresentadas de forma teórica, permitindo ao leitor assimilar seu funcionamento e assim melhor compreender sua aplicação prática
+% descrita no capítulo \ref{Desenvolvimento}
+.
 
-Para melhor compreensão, este capítulo é dividido em cinco seções. Na seção \ref{Fundamentacao:EstadoArte} é apresentado o estado da arte da técnica DTM. Na seção \ref{Fundamentacao:DTM} ocorre a demonstração de como funciona a técnica de memorização dinâmica de traces de forma teórica. Na seção \ref{Fundamentacao:DTMHardware} vemos uma adaptação da técnica para aplicação prática em hardware. Na seção \ref{Fundamentacao:LEON3} é apresentado o processador LEON3 juntamente com outras tecnologias auxiliares. Por fim, na seção \ref{Fundamentacao:FPGA} é explicado como funciona o FPGA, tecnologia para gravação de circuitos utilizada neste trabalho.
+Para melhor compreensão, este capítulo é dividido em cinco seções. Na seção \ref{Fundamentacao:EstadoArte} é apresentado o estado da arte da técnica DTM. Na seção \ref{Fundamentacao:DTM} ocorre a demonstração de como funciona a técnica de memorização dinâmica de traços de forma teórica. Na seção \ref{Fundamentacao:DTMHardware} vemos uma adaptação da técnica para aplicação prática em hardware. Na seção \ref{Fundamentacao:LEON3} é apresentado o processador LEON3 juntamente com outras tecnologias auxiliares. Por fim, na seção \ref{Fundamentacao:FPGA} é explicado como funciona o FPGA, tecnologia para gravação de circuitos utilizada neste trabalho.
 
 \section{Estado da Arte}
 \label{Fundamentacao:EstadoArte}
 
 Apesar de não ser tão difundida quanto outras técnicas, a memorização de computações anteriores tem sido alvo de alguns estudos na busca pelo aumento do desempenho de sistemas computacionais. Por ser um conceito amplo, existem margens para diversas aplicações diferentes, tanto em hardware quanto em software. Como exemplo pode ser citado o trabalho realizado por \cite{citron1998accelerating}, que utilizou a memorização em hardware para reduzir a latência média de unidades de multiplicação e divisão multiciclo. Devido ao foco no reuso de instruções dado a este trabalho, nesta seção serão apresentados rapidamente alguns trabalhos relacionados a esta aplicação de memorização.
 
-Além de realizar um estudo sobre a repetição de instruções, \citeonline{sodani1997dynamic} propõe o uso da técnica de memorização para o reuso de instruções. Os quatro esquemas propostos fazem uso de uma unidade de memória denominada \textit{Reuse Buffer}. O esquema $S_{v}$ armazena e compara apenas os valores do conteúdo dos registradores utilizados na instrução, semelhantemente ao DTM. O esquema $S_{n}$ utiliza apenas o identificador do registrador e um bit de validade que é alterado quando os registradores indicados sofrem escrita. Os esquemas $S_{n+d}$ e $S_{v+d}$ buscam identificar dependências entre as instruções para permitir o reuso de conjuntos de instruções, algo parecido com o reuso de traces mas com entradas para instruções individuais indicando as dependências em vez da construção de uma entrada única para o trace. Todos esses esquemas permitem o reuso de instruções para carregar dados da memória.
+Além de realizar um estudo sobre a repetição de instruções, \citeonline{sodani1997dynamic} propõe o uso da técnica de memorização para o reuso de instruções. Os quatro esquemas propostos fazem uso de uma unidade de memória denominada \textit{Reuse Buffer}. O esquema $S_{v}$ armazena e compara apenas os valores do conteúdo dos registradores utilizados na instrução, semelhantemente ao DTM. O esquema $S_{n}$ utiliza apenas o identificador do registrador e um bit de validade que é alterado quando os registradores indicados sofrem escrita. Os esquemas $S_{n+d}$ e $S_{v+d}$ buscam identificar dependências entre as instruções para permitir o reuso de conjuntos de instruções, algo parecido com o reuso de traços mas com entradas para instruções individuais indicando as dependências em vez da construção de uma entrada única para o traço. Todos esses esquemas permitem o reuso de instruções para carregar dados da memória.
 
-\citeonline{gonzalez1999trace} apresenta uma forma teórica de reuso de traces completos, utilizando uma estrutura denominada \textit{Reuse Trace Memory}. Sua estratégia se assemelha à DTM porém inclui posições de memória nos contextos de entrada e saída, apesar que os problemas de consistência e latência gerados por esta inclusão não são adereçados. Além disso, não é especificado o comportamento da técnica em instruções de desvio, o que pode trazer efeitos colaterais indesejáveis considerando a ampla difusão do uso de estruturas que se baseiam em execuções anteriores para realizar a predição de desvios.
+\citeonline{gonzalez1999trace} apresenta uma forma teórica de reuso de traços completos, utilizando uma estrutura denominada \textit{Reuse Trace Memory}. Sua estratégia se assemelha à DTM porém inclui posições de memória nos contextos de entrada e saída, apesar que os problemas de consistência e latência gerados por esta inclusão não são resolvidos. Além disso, não é especificado o comportamento da técnica em instruções de desvio, o que pode trazer efeitos colaterais indesejáveis considerando a ampla difusão do uso de estruturas que se baseiam em execuções anteriores para realizar a predição de desvios.
 
 \citeonline{costa2001explorando} introduz a técnica de reuso explorada nas seções \ref{Fundamentacao:DTM} e \ref{Fundamentacao:DTMHardware}. Seu trabalho consiste em descrever uma maneira viável de explorar o reuso dinâmico de instruções a nível de hardware. Para isso se baseou na literatura mas apresentando inovações, permitindo por exemplo um reuso de sequências de instruções mais eficiente que \citeonline{sodani1997dynamic} porém tratando questões que poderiam tornar tal unidade impraticável diferentemente de \citeonline{gonzalez1999trace}, como a remoção do reuso de memória e o tratamento específico para instruções de desvio. Além disso foram realizados testes sobre a eficiência de tal técnica através de simulações de uma arquitetura superescalar com DTM incorporado.
 
-\citeonline{pilla2003limits} introduz a RST, que é a execução especulativa aplicada à técnica DTM, realizando o reuso mesmo em condições onde nem todos os valores do contexto de entrada foram testados. Alterando a tabela de armazenamento de traces, a \tablet, e reutilizando partes do esquema de predição de desvios já presentes na arquitetura foi criada uma unidade que, para níveis de acerto de predição acima de 90\%, produziu ganhos de performance em relação à técnica DTM.
+\citeonline{pilla2003limits} introduz a RST, que é a execução especulativa aplicada à técnica DTM, realizando o reuso mesmo em condições onde nem todos os valores do contexto de entrada foram testados. Alterando a tabela de armazenamento de traços, a \tablet, e reutilizando partes do esquema de predição de desvios já presentes na arquitetura foi criada uma unidade que, para níveis de acerto de predição acima de 90\%, produziu ganhos de performance em relação à técnica DTM.
 
 No trabalho de \citeonline{silva2006memorizacao} é demonstrada a técnica JDTM, que adapta a DTM para a utilização em máquinas Java. A natureza de máquina de pilha de uma arquitetura Java demanda que alterações sejam realizadas, já que os operandos, tanto de entrada como de saída, de uma instrução deixam de ser registradores específicos para serem posições relativas ao topo da pilha. Assim como em \citeonline{costa2001explorando}, resultados positivos foram obtidos na execução de \textit{benchmarks} em simulações da arquitetura com JDTM.
 
-\citeonline{laurino2007reuso} expande a técnica RST para incluir o reuso de instruções de acesso à memória. A RSTm inclui uma nova tabela, a \tablel, para realizar o acompanhamento das instruções de manipulação de memória. Assim é paralelamente comparado o PC atual com a \tableg, \tablet\ e \tablel, reusando um trace ou uma instrução envolvendo ou não acessos à memória caso seja detectada redundância através de uma instância anterior armazenada.
+\citeonline{laurino2007reuso} expande a técnica RST para incluir o reuso de instruções de acesso à memória. A RSTm inclui uma nova tabela, a \tablel, para realizar o acompanhamento das instruções de manipulação de memória. Assim é paralelamente comparado o PC atual com a \tableg, \tablet\ e \tablel, reusando um traço ou uma instrução envolvendo ou não acessos à memória caso seja detectada redundância através de uma instância anterior armazenada.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%% TA MEIO ESQUISITO ESSE REF %%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Todos estes trabalhos citados anteriormente produzem seus resultados através de modelos teóricos ou simulações computacionais. Porém certos aspectos de um processador alterados ao inserir novas unidades não são facilmente detectados através de simulações, como discutido na seção \ref{Metodologia:Analise}. Por isso há a necessidade de realizar a implementação em hardware físico a fim de melhor avaliar essas outras características e validar a viabilidade prática do mecanismo DTM.
+Todos estes trabalhos citados anteriormente produzem seus resultados através de modelos teóricos ou simulações computacionais. Porém certos aspectos de um processador alterados ao inserir novas unidades não são facilmente detectados através de simulações, como discutido na seção \ref{Metodologia:Analise}. Por isso há a necessidade de realizar a implementação em hardware físico a fim de melhor avaliar essas outras características e validar a viabilidade prática do mecanismo DTM. Este trabalho busca realizar essa análise, jogando luz sobre os possíveis efeitos da DTM em um circuito real além do ganho de desempenho teórico apontado por simulações.
 
-\section{Memorização dinâmica de traces}
+\section{Memorização dinâmica de traços}
 \label{Fundamentacao:DTM}
 
-A memorização dinâmica de traces é uma técnica que busca evitar a perda de tempo computacional reduzindo o número de execuções de instruções já executadas. Diferente de algumas técnicas de programação que exploram o reuso de computação a nível de software, a DTM trabalha a nível de hardware e identifica candidatos ao reuso de forma dinâmica. Essa identificação dinâmica se caracteriza por reutilizar instruções em qualquer ponto do programa, categorizando uma instrução ou sequência de instruções como redundante de acordo com os valores dos seus parâmetros de entrada, comparando-os aos de uma execução anterior \cite{costa2001explorando}.
+A memorização dinâmica de traços é uma técnica que busca evitar a perda de tempo computacional reduzindo o número de execuções de instruções já executadas. Diferente de algumas técnicas de programação que exploram o reuso de computação a nível de software, a DTM trabalha a nível de hardware e identifica candidatos ao reuso de forma dinâmica. Essa identificação dinâmica se caracteriza por reutilizar instruções em qualquer ponto do programa, categorizando uma instrução ou sequência de instruções como redundante de acordo com os valores dos seus parâmetros de entrada, comparando-os aos de uma execução anterior \cite{costa2001explorando}.
 
-Na figura \ref{Fig:ExemploDTM} vemos um exemplo do funcionamento de DTM em um fluxo de controle. Na figura, cada nó representa um instrução e as ligações entre os nós representam os possíveis caminhos de execução de um código. 
+Na figura \ref{Fig:ExemploDTM} vemos um exemplo do funcionamento de DTM em um fluxo de controle. Na figura, cada nó representa uma instrução e as ligações entre os nós representam os possíveis caminhos de execução de um código. 
 
 Em (a) é possível observar uma sequência de instruções que foram executadas pelo programa, com os nós em cinza claro simbolizando as instruções executadas enquanto os nós em branco os caminhos não tomados.
 
-Em (b) temos em cinza escuro os nós que representam instruções redundantes executadas. Após a identificação dessas instruções, ocorre a construção do trace e a memorização deste.
+Em (b) temos em cinza escuro os nós que representam instruções redundantes executadas. Após a identificação dessas instruções, ocorre a construção do traço e a memorização deste.
 
-Em (c) é representado como o fluxo de controle se comporta quando ocorre o reuso do trace. Como pode ser notado, as instruções identificadas como redundantes não são executadas. Ocorre então a escrita dos resultados gerados na execução memorizada e o desvio para a próxima instrução a ser executada que não pertence ao trace, considerando qualquer desvio que tenha sido tomado entre as instruções reusadas.
+Em (c) é representado como o fluxo de controle se comporta quando ocorre o reuso do traço. Como pode ser notado, as instruções identificadas como redundantes não são executadas. Ocorre então a escrita dos resultados gerados na execução memorizada e o desvio para a próxima instrução a ser executada que não pertence ao traço, considerando qualquer desvio que tenha sido tomado entre as instruções reusadas.
 
 \begin{figure}
 \label{Fig:ExemploDTM}
 	\caption[Exemplo das etapas do processo de DTM em um fluxo de controle]{
-	Exemplo do processo de DTM em um fluxo de controle: (a) Instruções executadas; (b) Instruções redundantes identificadas, memorização; (c) Fluxo de controle quando ocorre reuso do trace.}
+	Exemplo do processo de DTM em um fluxo de controle: (a) Instruções executadas; (b) Instruções redundantes identificadas, memorização; (c) Fluxo de controle quando ocorre reuso do traço.}
 	
 	\centering
 	\begin{multicols}{3}
@@ -223,25 +225,25 @@ Em (c) é representado como o fluxo de controle se comporta quando ocorre o reus
 \legend{Fonte: elaborada pelo autor}
 \end{figure}
 
-\subsection{Identificação e memorização de traces}
+\subsection{Identificação e memorização de traços}
 \label{Fundamentacao:DTM:Identificacao}
 
-A primeira etapa do processo de DTM é a identificação de traces. Traces são conjuntos sequenciais de instruções válidas redundantes e que não possuem efeitos colaterais. Instruções são consideradas redundantes quando, dado um determinado conjunto de entradas, a instrução produzirá sempre o mesmo resultado. Exemplos de instruções redundantes e sem efeitos colaterais incluem instruções lógicas e aritméticas e de desvio condicional e incondicional. Instruções que manipulam a memória primária e que executam sub-rotinas do sistema não são redundantes e possuem efeitos colaterais, portanto não serão constituintes de um trace. No caso da arquitetura SPARC também foram consideradas não redundantes as instruções que manipulam as janelas de registradores, já que adicionaram uma complexidade muito grande à criação e armazenamento de traces.
+A primeira etapa do processo de DTM é a identificação de traços. traços são conjuntos sequenciais de instruções válidas redundantes e que não possuem efeitos colaterais. Instruções são consideradas redundantes quando, dado um determinado conjunto de entradas, a instrução produzirá sempre o mesmo resultado. Exemplos de instruções redundantes e sem efeitos colaterais incluem instruções lógicas e aritméticas e de desvio condicional e incondicional. Instruções que manipulam a memória primária e que executam sub-rotinas do sistema não são redundantes e possuem efeitos colaterais, portanto não serão constituintes de um traço. No caso da arquitetura SPARC também foram consideradas não redundantes as instruções que manipulam as janelas de registradores, já que adicionaram uma complexidade muito grande à criação e armazenamento de traços.
 
 Operações envolvendo ponto-flutuante possuem a mesma caracterização quanto à redundância e causalidade de efeitos colaterais que as instruções citadas acima. Por exemplo, instruções aritméticas com ponto-flutuante são redundantes enquanto a manipulação de memória envolvendo-os não. Porém, como \citeonline{gabbay1996speculative} observa, instruções de ponto flutuante costumam ter baixa localidade espacial, o que no caso da construção de uma unidade de DTM as torna indesejáveis, por adicionarem complexidade desnecessária tendo em vista o baixo retorno causado por sua inclusão. Isso não impede que a técnica de memorização seja empregada em operações de ponto-flutuante para aumentar seu desempenho, como demonstrado por \citeonline{citron1998accelerating}.
 
-Após a identificação do trace, se dá o processo de memorização. A memorização consiste em armazenar as informações necessárias para permitir a identificação de uma oportunidade de reuso de um trace, além de garantir que o circuito seja capaz de gerar corretamente as saídas necessárias e realizar um desvio para a próxima instrução a ser executada.
+Após a identificação do traço, se dá o processo de memorização. A memorização consiste em armazenar as informações necessárias para permitir a identificação de uma oportunidade de reuso de um traço, além de garantir que o circuito seja capaz de gerar corretamente as saídas necessárias e realizar um desvio para a próxima instrução a ser executada.
 
 
 
-\subsection{Reuso de traces}
+\subsection{Reuso de traços}
 \label{Fundamentacao:DTM:Reuso}
 
-O reuso de um trace ocorre quando este é redundante e possui uma instância memorizada equivalente ao que deve ser executado. Essas instâncias são equivalentes quando possuem a mesma sequência de instruções e o mesmo contexto de entrada.
+O reuso de um traço ocorre quando este é redundante e possui uma instância memorizada equivalente ao que deve ser executado. Essas instâncias são equivalentes quando possuem a mesma sequência de instruções e o mesmo contexto de entrada.
 
-O contexto de entrada é definido como o conjunto de valores utilizados no trace cuja origem é externa ao trace. De forma análoga, o contexto de saída são os valores gerados internamente ao trace e que estão disponíveis para uso externo ao término deste.
+O contexto de entrada é definido como o conjunto de valores utilizados no traço cuja origem é externa ao traço. De forma análoga, o contexto de saída são os valores gerados internamente ao traço e que estão disponíveis para uso externo ao término deste.
 
-Como exemplo, tomemos um trace para o pseudocódigo demonstrado na figura \ref{Fig:ExemploContexto1}. Em um trace gerado após a execução desse código, os valores contidos em $a$, $b$ e $c$ são utilizados internamente antes de terem seus valores definidos no próprio trace, compondo então o contexto de entrada.
+Como exemplo, tomemos um traço para o pseudocódigo demonstrado na figura \ref{Fig:ExemploContexto1}. Em um traço gerado após a execução desse código, os valores contidos em $a$, $b$ e $c$ são utilizados internamente antes de terem seus valores definidos no próprio traço, compondo então o contexto de entrada.
 
 \begin{figure}[!h]
 	\label{Fig:ExemploContexto1}
@@ -260,13 +262,13 @@ Como exemplo, tomemos um trace para o pseudocódigo demonstrado na figura \ref{F
 	\legend{Fonte: elaborada pelo autor}
 \end{figure}
 
-Suponhamos os valores de entrada como $a = 1$, $b = 2$ e $c = 3$. Com esses valores as instruções armazenadas no trace resultante se assemelhariam com o trace representado na figura \ref{Fig:ExemploContexto2}\footnote{Estariam inclusas no trace também as instruções de comparação e desvio responsáveis pelo desvio condicional, mas por terem formato e efeitos relativos à arquitetura foram omitidas para maior clareza no exemplo.}. 
-%. Estariam inclusas no trace também as instruções de comparação e desvio responsáveis pelo desvio condicional, mas por terem formato e efeitos relativos à arquitetura foram omitidas para maior clareza no exemplo.
+Suponhamos os valores de entrada como $a = 1$, $b = 2$ e $c = 3$. Com esses valores as instruções armazenadas no traço resultante se assemelhariam com o traço representado na figura \ref{Fig:ExemploContexto2}\footnote{Estariam inclusas no traço também as instruções de comparação e desvio responsáveis pelo desvio condicional, mas por terem formato e efeitos relativos à arquitetura foram omitidas para maior clareza no exemplo.}. 
+%. Estariam inclusas no traço também as instruções de comparação e desvio responsáveis pelo desvio condicional, mas por terem formato e efeitos relativos à arquitetura foram omitidas para maior clareza no exemplo.
 
 \begin{figure}[!h]
 	\label{Fig:ExemploContexto2}
-	\caption[Exemplo de trace para o pseudocódigo da figura \ref{Fig:ExemploContexto1}]{
-		Exemplo de trace para o pseudocódigo da figura \ref{Fig:ExemploContexto1}.}
+	\caption[Exemplo de traço para o pseudocódigo da figura \ref{Fig:ExemploContexto1}]{
+		Exemplo de traço para o pseudocódigo da figura \ref{Fig:ExemploContexto1}.}
 	
 	\begin{algorithmic}
 		\STATE $c \leftarrow c + a$
@@ -276,9 +278,9 @@ Suponhamos os valores de entrada como $a = 1$, $b = 2$ e $c = 3$. Com esses valo
 	\legend{Fonte: elaborada pelo autor}
 \end{figure}
 
-Com os valores do contexto de entrada contidos no parágrafo anterior, o contexto de saída deste trace é $c = 4$ e $x = 7$. Assim, sempre que os valores do contexto de entrada se igualarem a esses ao entrar no trace, não há necessidade de execução das instruções, ocorrendo então a escrita do contexto de saída diretamente. Como essas instruções não possuem efeito colateral, esse processo é transparente para o programa sendo executado.
+Com os valores do contexto de entrada contidos no parágrafo anterior, o contexto de saída deste traço é $c = 4$ e $x = 7$. Assim, sempre que os valores do contexto de entrada se igualarem a esses ao entrar no traço, não há necessidade de execução das instruções, ocorrendo então a escrita do contexto de saída diretamente. Como essas instruções não possuem efeito colateral, esse processo é transparente para o programa sendo executado.
 
-É possível então observar a importância da memorização correta do trace. Ainda analisando o pseudocódigo da figura \ref{Fig:ExemploContexto1}, caso o contexto de entrada seja $a = 1$, $b = 2$ e $c = 1$, o contexto de saída é $c = 2$, $x = 4$ e $y = 8$. O trace gerado para essa execução difere do trace descrito anteriormente, tanto nas instruções contidas como nos resultados gerados, de forma que o reuso do trace impróprio pode levar a aplicação que está executando a produzir resultados incorretos.
+É possível então observar a importância da memorização correta do traço. Ainda analisando o pseudocódigo da figura \ref{Fig:ExemploContexto1}, caso o contexto de entrada seja $a = 1$, $b = 2$ e $c = 1$, o contexto de saída é $c = 2$, $x = 4$ e $y = 8$. O traço gerado para essa execução difere do traço descrito anteriormente, tanto nas instruções contidas como nos resultados gerados, de forma que o reuso do traço impróprio pode levar a aplicação que está executando a produzir resultados incorretos.
 
 \section{DTM em hardware}
 \label{Fundamentacao:DTMHardware}
@@ -287,7 +289,7 @@ Na seção \ref{Fundamentacao:DTM} é explanado o funcionamento da técnica DTM 
 
 A implementação de \citeonline{costa2001explorando} tem como alvo um processador com ISA MIPS I, uma ISA do tipo RISC tal qual a ISA SPARC, se assemelhando em muitas características ao processador LEON3 utilizado neste trabalho. Assim, a implementação apresentada nesta seção é adaptada para se adequar à ISA e desenho do LEON3.
 
-Para armazenamento das informações relevantes ao reuso de um trace será utilizada uma unidade de memória denominada \tablet. Essa unidade de memória será organizada como uma tabela, na qual cada linha corresponde a um trace armazenado. Também é utilizada uma tabela para o armazenamento de informações sobre instruções individuais, denominada \tableg. Esta será utilizada para o reuso de instruções isoladas, enquanto aquela para o reuso de blocos de instruções sequenciais.
+Para armazenamento das informações relevantes ao reuso de um traço será utilizada uma unidade de memória denominada \tablet. Essa unidade de memória será organizada como uma tabela, na qual cada linha corresponde a um traço armazenado. Também é utilizada uma tabela para o armazenamento de informações sobre instruções individuais, denominada \tableg. Esta será utilizada para o reuso de instruções isoladas, enquanto aquela para o reuso de blocos de instruções sequenciais.
 
 \subsection{A unidade \tableg}
 \label{Fundamentacao:DTMHardware:TableG}
@@ -338,20 +340,20 @@ Os três campos de um bit servem para identificar como deve ser utilizado o resu
 \subsection{A unidade \tablet}
 \label{Fundamentacao:DTMHardware:TableT}
 
-Analogamente à \tableg, a \tablet\ tem como objetivo armazenar dados de instâncias de instruções armazenadas afim de permitir o reuso destas em execuções futuras. Porém, diferentemente daquela, esta armazena informações sobre traces, sendo então responsável por guardar todas as informações necessárias para o reuso de um conjunto de duas ou mais instruções redundantes.
+Analogamente à \tableg, a \tablet\ tem como objetivo armazenar dados de instâncias de instruções armazenadas afim de permitir o reuso destas em execuções futuras. Porém, diferentemente daquela, esta armazena informações sobre traços, sendo então responsável por guardar todas as informações necessárias para o reuso de um conjunto de duas ou mais instruções redundantes.
 
-O projeto da \tablet, apesar de compartilhar características com a estrutura da \tableg, deve ser adaptado para que o armazenamento de informações sobre um trace completo possam ser utilizadas de forma a identificar um trace redundante e reutilizá-lo de forma transparente à aplicação utilizando a unidade de processamento. 
+O projeto da \tablet, apesar de compartilhar características com a estrutura da \tableg, deve ser adaptado para que o armazenamento de informações sobre um traço completo possam ser utilizadas de forma a identificar um traço redundante e reutilizá-lo de forma transparente à aplicação utilizando a unidade de processamento. 
 
-A \tablet\ é então também uma unidade de memória completamente associativa organizada em forma tabular na qual cada linha representa um trace, ou seja uma instância de execução de uma sequência de instruções, e cada coluna um campo necessário para identificação ou reuso correto deste trace. A descrição destes campos, que podem ser vistos na figura \ref{Fig:MemoTableT}, segue abaixo:
+A \tablet\ é então também uma unidade de memória completamente associativa organizada em forma tabular na qual cada linha representa um traço, ou seja uma instância de execução de uma sequência de instruções, e cada coluna um campo necessário para identificação ou reuso correto deste traço. A descrição destes campos, que podem ser vistos na figura \ref{Fig:MemoTableT}, segue abaixo:
 
 \begin{itemize}
-	\item $pc$: Onde é guardado o endereço de memória da primeira instrução do trace, usado para identificação de candidatos a reuso.
-	\item $npc$: Armazena o endereço de memória da próxima instrução a ser executada. Após o reuso de um trace é necessário um desvio para a instrução subsequente, sendo então utilizado o valor de $npc$ para o cálculo desse desvio.
+	\item $pc$: Onde é guardado o endereço de memória da primeira instrução do traço, usado para identificação de candidatos a reuso.
+	\item $npc$: Armazena o endereço de memória da próxima instrução a ser executada. Após o reuso de um traço é necessário um desvio para a instrução subsequente, sendo então utilizado o valor de $npc$ para o cálculo desse desvio.
 	\item $icr$: Identifica quais registradores pertencem ao contexto de entrada.
 	\item $icv$: Armazena os valores do contexto de entrada, contido nos registradores indicados pelo campo $icr$.
 	\item $ocr$: Identifica quais registradores pertencem ao contexto de saída.
 	\item $ocv$: Armazena os valores do contexto de saída, contido nos registradores indicados pelo campo $ocr$.
-	\item $bmask$: Máscara na qual cada bit em nível alto indica a presença de um desvio no trace.
+	\item $bmask$: Máscara na qual cada bit em nível alto indica a presença de um desvio no traço.
 	\item $btaken$: Máscara que armazena para cada desvio indicado em $bmask$ se ele foi tomado ou não.
 \end{itemize}
 
@@ -388,25 +390,25 @@ A \tablet\ é então também uma unidade de memória completamente associativa o
 
 A figura \ref{Fig:MemoTableT} também indica o uso de três parâmetros configuráveis: $N_{1}, N_{2}, B  \in \mathbb{Z}$. O significado de cada um é explicado a seguir.
 
-$N_{1}$ define quantos registradores podem pertencer ao contexto de entrada de um trace. Caso o para continuar a construção do trace esse seja necessário mais registradores, a construção será encerrada. 
+$N_{1}$ define quantos registradores podem pertencer ao contexto de entrada de um traço. Caso para continuar a construção do traço sejam necessários mais registradores do que $N_{1}$, a construção será encerrada na instrução anterior à que inseriria o registrador de número $N_{1} + 1$ no contexto de entrada.
 
-Com uso bastante semelhante a $N_{1}$, $N_{2}$ limita a quantidade de registradores no contexto de saída. \citeonline{costa2001explorando} utiliza $N_{1}, N_{2} \mid N_{1} = N_{2}$, mas isso não é necessário para o funcionamento correto do DTM. Em aplicações que os traces comumente possuem mais valores no contexto de saída que no de entrada é desejável criar a tabela tal que $N_{1} < N_{2}$. Da mesma forma, caso o contexto de entrada costume ser maior que o de saída, podem ser escolhidos valores para os quais $N_{1} > N_{2}$. Cabe ao projetista ajustar a unidade para melhor se adaptar as características dos traces nela armazenados, atingindo assim melhor desempenho e evitando desperdício de memória.
+Com uso bastante semelhante a $N_{1}$, $N_{2}$ limita a quantidade de registradores no contexto de saída. \citeonline{costa2001explorando} utiliza $N_{1}, N_{2} \mid N_{1} = N_{2}$, mas isso não é necessário para o funcionamento correto do DTM. Em aplicações que os traços comumente possuem mais valores no contexto de saída que no de entrada é desejável criar a tabela tal que $N_{1} < N_{2}$. Da mesma forma, caso o contexto de entrada costume ser maior que o de saída, podem ser escolhidos valores para os quais $N_{1} > N_{2}$. Cabe ao projetista ajustar a unidade para melhor se adaptar as características dos traços nela armazenados, atingindo assim melhor desempenho e evitando desperdício de memória.
 
-Por fim, $B$ indica a quantidade máxima de instruções de desvio que serão armazenadas em um trace. Os valores armazenados em $bmask$ e $btaken$ são utilizados para atualizar as unidades de predição de desvio. Caso a aplicação envolva muitas instruções de desvio, aumentar o valor de $B$ aumentará o tamanho máximo dos traces armazenados, permitindo o reuso de mais instruções com uma única entrada.
+Por fim, $B$ indica a quantidade máxima de instruções de desvio que serão armazenadas em um traço. Os valores armazenados em $bmask$ e $btaken$ são utilizados para atualizar as unidades de predição de desvio. Caso a aplicação envolva muitas instruções de desvio, aumentar o valor de $B$ aumentará o tamanho máximo dos traços armazenados, permitindo o reuso de mais instruções com uma única entrada.
 
-Esses parâmetros devem ser definidos no momento da construção do hardware. A existência desses se deve ao fato de não interferirem no bom funcionamento da técnica mas influenciar os resultados. A medida que se aumenta o valor dos parâmetros o tamanho máximo dos traces também aumenta, o que pode causar um ganho de desempenho dependendo da aplicação sendo executada. Porém, esses valores são diretamente proporcionais à quantidade de memória necessária para o armazenamento, aumentando a área de chip e o custo do hardware resultante.
+Esses parâmetros devem ser definidos no momento da construção do hardware. A existência desses se deve ao fato de não interferirem no bom funcionamento da técnica mas influenciar os resultados. A medida que se aumenta o valor dos parâmetros o tamanho máximo dos traços também aumenta, o que pode causar um ganho de desempenho dependendo da aplicação sendo executada. Porém, esses valores são diretamente proporcionais à quantidade de memória necessária para o armazenamento, aumentando a área de chip e o custo do hardware resultante.
 
 
 \subsection{Construção e reuso}
 \label{Fundamentacao:DTMHardware:Integracao}
 
-Para construção de um trace são utilizados dois mapas de contexto e um \textit{buffer} temporário. Esse \textit{buffer} possui o mesmo formato de uma linha da \tablet, enquanto os mapas possuem um bit para cada registrador, totalizando 32 bits.
+Para construção de um traço são utilizados dois mapas de contexto e um \textit{buffer} temporário. Esse \textit{buffer} possui o mesmo formato de uma linha da \tablet, enquanto os mapas possuem um bit para cada registrador, totalizando 32 bits.
 
-Quando uma instrução redundante é identificada se inicia a construção do trace. O valor do registrador PC é inserido no \textit{buffer} no campo $pc$, enquanto seu valor somado 4 no $npc$. Para cada registrador pertencente ao contexto de entrada, o respectivo bit na máscara de contexto de entrada é posta em nível alto. Caso o bit estivesse em $0$, o número do registrador e seu valor são inseridos no \textit{buffer}. O mesmo se aplica ao mapa de contexto de saída, com a diferença que caso haja duas escritas em um registrador o valor em $ocv$ é atualizado, o que não ocorre no contexto de entrada. Caso a instrução a ser executada seja um desvio, os devidos bits são escritos nas máscaras do \textit{buffer} temporário. 
+Quando uma instrução redundante é identificada se inicia a construção do traço. O valor do registrador PC é inserido no \textit{buffer} no campo $pc$, enquanto seu valor somado 4 no $npc$. Para cada registrador pertencente ao contexto de entrada, o respectivo bit na máscara de contexto de entrada é posta em nível alto. Caso o bit estivesse em $0$, o número do registrador e seu valor são inseridos no \textit{buffer}. O mesmo se aplica ao mapa de contexto de saída, com a diferença que caso haja duas escritas em um registrador o valor em $ocv$ é atualizado, o que não ocorre no contexto de entrada. Caso a instrução a ser executada seja um desvio, os devidos bits são escritos nas máscaras do \textit{buffer} temporário. 
 
 Para cada instrução subsequente, caso seja redundante, o campo $npc$ recebe o valor do registrador PC mais quatro, enquanto os outros valores são inseridos e atualizados como descrito anteriormente. Caso a instrução não seja redundante o \textit{buffer} é escrito em uma entrada da \tablet\ e os valores do \textit{buffer} e dos mapas são zerados.
 
-Paralelamente, para cada instrução é verificado em \tableg\ e \tablet\ se existem entradas para as quais valor de $pc$ equivale ao do registrador PC. Para as que são encontradas, é verificado então o contexto de entrada. Os registradores indicados pelo campo $icr$ tem seus valores lidos do banco de registradores e comparados com os valores de $icv$ para cada entrada identificadas de \tablet. Já para \tableg, os registradores indicados na própria instrução tem seus valores comparados com os campos $sv1$ e $sv2$. Caso haja um trace em \tablet\ no qual todos os registradores passem neste teste, ele então é reusado. Caso não haja um trace mas haja um instrução em \tableg, ela então é reusada. Caso contrário, a instrução é executada normalmente.
+Paralelamente, para cada instrução é verificado em \tableg\ e \tablet\ se existem entradas para as quais valor de $pc$ equivale ao do registrador PC. Para as que são encontradas, é verificado então o contexto de entrada. Os registradores indicados pelo campo $icr$ tem seus valores lidos do banco de registradores e comparados com os valores de $icv$ para cada entrada identificadas de \tablet. Já para \tableg, os registradores indicados na própria instrução tem seus valores comparados com os campos $sv1$ e $sv2$. Caso haja um traço em \tablet\ no qual todos os registradores passem neste teste, ele então é reusado. Caso não haja um traço mas haja um instrução em \tableg, ela então é reusada. Caso contrário, a instrução é executada normalmente.
 
 \section{O LEON3}
 \label{Fundamentacao:LEON3}
@@ -434,7 +436,7 @@ A janela atual é determinada pelo \textit{Current Window Pointer}, um contador 
 	\legend{Fonte: \cite{leondatasheet}}
 \end{figure}
 
-Ao configurar o sistema antes da compilação do código-fonte também é possível optar pela inclusão de uma unidade de processamento de ponto-flutuante. Duas unidades estão disponíveis, a GRFPU e a GRFPU-Lite, ambas se adequando ao padrão IEEE-754.
+Ao configurar o sistema antes da síntese do código-fonte também é possível optar pela inclusão de uma unidade de processamento de ponto-flutuante. Duas unidades estão disponíveis, a GRFPU e a GRFPU-Lite, ambas se adequando ao padrão IEEE-754.
 
 Além dessas unidades, como demonstrado na figura \ref{Fig:Leon3Interno} são incluídas outras unidades como suporte a depuração, multiplicadores e divisores em hardware, entre outros \cite{grlibmanual}.
 
