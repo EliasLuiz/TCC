@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {brazilian}
+\beamer@sectionintoc {1}{Introdu\c c\~ao}{2}{0}{1}
+\beamer@sectionintoc {2}{DTM}{5}{0}{2}
+\beamer@sectionintoc {3}{Problema}{13}{0}{3}
+\beamer@sectionintoc {4}{Proposta}{16}{0}{4}

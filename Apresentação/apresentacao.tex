@@ -1,0 +1,620 @@
+% \documentclass{beamer}
+\documentclass[handout]{beamer}
+
+\usepackage{beamerthemesplit}
+\usepackage[latin1]{inputenc}
+\usepackage[brazilian]{babel}
+\PassOptionsToPackage{pdftex}{graphicx}
+\usepackage{epstopdf}
+\usepackage{geometry}
+
+%cores
+%http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme_and_color.html
+
+
+\usepackage{beamerthemeshadow}
+%\usepackage{graphicx} % Enable the use of graphs
+\usepackage{amsfonts} % Enable special mathemtical characters.
+\usepackage{amsmath}  % Enable the use  Multi-line equations, compound symbols, etc
+%\usepackage{extsizes} % Enable the use of different font sizes. DANDO PAU
+\usepackage{booktabs} % More complex tables
+\usepackage{hyperref} % Links
+\usepackage{subfig}   % Subfigures
+\usepackage{helvet}   % Different fonts
+% Need also to download pgf, ms and xcolor packages.
+%\usepackage[ansinew]{inputenc} % Permite digitar os acentos diretamente.
+%\usepackage[portuguese]{babel} % Habilita a língua portuguesa
+
+\usetheme{boxes} % Options: default, Antibes, Berkeley, Berlin, Copenhagen, Madrid, Pittsburgh, Singapore, etc.
+%\useinnertheme{default} % Options: default, circles, rectangles, rounded, inmargin,
+%\useoutertheme{default} % Options: default, infolines, miniframes, etc. Options []: footline=empty, footline=authorinstitute, footline=authortitle, footline=institutetitle, footline=authorinstitutetitle, subsection=.true or false.
+
+%\usecolortheme{default} % Options: default, beetle, albatross, crane, fly, wolverine, beaver, whale, etc.
+%\useinnertheme{orchid} % Inner Color Themes: lily, orchid, rose
+%\useoutertheme{dolphin} % Outer Color Themes: whale, seahorse, dolphin
+
+\setbeamersize{text margin left=0.6cm, text margin right=0.6cm}
+
+\setbeameroption{hide notes} % Use this option instead in presentations with projectors: show notes on second screen
+% to add notes, type: \note[item]<1>{Text}
+
+
+
+%%%%%%%%%%%%%%%
+
+
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{cmap}				% Mapear caracteres especiais no PDF		
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+%\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\PassOptionsToPackage{normalem}{ulem} % Para não usar sublinhado em referências bibliográficas
+\usepackage{ulem}
+\usepackage{multicol}
+\usepackage{amssymb}
+% ---
+
+%Trocar fonte para Arial ou Helvetica
+%\usepackage{uarial}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+%\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf,abnt-thesis-year=both,]{abntex2cite}	% Citações padrão ABNT
+
+
+
+%Outros pacotes
+
+\usepackage{longtable}
+\usepackage{tikz}
+
+
+%\setlrmarginsandblock{3cm}{2cm}{*}
+%\setulmarginsandblock{3cm}{2cm}{*}
+%\checkandfixthelayout
+
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+%
+	\or
+%
+	\else
+	%Citado #1 vezes nas páginas #2.%
+%
+	\fi}%
+% ---
+
+
+
+
+
+
+%%%%%%%%%%%%%%
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\lstset{ 
+  language=Octave,                % the language of the code
+  basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  %backgroundcolor=\color{bg},     % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=4,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue}, %blue     % keyword style
+  commentstyle=\color{dkgreen}, %dkgreen   % comment style
+  stringstyle=\color{mauve}, %mauve      % string literal style
+  escapeinside={\%*}{*)},         % if you want to add a comment within your code
+  morekeywords={*,...}            % if you want to add more keywords to the set
+}
+
+
+%%Pacote para escrita de algoritmos
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%     configurações do pacote algorithm
+% \renewcommand{\algorithmcfname}{alg}
+\floatname{algorithm}{Algoritmo}
+\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{Saída:}}
+\renewcommand{\algorithmicend}{\textbf{fim}}
+\renewcommand{\algorithmicif}{\textbf{se}}
+\renewcommand{\algorithmicthen}{\textbf{então}}
+\renewcommand{\algorithmicelse}{\textbf{senão}}
+\renewcommand{\algorithmicelsif}{\algorithmicelse\ \algorithmicif}
+\renewcommand{\algorithmicendif}{\algorithmicend\ \algorithmicif}
+\renewcommand{\algorithmicfor}{\textbf{para}}
+% \renewcommand{\algorithmicto}{\textbf{até}}
+\renewcommand{\algorithmicforall}{\textbf{para todo}}
+\renewcommand{\algorithmicdo}{\textbf{faça}}
+\renewcommand{\algorithmicendfor}{\algorithmicend\ \algorithmicfor}
+\renewcommand{\algorithmicwhile}{\textbf{enquanto}}
+\renewcommand{\algorithmicendwhile}{\algorithmicend\ \algorithmicwhile}
+\renewcommand{\algorithmicloop}{\textbf{laço}}
+\renewcommand{\algorithmicendloop}{\algorithmicend\ \algorithmicloop}
+\renewcommand{\algorithmicrepeat}{\textbf{repita}}
+\renewcommand{\algorithmicuntil}{\textbf{até que}}
+\renewcommand{\algorithmicprint}{\textbf{imprima}}
+\renewcommand{\algorithmicreturn}{\textbf{retorne}}
+\renewcommand{\algorithmictrue}{\textbf{verdadeiro}}
+\renewcommand{\algorithmicfalse}{\textbf{falso}}
+\renewcommand{\algorithmicnot}{\textbf{não}}
+
+\usepackage{hyperref}
+\usepackage{ulem}
+\newcommand{\tablet}{\textit{Memo\_Table\_T}}
+\newcommand{\tableg}{\textit{Memo\_Table\_G}}
+\newcommand{\tablel}{\textit{Memo\_Table\_L}}
+\setbeamertemplate{bibliography item}{}
+\setbeamertemplate{bibliography entry article}{}
+\setbeamertemplate{bibliography entry title}{}
+\setbeamertemplate{bibliography entry location}{}
+\setbeamertemplate{bibliography entry note}{}
+\setbeamercolor{bibliography item}{fg=black}
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor{bibliography entry title}{fg=black}
+\setbeamercolor{bibliography entry location}{fg=black}
+\setbeamercolor{bibliography entry article}{fg=black}
+\setbeamercolor{bibliography entry note}{fg=black}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+\title{Avaliação em FPGA do mecanismo de memorização de traços dinâmicos}
+\author{Elias Luiz da Silva Júnior}
+% \date{Novembro de 2011}
+\date{}
+%\date{\today} 
+\institute{CEFET-MG}
+\logo{\includegraphics[scale=0.12]{images/_logo-eps-converted-to}}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Introdução}
+
+\begin{frame}\frametitle{Introdução}
+	\begin{itemize}
+		\item Demanda crescente por computação.
+		\item Em parte atendida pela Lei de Moore.
+		\item Avanços tecnológicos tem permitido:
+		\begin{itemize}
+			\item Aumento exponencial no número de transistores em um circuito integrado;
+			\item Redução exponencial no custo de circuito integrado;
+			\item Redução no consumo elétrico de sistemas de computação.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Introdução}
+	\begin{itemize}
+		\item Isso se manteve verdadeiro por cerca de 50 anos.
+		\item Limites físicos próximos de serem atingidos \cite{mack2011fifty}.
+		\item Necessárias alternativas para criação de melhorias a nível de arquitetura.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Introdução}
+	\begin{itemize}
+		\item Uma alternativa bastante utilizada é explorar o paralelismo tanto a nível de instrução quanto a nível de tarefa.
+		\item Porém não é uma solução completa:
+		  \begin{itemize}
+			 \item Incapaz de paralelizar instruções com dependências;
+			 \item Depende do programador e do compilador para ser melhor explorado \cite{hennessy2011computer}.
+		  \end{itemize}
+	\end{itemize}
+\end{frame}
+
+\section{DTM}
+
+\begin{frame}\frametitle{Memorização dinâmica de traços}
+	\begin{itemize}
+		\item Técnica que produz ganhos de desempenho em várias aplicações.
+		\item Lida muito bem com instruções que possuem dependências.
+		\item Permite a execução de múltiplas instruções de uma vez \cite{costa2001explorando}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Memorização dinâmica de traços}
+	\begin{itemize}
+		\item Instruções redundantes: não possuem efeitos colaterais e já foram executadas anteriormente com os mesmos valores de entrada.
+		\item Traço: sequência de instruções redundantes.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Memorização dinâmica de traços}
+	\begin{itemize}
+		\item A memorização dinâmica de traços (DTM) armazena traços e instruções redundantes.
+		\item Em execuções posteriores identifica oportunidades de reuso e recupera os resultados anteriores.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Memorização dinâmica de traços}
+	\begin{figure}
+		\label{Fig:ExemploDTM}
+		\caption[Exemplo das etapas do processo de DTM em um fluxo de controle]{ Exemplo do processo de DTM: (a) Instruções executadas; (b) Instruções redundantes; (c) Fluxo de controle quando ocorre reuso.}
+		
+		\centering
+		\begin{multicols}{3}
+			\begin{tikzpicture}[->,>=stealth,shorten >=0.5pt,auto,node distance=0.5cm,main node/.style={fill=black!20,circle,draw}]
+			
+			\node[main node] (1) { };
+			\node[main node] (2) [below of=1] { };
+			\node[main node] (3) [below of=2] { };
+			\node[main node, style={thin, fill=none}] (4) [below left of=3] { };
+			\node[main node] (5) [below right of=3] { };
+			\node[main node, style={draw=none, fill=none}] (erapraser6) [below left of=4] { };
+			\node[main node] (6) [below left of=5] { };
+			\node[main node, style={thin, fill=none}] (7) [below right of=5] { };
+			\node[main node, style={thin, fill=none}] (8) [below right of=6] { };
+			\node[main node] (9) [below left of=6] { };
+			\node[main node, style={draw=none, fill=none}] (erapraser10) [below of=7] { };
+			\node[main node, style={draw=none, fill=none}] (10) [below of=8] { };
+			\node[main node] (11) [below of=9] { };
+			\node[main node] (12) [below right of=11] { };
+			\node[main node, style={thin, fill=none}] (13) [below left of=11] { };
+			\node[main node] (14) [below of=12] { };
+			\node[main node, style={draw=none, fill=none}] (15) [below of=13] { };
+			\node[main node] (16) [below of=14] { };
+			\node[main node] (17) [below left of=16] { };
+			\node[main node, style={thin, fill=none}] (18) [below right of=16] { };
+			\node[main node] (19) [below of=17] { };
+			\node[main node, style={draw=none, fill=none}] (20) [below of=16] {};
+			\node[main node, style={draw=none, fill=none}] (21) [below of=20] {};
+			\node[main node, style={draw=none, fill=none}] (a) [below of=21] {(a)};
+			
+			\path[every node/.style={font=\sffamily\small}]
+			(1) edge (2)
+			(2) edge (3)
+			(3) edge (4)
+			edge (5)
+			(4)	edge (erapraser6)
+			(5) edge (6)
+			edge (7)
+			(6) edge (8)
+			edge (9)
+			(7) edge (erapraser10)
+			(8) edge (10)
+			(9) edge (11)
+			(11)edge (12)
+			edge (13)
+			(12)edge (14)
+			(13)edge (15)
+			(14)edge (16)
+			(16)edge (17)
+			edge (18)
+			(17)edge (19);
+			
+			\end{tikzpicture}
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			
+			\begin{tikzpicture}[->,>=stealth,shorten >=0.5pt,auto,node distance=0.5cm,main node/.style={fill=black!50,circle,draw}]
+			
+			\node[main node, style={fill=black!20}] (1) { };
+			\node[main node] (2) [below of=1] { };
+			\node[main node] (3) [below of=2] { };
+			\node[main node, style={thin, fill=none}] (4) [below left of=3] { };
+			\node[main node] (5) [below right of=3] { };
+			\node[main node, style={draw=none, fill=none}] (erapraser6) [below left of=4] { };
+			\node[main node] (6) [below left of=5] { };
+			\node[main node, style={thin, fill=none}] (7) [below right of=5] { };
+			\node[main node, style={thin, fill=none}] (8) [below right of=6] { };
+			\node[main node] (9) [below left of=6] { };
+			\node[main node, style={draw=none, fill=none}] (erapraser10) [below of=7] { };
+			\node[main node, style={draw=none, fill=none}] (10) [below of=8] { };
+			\node[main node] (11) [below of=9] { };
+			\node[main node] (12) [below right of=11] { };
+			\node[main node, style={thin, fill=none}] (13) [below left of=11] { };
+			\node[main node] (14) [below of=12] { };
+			\node[main node, style={draw=none, fill=none}] (15) [below of=13] { };
+			\node[main node] (16) [below of=14] { };
+			\node[main node] (17) [below left of=16] { };
+			\node[main node, style={thin, fill=none}] (18) [below right of=16] { };
+			\node[main node, style={fill=black!20}] (19) [below of=17] { };
+			\node[main node, style={draw=none, fill=none}] (20) [below of=16] {};
+			\node[main node, style={draw=none, fill=none}] (21) [below of=20] {};
+			\node[main node, style={draw=none, fill=none}] (b) [below of=21] {(b)};
+			
+			\path[every node/.style={font=\sffamily\small}]
+			(1) edge (2)
+			(2) edge (3)
+			(3) edge (4)
+			edge (5)
+			(4)	edge (erapraser6)
+			(5) edge (6)
+			edge (7)
+			(6) edge (8)
+			edge (9)
+			(7) edge (erapraser10)
+			(8) edge (10)
+			(9) edge (11)
+			(11)edge (12)
+			edge (13)
+			(12)edge (14)
+			(13)edge (15)
+			(14)edge (16)
+			(16)edge (17)
+			edge (18)
+			(17)edge (19);
+			
+			\end{tikzpicture}
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			
+			\begin{tikzpicture}[->,>=stealth,shorten >=0.5pt,auto,node distance=0.5cm,main node/.style={fill=black!50,circle,draw}]
+			
+			\node[main node, style={fill=black!20}] (1) { };
+			\node[main node] (2) [below of=1] { };
+			\node[main node] (3) [below of=2] { };
+			\node[main node, style={thin, fill=none}] (4) [below left of=3] { };
+			\node[main node] (5) [below right of=3] { };
+			\node[main node, style={draw=none, fill=none}] (erapraser6) [below left of=4] { };
+			\node[main node] (6) [below left of=5] { };
+			\node[main node, style={thin, fill=none}] (7) [below right of=5] { };
+			\node[main node, style={thin, fill=none}] (8) [below right of=6] { };
+			\node[main node] (9) [below left of=6] { };
+			\node[main node, style={draw=none, fill=none}] (erapraser10) [below of=7] { };
+			\node[main node, style={draw=none, fill=none}] (10) [below of=8] { };
+			\node[main node] (11) [below of=9] { };
+			\node[main node] (12) [below right of=11] { };
+			\node[main node, style={thin, fill=none}] (13) [below left of=11] { };
+			\node[main node] (14) [below of=12] { };
+			\node[main node, style={draw=none, fill=none}] (15) [below of=13] { };
+			\node[main node] (16) [below of=14] { };
+			\node[main node] (17) [below left of=16] { };
+			\node[main node, style={thin, fill=none}] (18) [below right of=16] { };
+			\node[main node, style={fill=black!20}] (19) [below of=17] { };
+			\node[main node, style={draw=none, fill=none}] (20) [below of=16] {};
+			\node[main node, style={draw=none, fill=none}] (21) [below of=20] {};
+			\node[main node, style={draw=none, fill=none}] (c) [below of=21] {(c)};
+			
+			\path[every node/.style={font=\sffamily\small}]
+			(1) edge (2)
+			%(2) edge (3)
+			(3) edge (4)
+			edge (5)
+			(4)	edge (erapraser6)
+			(5) edge (6)
+			edge (7)
+			(6) edge (8)
+			edge (9)
+			(7) edge (erapraser10)
+			(8) edge (10)
+			(9) edge (11)
+			(11)edge (12)
+			edge (13)
+			(12)edge (14)
+			(13)edge (15)
+			(14)edge (16)
+			(16)edge (17)
+			edge (18)
+			(17)edge (19);
+			
+			\draw 
+			(2.west)
+			-- ++(left:2em) 
+			|- (19.west);
+			
+			\end{tikzpicture}
+		\end{multicols}
+		
+		\legend{Fonte: elaborada pelo autor}
+	\end{figure}
+\end{frame}
+
+\begin{frame}\frametitle{Memorização dinâmica de traços}
+	\begin{itemize}
+		\item Os valores utilizados em um traço produzidos externamente a ele compõe o chamado ``contexto de entrada''.
+		\item Os valores produzidos em um traço e disponíveis para uso externo a ele compõe o chamado ``contexto de saída''.
+		\item Ao reusar um traço, é feito um desvio para a próxima instrução a ser executada.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Memorização dinâmica de traços}
+	\begin{figure}[!h]
+		\label{Fig:ExemploContexto1}
+		\caption[Exemplo de pseudocódigo]{
+			Exemplo de pseudocódigo.}
+		
+		\begin{algorithmic}
+			\STATE $c \leftarrow c + a$
+			\STATE $x \leftarrow c + b$
+			\IF{$x \le 5$}
+			\STATE $y \leftarrow x * 2$
+			\ELSE
+			\STATE $x \leftarrow x + 1$
+			\ENDIF
+		\end{algorithmic}
+		\legend{Fonte: elaborada pelo autor}
+	\end{figure}
+	
+	Nesse código, os valores $a, b, c$ compõe o contexto de entrada. 
+	
+	Os valores $c, x$ e, dependendo do fluxo de execução $y$, compõe o contexto de saída.
+\end{frame}
+
+\begin{frame}\frametitle{Memorização dinâmica de traços}
+	\begin{figure}
+		\label{Fig:MemoTableG}
+		\caption[Representação da tabela \tableg]{
+			Representação da tabela \tableg, utilizada para recuperação de instruções individuais.}
+		\begin{center}
+			%A famosa gambiarra ataca novamente
+			\newcommand{\tabela}[1]{
+				\multicolumn{1}{|c|}{$#1$}
+			}
+			\begin{tabular}{*{8}{c}}
+				tamanho em bits & $32$ & $32$ & $32$ & $32$ & $1$ & $1$ & $1$ \\
+				\cline{2-8}
+				& \tabela{pc} & \tabela{sv1} & \tabela{sv2} & \tabela{res/targ} & \tabela{jmp} & \tabela{brc} & \tabela{btaken} \\
+				\cline{2-8}
+				& \multicolumn{7}{c}{\vdots} \\
+				\cline{2-8}
+				& \tabela{pc} & \tabela{sv1} & \tabela{sv2} & \tabela{res/targ} & \tabela{jmp} & \tabela{brc} & \tabela{btaken} \\
+				\cline{2-8}
+			\end{tabular}
+		\end{center}
+		\bigskip
+		\legend{Fonte: elaborada pelo autor}
+	\end{figure}
+\end{frame}
+
+\begin{frame}\frametitle{Memorização dinâmica de traços}
+	\begin{figure}
+		\label{Fig:MemoTableT}
+		\caption[Representação da tabela \tablet]{
+			Representação da tabela \tablet, utilizada para recuperação de traços.}
+		\begin{center}
+			%A famosa gambiarra ataca novamente novamente
+			\newcommand{\tabela}[1]{
+				\multicolumn{1}{|@{ }c@{ }|}{#1}
+			}
+			
+			\newcommand{\tabelatripla}[2]{
+				\tabela{$#1_{1}$} & \tabela{\hdots} & \tabela{$#1_{#2}$}
+			}
+			
+			\tiny
+			\scalebox{.9}{
+			\begin{tabular}{*{21}{c}}
+				tamanho em bits & $32$ & $32$ & \multicolumn{3}{c}{$5 * N_{1}$} & \multicolumn{3}{c}{$32 * N_{1}$} & \multicolumn{3}{c}{$5 * N_{2}$} & \multicolumn{3}{c}{$32 * N_{2}$} & \multicolumn{3}{c}{$1 * B$} & \multicolumn{3}{c}{$1 * B$} \\
+				\cline{2-21}
+				& \tabela{$pc$} & \tabela{$npc$} & \tabelatripla{icr}{N_{1}} & \tabelatripla{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}} & \tabelatripla{bmask}{B} & \tabelatripla{btaken}{B}  \\
+				\cline{2-21}
+				\multicolumn{21}{c}{\vdots} \\
+				\cline{2-21}
+				& \tabela{$pc$} & \tabela{$npc$} & \tabelatripla{icr}{N_{1}} & \tabelatripla{icv}{N_{1}} & \tabelatripla{ocr}{N_{2}} & \tabelatripla{ocv}{N_{2}} & \tabelatripla{bmask}{B} & \tabelatripla{btaken}{B}  \\
+				\cline{2-21}
+			\end{tabular}
+			}
+			\normalsize
+			
+		\end{center}
+		\bigskip
+		\legend{Fonte: elaborada pelo autor}
+	\end{figure}
+\end{frame}
+
+\section{Problema}
+
+\begin{frame}\frametitle{Problema}
+	Diversos trabalhos, entre eles \citeonline{costa2001explorando}, \citeonline{pilla2003limits}, \citeonline{silva2006memorizacao} e \citeonline{laurino2007reuso}, testaram a DTM em diferentes formas e todas produziram ganhos de desempenho para diversas aplicações.
+\end{frame}
+
+\begin{frame}\frametitle{Problema}
+	Além da mudança no desempenho do sistema, incluir a DTM em um processador também pode alterar:
+	\begin{itemize}
+		\item área de chip;
+		\item potência consumida;
+		\item latência de ciclo;
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Problema}
+	\begin{itemize}
+		\item Trabalhos anteriores que analisavam a DTM utilizaram apenas modelos teóricos ou simulações computacionais.
+		\item Impossível ou extremamente difícil de prever tais alterações dessa forma.
+	\end{itemize}
+\end{frame}
+
+\section{Proposta}
+
+\begin{frame}\frametitle{Proposta}
+	Proposta do trabalho:
+	\begin{itemize}
+		\item Implementar o mecanismo de DTM em uma arquitetura de processador;
+		\item Sintetizar o circuito e gravar em uma placa de FPGA;
+		\item Executar os programas de \textit{benchmark} do SPEC CPU 2006;
+		\item Comparar medições realizadas no processador original com as do processador alterado.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Proposta}
+	\begin{itemize}
+		\item A arquitetura de processador utilizada é o LEON3, da Cobham Gaisler.
+		\item O LEON3 implementa a ISA SPARC V8.
+		\item A placa de FPGA utilizada é a Altera Cyclone II EP2C35F672C6.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Proposta}
+	Objetivos do trabalho:
+	\begin{itemize}
+		\item Definir os \textit{trade-offs} de implementar a DTM;
+		\item Saber para quais aplicações práticas a técnica é viável.
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Referências}
+	\bibliography{bibfile}
+\end{frame}
+
+
+
+
+\end{document}
