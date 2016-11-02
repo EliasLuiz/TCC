@@ -62,3 +62,4 @@ Trabalhos posteriores:
         Ex: addi $s0, $0, 1 
             ... 
             addi $s1, $0, 1 [reusada apesar de pc diferente]
+    Implementação em processador superescalar

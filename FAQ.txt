@@ -1,0 +1,74 @@
+Mecanismo:
+
+	Trace Builder: Reune as informações pelos estágios do pipeline, construindo um trace se necessário. Os traces são alimentados à Memo Table.
+
+	Memo Table: Armazena os traces. Escreve um trace já construído no Trace Builder. Lê todos os traces de possível reuso para o Trace Reuser. Substitui os traces antigos com esquema semelhante a LRU, adaptado para múltiplos hits e escrita em endereço diferente da leitura.
+
+	Trace Reuser: Ativa sinais de controle, compara os contextos de entrada e escreve o devido contexto de saida no Write Buffer.
+
+	Write Buffer: Gerencia todas as escritas no banco de registradores. Gera stalls no pipeline quando cheio.
+
+
+
+Memo_Tables
+
+	Contexto de entrada
+
+		Q: Como realizar a leitura dos N1 valores do contexto de entrada de forma eficiente?
+		A: Parada condicional. Enquanto haja hit e os operadores já lidos sejam iguais gerar stalls no pipeline para continuar a leitura dos outros valores. Para N1 = 3|4 e 2 portas de leitura de registradores, caso os 2 primeiros valores confiram gerar um ciclo de stall para leitura dos outros 2. Caso afirmativo, proceder com o reuso.
+
+?		Q: Como ler 2 membros do contexto de entrada quando a instrução inicial do trace lê apenas 1 ou nenhum?
+		A: Através da identificação do OPCODE da instrução utilizar as portas de leitura disponíveis para teste de reuso. (Aumento significativo de complexidade?   Tem que testar outros valores além dos dados pela instrução de qualquer maneira - Mux para decidir se registrador a ser lido/fowarding vem da instrução ou da Memo_Table) => (Atraso da leitura da Memo_Table + identificação do registrador a ser lido + alteração do mux + leitura do banco/fowarding + comparação dentro da Memo_Table para decidir se continua os testes ou o reuso já não irá ocorrer)
+
+		Q: Como ler o valor do contexto de entrada caso o valor correto seja obtido via fowarding?
+		A: Quando o valor a ser comparado vier diretamente do valor lido pela instrução, observar o valor por ela escolhido, seja via leitura de banco ou o disponibilizado por fowarding caso haja. Quando o valor lido é obtido através do método descrito na questão anterior o próprio mecanismo de fowarding já presente resolverá da mesma forma que no caso anterior, já que o valor do registrador desejado substituirá o valor de lixo que seria lido e descartado.
+
+?		Q: Como lidar com dependências RAW?
+		A: Até o momento há duas possibilidades:
+			A1: Geração de stalls quando não for possível realizar o fowarding
+			A2: Implementação do RST - reuso especulativo
+		Caso o LEON3 dê stall em RAW verdadeira (fowarding impossível), pode se considerar o stall uma instrução que lê nenhum operando mas pertence ao trace, permitindo assim a comparação antecipada de outros valores do contexto de entrada do trace. Isso tornaria o RST desnecessário
+
+		RST
+
+?			Q: Caso o RST seja utilizado, seria necessário a leitura de todos os N2 membros do contexto de entrada para predizer os valores não obtíveis (RAW)?
+			A:
+
+	Contexto de saída
+
+		Q: Como realizar a escrita de N2 valores do contexto de saída de forma eficiente?
+		A: Memo_Tables escrevem em um buffer de escrita. Caso alguma instrução necessite de um valor a ser escrito (RAW), ler do buffer. 
+
+		Buffer de escrita:
+
+?			Q: Como vai se dar a escrita do buffer e das instruções?
+			A: Duas possibilidades: 
+				A1: Buffer escrever quando a instrução no estágio de Write Back não irá realizar escrita.
+				A2: Todas as escritas no banco de registradores são inseridas em ordem de emissão no buffer de escrita.
+
+?			Q: Como garantir a integridade da escrita em casos WAW?
+			A: Caso o valor a ser escrito pelo Write Back ou pelo reuso de outro trace já esteja no buffer (WAW) há duas possíveis abordagens::
+				A1: Atualizar o valor do buffer para aquele registrador?
+				A2: Realizar a escrita do WB e apagar a entrada do registrador no buffer? (E para caso de trace? Apagar a primeira e manter só a última?) => (Perda de espaço no buffer?)
+
+			Q: Como garantir que não haverá buffer overflow?
+			A: Enquanto o número de espaços livres no buffer for menor que N2 deverão ser gerados stalls para escrita no banco. Assim, instruções e traces poderão ser executados em paralelo à escrita do buffer.
+
+	Outros
+
+?		Q: Como atualizar preditores de desvio dinâmicos?
+		A: Há campos na tabela para atualização de preditores de desvio, mas até o momento não sei como calcular os valores PC para atualizar a tabela
+
+?		Q: A Memo_Table_G é realmente necessária?
+		A: No momento não há intenção de implementá-la
+		A implementação da Memo_Table_G tem prós e contras:
+			Pros:
+    			- Speedup em casos de RAW redundante quando não há reuso do trace. Resultado pronto no 3o(?) ciclo do pipeline ao invés do 4o(?).
+  			Cons:
+    			- Speedup em casos de RAW não auxilia teste para reuso de traces, já que como o trace engloba o máximo de instruções redundantes contínuas possível, a instrução que o antecede não é redundante, logo não está na Memo_Table_G.
+    			- Não gera ganhos quando não há dependência RAW, já que o fowarding ou a escrita no banco realizaram a escrita em tempo hábil. Também não gera ganhos em caso de reuso de trace, já que a Memo_Table_T possui prioridade.
+    			- Aumento da complexidade do circuito
+
+?    	Q: Qual o algoritmo de substituição de entradas na cache?
+    	A: 
+    	
