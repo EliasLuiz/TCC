@@ -11,25 +11,25 @@ package MemoTableTDefinitions is
 	constant ArchitectureBitCount: integer := 8;
 	
 	--Memory associativity
-	constant MemoTableTAssociativity: integer := 2;
+	constant MemoTableTAssociativity: integer := 4;
 	constant MemoTableTAssociativityAddress : integer := 
 		integer(ceil(log2(real(MemoTableTAssociativity))));
 
 	--DTM storage parameters
-	constant InputContextLenght: integer := 3;
-	constant OutputContextLenght: integer := 2;
+	constant InputContextLenght: integer := 1;
+	constant OutputContextLenght: integer := 1;
 	
-	--Adicionar bits para Branch?
 	constant MemoTableTWidth: integer := 
 										ArchitectureBitCount * (	--Values of:
-											2 								--PC and NextPC
+										-- 1 +							--PC (Unnecessary because of memory position + tag)
+										   1								--NextPC
 											+ InputContextLenght		--Input context registers
 											+ OutputContextLenght) 	--Output context registers
 										 + 5 * (							--Indentifiers of:
 											InputContextLenght 		--Input context registers
 											+ OutputContextLenght); --Output context registers
 	--Number of entries per way
-	constant MemoTableTLenght: integer := 32;
+	constant MemoTableTLenght: integer := 16;
 	
 	constant MemoTableTAdressLenght: integer := 
 		integer(ceil(log2(real(MemoTableTLenght))));

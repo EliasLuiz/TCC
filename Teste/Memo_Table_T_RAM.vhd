@@ -18,12 +18,15 @@ entity Teste is
 		--Low level activation reset
 		Reset: in std_logic;
 		
+		--High level write enabler
 		WEnable: in std_logic;
+		
 		Clock: in std_logic;
 		
 		--Data read from each table way
 		--Data(i)(MemoTableTWidth) = '1' => Hit
 		--Data(i)(MemoTableTWidth) = '0' => Miss
+		--Data(i)(MemoTableTWidth-1 downto 0) => Trace
 		Data: out MemoTableTReadData
 	);
 end Teste;
@@ -196,8 +199,11 @@ begin
 								to_unsigned(MemoTableTAssociativity - 1, MemoTableTAssociativityAddress));
 						Memory(i)
 							(to_integer(unsigned(WAddress(MemoTableTAdressLenght-1 downto 0))))
-								(MemoTableTWidth-1 downto 0)
-						<= WData;
+								(MemoTableTTagWidth+MemoTableTWidth downto 0)
+						<= '1' & 											--Valid bit
+							WAddress(ArchitectureBitCount-1 
+								downto MemoTableTAdressLenght) &		--Tag
+							WData;											--Trace
 						
 					--If counter must be decremented
 					elsif 
