@@ -1,0 +1,49 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.math_real.all;
+
+LIBRARY altera_mf;
+USE altera_mf.ALL;
+
+USE work.Constants.ALL;
+USE work.DefTypes.ALL;
+
+--Select the smaller of a array of registers
+--The integer being compared is StdLogicToInteger(register.value & register.identifier)
+ENTITY Minimum IS
+--ENTITY TraceMemory IS
+	GENERIC
+	(
+		InputArrayLenght: integer --MemoTableTRegisterArray'LEFT+1
+	);
+	PORT
+	(
+		ArrayVector		: IN  MemoTableTRegisterArray;
+		MinimumRegister	: OUT MemoTableTRegister
+	);
+END Minimum;
+--END TraceMemory;
+
+
+ARCHITECTURE SYN OF Minimum IS
+--ARCHITECTURE SYN OF TraceMemory IS
+	
+	TYPE AuxiliarRegisterMatrix IS ARRAY (0 TO integer(ceil(log2(real(InputArrayLenght))))) OF MemoTableTRegisterArray
+	SIGNAL AuxiliarMatrix: AuxiliarRegisterMatrix;
+
+BEGIN
+
+	AuxiliarMatrix(0) <= ArrayVector;
+
+	out: FOR i IN 1 TO ArrayVector'RIGHT GENERATE
+		in: FOR j IN 0 TO floor(ArrayVector(0)'RIGHT / 2) GENERATE
+			ArrayVector(i)(j) <= StdLogicToRegister(Smaller(
+					RegisterToStdLogic(ArrayVector(i-1)(j*2)),
+					RegisterToStdLogic(ArrayVector(i-1)(j*2+1))
+				));
+		END GENERATE in;
+	END GENERATE out;
+
+	MinimumRegister <= MinimumRegister(ArrayVector'RIGHT)(0);
+
+END SYN;

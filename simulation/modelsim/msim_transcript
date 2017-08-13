@@ -1,0 +1,228 @@
+# do TraceMemory_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying /home/elias/altera/13.0sp1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /home/elias/altera/13.0sp1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {/home/elias/TCC/TraceMemory/DefConstants.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package MATH_REAL
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Constants
+# -- Compiling package body Constants
+# -- Loading package Constants
+# vcom -93 -work work {/home/elias/TCC/TraceMemory/DefTypes.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package MATH_REAL
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Constants
+# -- Compiling package DefTypes
+# -- Compiling package body DefTypes
+# -- Loading package DefTypes
+# vcom -93 -work work {/home/elias/TCC/TraceMemory/Minimum.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package Constants
+# -- Loading package DefTypes
+# -- Compiling entity Minimum
+# -- Compiling architecture SYN of Minimum
+# vcom -93 -work work {/home/elias/TCC/TraceMemory/MemoTableTLRUCounterWay.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package MATH_REAL
+# -- Loading package NUMERIC_STD
+# -- Loading package Constants
+# -- Loading package DefTypes
+# -- Compiling entity MemoTableTLRUCounterWay
+# -- Compiling architecture SYN of MemoTableTLRUCounterWay
+# vcom -93 -work work {/home/elias/TCC/TraceMemory/MemoTableTLRUCounter.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package MATH_REAL
+# -- Loading package NUMERIC_STD
+# -- Loading package Constants
+# -- Loading package DefTypes
+# -- Compiling entity TraceMemory
+# -- Compiling architecture SYN of TraceMemory
+# ** Warning: /home/elias/TCC/TraceMemory/MemoTableTLRUCounter.vhd(75): Cannot associate port "RData" of mode OUT with port "RData" of mode BUFFER.
+# 
+# vcom -93 -work work {/home/elias/TCC/TraceMemory/DefConstants.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package MATH_REAL
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Constants
+# -- Compiling package body Constants
+# -- Loading package Constants
+# vcom -93 -work work {/home/elias/TCC/TraceMemory/DefTypes.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package MATH_REAL
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Constants
+# -- Compiling package DefTypes
+# -- Compiling package body DefTypes
+# -- Loading package DefTypes
+# vcom -93 -work work {/home/elias/TCC/TraceMemory/Minimum.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package Constants
+# -- Loading package DefTypes
+# -- Compiling entity Minimum
+# -- Compiling architecture SYN of Minimum
+# vcom -93 -work work {/home/elias/TCC/TraceMemory/MemoTableTLRUCounterWay.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package MATH_REAL
+# -- Loading package NUMERIC_STD
+# -- Loading package Constants
+# -- Loading package DefTypes
+# -- Compiling entity MemoTableTLRUCounterWay
+# -- Compiling architecture SYN of MemoTableTLRUCounterWay
+# vcom -93 -work work {/home/elias/TCC/TraceMemory/MemoTableTLRUCounter.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package MATH_REAL
+# -- Loading package NUMERIC_STD
+# -- Loading package Constants
+# -- Loading package DefTypes
+# -- Compiling entity TraceMemory
+# -- Compiling architecture SYN of TraceMemory
+# ** Warning: /home/elias/TCC/TraceMemory/MemoTableTLRUCounter.vhd(75): Cannot associate port "RData" of mode OUT with port "RData" of mode BUFFER.
+# vcom -93 -work work {/home/elias/TCC/TraceMemory/simulation/modelsim/TraceMemory.vht}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package MATH_REAL
+# -- Loading package NUMERIC_STD
+# -- Loading package Constants
+# -- Loading package DefTypes
+# -- Compiling entity TraceMemory_vhd_tst
+# -- Compiling architecture TraceMemory_arch of TraceMemory_vhd_tst
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs="+acc"  TraceMemory_vhd_tst
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs=\"+acc\" -t 1ps TraceMemory_vhd_tst 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.math_real(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.deftypes(body)
+# Loading work.tracememory_vhd_tst(tracememory_arch)
+# Loading work.tracememory(syn)
+# Loading work.memotabletlrucounterway(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.minimum(syn)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tracememory_vhd_tst/i1
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Region: /tracememory_vhd_tst/i1/Minimum_cmp/outfor(2)/infor(1)
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Region: /tracememory_vhd_tst/i1/Minimum_cmp/outfor(2)/infor(0)
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Region: /tracememory_vhd_tst/i1/Minimum_cmp/outfor(1)/infor(1)
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Region: /tracememory_vhd_tst/i1/Minimum_cmp/outfor(1)/infor(0)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /tracememory_vhd_tst/i1/mem(3)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /tracememory_vhd_tst/i1/mem(3)
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /tracememory_vhd_tst/i1/mem(3)/MemoTableTLRUCounterWay_cmp/altsyncram_component
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /tracememory_vhd_tst/i1/mem(2)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /tracememory_vhd_tst/i1/mem(2)
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /tracememory_vhd_tst/i1/mem(2)/MemoTableTLRUCounterWay_cmp/altsyncram_component
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /tracememory_vhd_tst/i1/mem(1)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /tracememory_vhd_tst/i1/mem(1)
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /tracememory_vhd_tst/i1/mem(1)/MemoTableTLRUCounterWay_cmp/altsyncram_component
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /tracememory_vhd_tst/i1/mem(0)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /tracememory_vhd_tst/i1/mem(0)
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /tracememory_vhd_tst/i1/mem(0)/MemoTableTLRUCounterWay_cmp/altsyncram_component
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Region: /tracememory_vhd_tst/i1/mem(0)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Region: /tracememory_vhd_tst/i1/mem(1)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Region: /tracememory_vhd_tst/i1/mem(2)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Region: /tracememory_vhd_tst/i1/mem(3)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /tracememory_vhd_tst/i1
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 2  Region: /tracememory_vhd_tst/i1/Minimum_cmp/outfor(1)/infor(0)
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 2  Region: /tracememory_vhd_tst/i1/Minimum_cmp/outfor(1)/infor(1)
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Region: /tracememory_vhd_tst/i1/Minimum_cmp/outfor(1)/infor(0)
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Region: /tracememory_vhd_tst/i1/Minimum_cmp/outfor(1)/infor(1)
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 4  Region: /tracememory_vhd_tst/i1/Minimum_cmp/outfor(2)/infor(0)
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 5  Region: /tracememory_vhd_tst/i1/Minimum_cmp/outfor(2)/infor(0)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 7  Region: /tracememory_vhd_tst/i1/mem(0)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 7  Region: /tracememory_vhd_tst/i1/mem(1)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 7  Region: /tracememory_vhd_tst/i1/mem(2)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 7  Region: /tracememory_vhd_tst/i1/mem(3)
+# ** Failure: Assertion violation.
+#    Time: 220 ns  Iteration: 0  Process: /tracememory_vhd_tst/init File: /home/elias/TCC/TraceMemory/simulation/modelsim/TraceMemory.vht
+# Break in Process init at /home/elias/TCC/TraceMemory/simulation/modelsim/TraceMemory.vht line 104
+# Simulation Breakpoint: Break in Process init at /home/elias/TCC/TraceMemory/simulation/modelsim/TraceMemory.vht line 104
+# MACRO ./TraceMemory_run_msim_rtl_vhdl.do PAUSED at line 26
