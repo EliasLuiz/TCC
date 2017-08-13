@@ -1,0 +1,37 @@
+source compile.synp
+add_file -vhdl -lib work config.vhd
+add_file -vhdl -lib work clkgen_de2.vhd
+add_file -vhdl -lib work mypackage.vhd
+add_file -vhdl -lib work sdctrl16.vhd
+add_file -vhdl -lib work apblcd.vhd
+add_file -vhdl -lib work leon3mp.vhd
+add_file -constraint  default.sdc
+
+#implementation: "synplify"
+impl -add synplify
+
+#device options
+set_option -technology CYCLONEII
+set_option -part EP2C35
+set_option -speed_grade -6
+
+#compilation/mapping options
+set_option -use_fsm_explorer 0
+set_option -symbolic_fsm_compiler 0
+set_option -resource_sharing 0
+
+set_option -write_vhdl 1
+#set_option -disable_io_insertion 0
+
+#map options
+set_option -frequency 60
+
+set_option -top_module leon3mp
+
+#set result format/file last
+project -result_file "synplify/leon3mp.edf"
+
+#implementation attributes
+set_option -package F672C
+set_option -pipe 1; set_option -retiming 1; set_option -write_apr_constraint 0
+impl -active "synplify"

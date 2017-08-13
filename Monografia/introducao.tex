@@ -1,0 +1,99 @@
+%\chapter{Introdução}
+\label{Introducao}
+
+%	\begin{flushright}
+%		\textit{``Clássico é clássico e vice-versa''.\\
+%		Mário Jardel}
+%	\end{flushright}
+
+%% INTRODUÇÃO - Relevância da área sem especificar problema. 
+
+A Lei de Moore possui algumas variações quanto ao seu enunciado, porém todas afirmam que a capacidade computacional dos processadores cresceria exponencialmente devido aos avanços na tecnologia. Por 50 anos essa previsão se manteve consistente com os produtos lançados no mercado. Porém, limitações físicas na criação de circuitos integrados ameaçam o continuidade dessa evolução \cite{mack2011fifty}. 
+
+Mas com o crescente aumento da demanda por computação é necessário que os projetistas encontrem maneiras de aperfeiçoar ainda mais o funcionamento das unidades de processamento. Uma solução que vem sendo utilizada é acoplar vários processadores para funcionar em paralelo, porém isso aumenta a complexidade de projetos tanto a nível de hardware como de software, além de amplificar o consumo energético do sistema.
+
+O grande desafio da arquitetura de computadores é buscar soluções eficientes, conciliando fatores como desempenho do sistema, consumo de energia, custo de produção e tamanho e complexidade do produto final. Em muitas situações, esses fatores concorrem entre si, levando o projetista a ter de tomar decisões sobre qual abordagem será escolhida para solucionar determinado problema.
+
+O que ocorre então é a criação de sistemas especialistas para determinadas funções, enquanto outros projetos mais gerais lidam com uma gama mais diversa de aplicações. Em ambos os casos, projetistas consideram qual problema buscam resolver para criar a solução mais adequada dentro das restrições. 
+
+Como exemplo podemos comparar as diferentes abordagens assumidas ao projetar um \textit{system-on-chip} para aplicação em um sistema embarcado e na criação de uma unidade de processamento gráfico. Enquanto sistemas embarcados prezam por tamanho reduzido e baixo consumo de energia, unidades gráficas têm como prioridade a velocidade para cálculos de ponto flutuante, sendo otimizadas para executar instruções simples a diversos dados de entrada simultaneamente \cite{tanenbaum2009organizacao}. 
+
+Assim, é importante conhecer e desenvolver técnicas que possam tornar os projetos mais eficientes. Desenvolver para que o custo-benefício do produto seja melhorado independentemente de avanços na tecnologia de produção, mas sim por um design melhor elaborado. Conhecer para que seja possível ponderar como e quais técnicas aplicar para que o objetivo final possa ser atingido de maneira ótima, com um máximo de desempenho e mínimo de recursos despendidos.
+
+
+
+\section{Justificativa}
+\label{Introducao:Justificativa} %Relevância do trabalho em específico. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% OTIMIZACAO DINAMICA DE CODIGO? %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Como demonstrado por \citeonline{costa2001explorando}, muitos programas acabam por ter instruções redundantes ao longo de seu fluxo de execução. Instruções redundantes são aquelas que não possuem efeitos colaterais e já foram executadas anteriormente com os mesmos valores de entrada, o que faz com que o valor de saída produzido seja o mesmo da execução prévia. Assim, executando essas instruções novamente, tempo computacional é perdido para se obter resultados já calculados.
+
+Uma das técnicas propostas para reduzir esse desperdício de poder de processamento é a memorização dinâmica de traços. A DTM armazena o resultado de conjuntos de instruções executados anteriormente e, caso detecte uma execução redundante do mesmo conjunto, é capaz de recuperar os resultados e desviar o fluxo de controle para a instrução a ser executada após esse conjunto, substituindo a execução linear de cada instrução pelo resultado final, como se o bloco inteiro fosse uma instrução somente. A técnica será abordada com mais detalhes na seção \ref{Fundamentacao:DTM}.
+
+Em simulações realizadas por \citeonline{costa2001explorando}, essa técnica foi capaz de aumentar o desempenho de programas do \textit{SpecInt95 Benchmark Suite} de 1\% até 21\%, variando de acordo com o programa e os parâmetros utilizados na construção das unidades responsáveis por implementar o mecanismo DTM.
+
+É possível então notar que há aplicações para as quais a implementação de uma unidade de DTM poderia melhorar significativamente o desempenho. Sendo assim, é interessante conhecer as os impactos desta para que seja possível melhor avaliar em que situações a utilização da DTM é proveitosa, considerando os \textit{trade-offs} causados por sua presença.
+
+\section{Problema}
+\label{Introducao:Problema}
+
+O problema que motiva este trabalho é saber se a DTM é uma técnica viável para aplicações práticas. Caso seja, quais os \textit{trade-offs} que o projetista deve considerar ao aplicar a DTM no seu projeto. Esses \textit{trade-offs} serão baseados na análise das principais características do circuito resultante.
+
+A arquitetura de um circuito e a tecnologia utilizada para a sua geração estão intimamente ligados às características do circuito resultante. Considerando isso, algumas métricas utilizadas nesses circuitos resultantes servem para comparar apenas um dos fatores, seja uma mesma arquitetura em diversas tecnologias ou diversas arquiteturas em uma mesma tecnologia.
+
+Segundo \citeonline{chu2006rtl}, as principais métricas que podem ser utilizadas nessas medições são área de chip, velocidade, consumo de potência e custo de produção. Esses quesitos são correlacionados, fazendo que alterações mudem os valores de mais de um ponto, senão todos. Saber como esses fatores se comportam ao inserir uma unidade de DTM em um processador foi o fator que estimulou este trabalho de pesquisa, já que nenhum dos trabalhos realizados até o momento realizou uma implementação real de um processador com DTM. Por se aterem a simulações computacionais, foi estimado o efeito da técnica no desempenho do processador, mas é impossível saber o impacto em outros aspectos do circuito sem uma análise de uma unidade física. Mais detalhes sobre os trabalhos passados se encontram na seção \ref{Fundamentacao:EstadoArte}.
+
+\section{Objetivos}
+\label{Introducao:Objetivos} % Falar o que será feito.
+
+O objetivo deste trabalho é avaliar como as métricas citadas na seção \ref{Introducao:Problema} são alteradas com a implementação do mecanismo de DTM em um processador.
+
+Mais especificamente, os objetivos podem ser descritos nos seguintes tópicos:
+\begin{enumerate}
+	\item Implementar a memorização dinâmica de traços em uma arquitetura de processador;
+	\item Produzir um circuito físico do processador e comparar os resultados da arquitetura padrão e da arquitetura com DTM nas seguintes métricas:
+	
+	\begin{itemize}
+		\item área de chip;
+		\item potência consumida;
+		\item latência de ciclo;
+	\end{itemize}
+	
+	\item Executar programas de \textit{benchmark}, mais especificamente os que compõe o SPEC CPU 2006, sobre as duas arquiteturas e comparar os resultados de performance de ambas.
+\end{enumerate}
+
+\section{Estrutura da monografia}
+\label{Introducao:Estrutura}
+
+%\textbf{Links para os próximos capítulos.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% ATUALIZAR NUMERO CAPITULOS %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Esta monografia está organizada em 6 capítulos. Esses capítulos foram ordenados em uma sequência lógica que facilitasse a compreensão do leitor, já que cronologicamente houve certo paralelismo durante a produção de algumas etapas.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% ATUALIZAR NUMERO CAPITULOS %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+	%\item capítulo atual	
+
+	\item No capítulo \ref{Metodologia} é demonstrado o processo metodológico adotado no desenvolvimento deste trabalho. Nele é descrito o processo de seleção da literatura base, a definição das ferramentas e parâmetros para a implementação da DTM e como foi planejado a análise e comparação dos resultados obtidos.
+
+	\item Sequencialmente, no capítulo \ref{Fundamentacao} é apresentada a fundamentação que serve como base teórica para o trabalho, incluindo uma conceituação mais apurada sobre a técnica de memorização dinâmica de traços, além de discorrer sobre a arquitetura de processadores escolhida como referência para a implementação e as tecnologias utilizadas para o desenvolvimento.
+	
+%	\item No capítulo \ref{Desenvolvimento} é exposto todo o processo de desenvolvimento, definindo as decisões de \textit{design} tomadas além das técnicas e softwares utilizados. Também será demonstrado como se deu a implementação da unidade, explicitando as alterações realizadas no processador e como ficou estruturado o produto final.
+%	
+%	\item A seguir, no capítulo \ref{Analise} são demonstrados os métodos de testes aplicados ao circuito. Somado à exposição dos testes e seus resultados, é feita também uma análise do significado e do impacto que as medições tem na aplicabilidade da técnica de memorização dinâmica de traços.
+%	
+%	\item Por fim, no capítulo \ref{Conclusao} é feita uma sumarização do trabalho como um todo, realçando os aspectos mais importantes e contextualizando a significância desta pesquisa para o estado da arte de técnicas de reuso aplicadas a conjuntos de instruções.
+	
+\end{itemize}

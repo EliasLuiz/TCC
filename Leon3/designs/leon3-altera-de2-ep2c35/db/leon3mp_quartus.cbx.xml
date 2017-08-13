@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="leon3mp_quartus">
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|svgactrl:\svga:svga0|syncram_2p:clutram|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_14r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|svgactrl:\svga:svga0|syncram_2p:ram0|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_24r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|dsu3:\dsugen:dsu0|dsu3x:x0|tbufmem:\tb0:mem0|syncram64:\mem32:0:ram0|syncram:\nopar:nos64:x0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_t3r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|cachemem:\vhdl:cmem0|syncram:\dme:dd0:0:ddata0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_h6r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|cachemem:\vhdl:cmem0|syncram:\ime:im0:0:idata0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_h6r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|regfile_3p_l3:\vhdl:rf0|regfile_3p:\s1:rhu|syncram_2p:\s1:dp:x1|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_v3r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|tbufmem:\vhdl:tbmem_gen:tbmem_1p:tbmem0|syncram64:\mem32:0:ram0|syncram:\nopar:nos64:x0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_t3r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|dsu3:\dsugen:dsu0|dsu3x:x0|tbufmem:\tb0:mem0|syncram64:\mem32:0:ram0|syncram:\nopar:nos64:x1|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_t3r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|dsu3:\dsugen:dsu0|dsu3x:x0|tbufmem:\tb0:mem0|syncram64:\mem32:1:ram0|syncram:\nopar:nos64:x0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_t3r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|cachemem:\vhdl:cmem0|syncram:\ime:im0:0:itags0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_74r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|cachemem:\vhdl:cmem0|syncram:\ime:im0:1:idata0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_h6r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|proc3:\vhdl:p0|mul32:\mgen:mul0|techmult:\xm3232:m3232|gen_mult_pipe:\pipe2:arch0:dwm|lpm_mult:Mult0" CBX_FILE_NAME="mult_m1t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|tbufmem:\vhdl:tbmem_gen:tbmem_1p:tbmem0|syncram64:\mem32:0:ram0|syncram:\nopar:nos64:x1|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_t3r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|tbufmem:\vhdl:tbmem_gen:tbmem_1p:tbmem0|syncram64:\mem32:1:ram0|syncram:\nopar:nos64:x0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_t3r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|dsu3:\dsugen:dsu0|dsu3x:x0|tbufmem:\tb0:mem0|syncram64:\mem32:1:ram0|syncram:\nopar:nos64:x1|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_t3r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|cachemem:\vhdl:cmem0|syncram:\dme:dtags0:dt0:0:dtags0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_14r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|cachemem:\vhdl:cmem0|syncram:\ime:im0:1:itags0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_74r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|tbufmem:\vhdl:tbmem_gen:tbmem_1p:tbmem0|syncram64:\mem32:1:ram0|syncram:\nopar:nos64:x1|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_t3r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\cpu:0:nosh:u0|leon3x:leon3x0|regfile_3p_l3:\vhdl:rf0|regfile_3p:\s1:rhu|syncram_2p:\s1:dp:x0|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_v3r.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

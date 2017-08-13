@@ -1,0 +1,8 @@
+[Device]
+Family = ;
+PartNumber = EP2C35-6F672C;
+Package = ;
+PartType = EP2C35;
+Speed = -6;
+Operating_condition = COM;
+Status = Production;

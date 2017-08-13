@@ -1,0 +1,17 @@
+Info (10281): Verilog HDL Declaration information at decoder_8b10b.v(100): object "a" differs only in case from object "A" in the same scope
+Info (10281): Verilog HDL Declaration information at decoder_8b10b.v(100): object "b" differs only in case from object "B" in the same scope
+Info (10281): Verilog HDL Declaration information at decoder_8b10b.v(100): object "c" differs only in case from object "C" in the same scope
+Info (10281): Verilog HDL Declaration information at decoder_8b10b.v(100): object "d" differs only in case from object "D" in the same scope
+Info (10281): Verilog HDL Declaration information at decoder_8b10b.v(100): object "e" differs only in case from object "E" in the same scope
+Info (10281): Verilog HDL Declaration information at decoder_8b10b.v(100): object "f" differs only in case from object "F" in the same scope
+Info (10281): Verilog HDL Declaration information at decoder_8b10b.v(100): object "g" differs only in case from object "G" in the same scope
+Info (10281): Verilog HDL Declaration information at decoder_8b10b.v(100): object "h" differs only in case from object "H" in the same scope
+Info (10281): Verilog HDL Declaration information at encoder_8b10b.v(105): object "A" differs only in case from object "a" in the same scope
+Info (10281): Verilog HDL Declaration information at encoder_8b10b.v(105): object "B" differs only in case from object "b" in the same scope
+Info (10281): Verilog HDL Declaration information at encoder_8b10b.v(105): object "C" differs only in case from object "c" in the same scope
+Info (10281): Verilog HDL Declaration information at encoder_8b10b.v(105): object "D" differs only in case from object "d" in the same scope
+Info (10281): Verilog HDL Declaration information at encoder_8b10b.v(105): object "E" differs only in case from object "e" in the same scope
+Info (10281): Verilog HDL Declaration information at encoder_8b10b.v(105): object "F" differs only in case from object "f" in the same scope
+Info (10281): Verilog HDL Declaration information at encoder_8b10b.v(105): object "G" differs only in case from object "g" in the same scope
+Info (10281): Verilog HDL Declaration information at encoder_8b10b.v(105): object "H" differs only in case from object "h" in the same scope
+Info (10281): Verilog HDL Declaration information at ge_1000baseX_mdio.v(59): object "PHY_ADDR" differs only in case from object "phy_addr" in the same scope

@@ -1,0 +1,167 @@
+%\chapter{Procedimentos metodológicos}
+\label{Metodologia}
+
+%	\begin{flushright}
+%		\textit{``Um bom começo é a metade''.\\
+%		Aristóteles}
+%	\end{flushright}
+
+
+%\textbf{Introdução das etapas metodológicas.}
+Esta pesquisa é descritiva em se tratando dos objetivos, já que a observação das características do objeto de pesquisa é o foco principal. É aplicada do ponto de vista de sua natureza, considerando que busca contrastar os resultados obtidos em modelos teóricos e simulações com resultados medidos em uma implementação real. É classificada como qualitativa quanto à abordagem ao problema, pois os resultados apresentados são medições de grandezas do objeto de estudo.
+
+Os procedimentos metodológicos adotados podem ser descritos na seguinte sequência:
+
+\begin{enumerate}
+
+\item realizar um levantamento sobre arquiteturas de computadores disponíveis em código aberto, considerando sua compatibilidade com os equipamentos disponíveis no laboratório e características da arquitetura e implementação, selecionando a que mais se adequasse a um dos padrões propostos;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%        REVISAR         %%
+
+\item reunir e estudar trabalhos publicados relacionados ao problema principal abordado, que em suma são os trabalhos onde a DTM é primeiramente apresentada e alguns outros trabalhos relacionados analisando algumas facetas diferentes da mesma;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item adaptar a técnica DTM para esse conjunto de instruções de máquina, implementar a unidade de memorização dinâmica de traços em linguagem de descrição de hardware, testá-la de forma isolada e integrá-la ao processador da maneira menos invasiva, isto é alterando ao mínimo a unidade de processamento; 
+
+\item realizar testes em um processador sem DTM, que age como unidade de controle, e no processador com DTM, comparando os resultados de ambos obtidos através de  simulação e execução física em placas de FPGA;
+
+\end{enumerate}
+
+Essas etapas serão expostas em mais detalhes nas seções subsequentes deste capítulo.
+
+\section{Escolha da arquitetura} 
+\label{Metodologia:Arquitetura}
+
+O primeiro passo do desenvolvimento deste trabalho foi selecionar uma arquitetura de processadores que atendesse os requisitos necessários, listados abaixo:
+
+\begin{itemize}
+	
+	\item Disponível em código aberto na forma de alguma linguagem de descrição de hardware, preferencialmente em Verilog ou VHDL;
+	
+	\item Sintetizável e gravável no dispositivo FPGA disponibilizado pela instituição, o Altera Cyclone II EP2C35F672C6;
+	
+	\item ISA do tipo RISC ou Java;
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%% ADICIONAR MAIS COISAS AQUI %%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+\end{itemize}
+
+O motivo para que a escolha da arquitetura se desse antes da revisão de literatura se dá pelo fato desta ser influenciada pelo tipo da arquitetura utilizado. Enquanto grande parte dos trabalhos utilizados seriam os mesmos, a bibliografia básica descrevendo a DTM está sujeita ao tipo da arquitetura.
+
+Caso fosse selecionada uma arquitetura baseada em Java como o JOP \cite{schoeberl2005jop}, em que o funcionamento do processador é baseado em uma máquina de pilha, seria utilizado como referência básica \citeonline{silva2006memorizacao}, já que este trabalho lida de maneira mais detalhada com a técnica DTM aplicada a uma máquina Java.
+
+Porém, por possuir melhor compatibilidade com o FPGA utilizado, decidiu-se utilizar a arquitetura LEON3, atualmente mantido pela Cobham Gaisler, que possui como ISA o SPARC v8 \cite{gaisler2010leon3}. Por ser uma arquitetura de modelo RISC tal qual a arquitetura MIPS, utilizada por \citeonline{costa2001explorando}, este foi tido como a peça de bibliografia central para este trabalho.
+
+
+\section{Revisão da literatura}
+\label{Metodologia:Literatura}
+
+Como dito anteriormente na seção \ref{Metodologia:Arquitetura}, a peça central da literatura utilizada neste trabalho é \citeonline{costa2001explorando} devido a sua abordagem minuciosa ao descrever todas as características que compõe a técnica de memorização dinâmica de traços. Sendo o trabalho mais completo tratando de DTM e contendo uma explicação detalhada em como implementar essa técnica em um processador RISC, é notável a semelhança com este trabalho, o que o torna uma referência de suma importância.
+
+Cabe notar que, enquanto há outros trabalhos que trazem diferentes abordagens sobre DTM, como reuso especulativo através da predição de valores de entrada, neste trabalho o escopo foi limitado a uma abordagem mais simples, analisando o impacto dos conceitos básicos de DTM em um processador. %Outras abordagens adicionando uma maior capacidade e complexidade à unidade serão tratadas na seção \ref{Conclusao:Trabalhos}, onde serão apresentadas algumas possíveis adições para futuros trabalhos que compartilhem essa temática.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% ESTICAR EM MAIS PARAGRAFOS? %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Porém, devido à natureza prática deste trabalho, a revisão de literatura não se ateve ao estudo teórico da técnica. Uma seção considerável da bibliografia utilizada concerne às tecnologias componentes do trabalho, desde manuais confeccionados pela Altera tratando aspectos físicos do chip de FPGA utilizado à documentos da Aeroflex Gaisler, atual Cobham Gaisler, referentes à comunicação com o processador para \textit{debug} de software. Essas referências utilizadas na implementação serão melhor demonstradas 
+%nos capítulos \ref{Fundamentacao} e \ref{Desenvolvimento}
+no capítulo \ref{Fundamentacao}
+, onde ocorrerá um maior detalhamento das questões técnicas envolvidas no projeto.
+
+
+\section{Adaptação e implementação}
+\label{Metodologia:Implementacao}
+
+Em \citeonline{costa2001explorando} a técnica DTM é aplicada a um processador cujo conjunto de instruções é o MIPS I. Neste trabalho a aplicação se dá em um processador que implementa o SPARC v8. Apesar de possuírem muitas semelhanças há também diferenças entre eles, como o fato do SPARC implementar janelas de registradores para uma troca de contexto de execução mais rápida.
+
+Diferenças como a citada se mostram como um empecilho para a aplicação direta de DTM em uma arquitetura diferente seguindo a implementação de \cite{costa2001explorando}. Portanto neste trabalho decidiu-se por estudar o funcionamento da técnica de forma ampla e genérica e projetar uma unidade específica para a arquitetura utilizada, sem fugir dos conceitos básicos que definem o DTM.
+
+A implementação se dá alterando o código-fonte do processador LEON3 na linguagem de descrição de hardware VHDL. Por utilizar \textit{generics}, ou seja uma implementação parametrizada, o LEON3 pode ter suas características adaptadas de acordo com a definição do usuário antes do processo de síntese do circuito ser iniciado.
+
+Para este trabalho, o processador foi configurado de uma maneira que se assemelha a uma unidade de processamento de propósito geral, considerando as restrições impostas pelo fato deste ser aplicado em sistemas embarcados, onde características como tamanho de memória e quantidade de periféricos se comunicando diferem de uma unidade central de processamento utilizada em outras aplicações, como estações de trabalho e servidores. %Mais detalhes serão discutidos na seção \ref{Implementacao:LEON3}.
+
+%Neste trabalho, o processador foi configurado da seguite forma:
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% DISCUTIR CONFIG COM BRUNO %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{itemize}
+%	\item 1 núcleo de processamento;
+%	\item unidade de processamento de inteiros:
+%	\begin{itemize}
+%		\item 8 janelas de registradores;
+%		\item unidades de multiplicação e divisão;
+%		\item unidade de predição de desvio;
+%%		\item modo power-down desativado;
+%	\end{itemize}
+%	\item unidade de processamento de ponto flutuante:
+%	\begin{itemize}
+%		\item GRFPU, compatível com o padrão IEEE-754;
+%	\end{itemize}
+%	\item memória cache:
+%	\begin{itemize}
+%		\item cache de dados e instruções separadas;
+%		\item método LRU de substituição;
+%		\item cache de instruções:
+%		\begin{itemize}
+%			\item tamanho de 8 Kbytes;
+%			\item associatividade dupla;
+%			\item 32 bytes por linha;
+%		\end{itemize}
+%		\item cache de dados:
+%		\begin{itemize}
+%			\item tamanho de 4 Kbytes;
+%			\item diretamente mapeada;
+%			\item 16 bytes por linha;
+%		\end{itemize}
+%	\end{itemize}
+%%	???????????????????????????????
+%%	\item unidade de gerenciamento de memória; 
+%%	???????????????????????????????
+%	\item unidade de suporte a depuração;
+%\end{itemize}
+
+
+\section{Testes e análise}
+\label{Metodologia:Analise}
+
+Após completada a implementação do processador com DTM, será iniciada a etapa de testes e análise dos resultados. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% ESPECIFICAR QUAL BENCHMARK %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Como descrito em \ref{Introducao:Objetivos}, os testes realizados tem a função de determinar a área de chip, potência dissipada, latência de ciclo de execução e ganho de performance na execução de programas de \textit{benchmark}. Para este trabalho os programas de \textit{benchmark} que compõe a suite SPEC CPU 2006 servem como parâmetros para a medição de performance dos processadores em diferentes tarefas.
+
+Para que os resultados tenham valor significativo, o mesmo processador porém sem DTM desempenha o papel de controle, servindo de referência para os valores lidos e permitindo uma visão mais completa dos impactos do mecanismo nas características gerais da unidade de processamento.
+
+A área do chip pode ser estimada pela quantidade de células ou \textit{slices} necessários para a gravação do circuito em FPGA. Essa métrica impacta diretamente no tamanho do circuito resultante, custo por unidade produzida usando tecnologias ASIC e qual o número mínimo de células que um dispositivo lógico programável deve possuir para suportá-lo.
+
+Além disso, a área do chip impacta indiretamente a potência dissipada e a latência do circuito. Apesar de não haver relação de causalidade direta, comumente existe uma correlação entre circuitos com uma área de chip maior e maior quantidade de elementos lógicos, o que pode acarretar em uma perda de potência maior \cite{chu2006rtl}.
+
+A potência dissipada no circuito, ou seja, a energia consumida por este, é outro aspecto importante a ser considerado ao determinar a aplicabilidade da técnica e que pode ser medido diretamente com auxílio de equipamentos para medições elétricas. Além de possuir uma relação direta com o calor produzido no circuito, explicada pelo efeito Joule, a fonte utilizada para alimentação do circuito deve possuir a capacidade de suprir a potência necessária. Isso é um fator determinante em aplicações de sistemas embarcados, nos quais muitas vezes busca-se o sistema com o menor consumo possível devido a estar embutido em outros sistemas, normalmente em um ambiente não idealmente preparado e estar ativado por longos períodos de tempo \cite{tanenbaum2009organizacao}.
+
+Também é possível perceber uma correlação entre área de chip e latência, apesar de mais fraca. O ponto que envolve ambos é o chamada caminho crítico, isto é, o maior caminho de dados possível dentro do circuito. Este caminho é o fator determinante para a determinação da latência do circuito e está diretamente associado com a quantidade de elementos pelos quais o sinal deve passar no circuito. Como cada elemento contido no circuito possui um \textit{delay} ou atraso próprio, a quantidade de elementos do caminho crítico é diretamente proporcional ao atraso total do caminho, sendo este o fator que determina a latência do circuito. Portanto, a relação entre área de chip e latência do circuito depende do design deste, já que um projeto que explore características de paralelismo é capaz de possuir uma área maior sem necessariamente estender o caminho crítico \cite{patterson2013computer}.
+
+A latência por sua vez define qual o tempo de ciclo ou \textit{clock} mínimo para o circuito sem que haja perda de dados, portanto determinando o limite máximo para a frequência de trabalho do processador. Apesar de haverem outros fatores envolvidos no desempenho final do circuito, o tempo de ciclo é um fator fundamental. Com a implementação de DTM, observando como foi alterado o caminho crítico determina-se como foi alterado o tempo mínimo de \textit{clock}, o que é possível através de análise do circuito resultante e medindo qual a frequência de \textit{clock} máxima aplicável para o circuito \cite{hennessy2011computer}.
+
+Com a execução de programas de \textit{benchmark} é possível determinar ganhos em tempo de execução de diferentes tarefas, cada programa executando um tipo de aplicação e quantificando o desempenho do sistema. Assim, juntamente com a informação sobre alteração na frequência máxima suportada, será possível ter uma visão mais completa sobre os impactos que a implantação de DTM em uma unidade de processamento possui no desempenho final do sistema.

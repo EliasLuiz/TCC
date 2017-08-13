@@ -1,0 +1,29 @@
+source compile.synp
+
+#implementation: "synplify"
+impl -add synplify
+
+#device options
+set_option -technology 
+set_option -part 
+set_option -speed_grade 
+
+#compilation/mapping options
+set_option -use_fsm_explorer 0
+set_option -symbolic_fsm_compiler 0
+set_option -resource_sharing 0
+
+set_option -write_vhdl 1
+#set_option -disable_io_insertion 0
+
+#map options
+set_option -frequency 
+
+set_option -top_module 
+
+#set result format/file last
+project -result_file "synplify/.edf"
+
+#implementation attributes
+
+impl -active "synplify"

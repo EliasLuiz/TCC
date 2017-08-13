@@ -1,0 +1,1 @@
+grlib ec unisim secureip unimacro altera altera_mf stratixii eclipsee cycloneiii stratixiii simprim virage atc18 umc18 saed32 synplify techmap spw eth opencores gaisler esa fmf spansion gsi cypress micron work 

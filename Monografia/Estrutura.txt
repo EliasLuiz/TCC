@@ -1,0 +1,65 @@
+﻿Introdução
+    Introdução
+        Necessidade de maior desempenho
+        Limites físicos e da Lei de Moore
+    Justificativa
+        Instruções redundantes
+        Possibilidade de otimização dinâmica de código - DTM
+    Problema
+        Métricas para avaliar qualidade chip
+        Verificar se DTM é uma solução viável
+    Objetivos
+        Implementar DTM em HDL
+        Gravar em FPGA
+        Testar e analisar desempenho
+    Estrutura da tese
+
+Metodologia
+    Escolher arquitetura
+        Java vs RISC
+    Revisão literatura
+        DTM - Tese Amarildo
+        Tecnologias
+            LEON3
+            Altera
+    Implementação
+        Estudo e adaptação para SPARC
+        Repetir Metodologia:Literatura:Tecnologias ???? - Discutir com o Bruno qual a configuração do processador
+    Testes e análise
+        Chu - repetir Introducao:Problema - Perguntar Bruno qual benchmark (SPECInt95 (impacto direto)? SPECFp95 (impacto indireto)?)
+						-SPECint vs Dhrystone vs CoreMark
+                                          - Texto explicando cada medição fica aqui mesmo?
+
+Fundamentação Teórica
+    Estado da arte
+    DTM (Técnica a ser estudada e testada)
+        Introdução
+        Identificação e memorização
+        Reuso
+    DTM em hardware
+        MemoTableG
+        MemoTableT
+            npc - desvio relativo? em vez de armazenar o pc armazenar o desvio?
+            b - armazenar apenas desvio condicional?
+                laços sem acesso a memoria -> b = 0 ?(reuso do laço inteiro)
+                sem unidade previsão branch -> b = 0?
+            icr e icv - não armazenar o registrador zero
+        Construcao de Traces
+        Reuso de Traces
+    Arquitetura utilizada:
+        Leon3 / GRLIB
+        SPARC
+    Tecnologias utilizadas:
+        FPGA
+        VHDL
+
+
+Trabalhos posteriores:
+    Testar DTM especulativo
+    [Já existe: DTM-M] Incorporar LOAD e STORE nos traces (estilo memvalid do Sodoni?), controle parecido com o da cache
+    Incorporar instruções de PF? somente em Memo_Table_G ? Gabbay diz ter pouco reuso, mas pode ter sido só naquele benchmark
+    Memo_Table_G com comparacao por opcode em vez de pc e armazenando imediato para permitir reuso global?
+        Ex: addi $s0, $0, 1 
+            ... 
+            addi $s1, $0, 1 [reusada apesar de pc diferente]
+    Implementação em processador superescalar

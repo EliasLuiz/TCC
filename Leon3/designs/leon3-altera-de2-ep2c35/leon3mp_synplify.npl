@@ -1,0 +1,20 @@
+JDF G
+PROJECT leon3mp
+DESIGN leon3mp
+DEVFAM CYCLONEII
+DEVICE EP2C35
+DEVSPEED -6
+DEVPKG F672C
+DEVTOPLEVELMODULETYPE EDIF
+DEVSIMULATOR Modelsim
+DEVGENERATEDSIMULATIONMODEL VHDL
+SOURCE synplify/leon3mp.edf
+DEPASSOC leon3mp leon3mp.ucf
+[Normal]
+xilxMapAllowLogicOpt=edif,  CYCLONEII, EDIF.t_placeAndRouteDes, 1102861051, True
+xilxMapCoverMode=edif,  CYCLONEII, EDIF.t_placeAndRouteDes, 1102861051, Speed
+xilxNgdbld_AUL=edif,  CYCLONEII, EDIF.t_placeAndRouteDes, 1102861051, True
+xilxPAReffortLevel=edif,  CYCLONEII, EDIF.t_placeAndRouteDes, 1102861051, Medium
+xilxNgdbldMacro=edif,  CYCLONEII, EDIF.t_placeAndRouteDes, 1105378344, ../../netlists/xilinx/CYCLONEII
+[STRATEGY-LIST]
+Normal=True
